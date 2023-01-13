@@ -1,5 +1,5 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -14,7 +14,8 @@ module.exports = {
   plugins: ['@typescript-eslint', 'prettier'],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    parser: '@typescript-eslint/parser'
   },
   rules: {
     'prettier/prettier': 'error',

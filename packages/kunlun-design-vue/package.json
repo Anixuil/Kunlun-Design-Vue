@@ -1,0 +1,26 @@
+{
+  "name": "kunlun-design-vue",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "liuxin0207 <1140040227@qq.com>",
+  "homepage": "https://github.com/1140040227/Kunlun-Design-Vue#readme",
+  "license": "ISC",
+  "main": "index.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1140040227/Kunlun-Design-Vue.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/1140040227/Kunlun-Design-Vue/issues"
+  }
+}

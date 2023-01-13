@@ -20,7 +20,8 @@
   ],
   "dependencies": {
     "typescript": "^4.9.4",
-    "vue": "^3.2.36"
+    "vue": "^3.2.36",
+    "vue-eslint-parser": "^9.1.0"
   },
   "scripts": {
     "prettier": "prettier --write .",
