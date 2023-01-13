@@ -1,5 +1,6 @@
 import { App, defineComponent } from 'vue'
 import Button from './src/button.vue'
+console.log(Button)
 
 Button.install = (app: App): void => {
   app.component(Button.name, Button)

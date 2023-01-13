@@ -1,6 +1,8 @@
 import Button from '@kunlun-design-vue/button'
 import { App } from 'vue'
 
+console.log(Button)
+
 const components = [Button]
 
 const install = (app: App): void => {

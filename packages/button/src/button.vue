@@ -4,11 +4,16 @@
   </button>
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
+defineOptions({
+  name: 'KunlunButton'
+})
+</script> -->
+<script lang="ts">
 import { defineComponent } from 'vue'
 
-defineComponent({
-  name: 'kunlunButton'
+export default defineComponent({
+  name: 'KunlunButton'
 })
 </script>
 
