@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/1140040227/Kunlun-Design-Vue/issues"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.36"
   }
 }
