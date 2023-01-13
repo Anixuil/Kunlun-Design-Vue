@@ -21,6 +21,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
     'no-extra-semi': 'off',
+    'no-undef': 'off',
     '@typescript-eslint/camelcase': 'off',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/no-var-requires': 'off',
