@@ -1,7 +1,7 @@
 {
     "name": "kunlun-design",
     "private": false,
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "commonjs",
     "author": "anixuil",
     "description": "Kunlun Design - A Vue.js 3 UI library",
