@@ -4,18 +4,13 @@
   </button>
 </template>
 
-<!-- <script setup lang="ts">
-defineOptions({
-  name: 'KunlunButton'
-})
-</script> -->
 <script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default {
   name: 'KunlunButton'
-})
+}
 </script>
+<script setup lang="ts"></script>
+<script set></script>
 
 <style scoped lang="scss">
 button {
