@@ -3,13 +3,13 @@
         <slot></slot>
     </button>
 </template>
-<script>
+<script lang="ts">
 export default {
     name: 'KunlunButton'
 }
 </script>
-<script setup lang="ts">
-import './index.scss'
-</script>
+<script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped lang="scss">
+@import './index.scss';
+</style>
