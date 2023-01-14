@@ -1,8 +1,39 @@
 {
     "name": "kunlun-design",
-    "private": true,
-    "version": "0.0.0",
+    "private": false,
+    "version": "0.0.1",
     "type": "commonjs",
+    "author": "anixuil",
+    "description": "Kunlun Design - A Vue.js 3 UI library",
+    "keywords": [
+        "Kunlun-Design",
+        "Kunlun",
+        "kunlun-design",
+        "Kunlun Design",
+        "kunlun-design-vue"
+    ],
+    "homepage": "https://github.com/1140040227/Kunlun-Design-Vue/tree/vitedev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/1140040227/Kunlun-Design-Vue.git"
+    },
+    "files": [
+        "lib/*",
+        "packages/*",
+        "package.json"
+    ],
+    "main": "./lib/kunlun-design-vue.umd.js",
+    "module": "./lib/kunlun-design-vue.mjs",
+    "exports": {
+        ".": {
+            "import": "./lib/kunlun-design.mjs",
+            "require": "./lib/kunlun-design.umd.js"
+        },
+        "./lib/style.css": "./lib/style.css"
+    },
+    "engines": {
+        "node": ">=16.15.0"
+    },
     "scripts": {
         "dev": "vite",
         "build": "vue-tsc && vite build",
