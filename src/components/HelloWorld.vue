@@ -2,9 +2,6 @@
 import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
-defineOptions({
-    name: 'nihao'
-})
 
 const count = ref(0)
 </script>
