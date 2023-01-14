@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "target": "ESNext",
+        "sourceMap": false,
+        "module": "ESNext",
+        "esModuleInterop": true,
+        "strict": true,
+        "jsx": "preserve",
+        "types": ["unplugin-vue-define-options/macros-global"],
+        "rootDir": ".",
+        "moduleResolution": "node",
+        "declaration": true
+    }
+}

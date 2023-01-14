@@ -1,0 +1,24 @@
+{
+    "name": "@kunlun-design/eslint-config",
+    "version": "0.0.1",
+    "description": "eslint-config",
+    "main": "index.js",
+    "files": [
+        "index.js"
+    ],
+    "keywords": [
+        "eslint",
+        "tslint",
+        "config",
+        "kunlun-design"
+    ],
+    "author": "anixuil",
+    "license": "ISC",
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.48.1",
+        "@typescript-eslint/parser": "^5.48.1",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-vue": "^9.9.0"
+    }
+}
