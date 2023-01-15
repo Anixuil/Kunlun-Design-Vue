@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "play": "pnpm --filter ./play dev",
         "prettier": "prettier --write .",
         "lint": "eslint --ext .ts packages/**/*.ts",
         "lint:fix": "eslint --ext .ts packages/**/*.ts --fix",
