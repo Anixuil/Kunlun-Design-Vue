@@ -1,5 +1,6 @@
-const path = require('path')
-const fs = require('fs')
+// const path = require('path')
+// const fs = require('fs')
+const { resolve } = require('path')
 
 // 使用vite打包
 const { build, defineConfig } = require('vite')
@@ -10,24 +11,24 @@ const dts = require('vite-plugin-dts')
 const DefineOptions = require('unplugin-vue-define-options/vite')
 
 // 根目录
-const rootDir = path.resolve(__dirname, '../')
+// const rootDir = resolve(__dirname, '../')
 
 // 打包后的目录
-const outDir = resolve('lib')
+// const outDir = resolve('lib')
 
 const baseConfig = defineConfig({
     plugins: [
         vue(),
-        DefineOptions(),
-        dts({
-            include: ['packages/vangle', 'packages/components'],
-            outputDir: path.resolve(outDir, 'types')
-        })
+        DefineOptions()
+        // dts({
+        //     include: ['packages/vangle', 'packages/components'],
+        //     outputDir: resolve(outDir, 'types')
+        // })
     ],
     build: {
         outDir: 'lib',
         lib: {
-            entry: resolve(__dirname, '../packages/kunlun-design'),
+            entry: resolve(__dirname, '../packages/kunlun-design/index.ts'),
             name: 'Kunlun-Design',
             fileName: 'kunlun-design-vue'
         },
@@ -78,6 +79,6 @@ async function main() {
 //   )
 // }
 
-function resolve(...urlOrUrls) {
-    return path.resolve(rootDir, ...urlOrUrls)
-}
+// function resolve(...urlOrUrls) {
+//     return resolve(rootDir, ...urlOrUrls)
+// }
