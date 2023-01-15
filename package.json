@@ -16,6 +16,7 @@
         "@commitlint/cli": "^17.4.2",
         "@commitlint/config-conventional": "^17.4.2",
         "@kunlun-design/eslint-config": "workspace:*",
+        "@kunlun-design/utils": "workspace:*",
         "eslint": "^8.31.0",
         "husky": "^8.0.3",
         "lint-staged": "^13.1.0",

@@ -6,6 +6,7 @@ importers:
             '@commitlint/cli': ^17.4.2
             '@commitlint/config-conventional': ^17.4.2
             '@kunlun-design/eslint-config': workspace:*
+            '@kunlun-design/utils': workspace:*
             eslint: ^8.31.0
             husky: ^8.0.3
             lint-staged: ^13.1.0
@@ -28,6 +29,7 @@ importers:
             '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/17.4.2
             '@commitlint/config-conventional': registry.npmmirror.com/@commitlint/config-conventional/17.4.2
             '@kunlun-design/eslint-config': link:packages/eslint-config
+            '@kunlun-design/utils': link:packages/utils
             eslint: registry.npmmirror.com/eslint/8.31.0
             husky: registry.npmmirror.com/husky/8.0.3
             lint-staged: registry.npmmirror.com/lint-staged/13.1.0

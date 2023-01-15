@@ -1,22 +1,48 @@
-// //文字
-$font-size-xs: 10px;
-$font-size-sm: 12px;
-$font-size-md: 14px;
-$font-size-lg: 16px;
+@import './types.scss';
 
-//图标
-$icon-size-xs: 12px;
-$icon-size-sm: 18px;
-$icon-size-md: 20px;
-$icon-size-lg: 22px;
+:root {
+    --kl-color-white: rgb(249, 249, 249);
+    --kl-text-color-white: white;
+    --kl-color-black: #000000;
+    --kl-bg-color: var(--kl-color-white);
 
-//颜色
-$color-body: rgb(249, 248, 248);
-$color-text: #333;
-$color-primary: #3a7afe;
-$color-info: #00afef;
-$color-success: #00c483;
-$color-warning: #ff9f00;
-$color-danger: #f44336;
-$color-disabled: #e0e0e0;
-$color-text-disabled: #aaa;
+    //padding
+    --kl-paddding-base: 4px;
+    --kl-padding-small: 12px;
+    --kl-padding-middle: 16px;
+    --kl-padding-large: 24px;
+    --kl-line-height-small: 18px;
+    --kl-line-height-middle: 20px;
+    --kl-line-height-large: 22px;
+
+    //border
+    --kl-border-color: #ebedf0;
+    --kl-border-radius-base: 5px;
+    --kl-border-radius-small: 3px;
+    --kl-border-radius-middle: 7px;
+    --kl-border-radius-large: 10px;
+
+    //status
+    --kl-active-opacity: 0.6;
+    --kl-disabled-opacity: 0.5;
+
+    //font
+    @each $fontSizeKey, $fontSize in $fontSizes {
+        .kl-font-size-#{$fontSizeKey} {
+            font-size: $fontsize;
+        }
+    }
+
+    //type background color
+    @each $typeKey, $type in $colors {
+        .kl-type-bg-#{$typeKey} {
+            background-color: $type;
+        }
+    }
+    //type font color
+    @each $typeKey, $type in $fontColors {
+        .kl-type-fontColor-#{$typeKey} {
+            color: $type;
+        }
+    }
+}
