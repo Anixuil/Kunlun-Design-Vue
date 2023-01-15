@@ -22,6 +22,7 @@ module.exports = {
         'prettier/prettier': 'error',
         'no-extra-semi': 'off',
         'no-undef': 'off', //未定义
+        '@typescript-eslint/ban-types': 'off',
         'vue/multi-word-component-names': 'off', //驼峰
         '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/ban-ts-ignore': 'off',

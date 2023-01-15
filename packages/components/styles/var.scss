@@ -29,7 +29,7 @@
     //font
     @each $fontSizeKey, $fontSize in $fontSizes {
         .kl-font-size-#{$fontSizeKey} {
-            font-size: $fontsize;
+            font-size: $fontSize;
         }
     }
 

@@ -3,14 +3,14 @@
     --kl-button-text-color: var(.kl-type-fontColor-infor);
     --kl-button-bg-color: var(.kl-type-bg-info);
 }
-@function kl-button-text-color() {
-    @each $typeKey, $type in $colors {
-        &.kl-button-#{$typeKey} {
-            --kl-button-bg-color: $type;
-            --kl-button-text-color: white;
-        }
-    }
-}
+// @function kl-button-text-color() {
+//     @each $typeKey, $type in $colors {
+//         .kl-button-#{$typeKey} {
+//             --kl-button-bg-color: $type;
+//             --kl-button-text-color: white;
+//         }
+//     }
+// }
 
 .kl-button {
     position: relative;

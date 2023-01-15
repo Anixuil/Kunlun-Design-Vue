@@ -7,7 +7,7 @@ const { build, defineConfig } = require('vite')
 
 // 用到的插件
 const vue = require('@vitejs/plugin-vue')
-const dts = require('vite-plugin-dts')
+// const dts = require('vite-plugin-dts')
 const DefineOptions = require('unplugin-vue-define-options/vite')
 
 // 根目录
@@ -21,12 +21,26 @@ const baseConfig = defineConfig({
         vue(),
         DefineOptions()
         // dts({
-        //     include: ['packages/vangle', 'packages/components'],
-        //     outputDir: resolve(outDir, 'types')
+        //     include: ['packages/kunlun-design', 'packages/components'],
+        //     outputDir: resolve(__dirname, '../types')
         // })
     ],
+    // css: {
+    //     loaderOptions: {
+    //         scss: {
+    //             data: `@import "@/packages/components/styles/var.scss";`
+    //         }
+    //     }
+    // },
+    // css:{
+    //   preprocessorOptions:{
+    //     scss:{
+    //       additionalData:`@use "../packages/components/styles/var.scss" as *;`
+    //     }
+    //   }
+    // },
     build: {
-        outDir: 'lib',
+        outDir: resolve(__dirname, '../packages/kunlun-design/lib'),
         lib: {
             entry: resolve(__dirname, '../packages/kunlun-design/index.ts'),
             name: 'Kunlun-Design',
@@ -43,24 +57,6 @@ const baseConfig = defineConfig({
             }
         }
     }
-    //   build: {
-    //     lib: {
-    //       entry: resolve('packages/vangle/index.ts'),
-    //       name: 'vangle',
-    //       fileName: format => `index.${format}.js`
-    //     },
-    //     outDir,
-    //     rollupOptions: {
-    //       // 确保外部化处理那些你不想打包进库的依赖
-    //       external: ['vue'],
-    //       output: {
-    //         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-    //         globals: {
-    //           vue: 'Vue'
-    //         }
-    //       }
-    //     }
-    //   }
 })
 
 main()
@@ -69,7 +65,7 @@ async function main() {
     // build
     await build(baseConfig)
 
-    await copyFiles()
+    // await copyFiles()
 }
 
 // async function copyFiles() {
