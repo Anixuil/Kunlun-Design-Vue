@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "build": "node ./scripts/build.js",
         "play": "pnpm --filter ./play dev",
         "prettier": "prettier --write .",
         "lint": "eslint --ext .ts packages/**/*.ts",
@@ -16,6 +17,7 @@
     "devDependencies": {
         "@commitlint/cli": "^17.4.2",
         "@commitlint/config-conventional": "^17.4.2",
+        "@kunlun-design/components": "workspace:*",
         "@kunlun-design/eslint-config": "workspace:*",
         "@kunlun-design/utils": "workspace:*",
         "eslint": "^8.31.0",

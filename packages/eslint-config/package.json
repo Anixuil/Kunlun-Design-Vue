@@ -1,5 +1,6 @@
 {
     "name": "@kunlun-design/eslint-config",
+    "private": true,
     "version": "0.0.1",
     "description": "eslint-config",
     "main": "index.js",

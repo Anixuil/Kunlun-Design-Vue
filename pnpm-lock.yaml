@@ -5,6 +5,7 @@ importers:
         specifiers:
             '@commitlint/cli': ^17.4.2
             '@commitlint/config-conventional': ^17.4.2
+            '@kunlun-design/components': workspace:*
             '@kunlun-design/eslint-config': workspace:*
             '@kunlun-design/utils': workspace:*
             eslint: ^8.31.0
@@ -28,6 +29,7 @@ importers:
         devDependencies:
             '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/17.4.2
             '@commitlint/config-conventional': registry.npmmirror.com/@commitlint/config-conventional/17.4.2
+            '@kunlun-design/components': link:packages/components
             '@kunlun-design/eslint-config': link:packages/eslint-config
             '@kunlun-design/utils': link:packages/utils
             eslint: registry.npmmirror.com/eslint/8.31.0
@@ -65,6 +67,9 @@ importers:
             eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier/8.6.0
             eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier/4.2.1_zkckifkqyqpdswg4rcmfg26die
             eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/9.9.0
+
+    packages/kun-design:
+        specifiers: {}
 
     packages/utils:
         specifiers: {}
