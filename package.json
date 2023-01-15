@@ -7,7 +7,7 @@
         "prettier": "prettier --write .",
         "lint": "eslint --ext .ts packages/**/*.ts",
         "lint:fix": "eslint --ext .ts packages/**/*.ts --fix",
-        "lint:stylelint": "stylelint --fix \"**/*.{vue,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+        "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
     },
     "keywords": [],
     "author": "",
@@ -27,6 +27,7 @@
         "stylelint-config-html": "^1.1.0",
         "stylelint-config-prettier": "^9.0.4",
         "stylelint-config-standard": "^29.0.0",
+        "stylelint-config-standard-vue": "^1.0.0",
         "stylelint-order": "^6.0.1",
         "stylelint-scss": "^4.3.0",
         "typescript": "^4.9.4",
@@ -37,8 +38,18 @@
     "lint-staged": {
         "*.{js,jsx,vue,ts,tsx}": [
             "eslint --ext .ts packages/**/*.ts",
-            "eslint --ext .ts packages/**/*.ts --fix",
-            "stylelint --fix \"**/*.{vue,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+            "eslint --ext .ts packages/**/*.ts --fix"
+        ],
+        "package.json": [
+            "prettier --write ."
+        ],
+        "*.vue": [
+            "prettier --write .",
+            "stylelint --fix"
+        ],
+        "*.{scss,styl,html}": [
+            "stylelint --fix",
+            "prettier --write ."
         ]
     }
 }

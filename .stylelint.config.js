@@ -2,7 +2,11 @@ module.exports = {
     root: true,
     plugins: ['stylelint-order', 'stylelint-scss'],
     customSyntax: 'postcss-html',
-    extends: ['stylelint-config-standard', 'stylelint-config-prettier', 'stylelint-config-html'],
+    extends: [
+        'stylelint-config-standard-vue',
+        'stylelint-config-prettier',
+        'stylelint-config-html'
+    ],
     rules: {
         'selector-class-pattern': null,
         'selector-pseudo-class-no-unknown': [
