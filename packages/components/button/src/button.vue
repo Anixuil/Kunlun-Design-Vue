@@ -17,6 +17,7 @@
 import { ButtonProps } from './button'
 import { createNamespace } from '@kunlun-design/utils'
 import { computed } from 'vue'
+import './button.scss'
 
 const props = defineProps(ButtonProps)
 const style = computed(() => {
@@ -35,6 +36,4 @@ defineOptions({
 const { n } = createNamespace('button')
 </script>
 
-<style scoped lang="scss">
-@import url('./button.scss');
-</style>
+<style scoped lang="scss"></style>

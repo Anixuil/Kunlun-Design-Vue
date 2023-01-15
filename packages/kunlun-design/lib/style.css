@@ -1,0 +1,95 @@
+:root {
+    --font-size-xs: $font-size-xs;
+    --font-size-sm: $font-size-sm;
+    --font-size-md: $font-size-md;
+    --font-size-lg: $font-size-lg;
+    --icon-size-xs: $icon-size-xs;
+    --icon-size-sm: $icon-size-sm;
+    --icon-size-lg: $icon-size-lg;
+    --color-body: $color-body;
+    --color-text: $color-text;
+    --color-primary: $color-primary;
+    --color-default: $color-default;
+    --color-info: $color-info;
+    --color-success: $color-success;
+    --color-warning: $color-warning;
+    --color-danger: $color-danger;
+    --color-disabled: $color-disabled;
+    --color-text-decoration: $color-text-decoration;
+}
+:root {
+    --kl-color-white: rgb(249, 249, 249);
+    --kl-text-color-white: white;
+    --kl-color-black: #000000;
+    --kl-bg-color: var(--kl-color-white);
+    --kl-paddding-base: 4px;
+    --kl-padding-small: 12px;
+    --kl-padding-middle: 16px;
+    --kl-padding-large: 24px;
+    --kl-line-height-small: 18px;
+    --kl-line-height-middle: 20px;
+    --kl-line-height-large: 22px;
+    --kl-border-color: #ebedf0;
+    --kl-border-radius-base: 5px;
+    --kl-border-radius-small: 3px;
+    --kl-border-radius-middle: 7px;
+    --kl-border-radius-large: 10px;
+    --kl-active-opacity: 0.6;
+    --kl-disabled-opacity: 0.5;
+}
+:root .kl-font-size-mini {
+    font-size: 10px;
+}
+:root .kl-font-size-small {
+    font-size: 12px;
+}
+:root .kl-font-size-normal {
+    font-size: 14px;
+}
+:root .kl-font-size-large {
+    font-size: 16px;
+}
+:root .kl-type-bg-primary {
+    background-color: #3a7afe;
+}
+:root .kl-type-bg-info {
+    background-color: #d6d6d6;
+}
+:root .kl-type-bg-success {
+    background-color: #00c483;
+}
+:root .kl-type-bg-warning {
+    background-color: #ff9f00;
+}
+:root .kl-type-bg-danger {
+    background-color: #f44336;
+}
+:root .kl-type-fontColor-primary {
+    color: #fff;
+}
+:root .kl-type-fontColor-regular {
+    color: #606266;
+}
+:root .kl-type-fontColor-secondary {
+    color: #909399;
+}
+:root .kl-type-fontColor-placeholder {
+    color: #a8abb2;
+}
+:root .kl-type-fontColor-disabled {
+    color: #c0c4cc;
+}
+.kl-button {
+    --kl-button-text-color: var(.kl-type-fontColor-infor);
+    --kl-button-bg-color: var(.kl-type-bg-info);
+}
+.kl-button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    color: var(--kl-button-text-color);
+    background-color: var(--kl-button-bg-color);
+}
