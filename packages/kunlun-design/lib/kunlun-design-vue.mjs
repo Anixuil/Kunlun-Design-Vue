@@ -1,108 +1,102 @@
 import {
-    defineComponent as u,
-    computed as p,
-    openBlock as f,
-    createElementBlock as y,
-    Fragment as b,
-    createElementVNode as d,
-    normalizeClass as E,
-    unref as l,
-    normalizeStyle as S,
-    renderSlot as $,
-    createCommentVNode as k
+    defineComponent as i,
+    computed as a,
+    openBlock as y,
+    createElementBlock as d,
+    normalizeClass as m,
+    unref as s,
+    normalizeStyle as k,
+    renderSlot as B
 } from 'vue'
-const B = {
-    type: String,
-    size: String,
-    color: String,
-    textColor: {
-        type: String
+const b = n => ['primary', 'info', 'success', 'warning', 'danger'].includes(n),
+    S = {
+        type: String,
+        size: String,
+        color: String,
+        textColor: {
+            type: String
+        },
+        round: Boolean,
+        plain: Boolean,
+        circle: Boolean
     }
-}
-function g(e) {
-    const n = `kl-${e}`
+function $(n) {
+    const t = `kl-${n}`
     return {
-        n: t => (t ? (t.startsWith('--') ? `${n}${t}` : `${n}__${t}`) : n),
-        classes: (...t) =>
-            t.map(s => {
-                if (Array.isArray(s)) {
-                    const [a, i, m = null] = s
-                    return a ? i : m
+        n: l => (l ? (l.startsWith('--') ? `${t}${l}` : `${t}__${l}`) : t),
+        classes: (...l) =>
+            l.map(o => {
+                if (Array.isArray(o)) {
+                    const [c, p, f = null] = o
+                    return c ? p : f
                 }
-                return s
+                return o
             })
     }
 }
-const h = (e, n) => {
+const E = (n, t) => {
     if (
-        ((e.install = r => {
-            for (const o of [e, ...Object.values(n ?? {})]) r.component(o.name, o)
+        ((n.install = e => {
+            for (const r of [n, ...Object.values(t ?? {})]) e.component(r.name, r)
         }),
-        n)
+        t)
     )
-        for (const [r, o] of Object.entries(n)) e[r] = o
-    return e
+        for (const [e, r] of Object.entries(t)) n[e] = r
+    return n
 }
-const C = u({
-        name: 'KunlunButton'
+const g = i({
+        name: 'KlButton'
     }),
-    _ = /* @__PURE__ */ u({
-        ...C,
-        props: B,
-        setup(e) {
-            const n = e,
-                r = p(() =>
-                    n.color
+    h = /* @__PURE__ */ i({
+        ...g,
+        props: S,
+        setup(n) {
+            const t = n,
+                e = a(() =>
+                    t.color
                         ? {
-                              '--kl-button-bg-color': n.color,
+                              '--kl-button-bg-color': t.color,
                               '--kl-button-text-color': 'var(--kl-text-color-white)'
                           }
                         : {}
                 ),
-                { n: o } = g('button')
-            return (t, s) => (
-                f(),
-                y(
-                    b,
-                    null,
-                    [
-                        d(
-                            'button',
-                            {
-                                class: E([
-                                    l(o)(),
-                                    t.type && l(o)(`--${t.type}`),
-                                    t.size && l(o)(`--${t.size}`)
-                                ]),
-                                style: S({
-                                    color: t.textColor,
-                                    ...l(r)
-                                })
-                            },
-                            [$(t.$slots, 'default')],
-                            6
-                            /* CLASS, STYLE */
-                        ),
-                        k(` <button>
-        <slot></slot>
-    </button> `)
-                    ],
-                    2112
-                    /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+                r = a(() => (t.type === void 0 ? 'default' : b(t.type) ? t.type : 'default')),
+                { n: l } = $('button')
+            return (o, c) => (
+                y(),
+                d(
+                    'button',
+                    {
+                        class: m([
+                            s(l)(),
+                            s(r) && s(l)(`--${s(r)}`),
+                            o.size && s(l)(`--${o.size}`),
+                            o.round && 'kl-round',
+                            o.plain && 'kl-plain',
+                            o.circle && 'kl-circle'
+                        ]),
+                        style: k({
+                            color: o.textColor,
+                            ...s(e)
+                        })
+                    },
+                    [B(o.$slots, 'default')],
+                    6
+                    /* CLASS, STYLE */
                 )
             )
         }
     }),
-    z = h(_),
-    c = Symbol('INSTALLED_KEY')
-function A(e = []) {
+    z = E(h),
+    u = Symbol('INSTALLED_KEY')
+function C(n = []) {
     return {
-        install: r => {
-            r[c] || ((r[c] = !0), e.forEach(o => r.use(o)))
+        install: e => {
+            e[u] || ((e[u] = !0), n.forEach(r => e.use(r)))
         }
     }
 }
-const K = [z],
-    L = A(K),
-    N = L.install
-export { B as ButtonProps, z as KlButton, L as default, N as install }
+const _ = [z],
+    v = C(_),
+    K = v.install
+export { S as ButtonProps, z as KlButton, v as default, K as install, b as typevalidator }

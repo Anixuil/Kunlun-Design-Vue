@@ -1,24 +1,50 @@
 @import '../../styles/var.scss';
-.kl-button {
-    --kl-button-text-color: var(.kl-type-fontColor-infor);
-    --kl-button-bg-color: var(.kl-type-bg-info);
-}
-// @function kl-button-text-color() {
-//     @each $typeKey, $type in $colors {
-//         .kl-button-#{$typeKey} {
-//             --kl-button-bg-color: $type;
-//             --kl-button-text-color: white;
-//         }
-//     }
-// }
 
 .kl-button {
+    outline: none;
+    cursor: pointer;
+    border: none;
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
     padding: 10px 20px;
-    color: var(--kl-button-text-color);
-    background-color: var(--kl-button-bg-color);
+
+    // transition
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:active {
+        opacity: 0.6;
+    }
+
+    //circle
+    &.kl-circle {
+        border-radius: 50%;
+    }
+
+    //round
+    &.kl-round {
+        border-radius: 10px;
+    }
+}
+
+//只有使用了type的才能正确使用plain
+//遍历type找到当前匹配的类型
+@each $key, $value in $typeStyle {
+    .kl-button--#{$key} {
+        &.kl-plain {
+            //如果是默认类型，不进行设置
+            @if $key == 'default' {
+            } @else {
+                //给背景颜色设置透明度
+                background-color: rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 0.1);
+                //给字体设置当前type主题色
+                @include kl-attribute($value, 'color', 'kl-bg');
+                //增加边框
+                border: 1px solid map-get($map: $value, $key: 'kl-bg');
+            }
+        }
+    }
 }

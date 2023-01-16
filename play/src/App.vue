@@ -1,31 +1,46 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-    <div>
-        <a href="https://vitejs.dev" target="_blank">
-            <img src="/vite.svg" class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://vuejs.org/" target="_blank">
-            <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-        </a>
-    </div>
-    <HelloWorld msg="Vite + Vue" />
+    <kl-button plain>button</kl-button>
+    <kl-button type="primary">primary</kl-button>
+    <kl-button type="default">default</kl-button>
+    <kl-button type="success">success</kl-button>
+    <kl-button type="info">info</kl-button>
+    <kl-button type="warning">warning</kl-button>
+    <kl-button type="danger">danger</kl-button>
+    <br />
+    <kl-button type="primary" size="mini">primary</kl-button>
+    <kl-button type="default" size="small">default</kl-button>
+    <kl-button type="success" size="normal">success</kl-button>
+    <kl-button type="info" size="large">info</kl-button>
+    <kl-button type="warning" size="xlarge" round>warning</kl-button>
+    <kl-button type="danger" plain circle>danger</kl-button>
 </template>
 
-<style scoped>
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
+<style scoped lang="scss">
+button {
+    margin: 10px;
 }
 
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
+.test {
+    padding: 5px 10px;
+    background-color: skyblue;
+    color: white;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
 
-.logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
+    &:hover,
+    &:active {
+        opacity: 0.6;
+    }
+
+    outline: none;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 </style>

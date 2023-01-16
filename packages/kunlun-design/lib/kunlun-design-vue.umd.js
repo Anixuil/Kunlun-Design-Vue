@@ -1,98 +1,104 @@
-;(function (r, t) {
+;(function (o, t) {
     typeof exports == 'object' && typeof module < 'u'
         ? t(exports, require('vue'))
         : typeof define == 'function' && define.amd
         ? define(['exports', 'vue'], t)
-        : ((r = typeof globalThis < 'u' ? globalThis : r || self),
-          t((r['Kunlun-Design'] = {}), r.vue))
-})(this, function (r, t) {
+        : ((o = typeof globalThis < 'u' ? globalThis : o || self),
+          t((o['Kunlun-Design'] = {}), o.vue))
+})(this, function (o, t) {
     'use strict'
     const $ = '',
-        i = { type: String, size: String, color: String, textColor: { type: String } }
-    function p(s) {
-        const e = `kl-${s}`
+        i = e => ['primary', 'info', 'success', 'warning', 'danger'].includes(e),
+        u = {
+            type: String,
+            size: String,
+            color: String,
+            textColor: { type: String },
+            round: Boolean,
+            plain: Boolean,
+            circle: Boolean
+        }
+    function y(e) {
+        const n = `kl-${e}`
         return {
-            n: n => (n ? (n.startsWith('--') ? `${e}${n}` : `${e}__${n}`) : e),
-            classes: (...n) =>
-                n.map(c => {
-                    if (Array.isArray(c)) {
-                        const [h, B, E = null] = c
-                        return h ? B : E
+            n: c => (c ? (c.startsWith('--') ? `${n}${c}` : `${n}__${c}`) : n),
+            classes: (...c) =>
+                c.map(r => {
+                    if (Array.isArray(r)) {
+                        const [p, g, h = null] = r
+                        return p ? g : h
                     }
-                    return c
+                    return r
                 })
         }
     }
-    const d = (s, e) => {
+    const m = (e, n) => {
             if (
-                ((s.install = l => {
-                    for (const o of [s, ...Object.values(e ?? {})]) l.component(o.name, o)
+                ((e.install = l => {
+                    for (const s of [e, ...Object.values(n ?? {})]) l.component(s.name, s)
                 }),
-                e)
+                n)
             )
-                for (const [l, o] of Object.entries(e)) s[l] = o
-            return s
+                for (const [l, s] of Object.entries(n)) e[l] = s
+            return e
         },
-        g = '',
-        m = t.defineComponent({ name: 'KunlunButton' }),
-        y = t.defineComponent({
-            ...m,
-            props: i,
-            setup(s) {
-                const e = s,
+        E = '',
+        B = t.defineComponent({ name: 'KlButton' }),
+        b = t.defineComponent({
+            ...B,
+            props: u,
+            setup(e) {
+                const n = e,
                     l = t.computed(() =>
-                        e.color
+                        n.color
                             ? {
-                                  '--kl-button-bg-color': e.color,
+                                  '--kl-button-bg-color': n.color,
                                   '--kl-button-text-color': 'var(--kl-text-color-white)'
                               }
                             : {}
                     ),
-                    { n: o } = p('button')
-                return (n, c) => (
+                    s = t.computed(() =>
+                        n.type === void 0 ? 'default' : i(n.type) ? n.type : 'default'
+                    ),
+                    { n: c } = y('button')
+                return (r, p) => (
                     t.openBlock(),
                     t.createElementBlock(
-                        t.Fragment,
-                        null,
-                        [
-                            t.createElementVNode(
-                                'button',
-                                {
-                                    class: t.normalizeClass([
-                                        t.unref(o)(),
-                                        n.type && t.unref(o)(`--${n.type}`),
-                                        n.size && t.unref(o)(`--${n.size}`)
-                                    ]),
-                                    style: t.normalizeStyle({ color: n.textColor, ...t.unref(l) })
-                                },
-                                [t.renderSlot(n.$slots, 'default')],
-                                6
-                            ),
-                            t.createCommentVNode(` <button>
-        <slot></slot>
-    </button> `)
-                        ],
-                        2112
+                        'button',
+                        {
+                            class: t.normalizeClass([
+                                t.unref(c)(),
+                                t.unref(s) && t.unref(c)(`--${t.unref(s)}`),
+                                r.size && t.unref(c)(`--${r.size}`),
+                                r.round && 'kl-round',
+                                r.plain && 'kl-plain',
+                                r.circle && 'kl-circle'
+                            ]),
+                            style: t.normalizeStyle({ color: r.textColor, ...t.unref(l) })
+                        },
+                        [t.renderSlot(r.$slots, 'default')],
+                        6
                     )
                 )
             }
         }),
-        u = d(y),
-        a = Symbol('INSTALLED_KEY')
-    function b(s = []) {
+        a = m(b),
+        f = Symbol('INSTALLED_KEY')
+    function S(e = []) {
         return {
             install: l => {
-                l[a] || ((l[a] = !0), s.forEach(o => l.use(o)))
+                l[f] || ((l[f] = !0), e.forEach(s => l.use(s)))
             }
         }
     }
-    const f = b([u]),
-        S = f.install
-    ;(r.ButtonProps = i),
-        (r.KlButton = u),
-        (r.default = f),
-        (r.install = S),
-        Object.defineProperties(r, {
+    const d = S([a]),
+        k = d.install
+    ;(o.ButtonProps = u),
+        (o.KlButton = a),
+        (o.default = d),
+        (o.install = k),
+        (o.typevalidator = i),
+        Object.defineProperties(o, {
             __esModule: { value: !0 },
             [Symbol.toStringTag]: { value: 'Module' }
         })

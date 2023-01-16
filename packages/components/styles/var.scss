@@ -1,48 +1,42 @@
-@import './types.scss';
+@import './typeStyle.scss';
+@import './size.scss';
+
+$components: button, input, select;
+
+@function typed($type, $key) {
+    @return map-get($type, $key);
+}
+
+@mixin kl-attribute($typeName, $attrKey, $attrName) {
+    #{$attrKey}: typed($typeName, $attrName);
+}
+
+//复用匹配组件
+@mixin matchComponent($typeKey) {
+    @each $comKey, $comValue in $components {
+        .kl-#{$comKey}--#{$typeKey} {
+            @content;
+        }
+    }
+}
 
 :root {
-    --kl-color-white: rgb(249, 249, 249);
-    --kl-text-color-white: white;
-    --kl-color-black: #000000;
-    --kl-bg-color: var(--kl-color-white);
-
-    //padding
-    --kl-paddding-base: 4px;
-    --kl-padding-small: 12px;
-    --kl-padding-middle: 16px;
-    --kl-padding-large: 24px;
-    --kl-line-height-small: 18px;
-    --kl-line-height-middle: 20px;
-    --kl-line-height-large: 22px;
-
-    //border
-    --kl-border-color: #ebedf0;
-    --kl-border-radius-base: 5px;
-    --kl-border-radius-small: 3px;
-    --kl-border-radius-middle: 7px;
-    --kl-border-radius-large: 10px;
-
-    //status
-    --kl-active-opacity: 0.6;
-    --kl-disabled-opacity: 0.5;
-
-    //font
-    @each $fontSizeKey, $fontSize in $fontSizes {
-        .kl-font-size-#{$fontSizeKey} {
-            font-size: $fontSize;
+    //type类型判断
+    @each $typeKey, $typeValue in $typeStyle {
+        @include matchComponent($typeKey) {
+            @include kl-attribute($typeValue, 'background-color', 'kl-bg');
+            @include kl-attribute($typeValue, 'color', 'kl-font-color');
+            @include kl-attribute($typeValue, 'border', 'kl-border');
+            box-sizing: border-box;
+            border-radius: 5px;
         }
     }
 
-    //type background color
-    @each $typeKey, $type in $colors {
-        .kl-type-bg-#{$typeKey} {
-            background-color: $type;
-        }
-    }
-    //type font color
-    @each $typeKey, $type in $fontColors {
-        .kl-type-fontColor-#{$typeKey} {
-            color: $type;
+    //size
+    @each $sizeKey, $sizeValue in $sizeStyle {
+        @include matchComponent($sizeKey) {
+            @include kl-attribute($sizeValue, 'padding', 'kl-paddingSize');
+            @include kl-attribute($sizeValue, 'font-size', 'kl-fontSize');
         }
     }
 }

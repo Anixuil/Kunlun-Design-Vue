@@ -1,0 +1,36 @@
+// $types: primary, default, info, warning, danger;
+
+$typeStyle: (
+    //type
+    'primary':
+        (
+            kl-bg: #3a7afe,
+            kl-font-color: white,
+            kl-border: none
+        ),
+    'success': (
+        kl-bg: rgb(103, 194, 58),
+        kl-font-color: white,
+        kl-border: none
+    ),
+    'info': (
+        kl-bg: rgb(175, 175, 175),
+        kl-font-color: white,
+        kl-border: none
+    ),
+    'warning': (
+        kl-bg: #ff9f00,
+        kl-font-color: white,
+        kl-border: none
+    ),
+    'danger': (
+        kl-bg: #f44336,
+        kl-font-color: white,
+        kl-border: none
+    ),
+    'default': (
+        kl-bg: white,
+        kl-font-color: rgb(59, 59, 59),
+        kl-border: 1px solid rgb(59, 59, 59)
+    )
+);

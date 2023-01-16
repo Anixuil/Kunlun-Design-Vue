@@ -4,9 +4,10 @@ type Classes = (ClassName | [any, ClassName, ClassName?])[]
 export function createNamespace(name: string) {
     const namespace = `kl-${name}`
 
+    //命名规范 suffix词尾 后缀
     const createBEM = (suffix?: string): string => {
+        //如果没传那就是组件的名字 比如传个button进来 button是直接调用的createNamespace，所以这个方法就没传参，就直接返回namespace
         if (!suffix) return namespace
-
         return suffix.startsWith('--') ? `${namespace}${suffix}` : `${namespace}__${suffix}`
     }
 

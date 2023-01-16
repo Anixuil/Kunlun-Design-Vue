@@ -1,0 +1,58 @@
+// $sizes: mini, small, normal, middle, large, xlarge;
+// $rounds: mini, small, normal, large, xlarge, circle;
+
+//size
+$sizeStyle: (
+    'mini': (
+        kl-fontSize: 10px,
+        kl-paddingSize: 5px 10px
+    ),
+    'small': (
+        kl-fontSize: 12px,
+        kl-paddingSize: 10px 15px
+    ),
+    'normal': (
+        kl-fontSize: 14px,
+        kl-paddingSize: 15px 20px
+    ),
+    'middle': (
+        kl-fontSize: 16px,
+        kl-paddingSize: 20px 25px
+    ),
+    'large': (
+        kl-fontSize: 18px,
+        kl-paddingSize: 20px 40px
+    ),
+    'xlarge': (
+        kl-fontSize: 20px,
+        kl-paddingSize: 20px 40px
+    )
+);
+
+//round
+$roundStyle: (
+    'mini': (
+        kl-radius: 5px,
+        //百分比形式
+        kl-radius-percent: 1%
+    ),
+    'small': (
+        kl-radius: 10px,
+        kl-radius-percent: 5%
+    ),
+    'normal': (
+        kl-radius: 15px,
+        kl-radius-percent: 10%
+    ),
+    'large': (
+        kl-radius: 20px,
+        kl-radius-percent: 15%
+    ),
+    'xlarge': (
+        kl-radius: 25px,
+        kl-radius-percent: 20%
+    ),
+    'circle': (
+        kl-radius-percent: 50%
+    )
+);
