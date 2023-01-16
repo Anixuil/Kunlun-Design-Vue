@@ -60,63 +60,63 @@
     border-radius: 5px;
 }
 :root .kl-button--info {
-    background-color: #afafaf;
+    background-color: #85878b;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-input--info {
-    background-color: #afafaf;
+    background-color: #85878b;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-select--info {
-    background-color: #afafaf;
+    background-color: #85878b;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-button--warning {
-    background-color: #ff9f00;
+    background-color: #e6a23c;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-input--warning {
-    background-color: #ff9f00;
+    background-color: #e6a23c;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-select--warning {
-    background-color: #ff9f00;
+    background-color: #e6a23c;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-button--danger {
-    background-color: #f44336;
+    background-color: #f56c6c;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-input--danger {
-    background-color: #f44336;
+    background-color: #f56c6c;
     color: #fff;
     border: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
 :root .kl-select--danger {
-    background-color: #f44336;
+    background-color: #f56c6c;
     color: #fff;
     border: none;
     box-sizing: border-box;
@@ -145,74 +145,92 @@
 }
 :root .kl-button--mini {
     padding: 5px 10px;
-    font-size: 10px;
+    min-width: 55px;
+    min-height: 26px;
+    font-size: 12px;
 }
 :root .kl-input--mini {
     padding: 5px 10px;
-    font-size: 10px;
+    min-width: 55px;
+    min-height: 26px;
+    font-size: 12px;
 }
 :root .kl-select--mini {
     padding: 5px 10px;
-    font-size: 10px;
+    min-width: 55px;
+    min-height: 26px;
+    font-size: 12px;
 }
 :root .kl-button--small {
     padding: 10px 15px;
-    font-size: 12px;
+    min-width: 65px;
+    min-height: 36px;
+    font-size: 14px;
 }
 :root .kl-input--small {
     padding: 10px 15px;
-    font-size: 12px;
+    min-width: 65px;
+    min-height: 36px;
+    font-size: 14px;
 }
 :root .kl-select--small {
     padding: 10px 15px;
-    font-size: 12px;
+    min-width: 65px;
+    min-height: 36px;
+    font-size: 14px;
 }
 :root .kl-button--normal {
-    padding: 15px 20px;
-    font-size: 14px;
+    padding: 10px 20px;
+    min-width: 86px;
+    min-height: 40px;
+    font-size: 16px;
 }
 :root .kl-input--normal {
-    padding: 15px 20px;
-    font-size: 14px;
+    padding: 10px 20px;
+    min-width: 86px;
+    min-height: 40px;
+    font-size: 16px;
 }
 :root .kl-select--normal {
-    padding: 15px 20px;
-    font-size: 14px;
-}
-:root .kl-button--middle {
-    padding: 20px 25px;
-    font-size: 16px;
-}
-:root .kl-input--middle {
-    padding: 20px 25px;
-    font-size: 16px;
-}
-:root .kl-select--middle {
-    padding: 20px 25px;
+    padding: 10px 20px;
+    min-width: 86px;
+    min-height: 40px;
     font-size: 16px;
 }
 :root .kl-button--large {
-    padding: 20px 40px;
+    padding: 10px 20px;
+    min-width: 95px;
+    min-height: 43px;
     font-size: 18px;
 }
 :root .kl-input--large {
-    padding: 20px 40px;
+    padding: 10px 20px;
+    min-width: 95px;
+    min-height: 43px;
     font-size: 18px;
 }
 :root .kl-select--large {
-    padding: 20px 40px;
+    padding: 10px 20px;
+    min-width: 95px;
+    min-height: 43px;
     font-size: 18px;
 }
 :root .kl-button--xlarge {
-    padding: 20px 40px;
+    padding: 10px 20px;
+    min-width: 100px;
+    min-height: 45px;
     font-size: 20px;
 }
 :root .kl-input--xlarge {
-    padding: 20px 40px;
+    padding: 10px 20px;
+    min-width: 100px;
+    min-height: 45px;
     font-size: 20px;
 }
 :root .kl-select--xlarge {
-    padding: 20px 40px;
+    padding: 10px 20px;
+    min-width: 100px;
+    min-height: 45px;
     font-size: 20px;
 }
 .kl-button {
@@ -225,40 +243,163 @@
     align-items: center;
     box-sizing: border-box;
     padding: 10px 20px;
-    transition: all 0.3s ease;
-}
-.kl-button:hover,
-.kl-button:active {
-    opacity: 0.6;
+    min-width: 86px;
+    min-height: 40px;
+    font-size: 16px;
+    transition: all 0.1s ease;
 }
 .kl-button.kl-circle {
     border-radius: 50%;
+    padding: 15px;
+    min-width: 20px;
+    height: 20px;
 }
 .kl-button.kl-round {
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .kl-button--primary.kl-plain {
     background-color: #3a7afe1a;
     color: #3a7afe;
     border: 1px solid #3a7afe;
 }
+.kl-button--primary.kl-plain:hover {
+    opacity: 1 !important;
+    background-color: #3a7afe;
+    color: #fff;
+}
+.kl-button--primary.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #075aff;
+}
+.kl-button--primary.kl-plain:focus {
+    background-color: #3a7afe;
+    color: #fff;
+}
+.kl-button--primary:hover {
+    opacity: 0.6;
+}
+.kl-button--primary:active {
+    opacity: 1 !important;
+    background-color: #075aff;
+}
 .kl-button--success.kl-plain {
     background-color: #67c23a1a;
     color: #67c23a;
     border: 1px solid rgb(103, 194, 58);
 }
+.kl-button--success.kl-plain:hover {
+    opacity: 1 !important;
+    background-color: #67c23a;
+    color: #fff;
+}
+.kl-button--success.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #2f8d00;
+}
+.kl-button--success.kl-plain:focus {
+    background-color: #67c23a;
+    color: #fff;
+}
+.kl-button--success:hover {
+    opacity: 0.6;
+}
+.kl-button--success:active {
+    opacity: 1 !important;
+    background-color: #2f8d00;
+}
 .kl-button--info.kl-plain {
-    background-color: #afafaf1a;
-    color: #afafaf;
-    border: 1px solid rgb(175, 175, 175);
+    background-color: #85878b1a;
+    color: #85878b;
+    border: 1px solid #85878b;
+}
+.kl-button--info.kl-plain:hover {
+    opacity: 1 !important;
+    background-color: #85878b;
+    color: #fff;
+}
+.kl-button--info.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #757679;
+}
+.kl-button--info.kl-plain:focus {
+    background-color: #85878b;
+    color: #fff;
+}
+.kl-button--info:hover {
+    opacity: 0.6;
+}
+.kl-button--info:active {
+    opacity: 1 !important;
+    background-color: #757679;
 }
 .kl-button--warning.kl-plain {
-    background-color: #ff9f001a;
-    color: #ff9f00;
-    border: 1px solid #ff9f00;
+    background-color: #e6a23c1a;
+    color: #e6a23c;
+    border: 1px solid rgb(230, 162, 60);
+}
+.kl-button--warning.kl-plain:hover {
+    opacity: 1 !important;
+    background-color: #e6a23c;
+    color: #fff;
+}
+.kl-button--warning.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #aa7320;
+}
+.kl-button--warning.kl-plain:focus {
+    background-color: #e6a23c;
+    color: #fff;
+}
+.kl-button--warning:hover {
+    opacity: 0.6;
+}
+.kl-button--warning:active {
+    opacity: 1 !important;
+    background-color: #aa7320;
 }
 .kl-button--danger.kl-plain {
-    background-color: #f443361a;
-    color: #f44336;
-    border: 1px solid #f44336;
+    background-color: #f56c6c1a;
+    color: #f56c6c;
+    border: 1px solid rgb(245, 108, 108);
+}
+.kl-button--danger.kl-plain:hover {
+    opacity: 1 !important;
+    background-color: #f56c6c;
+    color: #fff;
+}
+.kl-button--danger.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #be3e3e;
+}
+.kl-button--danger.kl-plain:focus {
+    background-color: #f56c6c;
+    color: #fff;
+}
+.kl-button--danger:hover {
+    opacity: 0.6;
+}
+.kl-button--danger:active {
+    opacity: 1 !important;
+    background-color: #be3e3e;
+}
+.kl-button--default.kl-plain:hover,
+.kl-button--default.kl-plain:active {
+    border: 1px solid #3a7afe;
+    color: #3a7afe;
+    background-color: #fff;
+}
+.kl-button--default.kl-plain:focus {
+    border: 1px solid #3a7afe;
+    color: #3a7afe;
+    background-color: #fff;
+}
+.kl-button--default:hover {
+    border: 1px solid #3a7afe;
+    color: #3a7afe;
+    background-color: #3a7afe1a;
+}
+.kl-button--default:focus {
+    border: 1px solid #3a7afe;
+    color: #3a7afe;
+    background-color: #3a7afe1a;
 }

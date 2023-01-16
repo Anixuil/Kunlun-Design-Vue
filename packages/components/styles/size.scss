@@ -1,58 +1,35 @@
-// $sizes: mini, small, normal, middle, large, xlarge;
-// $rounds: mini, small, normal, large, xlarge, circle;
+// $sizes: mini, small, normal, large, xlarge;
 
 //size
 $sizeStyle: (
     'mini': (
-        kl-fontSize: 10px,
-        kl-paddingSize: 5px 10px
+        kl-fontSize: 12px,
+        kl-paddingSize: 5px 10px,
+        kl-width: 55px,
+        kl-height: 26px
     ),
     'small': (
-        kl-fontSize: 12px,
-        kl-paddingSize: 10px 15px
+        kl-fontSize: 14px,
+        kl-paddingSize: 10px 15px,
+        kl-width: 65px,
+        kl-height: 36px
     ),
     'normal': (
-        kl-fontSize: 14px,
-        kl-paddingSize: 15px 20px
-    ),
-    'middle': (
         kl-fontSize: 16px,
-        kl-paddingSize: 20px 25px
+        kl-paddingSize: 10px 20px,
+        kl-width: 86px,
+        kl-height: 40px
     ),
     'large': (
         kl-fontSize: 18px,
-        kl-paddingSize: 20px 40px
+        kl-paddingSize: 10px 20px,
+        kl-width: 95px,
+        kl-height: 43px
     ),
     'xlarge': (
         kl-fontSize: 20px,
-        kl-paddingSize: 20px 40px
-    )
-);
-
-//round
-$roundStyle: (
-    'mini': (
-        kl-radius: 5px,
-        //百分比形式
-        kl-radius-percent: 1%
-    ),
-    'small': (
-        kl-radius: 10px,
-        kl-radius-percent: 5%
-    ),
-    'normal': (
-        kl-radius: 15px,
-        kl-radius-percent: 10%
-    ),
-    'large': (
-        kl-radius: 20px,
-        kl-radius-percent: 15%
-    ),
-    'xlarge': (
-        kl-radius: 25px,
-        kl-radius-percent: 20%
-    ),
-    'circle': (
-        kl-radius-percent: 50%
+        kl-paddingSize: 10px 20px,
+        kl-width: 100px,
+        kl-height: 45px
     )
 );

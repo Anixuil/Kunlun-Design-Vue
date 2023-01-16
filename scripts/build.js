@@ -17,28 +17,7 @@ const DefineOptions = require('unplugin-vue-define-options/vite')
 // const outDir = resolve('lib')
 
 const baseConfig = defineConfig({
-    plugins: [
-        vue(),
-        DefineOptions()
-        // dts({
-        //     include: ['packages/kunlun-design', 'packages/components'],
-        //     outputDir: resolve(__dirname, '../types')
-        // })
-    ],
-    // css: {
-    //     loaderOptions: {
-    //         scss: {
-    //             data: `@import "@/packages/components/styles/var.scss";`
-    //         }
-    //     }
-    // },
-    // css:{
-    //   preprocessorOptions:{
-    //     scss:{
-    //       additionalData:`@use "../packages/components/styles/var.scss" as *;`
-    //     }
-    //   }
-    // },
+    plugins: [vue(), DefineOptions()],
     build: {
         outDir: resolve(__dirname, '../packages/kunlun-design/lib'),
         lib: {

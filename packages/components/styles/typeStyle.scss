@@ -5,32 +5,38 @@ $typeStyle: (
     'primary':
         (
             kl-bg: #3a7afe,
-            kl-font-color: white,
-            kl-border: none
+            kl-fontColor: white,
+            kl-border: none,
+            kl-bg-active: #075aff
         ),
     'success': (
         kl-bg: rgb(103, 194, 58),
-        kl-font-color: white,
-        kl-border: none
+        kl-fontColor: white,
+        kl-border: none,
+        kl-bg-active: rgb(47, 141, 0)
     ),
     'info': (
-        kl-bg: rgb(175, 175, 175),
-        kl-font-color: white,
-        kl-border: none
+        kl-bg: #85878b,
+        kl-fontColor: white,
+        kl-border: none,
+        kl-bg-active: rgb(117, 118, 121)
     ),
     'warning': (
-        kl-bg: #ff9f00,
-        kl-font-color: white,
-        kl-border: none
+        kl-bg: rgb(230, 162, 60),
+        kl-fontColor: white,
+        kl-border: none,
+        kl-bg-active: rgb(170, 115, 32)
     ),
     'danger': (
-        kl-bg: #f44336,
-        kl-font-color: white,
-        kl-border: none
+        kl-bg: rgb(245, 108, 108),
+        kl-fontColor: white,
+        kl-border: none,
+        kl-bg-active: rgb(190, 62, 62)
     ),
     'default': (
         kl-bg: white,
-        kl-font-color: rgb(59, 59, 59),
-        kl-border: 1px solid rgb(59, 59, 59)
+        kl-fontColor: rgb(59, 59, 59),
+        kl-border: 1px solid rgb(59, 59, 59),
+        kl-border-active: 1px solid #075aff
     )
 );

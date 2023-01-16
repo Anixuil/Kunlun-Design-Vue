@@ -10,23 +10,35 @@
     align-items: center;
     box-sizing: border-box;
     padding: 10px 20px;
+    min-width: 86px;
+    min-height: 40px;
+    font-size: 16px;
 
     // transition
-    transition: all 0.3s ease;
-
-    &:hover,
-    &:active {
-        opacity: 0.6;
-    }
+    transition: all 0.1s ease;
 
     //circle
     &.kl-circle {
         border-radius: 50%;
+        padding: 15px;
+        min-width: 20px;
+        height: 20px;
     }
 
     //round
     &.kl-round {
-        border-radius: 10px;
+        border-radius: 20px;
+    }
+}
+
+$defaultHoverBgColor: null;
+
+@each $key, $value in $typeStyle {
+    @if $key == 'primary' {
+        $defaultHoverBgColor: map-get(
+            $map: $value,
+            $key: 'kl-bg'
+        );
     }
 }
 
@@ -37,6 +49,17 @@
         &.kl-plain {
             //如果是默认类型，不进行设置
             @if $key == 'default' {
+                &:hover,
+                &:active {
+                    border: 1px solid $defaultHoverBgColor;
+                    color: $defaultHoverBgColor;
+                    background-color: white;
+                }
+                &:focus {
+                    border: 1px solid $defaultHoverBgColor;
+                    color: $defaultHoverBgColor;
+                    background-color: white;
+                }
             } @else {
                 //给背景颜色设置透明度
                 background-color: rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 0.1);
@@ -44,6 +67,45 @@
                 @include kl-attribute($value, 'color', 'kl-bg');
                 //增加边框
                 border: 1px solid map-get($map: $value, $key: 'kl-bg');
+
+                &:hover {
+                    opacity: 1 !important;
+                    background-color: rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1);
+                    @include kl-attribute($value, 'color', 'kl-fontColor');
+                }
+
+                &:active {
+                    opacity: 1 !important;
+                    @include kl-attribute($value, 'background-color', 'kl-bg-active');
+                }
+
+                &:focus {
+                    background-color: rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1);
+                    color: white;
+                }
+            }
+        }
+
+        @if $key == 'default' {
+            &:hover {
+                border: 1px solid $defaultHoverBgColor;
+                color: $defaultHoverBgColor;
+                background-color: rgba($color: $defaultHoverBgColor, $alpha: 0.1);
+            }
+            &:focus {
+                border: 1px solid $defaultHoverBgColor;
+                color: $defaultHoverBgColor;
+                background-color: rgba($color: $defaultHoverBgColor, $alpha: 0.1);
+            }
+        } @else {
+            &:hover {
+                opacity: 0.6;
+            }
+
+            //激活样式
+            &:active {
+                opacity: 1 !important;
+                @include kl-attribute($value, 'background-color', 'kl-bg-active');
             }
         }
     }

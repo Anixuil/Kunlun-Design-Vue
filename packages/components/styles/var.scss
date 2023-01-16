@@ -25,7 +25,7 @@ $components: button, input, select;
     @each $typeKey, $typeValue in $typeStyle {
         @include matchComponent($typeKey) {
             @include kl-attribute($typeValue, 'background-color', 'kl-bg');
-            @include kl-attribute($typeValue, 'color', 'kl-font-color');
+            @include kl-attribute($typeValue, 'color', 'kl-fontColor');
             @include kl-attribute($typeValue, 'border', 'kl-border');
             box-sizing: border-box;
             border-radius: 5px;
@@ -36,6 +36,8 @@ $components: button, input, select;
     @each $sizeKey, $sizeValue in $sizeStyle {
         @include matchComponent($sizeKey) {
             @include kl-attribute($sizeValue, 'padding', 'kl-paddingSize');
+            @include kl-attribute($sizeValue, 'min-width', 'kl-width');
+            @include kl-attribute($sizeValue, 'min-height', 'kl-height');
             @include kl-attribute($sizeValue, 'font-size', 'kl-fontSize');
         }
     }

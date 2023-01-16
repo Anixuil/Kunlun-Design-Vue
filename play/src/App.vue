@@ -1,25 +1,51 @@
 <script setup lang="ts"></script>
 
 <template>
-    <kl-button plain>button</kl-button>
-    <kl-button type="primary">primary</kl-button>
-    <kl-button type="default">default</kl-button>
-    <kl-button type="success">success</kl-button>
-    <kl-button type="info">info</kl-button>
-    <kl-button type="warning">warning</kl-button>
-    <kl-button type="danger">danger</kl-button>
-    <br />
-    <kl-button type="primary" size="mini">primary</kl-button>
-    <kl-button type="default" size="small">default</kl-button>
-    <kl-button type="success" size="normal">success</kl-button>
-    <kl-button type="info" size="large">info</kl-button>
-    <kl-button type="warning" size="xlarge" round>warning</kl-button>
-    <kl-button type="danger" plain circle>danger</kl-button>
+    <div>
+        <h2>基础按钮</h2>
+        <kl-button>default</kl-button>
+        <kl-button type="default">default</kl-button>
+        <kl-button type="primary">primary</kl-button>
+        <kl-button type="success">success</kl-button>
+        <kl-button type="info">info</kl-button>
+        <kl-button type="warning">warning</kl-button>
+        <kl-button type="danger">danger</kl-button>
+        <h2>单色按钮</h2>
+        <kl-button plain>default</kl-button>
+        <kl-button type="default" plain>default</kl-button>
+        <kl-button type="primary" plain>primary</kl-button>
+        <kl-button type="success" plain>success</kl-button>
+        <kl-button type="info" plain>info</kl-button>
+        <kl-button type="warning" plain>warning</kl-button>
+        <kl-button type="danger" plain>danger</kl-button>
+        <h2>圆角按钮</h2>
+        <kl-button round>button</kl-button>
+        <kl-button type="default" round>button</kl-button>
+        <kl-button type="primary" round>button</kl-button>
+        <kl-button type="success" round>button</kl-button>
+        <kl-button type="info" round>button</kl-button>
+        <kl-button type="warning" round>button</kl-button>
+        <kl-button type="danger" round>button</kl-button>
+        <h2>圆形按钮</h2>
+        <kl-button circle>1</kl-button>
+        <kl-button type="default" circle>1</kl-button>
+        <kl-button type="primary" circle>1</kl-button>
+        <kl-button type="success" circle>1</kl-button>
+        <kl-button type="info" circle>1</kl-button>
+        <kl-button type="warning" circle>1</kl-button>
+        <kl-button type="danger" circle>1</kl-button>
+        <h2>按钮尺寸</h2>
+        <kl-button size="mini">button</kl-button>
+        <kl-button size="small">button</kl-button>
+        <kl-button size="normal">button</kl-button>
+        <kl-button size="large">button</kl-button>
+        <kl-button size="xlarge">button</kl-button>
+    </div>
 </template>
 
 <style scoped lang="scss">
 button {
-    margin: 10px;
+    margin: 5px;
 }
 
 .test {

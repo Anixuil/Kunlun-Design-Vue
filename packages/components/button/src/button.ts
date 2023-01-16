@@ -10,7 +10,7 @@ export const typevalidator = (type: string): boolean => {
 
 export const ButtonProps = {
     type: String as PropType<'primary' | 'info' | 'success' | 'warning' | 'danger'>,
-    size: String as PropType<'mini' | 'small' | 'normal' | 'middle' | 'large' | 'xlarge'>,
+    size: String as PropType<'mini' | 'small' | 'normal' | 'large' | 'xlarge'>,
     color: String,
     textColor: {
         type: String
