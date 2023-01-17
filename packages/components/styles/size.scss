@@ -1,35 +1,34 @@
-// $sizes: mini, small, normal, large, xlarge;
-
-//size
+@import './root.scss';
+//size样式管理
 $sizeStyle: (
     'mini': (
-        kl-fontSize: 12px,
-        kl-paddingSize: 5px 10px,
-        kl-width: 55px,
-        kl-height: 26px
+        kl-fontSize: $mini-fontSize,
+        kl-paddingSize: $mini-paddingSize,
+        kl-width: $mini-width,
+        kl-height: $mini-height
     ),
     'small': (
-        kl-fontSize: 14px,
-        kl-paddingSize: 10px 15px,
-        kl-width: 65px,
-        kl-height: 36px
+        kl-fontSize: $small-fontSize,
+        kl-paddingSize: $small-paddingSize,
+        kl-width: $small-width,
+        kl-height: $small-height
     ),
     'normal': (
-        kl-fontSize: 16px,
-        kl-paddingSize: 10px 20px,
-        kl-width: 86px,
-        kl-height: 40px
+        kl-fontSize: $normal-fontSize,
+        kl-paddingSize: $normal-paddingSize,
+        kl-width: $normal-width,
+        kl-height: $normal-height
     ),
     'large': (
-        kl-fontSize: 18px,
-        kl-paddingSize: 10px 20px,
-        kl-width: 95px,
-        kl-height: 43px
+        kl-fontSize: $large-fontSize,
+        kl-paddingSize: $large-paddingSize,
+        kl-width: $large-width,
+        kl-height: $large-height
     ),
     'xlarge': (
-        kl-fontSize: 20px,
-        kl-paddingSize: 10px 20px,
-        kl-width: 100px,
-        kl-height: 45px
+        kl-fontSize: $xlarge-fontSize,
+        kl-paddingSize: $xlarge-paddingSize,
+        kl-width: $xlarge-width,
+        kl-height: $xlarge-heigth
     )
 );

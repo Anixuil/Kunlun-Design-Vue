@@ -3,7 +3,7 @@
 .kl-button {
     outline: none;
     cursor: pointer;
-    border: none;
+    border: $border-none;
     position: relative;
     display: inline-flex;
     justify-content: center;
@@ -15,7 +15,7 @@
     font-size: 16px;
 
     // transition
-    transition: all 0.1s ease;
+    transition: all $transition-quick;
 
     //circle
     &.kl-circle {
@@ -53,12 +53,12 @@ $defaultHoverBgColor: null;
                 &:active {
                     border: 1px solid $defaultHoverBgColor;
                     color: $defaultHoverBgColor;
-                    background-color: white;
+                    background-color: $default-bgColor;
                 }
                 &:focus {
                     border: 1px solid $defaultHoverBgColor;
                     color: $defaultHoverBgColor;
-                    background-color: white;
+                    background-color: $default-bgColor;
                 }
             } @else {
                 //给背景颜色设置透明度
@@ -81,7 +81,7 @@ $defaultHoverBgColor: null;
 
                 &:focus {
                     background-color: rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1);
-                    color: white;
+                    color: $font-color-white;
                 }
             }
         }

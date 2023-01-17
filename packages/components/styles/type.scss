@@ -1,0 +1,40 @@
+@import './root.scss';
+//type样式管理
+$typeStyle: (
+    'primary': (
+        kl-bg: $primary-bgColor,
+        kl-fontColor: $primary-fontColor,
+        kl-border: $primary-border,
+        kl-bg-active: $primary-bgColor-active
+    ),
+    'success': (
+        kl-bg: $success-bgColor,
+        kl-fontColor: $success-fontColor,
+        kl-border: $success-border,
+        kl-bg-active: $success-bgColor-active
+    ),
+    'info': (
+        kl-bg: $info-bgColor,
+        kl-fontColor: $info-fontColor,
+        kl-border: $info-border,
+        kl-bg-active: $info-bgColor-active
+    ),
+    'warning': (
+        kl-bg: $warning-bgColor,
+        kl-fontColor: $warning-fontColor,
+        kl-border: $warning-border,
+        kl-bg-active: $warning-bgColor-active
+    ),
+    'danger': (
+        kl-bg: $danger-bgColor,
+        kl-fontColor: $danger-fontColor,
+        kl-border: $danger-border,
+        kl-bg-active: $danger-bgColor-active
+    ),
+    'default': (
+        kl-bg: $default-bgColor,
+        kl-fontColor: $default-fontColor,
+        kl-border: $default-border,
+        kl-border-active: $default-border-active
+    )
+);
