@@ -1,0 +1,35 @@
+/* 覆盖默认 */
+:root {
+    --linear-color: linear-gradient(to left, rgb(117, 205, 213), rgb(58, 186, 85));
+    --vp-button-hover: rgb(43, 142, 65);
+
+    /* --vp-c-brand: rgb(117, 205, 213); */
+    --vp-c-brand: rgb(58, 186, 85);
+    --vp-c-brand-light: rgb(58, 186, 85);
+    --vp-button-brand-border: var(--vp-c-brand-light);
+    --vp-home-hero-name-background: var(--linear-color);
+    --vp-home-hero-name-color: transparent;
+    --vp-button-brand-bg: var(--vp-c-brand-light);
+}
+.VPButton.brand {
+    background: var(--vp-button-brand-bg);
+}
+.VPButton.brand:hover {
+    background: var(--vp-button-hover) !important;
+    border-color: var(--vp-button-hover) !important;
+}
+.dark .VPButton.brand:hover {
+    background: var(--vp-button-hover) !important;
+    border-color: var(--vp-button-hover);
+}
+
+.dark .VPButton.brand {
+    background: var(--vp-button-brand-bg);
+}
+
+.dark {
+    --vp-button-brand-bg: var(--vp-c-brand-light);
+    --vp-button-brand-border: var(--vp-c-brand-light);
+    --vp-home-hero-name-color: transparent;
+    --vp-home-hero-name-background: var(--linear-color);
+}
