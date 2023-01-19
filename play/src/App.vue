@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 
-<!-- 这是在页面上对组件库的尼尔进行展示 -->
+<!-- 这是在页面上对组件库的使用进行展示 -->
 
 <template>
     <div>
