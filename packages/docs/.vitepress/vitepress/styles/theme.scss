@@ -1,16 +1,26 @@
 /* 覆盖默认 */
 :root {
-    --linear-color: linear-gradient(to left, rgb(117, 205, 213), rgb(58, 186, 85));
-    --vp-button-hover: rgb(43, 142, 65);
+    /* 主题色 */
+    --theme-color-light: rgb(58, 186, 85);
+    --theme-color-dark: rgb(117, 205, 213);
+    --theme-color: rgb(43, 142, 65);
+    --linear-color: linear-gradient(to left, var(--theme-color-dark), var(--theme-color-light));
+    --vp-button-hover: var(--theme-color);
+
+    /* demo公用样式 */
+    --demo-border: lightgray;
+    --demo-sen-color: rgba(60, 60, 67, 0.92);
 
     /* --vp-c-brand: rgb(117, 205, 213); */
-    --vp-c-brand: rgb(58, 186, 85);
-    --vp-c-brand-light: rgb(58, 186, 85);
+    --vp-c-brand: var(--theme-color-light);
+    --vp-c-brand-light: var(--theme-color-light);
     --vp-button-brand-border: var(--vp-c-brand-light);
     --vp-home-hero-name-background: var(--linear-color);
     --vp-home-hero-name-color: transparent;
     --vp-button-brand-bg: var(--vp-c-brand-light);
 }
+
+//首页按钮样式
 .VPButton.brand {
     background: var(--vp-button-brand-bg);
 }

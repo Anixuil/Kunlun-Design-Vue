@@ -1,4 +1,6 @@
 import type { UserConfig } from 'vitepress'
+import { mdPlugin } from './config/plugins'
+import { sidebar } from './config/sidebar'
 
 export const config: UserConfig = {
     outDir: './dist',
@@ -23,6 +25,14 @@ export const config: UserConfig = {
             link: '/',
             themeConfig: getChineseThemeConfig()
         },
+        zh: {
+            lang: 'zh-CN',
+            title: 'Kunlun Design',
+            description: '一个基于 vue 3 的组件库',
+            label: '简体中文',
+            link: '/zh/',
+            themeConfig: getChineseThemeConfig()
+        },
         en: {
             lang: 'en-US',
             title: 'Kunlun Design',
@@ -31,6 +41,9 @@ export const config: UserConfig = {
             link: '/en/',
             themeConfig: getEnglishThemeConfig()
         }
+    },
+    markdown: {
+        config: md => mdPlugin(md)
     }
 }
 
@@ -39,28 +52,23 @@ function getEnglishThemeConfig() {
         nav: [
             {
                 text: 'Guide',
-                link: '/en/guide/what-is-kunlun-design',
-                activeMatch: '/en/guide/what-is-kunlun-design'
+                link: '/en/guide/intro',
+                activeMatch: '/en/guide/intro'
+            },
+            {
+                text: 'Document',
+                link: '/en/document/basic/button',
+                activeMatch: 'document/basic/button'
             },
             {
                 text: 'About',
                 items: [
-                    { text: 'Dev Team', link: '/' },
+                    { text: 'Dev Team', link: '/en' },
                     { text: 'Contact Us', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }
                 ]
             }
         ],
-        sidebar: [
-            {
-                text: 'Guide',
-                items: [
-                    { text: 'Intro', link: '/en/guide/what-is-kunlun-design' },
-                    { text: 'Start', link: '/en/guide/test' }
-                ],
-                collapsible: true,
-                collapsed: true
-            }
-        ],
+        sidebar,
         docFooter: {
             prev: 'Prev Document',
             next: 'Next Document'
@@ -77,28 +85,23 @@ function getChineseThemeConfig() {
         nav: [
             {
                 text: '指南',
-                link: '/guide/what-is-kunlun-design',
-                activeMatch: '/guide/what-is-kunlun-design'
+                link: '/zh/guide/intro',
+                activeMatch: '/guide/intro'
+            },
+            {
+                text: '文档',
+                link: '/zh/document/basic/button',
+                activeMatch: 'document/basic/button'
             },
             {
                 text: '关于',
                 items: [
-                    { text: '开发团队', link: '/' },
-                    { text: '联系我们', link: '/https://github.com/Anixuil/Kunlun-Design-Vue' }
+                    { text: '开发团队', link: '/zh/' },
+                    { text: '联系我们', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }
                 ]
             }
         ],
-        sidebar: [
-            {
-                text: '指南',
-                items: [
-                    { text: '介绍', link: '/guide/what-is-kunlun-design' },
-                    { text: '开始', link: '/guide/test' }
-                ],
-                collapsible: true,
-                collapsed: true
-            }
-        ],
+        sidebar,
         docFooter: {
             prev: '上一篇',
             next: '下一篇'

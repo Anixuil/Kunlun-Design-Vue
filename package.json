@@ -21,7 +21,9 @@
         "@kunlun-design/eslint-config": "workspace:*",
         "@kunlun-design/utils": "workspace:*",
         "@vitejs/plugin-vue": "^4.0.0",
+        "@vitejs/plugin-vue-jsx": "^3.0.0",
         "eslint": "^8.31.0",
+        "gsap": "^3.11.4",
         "husky": "^8.0.3",
         "lint-staged": "^13.1.0",
         "node-sass": "^8.0.0",
@@ -59,5 +61,8 @@
             "stylelint --fix",
             "prettier --write ."
         ]
+    },
+    "dependencies": {
+        "escape-html": "^1.0.3"
     }
 }

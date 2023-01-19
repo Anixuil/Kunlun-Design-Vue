@@ -12,10 +12,10 @@ hero:
     actions:
         - theme: brand
           text: What is Kunlun Design ?
-          link: /en/guide/what-is-kunlun-design
+          link: /en/guide/intro
         - theme: alt
           text: Start
-          link: /en/guide/test
+          link: /en/guide/start
 
 features:
     - icon: ⚡️

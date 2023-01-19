@@ -1,0 +1,262 @@
+/* https://github.com/antfu/prism-theme-vars */
+@use 'prism-theme-vars/base.css';
+@use 'prism-theme-vars/marker.css';
+@use './theme.scss';
+
+body {
+    //滚动条整体样式
+    &::-webkit-scrollbar {
+        width: 10px;
+        // background-color: rgba(0, 154, 0, 0.074);
+        background-color: transparent;
+    }
+    // //滚动条轨道
+    // &::-webkit-scrollbar-track{
+
+    // }
+    // //内层轨道
+    // &::-webkit-scrollbar-track-piece{
+
+    // }
+    //滑块
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: var(--theme-color-light);
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+[class*='language-']:before {
+    font-family: var(--code-font-family);
+}
+
+span[class~='language-css']:before {
+    content: '';
+}
+
+:root {
+    --border-color: var(--van-border-color);
+    --bg-color: var(--van-bg-color);
+
+    --prism-marker-opacity: 0.6;
+    --prism-marker-color: var(--code-text-color);
+    --prism-line-height: var(--code-line-height);
+}
+@mixin common {
+    /* 主题色 */
+    --theme-color-light: rgb(58, 186, 85);
+    --theme-color-dark: rgb(117, 205, 213);
+    --theme-color: rgb(43, 142, 65);
+    --linear-color: linear-gradient(to left, var(--theme-color-dark), var(--theme-color-light));
+    --linear-color-rev: linear-gradient(
+        to right,
+        var(--theme-color-dark),
+        var(--theme-color-light)
+    );
+    --vp-button-hover: var(--theme-color);
+
+    /* demo公用样式 */
+    --demo-border: lightgray;
+    --demo-sen-color: rgba(60, 60, 67, 0.92);
+
+    /* --vp-c-brand: rgb(117, 205, 213); */
+    --vp-c-brand: var(--theme-color-light);
+    --vp-c-brand-light: var(--theme-color-light);
+    --vp-button-brand-border: var(--vp-c-brand-light);
+    --vp-home-hero-name-background: var(--linear-color);
+    --vp-home-hero-name-color: transparent;
+    --vp-button-brand-bg: var(--vp-c-brand-light);
+    --code-bg-color: rgba(43, 142, 64, 0.069);
+    --vp-home-hero-image-background-image: var(--linear-color-rev);
+    --vp-home-hero-image-filter: blur(40px);
+}
+
+html:not(.dark) {
+    --prism-builtin: var(--theme-color); //标签颜色#3182bd
+    --prism-comment: #848486;
+    --prism-deleted: #3182bd;
+    --prism-function: #6196cc; //函数名颜色
+    --prism-boolean: rgb(86, 156, 214); //布尔值颜色
+    --prism-number: #c25205; //number类型颜色
+    --prism-property: #3a7c11; //属性
+    --prism-punctuation: #5fb68d; //标点符号
+    --prism-keyword: rgb(0, 84, 0); //关键字颜色
+    --prism-variable: #0b8235;
+    --prism-url-decoration: #67cdcc;
+    --prism-symbol: green;
+    --prism-selector: #0b9338; //选择器
+
+    @include common;
+}
+
+html.dark {
+    --prism-scheme: dark;
+    --prism-foreground: #a6accd;
+    --prism-background: #181818;
+    --prism-comment: #758575;
+    --prism-string: #c3e88d; //字符串
+    --prism-literal: #429988;
+    --prism-keyword: #89ddff;
+    --prism-boolean: #6394bf;
+    --prism-number: #6394bf;
+    --prism-variable: #c2b36e;
+    --prism-function: #82aaff;
+    --prism-deleted: #bc6066;
+    --prism-class: #54b1bf;
+    --prism-builtin: var(--theme-color-dark);
+    --prism-property: #c792ea;
+    --prism-namespace: #db889a;
+    --prism-punctuation: #89ddff;
+    --prism-decorator: #bd8f8f;
+    --prism-regex: #ab5e3f;
+    --prism-json-property: #6b8b9e;
+    --prism-line-number: #888888;
+    --prism-line-number-gutter: #eeeeee;
+    --prism-line-highlight-background: #444444;
+    --prism-selection-background: #444444;
+    --prism-inline-background: #2d2d2d;
+
+    @include common;
+}
+
+// 清空二级标题外边距
+.vp-doc h2 {
+    margin: 0;
+}
+
+.content-container .vp-doc .example {
+    code {
+        margin: 0;
+        border-radius: 4px;
+        padding: 0.15rem 0.5rem;
+        font-family: var(--code-font-family);
+        font-size: var(--code-font-size);
+        color: var(--code-text-color);
+        line-height: var(--code-line-height);
+        background-color: var(--code-bg-color);
+    }
+
+    pre {
+        code {
+            background-color: transparent;
+        }
+    }
+
+    a > code {
+        color: var(--code-link-color);
+    }
+
+    code .token.deleted {
+        color: #ec5975;
+    }
+
+    code .token.inserted {
+        color: var(--c-brand);
+    }
+
+    div[class*='language-'] {
+        position: relative;
+        margin: 1rem -1.5rem;
+        background-color: var(--code-bg-color);
+        overflow-x: auto;
+    }
+
+    li > div[class*='language-'] {
+        border-radius: 6px 0 0 6px;
+        margin: 1rem -1.5rem 1rem -1.25rem;
+    }
+
+    @media (min-width: 420px) {
+        div[class*='language-'] {
+            margin: 1rem 0;
+            border-radius: 6px;
+        }
+
+        li > div[class*='language-'] {
+            margin: 1rem 0 1rem 0;
+            border-radius: 6px;
+        }
+    }
+
+    [class*='language-'] pre,
+    [class*='language-'] code {
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        tab-size: 4;
+        hyphens: none;
+    }
+
+    [class*='language-'] pre {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0.25rem;
+        background: transparent;
+        overflow-x: auto;
+    }
+
+    [class*='language-'] code {
+        padding: 0;
+        line-height: var(--code-line-height);
+        font-size: var(--code-font-size);
+        color: var(--code-text-color);
+    }
+}
+
+.content-container .vp-doc {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.5em;
+        th,
+        td {
+            border-color: var(--border-color);
+        }
+    }
+    h2 {
+        border-top: 0;
+    }
+}
+
+.image-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    width: 192px;
+    height: 192px;
+    background-image: var(--vp-home-hero-image-background-image);
+    filter: var(--vp-home-hero-image-filter);
+    transform: translate(-50%, -40%);
+    animation: logo-wave 6s infinite linear;
+}
+.VPNavBar {
+    .VPImage.logo {
+        height: 32px;
+    }
+}
+
+@keyframes logo-wave {
+    0% {
+        transform: translate(-42%, -42%);
+    }
+    20% {
+        transform: translate(-58%, -42%);
+    }
+    40% {
+        transform: translate(-58%, -58%);
+    }
+    60% {
+        transform: translate(-52%, -42%);
+    }
+    80% {
+        transform: translate(-42%, -58%);
+    }
+    100% {
+        transform: translate(-42%, -42%);
+    }
+}
