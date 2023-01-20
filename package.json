@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "docs": "pnpm --filter ./packages/docs docs:dev",
         "build": "node ./scripts/build.js",
         "play": "pnpm --filter ./play dev",
         "prettier": "prettier --write .",

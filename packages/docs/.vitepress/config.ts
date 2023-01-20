@@ -4,7 +4,27 @@ import { sidebar } from './config/sidebar'
 
 export const config: UserConfig = {
     outDir: './dist',
+    title: 'Kunun Design',
     themeConfig: {
+        nav: [
+            {
+                text: '指南',
+                link: '/zh/guide/intro',
+                activeMatch: '/guide/intro'
+            },
+            {
+                text: '文档',
+                link: '/zh/document/basic/button',
+                activeMatch: 'document/basic/button'
+            },
+            {
+                text: '关于',
+                items: [
+                    { text: '开发团队', link: '/zh/' },
+                    { text: '联系我们', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }
+                ]
+            }
+        ],
         logo: '/images/logo-transprent.png',
         footer: {
             message: 'Released under the MIT License.',
@@ -17,14 +37,14 @@ export const config: UserConfig = {
     lastUpdated: true,
     //国际化
     locales: {
-        root: {
-            lang: 'zh-CN',
-            title: 'Kunlun Design',
-            description: '一个基于 vue 3 的组件库',
-            label: '简体中文',
-            link: '/',
-            themeConfig: getChineseThemeConfig()
-        },
+        // root: {
+        //     lang: 'zh-CN',
+        //     title: 'Kunlun Design',
+        //     description: '一个基于 vue 3 的组件库',
+        //     label: '简体中文',
+        //     link: '/',
+        //     themeConfig: getChineseThemeConfig()
+        // },
         zh: {
             lang: 'zh-CN',
             title: 'Kunlun Design',
