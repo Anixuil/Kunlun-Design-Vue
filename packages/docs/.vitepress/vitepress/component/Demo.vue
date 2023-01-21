@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
-        <p text="sm" v-html="decodedDescription" />
+        <p text="sm" v-html="decodedDescription"></p>
         <div class="example">
             <!-- <Example :file="path" :demo="formatPathDemos[path]" /> -->
             <div class="example-showcase">
@@ -66,7 +66,16 @@ const decodedSource = computed(() => {
 const decodedDescription = computed(() => decodeURIComponent(props.description!))
 
 //代码展现隐藏过渡效果实现
-const code: Ref = ref()
+//声明类型 htmlType接口用来处理文档站打包时存在的找不到 offsetHeight 属性的问题
+type htmlType = {
+    offsetHeight: number
+    style: {
+        height: number
+    }
+}
+const htmlstr: htmlType = { offsetHeight: 0, style: { height: 0 } }
+const code: Ref<HTMLElement | htmlType> = ref(htmlstr)
+
 const codeHeight = ref<number>()
 nextTick(() => {
     codeHeight.value = code.value.offsetHeight
@@ -78,6 +87,7 @@ nextTick(() => {
 //控制代码展现
 function toggleSourceVisible() {
     sourceVisible.value = !sourceVisible.value
+
     if (sourceVisible.value) {
         gsap.to(code.value, {
             height: `${codeHeight.value}`,

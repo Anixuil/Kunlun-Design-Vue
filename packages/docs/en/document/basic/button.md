@@ -9,6 +9,7 @@ Common operation buttons
 
 ## Basic usage
 
-:::demo Use `type`, `plain`,`round` and `circle` to define style
+Use `type`, `plain`,`round` and `circle` to define style
+:::demo
 button/basic
 :::
