@@ -9,11 +9,14 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 10px 20px;
-    min-width: 86px;
-    min-height: 40px;
+    min-width: $normal-width;
+    min-height: $normal-height;
     font-size: 16px;
     user-select: none;
+
+    & + & {
+        margin-left: 12px;
+    }
 
     // transition
     transition: all $transition-quick;
@@ -74,15 +77,13 @@ $defaultHoverBgColor: null;
                     background-color: rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1);
                     @include kl-attribute($value, 'color', 'kl-fontColor');
                 }
-
-                &:active {
-                    opacity: 1 !important;
-                    @include kl-attribute($value, 'background-color', 'kl-bg-active');
-                }
-
                 &:focus {
                     background-color: rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1);
                     color: $font-color-white;
+                }
+                &:active {
+                    opacity: 1 !important;
+                    @include kl-attribute($value, 'background-color', 'kl-bg-active');
                 }
             }
         }
@@ -97,6 +98,9 @@ $defaultHoverBgColor: null;
                 border: 1px solid $defaultHoverBgColor;
                 color: $defaultHoverBgColor;
                 background-color: rgba($color: $defaultHoverBgColor, $alpha: 0.1);
+            }
+            &:active {
+                border: 2px solid $defaultHoverBgColor;
             }
         } @else {
             &:hover {

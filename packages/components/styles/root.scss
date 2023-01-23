@@ -9,7 +9,7 @@ $font-color-white: white;
 $border-none: none;
 
 //过渡
-$transition-quick: 0.1s ease;
+$transition-quick: 0.1s ease-in;
 $transition-normal: 0.3s ease;
 $transition-slow: 0.5s ease;
 
@@ -53,30 +53,30 @@ $default-border-active: 1px solid $primary-bgColor-active;
 //size
 //mini
 $mini-fontSize: 12px;
-$mini-paddingSize: 5px 10px;
+// $mini-paddingSize: 5px 10px;
 $mini-width: 55px;
 $mini-height: 26px;
 
 //small
 $small-fontSize: 14px;
-$small-paddingSize: 10px 15px;
+// $small-paddingSize: 10px 15px;
 $small-width: 65px;
 $small-height: 36px;
 
 //normal
 $normal-fontSize: 16px;
-$normal-paddingSize: 10px 20px;
+// $normal-paddingSize: 10px 20px;
 $normal-width: 86px;
 $normal-height: 40px;
 
 //large
 $large-fontSize: 18px;
-$large-paddingSize: 10px 20px;
+// $large-paddingSize: 10px 20px;
 $large-width: 95px;
 $large-height: 43px;
 
 //xlarge
 $xlarge-fontSize: 20px;
-$xlarge-paddingSize: 10px 20px;
+// $xlarge-paddingSize: 10px 20px;
 $xlarge-width: 100px;
 $xlarge-heigth: 45px;

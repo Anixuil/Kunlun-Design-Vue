@@ -125,91 +125,76 @@
     border-radius: 5px;
 }
 :root .kl-button--mini {
-    padding: 5px 10px;
     min-width: 55px;
     min-height: 26px;
     font-size: 12px;
 }
 :root .kl-input--mini {
-    padding: 5px 10px;
     min-width: 55px;
     min-height: 26px;
     font-size: 12px;
 }
 :root .kl-select--mini {
-    padding: 5px 10px;
     min-width: 55px;
     min-height: 26px;
     font-size: 12px;
 }
 :root .kl-button--small {
-    padding: 10px 15px;
     min-width: 65px;
     min-height: 36px;
     font-size: 14px;
 }
 :root .kl-input--small {
-    padding: 10px 15px;
     min-width: 65px;
     min-height: 36px;
     font-size: 14px;
 }
 :root .kl-select--small {
-    padding: 10px 15px;
     min-width: 65px;
     min-height: 36px;
     font-size: 14px;
 }
 :root .kl-button--normal {
-    padding: 10px 20px;
     min-width: 86px;
     min-height: 40px;
     font-size: 16px;
 }
 :root .kl-input--normal {
-    padding: 10px 20px;
     min-width: 86px;
     min-height: 40px;
     font-size: 16px;
 }
 :root .kl-select--normal {
-    padding: 10px 20px;
     min-width: 86px;
     min-height: 40px;
     font-size: 16px;
 }
 :root .kl-button--large {
-    padding: 10px 20px;
     min-width: 95px;
     min-height: 43px;
     font-size: 18px;
 }
 :root .kl-input--large {
-    padding: 10px 20px;
     min-width: 95px;
     min-height: 43px;
     font-size: 18px;
 }
 :root .kl-select--large {
-    padding: 10px 20px;
     min-width: 95px;
     min-height: 43px;
     font-size: 18px;
 }
 :root .kl-button--xlarge {
-    padding: 10px 20px;
     min-width: 100px;
     min-height: 45px;
     font-size: 20px;
 }
 :root .kl-input--xlarge {
-    padding: 10px 20px;
     min-width: 100px;
     min-height: 45px;
     font-size: 20px;
 }
 :root .kl-select--xlarge {
-    padding: 10px 20px;
     min-width: 100px;
     min-height: 45px;
     font-size: 20px;
@@ -223,11 +208,14 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    padding: 10px 20px;
     min-width: 86px;
     min-height: 40px;
     font-size: 16px;
-    transition: all 0.1s ease;
+    user-select: none;
+    transition: all 0.1s ease-in;
+}
+.kl-button + .kl-button {
+    margin-left: 12px;
 }
 .kl-button.kl-circle {
     border-radius: 50%;
@@ -248,13 +236,13 @@
     background-color: #3a7afe;
     color: #fff;
 }
-.kl-button--primary.kl-plain:active {
-    opacity: 1 !important;
-    background-color: #075aff;
-}
 .kl-button--primary.kl-plain:focus {
     background-color: #3a7afe;
     color: #fff;
+}
+.kl-button--primary.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #075aff;
 }
 .kl-button--primary:hover {
     opacity: 0.6;
@@ -273,13 +261,13 @@
     background-color: #67c23a;
     color: #fff;
 }
-.kl-button--success.kl-plain:active {
-    opacity: 1 !important;
-    background-color: #2f8d00;
-}
 .kl-button--success.kl-plain:focus {
     background-color: #67c23a;
     color: #fff;
+}
+.kl-button--success.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #2f8d00;
 }
 .kl-button--success:hover {
     opacity: 0.6;
@@ -298,13 +286,13 @@
     background-color: #85878b;
     color: #fff;
 }
-.kl-button--info.kl-plain:active {
-    opacity: 1 !important;
-    background-color: #757679;
-}
 .kl-button--info.kl-plain:focus {
     background-color: #85878b;
     color: #fff;
+}
+.kl-button--info.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #757679;
 }
 .kl-button--info:hover {
     opacity: 0.6;
@@ -323,13 +311,13 @@
     background-color: #e6a23c;
     color: #fff;
 }
-.kl-button--warning.kl-plain:active {
-    opacity: 1 !important;
-    background-color: #aa7320;
-}
 .kl-button--warning.kl-plain:focus {
     background-color: #e6a23c;
     color: #fff;
+}
+.kl-button--warning.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #aa7320;
 }
 .kl-button--warning:hover {
     opacity: 0.6;
@@ -348,13 +336,13 @@
     background-color: #f56c6c;
     color: #fff;
 }
-.kl-button--danger.kl-plain:active {
-    opacity: 1 !important;
-    background-color: #be3e3e;
-}
 .kl-button--danger.kl-plain:focus {
     background-color: #f56c6c;
     color: #fff;
+}
+.kl-button--danger.kl-plain:active {
+    opacity: 1 !important;
+    background-color: #be3e3e;
 }
 .kl-button--danger:hover {
     opacity: 0.6;
@@ -383,4 +371,7 @@
     border: 1px solid #3a7afe;
     color: #3a7afe;
     background-color: #3a7afe1a;
+}
+.kl-button--default:active {
+    border: 2px solid #3a7afe;
 }
