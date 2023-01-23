@@ -1,12 +1,10 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-    <List></List>
+    <div>list</div>
 </template>
 
+<script  setup lang="ts">
 
+</script>
 
 <style scoped lang="scss">
 

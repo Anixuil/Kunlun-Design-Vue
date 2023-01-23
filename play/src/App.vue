@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import List from './components/List.vue';
+</script>
 
 
 <template>
+    <!-- list测试 -->
+
+    <kl-list> default</kl-list>
     <div>
         <h2>基础按钮</h2>
         <kl-button>default</kl-button>

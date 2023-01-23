@@ -1,4 +1,4 @@
 import type { Plugin } from 'vue'
-import { KlButton } from '@kunlun-design/components'
+import { KlButton, KlList } from '@kunlun-design/components'
 
-export default [KlButton] as Plugin[]
+export default [KlButton, KlList] as Plugin[]
