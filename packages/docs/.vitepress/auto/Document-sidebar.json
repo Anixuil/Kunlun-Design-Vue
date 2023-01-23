@@ -1,0 +1,24 @@
+{
+    "zh": {
+        "basic": {
+            "text": "基础组件",
+            "children": [
+                {
+                    "text": "Button 按钮",
+                    "link": "/basic/button"
+                }
+            ]
+        }
+    },
+    "en": {
+        "basic": {
+            "text": "Basic Component",
+            "children": [
+                {
+                    "text": "Button",
+                    "link": "/basic/button"
+                }
+            ]
+        }
+    }
+}

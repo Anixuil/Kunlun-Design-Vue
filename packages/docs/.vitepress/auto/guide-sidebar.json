@@ -1,0 +1,40 @@
+{
+    "zh": {
+        "intro": {
+            "text": "指南",
+            "children": [
+                {
+                    "text": "介绍",
+                    "link": "/intro"
+                },
+                {
+                    "text": "安装",
+                    "link": "/install"
+                },
+                {
+                    "text": "快速开始",
+                    "link": "/start"
+                }
+            ]
+        }
+    },
+    "en": {
+        "intro": {
+            "text": "Guide",
+            "children": [
+                {
+                    "text": "Introduce",
+                    "link": "/intro"
+                },
+                {
+                    "text": "Install",
+                    "link": "/install"
+                },
+                {
+                    "text": "Start",
+                    "link": "/start"
+                }
+            ]
+        }
+    }
+}
