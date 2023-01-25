@@ -1,0 +1,22 @@
+//样式变量声明
+@import './var.scss';
+
+:root {
+    //基本变量
+    //背景
+    --kl-bg-color: white;
+    //字体
+    --kl-font-color: rgb(59, 59, 59);
+    //边框
+    --kl-border-color: rgb(59, 59, 59);
+    --kl-border-width: 1px;
+    --kl-border-style: solid;
+    --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
+    //尺寸
+    // --kl-
+
+    //button
+    // --kl-button-bg-color:var(--kl-bg-color);
+    // --kl-button-font-color:var(--kl-font-color);
+    // --kl-button-border:var(--kl-border);
+}

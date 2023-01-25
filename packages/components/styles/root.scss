@@ -1,5 +1,6 @@
 @import './type.scss';
 @import './size.scss';
+@import './variables.scss';
 
 $components: button, input, select;
 
@@ -24,11 +25,12 @@ $components: button, input, select;
     //type类型判断
     @each $typeKey, $typeValue in $typeStyle {
         @include matchComponent($typeKey) {
-            @include kl-attribute($typeValue, 'background-color', 'kl-bg');
-            @include kl-attribute($typeValue, 'color', 'kl-fontColor');
-            @include kl-attribute($typeValue, 'border', 'kl-border');
-            box-sizing: border-box;
+            // box-sizing: border-box;
             border-radius: 5px;
+            //button
+            @include kl-attribute($typeValue, '--kl-bg-color', 'kl-bg');
+            @include kl-attribute($typeValue, '--kl-font-color', 'kl-fontColor');
+            @include kl-attribute($typeValue, '--kl-border', 'kl-border');
         }
     }
 
