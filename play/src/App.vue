@@ -40,12 +40,51 @@
         <kl-button size="normal">button</kl-button>
         <kl-button size="large">button</kl-button>
         <kl-button size="xlarge">button</kl-button>
+        <h2>prop属性</h2>
+        <kl-button color="red" textColor="white">button</kl-button>
+        <h2>自定义样式按钮</h2>
+        <kl-button class="self-button" plain>button</kl-button>
+        <h2>禁用按钮</h2>
+        <kl-button disabled>button</kl-button>
     </div>
 </template>
 
 <style scoped lang="scss">
 button {
     margin: 5px;
+}
+
+.kl-button.self-button {
+    color: black;
+    // background-color: black;
+    border-color: black;
+
+    &:hover {
+        background-color: red;
+        color: white;
+        border-color: red;
+    }
+
+    &:visited {
+        border-color: darkred;
+        background-color: darkred;
+    }
+
+    &:link {
+        border-color: darkred;
+        background-color: darkred;
+    }
+
+    &:focus {
+        border-color: red;
+        background-color: red;
+        color: white;
+    }
+
+    &:active {
+        border-color: darkred;
+        background-color: darkred;
+    }
 }
 
 .test {
