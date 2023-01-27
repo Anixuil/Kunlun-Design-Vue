@@ -37,10 +37,9 @@ $components: button, input, select;
     //size
     @each $sizeKey, $sizeValue in $sizeStyle {
         @include matchComponent($sizeKey) {
-            @include kl-attribute($sizeValue, 'padding', 'kl-paddingSize');
-            @include kl-attribute($sizeValue, 'min-width', 'kl-width');
-            @include kl-attribute($sizeValue, 'min-height', 'kl-height');
-            @include kl-attribute($sizeValue, 'font-size', 'kl-fontSize');
+            @include kl-attribute($sizeValue, '--kl-size-width', 'kl-width');
+            @include kl-attribute($sizeValue, '--kl-size-height', 'kl-height');
+            @include kl-attribute($sizeValue, '--kl-size-font', 'kl-fontSize');
         }
     }
 }

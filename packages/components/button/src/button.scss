@@ -3,15 +3,14 @@
 .kl-button {
     outline: none;
     cursor: pointer;
-    // border: $border-none;
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    min-width: $normal-width;
-    min-height: $normal-height;
-    font-size: 16px;
+    min-width: var(--kl-size-width);
+    min-height: var(--kl-size-height);
+    font-size: var(--kl-size-font);
     user-select: none;
     background-color: var(--kl-bg-color);
     color: var(--kl-font-color);

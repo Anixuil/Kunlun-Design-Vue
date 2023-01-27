@@ -13,10 +13,7 @@
     --kl-border-style: solid;
     --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
     //尺寸
-    // --kl-
-
-    //button
-    // --kl-button-bg-color:var(--kl-bg-color);
-    // --kl-button-font-color:var(--kl-font-color);
-    // --kl-button-border:var(--kl-border);
+    --kl-size-width: #{$normal-width};
+    --kl-size-height: #{$normal-height};
+    --kl-size-font: #{$normal-fontSize};
 }
