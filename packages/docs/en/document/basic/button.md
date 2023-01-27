@@ -13,3 +13,12 @@ Use `type`, `plain`,`round` and `circle` to define style
 :::demo
 button/basic
 :::
+
+## Disable status
+
+You can use the `disabled` property to define whether the button is disabled
+
+Use the `disabled` attribute to control whether the button is disabled. This property accepts a value of type `Boolean`
+:::demo
+button/disabled
+:::

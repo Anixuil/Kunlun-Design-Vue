@@ -1,44 +1,82 @@
-@import './type.scss';
-@import './size.scss';
+//样式变量统一声明
 
-$components: button, input, select;
+//全局通用样式
 
-@function typed($type, $key) {
-    @return map-get($type, $key);
-}
+//字体
+$font-color-white: white;
 
-@mixin kl-attribute($typeName, $attrKey, $attrName) {
-    #{$attrKey}: typed($typeName, $attrName);
-}
+//边框
+$border-none: none;
 
-//复用匹配组件
-@mixin matchComponent($typeKey) {
-    @each $comKey, $comValue in $components {
-        .kl-#{$comKey}--#{$typeKey} {
-            @content;
-        }
-    }
-}
+//过渡
+$transition-quick: 0.1s ease-in;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;
 
-:root {
-    //type类型判断
-    @each $typeKey, $typeValue in $typeStyle {
-        @include matchComponent($typeKey) {
-            @include kl-attribute($typeValue, 'background-color', 'kl-bg');
-            @include kl-attribute($typeValue, 'color', 'kl-fontColor');
-            @include kl-attribute($typeValue, 'border', 'kl-border');
-            box-sizing: border-box;
-            border-radius: 5px;
-        }
-    }
+// type
+// primary
+$primary-bgColor: #3a7afe;
+$primary-bgColor-active: #075aff;
+$primary-fontColor: $font-color-white;
+$primary-border: $border-none;
 
-    //size
-    @each $sizeKey, $sizeValue in $sizeStyle {
-        @include matchComponent($sizeKey) {
-            @include kl-attribute($sizeValue, 'padding', 'kl-paddingSize');
-            @include kl-attribute($sizeValue, 'min-width', 'kl-width');
-            @include kl-attribute($sizeValue, 'min-height', 'kl-height');
-            @include kl-attribute($sizeValue, 'font-size', 'kl-fontSize');
-        }
-    }
-}
+//success
+$success-bgColor: rgb(103, 194, 58);
+$success-bgColor-active: rgb(47, 141, 0);
+$success-fontColor: $font-color-white;
+$success-border: $border-none;
+
+//info
+$info-bgColor: #85878b;
+$info-bgColor-active: rgb(117, 118, 121);
+$info-fontColor: $font-color-white;
+$info-border: $border-none;
+
+//warning
+$warning-bgColor: rgb(230, 162, 60);
+$warning-bgColor-active: rgb(170, 115, 32);
+$warning-fontColor: $font-color-white;
+$warning-border: $border-none;
+
+//danger
+$danger-bgColor: rgb(245, 108, 108);
+$danger-bgColor-active: rgb(190, 62, 62);
+$danger-fontColor: $font-color-white;
+$danger-border: $border-none;
+
+//default
+$default-bgColor: white;
+$default-fontColor: rgb(59, 59, 59);
+$default-border: 1px solid $default-fontColor;
+$default-border-active: 1px solid $primary-bgColor-active;
+
+//size
+//mini
+$mini-fontSize: 12px;
+// $mini-paddingSize: 5px 10px;
+$mini-width: 55px;
+$mini-height: 26px;
+
+//small
+$small-fontSize: 14px;
+// $small-paddingSize: 10px 15px;
+$small-width: 65px;
+$small-height: 36px;
+
+//normal
+$normal-fontSize: 16px;
+// $normal-paddingSize: 10px 20px;
+$normal-width: 86px;
+$normal-height: 40px;
+
+//large
+$large-fontSize: 18px;
+// $large-paddingSize: 10px 20px;
+$large-width: 95px;
+$large-height: 43px;
+
+//xlarge
+$xlarge-fontSize: 20px;
+// $xlarge-paddingSize: 10px 20px;
+$xlarge-width: 100px;
+$xlarge-heigth: 45px;

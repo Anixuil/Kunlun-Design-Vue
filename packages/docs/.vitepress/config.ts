@@ -31,8 +31,8 @@ export const config: UserConfig = {
             copyright: `Copyright &copy; 2023-PRESENT Kunlun-Designer and Kunlun-Design contributors`
         },
         algolia: {},
-        socialLinks: [{ icon: 'github', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }],
-        lastUpdatedText: '文档最近更新时间'
+        socialLinks: [{ icon: 'github', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }]
+        // lastUpdatedText: '文档最近更新时间'
     },
     lastUpdated: true,
     //国际化
@@ -96,7 +96,8 @@ function getEnglishThemeConfig() {
         editLink: {
             pattern: 'https://github.com/Anixuil/Kunlun-Design-Vue/packages/docs/:path',
             text: 'Edit this page on Github'
-        }
+        },
+        lastUpdatedText: 'Last update time of the document'
     }
 }
 
@@ -129,7 +130,8 @@ function getChineseThemeConfig() {
         editLink: {
             pattern: 'https://github.com/Anixuil/Kunlun-Design-Vue/packages/docs/:path',
             text: '在github上编辑此页'
-        }
+        },
+        lastUpdatedText: '文档最近更新时间'
     }
 }
 
