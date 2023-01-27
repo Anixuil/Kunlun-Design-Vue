@@ -45,7 +45,8 @@
         <h2>自定义样式按钮</h2>
         <kl-button class="self-button" plain>button</kl-button>
         <h2>禁用按钮</h2>
-        <kl-button disabled>button</kl-button>
+        <kl-button disabled type="primary">button</kl-button>
+        <kl-button type="primary">button</kl-button>
     </div>
 </template>
 

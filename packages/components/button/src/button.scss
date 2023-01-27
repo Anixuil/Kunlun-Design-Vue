@@ -36,6 +36,11 @@
     &.kl-round {
         border-radius: 20px;
     }
+    //disabled
+    &.kl-disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
 }
 
 $defaultHoverBgColor: null;
@@ -52,7 +57,7 @@ $defaultHoverBgColor: null;
 //只有使用了type的才能正确使用plain
 //遍历type找到当前匹配的类型
 @each $key, $value in $typeStyle {
-    .kl-button--#{$key} {
+    .kl-button--#{$key}:not(.kl-disabled) {
         @if $key == 'default' {
             &:hover {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};

@@ -6,7 +6,8 @@
             size && n(`--${size}`),
             round && 'kl-round',
             plain && 'kl-plain',
-            circle && 'kl-circle'
+            circle && 'kl-circle',
+            disabled && 'kl-disabled'
         ]"
         :style="{
             ...style
