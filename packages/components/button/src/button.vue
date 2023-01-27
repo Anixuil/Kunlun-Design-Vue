@@ -9,7 +9,6 @@
             circle && 'kl-circle'
         ]"
         :style="{
-            color: textColor,
             ...style
         }"
     >
@@ -25,10 +24,12 @@ import './button.scss'
 
 const props = defineProps(ButtonProps)
 const style = computed(() => {
-    return props.color
+    return props.color || props.textColor
         ? {
-              '--kl-button-bg-color': props.color,
-              '--kl-button-text-color': 'var(--kl-text-color-white)'
+              '--kl-bg-color': props.color,
+              '--kl-font-color': props.textColor,
+              '--kl-border-color': props.color,
+              '--kl-border': `var(--kl-border-width) var(--kl-border-style) var(--kl-border-color) var(--kl-border-style)`
           }
         : {}
 })
