@@ -1,12 +1,21 @@
 <script setup lang="ts">
-import List from './components/List.vue';
+const data: string[] = [
+    'Racing car sprays burning fuel into crowd.',
+    'Japanese princess to wed commoner.',
+    'Australian walks 100km after outback crash.',
+    'Man charged over missing wedding girl.',
+    'Los Angeles battles huge wildfires.',
+];
+
+
 </script>
 
 
 <template>
     <!-- list测试 -->
 
-    <kl-list> default</kl-list>
+    <kl-list :dataSource="data"></kl-list>
+
     <div>
         <h2>基础按钮</h2>
         <kl-button>default</kl-button>
