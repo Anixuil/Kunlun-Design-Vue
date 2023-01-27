@@ -17,5 +17,6 @@ export const ButtonProps = {
     },
     round: Boolean,
     plain: Boolean,
-    circle: Boolean
+    circle: Boolean,
+    disabled: Boolean
 }
