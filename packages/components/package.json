@@ -9,5 +9,9 @@
     "peerDependencies": {
         "vue": "^3.2.45"
     },
-    "sideEffects": false
+    "sideEffects": false,
+    "scripts": {
+        "test": "vitest",
+        "coverage": "vitest run --coverage"
+    }
 }

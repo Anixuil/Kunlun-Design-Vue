@@ -2,3 +2,5 @@
 **/dist
 **/lib
 **/.temp
+coverage
+/packages/test/**/*.test.ts
