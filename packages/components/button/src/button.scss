@@ -12,6 +12,7 @@
     min-width: var(--kl-size-width);
     min-height: var(--kl-size-height);
     font-size: var(--kl-size-font);
+    padding: 0 10px;
     user-select: none;
     background-color: var(--kl-bg-color);
     color: var(--kl-font-color);
@@ -57,30 +58,30 @@ $defaultHoverBgColor: null;
 //只有使用了type的才能正确使用plain
 //遍历type找到当前匹配的类型
 @each $key, $value in $typeStyle {
-    .kl-button--#{$key}:not(.kl-disabled) {
+    .kl-button--#{$key} {
         @if $key == 'default' {
-            &:hover {
+            &:hover:not(.kl-disabled) {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
                 --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
                 --kl-font-color: #{$defaultHoverBgColor};
                 --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
             }
-            &:focus {
+            &:focus:not(.kl-disabled) {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
                 --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
                 --kl-font-color: #{$defaultHoverBgColor};
                 --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
             }
-            &:active {
+            &:active:not(.kl-disabled) {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 1)};
             }
         } @else {
-            &:hover {
+            &:hover:not(.kl-disabled) {
                 opacity: 0.6;
             }
 
             //激活样式
-            &:active {
+            &:active:not(.kl-disabled) {
                 opacity: 1 !important;
                 @include kl-attribute($value, '--kl-bg-color', 'kl-bg-active');
             }
@@ -89,13 +90,13 @@ $defaultHoverBgColor: null;
         &.kl-plain {
             //如果是默认类型，不进行设置
             @if $key == 'default' {
-                &:hover,
-                &:active {
+                &:hover:not(.kl-disabled),
+                &:active:not(.kl-disabled) {
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
                 }
-                &:focus {
+                &:focus:not(.kl-disabled) {
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
@@ -109,16 +110,16 @@ $defaultHoverBgColor: null;
                 --kl-border-color: #{map-get($map: $value, $key: 'kl-bg')};
                 --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
 
-                &:hover {
+                &:hover:not(.kl-disabled) {
                     opacity: 1 !important;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                     @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
                 }
-                &:focus {
+                &:focus:not(.kl-disabled) {
                     --kl-font-color: white;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                 }
-                &:active {
+                &:active:not(.kl-disabled) {
                     opacity: 1 !important;
                     @include kl-attribute($value, '--kl-bg-color', 'kl-bg-active');
                     --kl-border-color: #{map-get($map: $value, $key: 'kl-bg-active')};
