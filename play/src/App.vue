@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { KlButton } from 'kunlun-design'
+</script>
 
 <template>
     <div>
