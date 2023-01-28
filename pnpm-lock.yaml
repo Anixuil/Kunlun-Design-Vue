@@ -125,6 +125,9 @@ importers:
     packages/kunlun-design:
         specifiers: {}
 
+    packages/test:
+        specifiers: {}
+
     packages/utils:
         specifiers: {}
 
@@ -141,7 +144,7 @@ importers:
             vue: registry.npmmirror.com/vue/3.2.45
         devDependencies:
             '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/4.0.0_vite@4.0.4+vue@3.2.45
-            kunlun-design: link:..
+            kunlun-design: link:../packages/kunlun-design
             sass: registry.npmmirror.com/sass/1.57.1
             typescript: registry.npmmirror.com/typescript/4.9.4
             vite: registry.npmmirror.com/vite/4.0.4_sass@1.57.1
