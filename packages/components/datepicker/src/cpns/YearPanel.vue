@@ -287,7 +287,7 @@ defineExpose({
 <style lang="scss" scoped>
 .year-panel {
     width: 320px;
-    font-family: '楷体';
+    /* font-family: '楷体'; */
     font-size: 16px;
     font-weight: 600;
 }

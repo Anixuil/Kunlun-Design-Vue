@@ -686,7 +686,7 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
 }
 
 .date-panel {
-    font-family: '楷体';
+    /* font-family: '楷体'; */
     font-size: 16px;
     font-weight: 600;
 }
@@ -790,6 +790,10 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
                 cursor: pointer;
                 transition: all 0.2s;
                 border-radius: 100%;
+
+                > span {
+                    line-height: 16px;
+                }
 
                 &:hover {
                     background-color: #eee;

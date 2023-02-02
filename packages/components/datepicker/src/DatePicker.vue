@@ -71,7 +71,7 @@ export interface IPropsType {
     placeholderRange?: string[]
     isRangePicker?: boolean
     disabledDate?: Array<number[]>
-    disabledDateTime?: Array<number[]>
+    disabledTime?: Array<number[]>
     showHolidays?: boolean
     lang?: 'ch' | 'en'
 }
@@ -157,7 +157,7 @@ provide<Ref<InstanceType<typeof PickerInputRange> | null>>(
 // 不可选日期
 provide<Array<number[]> | undefined>('disabledDate', props.disabledDate)
 // 不可选日期时间
-provide<Array<number[]> | undefined>('disabledDateTime', props.disabledDateTime)
+provide<Array<number[]> | undefined>('disabledTime', props.disabledTime)
 // 是否展示节假日视图
 provide<boolean>('showHolidays', props.showHolidays)
 // 语言
@@ -323,6 +323,10 @@ const changeYearRange = (yr: number[], formatStr: string) => {
     yearRange.value[1] = formatTime('y', { year: ey }, formatStr)
     closeAction()
 }
+
+defineOptions({
+    name: 'KlDatePicker'
+})
 </script>
 
 <style lang="scss" scoped>

@@ -61,9 +61,9 @@
         ></KlDatePicker>
         <br />
         <br />
-        <h1>disabledDateTime属性</h1>
+        <h1>disabledTime属性</h1>
         <KlDatePicker
-            :disabledDateTime="disabledDateTime"
+            :disabledTime="disabledTime"
             :isRangePicker="true"
             :isDateTime="true"
         ></KlDatePicker>
@@ -114,7 +114,7 @@ const disabledDate = [
     [2023, 2, 23]
 ]
 
-const disabledDateTime = [
+const disabledTime = [
     [0, 1, 2, 3, 4],
     [1, 2, 3, 4],
     [1, 2, 3, 4]

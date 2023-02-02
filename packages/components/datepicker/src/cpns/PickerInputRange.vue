@@ -22,7 +22,7 @@
             @focus="focusInputHandle('start')"
         />
         <span class="separator">
-            <svg viewBox="0 0 1024 1024" fill="currentColor">
+            <svg viewBox="0 0 1024 1024" fill="currentColor" width="16" height="16">
                 <path
                     d="M62.6 806.8L0.1 744.3l232.2-232.2L0.1 279.9l62.5-62.5 294.7 294.7L62.6 806.8z"
                 ></path>
@@ -213,7 +213,7 @@ defineExpose({
 
     .separator {
         padding: 0 10px;
-        width: 16px;
+        /* width: 16px; */
         height: 16px;
     }
 

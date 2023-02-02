@@ -91,9 +91,10 @@ const isClickBlank = (event: MouseEvent) => {
 const setPanelPosition = () => {
     const { datePickerRef } = toRefs(props)
     if (datePickerRef.value && panelRef.value) {
+        const { left, bottom } = datePickerRef.value.getBoundingClientRect()
         // 计算日期面板的位置
-        const panelTop = datePickerRef.value.offsetTop + datePickerRef.value.offsetHeight + 5
-        const panelLeft = datePickerRef.value.offsetLeft
+        const panelTop = bottom + window.scrollY + 5
+        const panelLeft = left + window.scrollX
         // 设置日期面板的位置
         panelRef.value.style.top = panelTop + 'px'
         panelRef.value.style.left = panelLeft + 'px'

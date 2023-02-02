@@ -71,7 +71,7 @@ const props = defineProps<IPropsType>()
 // DatePicker组件的input值
 const datetime = inject('datetime') as Ref<string>
 // 不可选日期时间
-const disabledDateTime = inject<Array<number[]>>('disabledDateTime') || []
+const disabledTime = inject<Array<number[]>>('disabledTime') || []
 // 语言
 const lang = inject<'ch' | 'en'>('lang') as 'ch' | 'en'
 
@@ -138,8 +138,8 @@ const checkSelectTime = (timeType: 'hour' | 'minute' | 'second', value: number) 
 
 // 不可选日期时间
 const checkUnselectTime = (timeType: 'hour' | 'minute' | 'second', value: number) => {
-    if (!disabledDateTime.length) return false
-    const [hours, minutes, seconds] = disabledDateTime
+    if (!disabledTime.length) return false
+    const [hours, minutes, seconds] = disabledTime
     switch (timeType) {
         case 'hour':
             return hours.some(hour => value === hour)
