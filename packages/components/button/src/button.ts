@@ -1,7 +1,7 @@
 import type { PropType } from 'vue'
 
 export const typevalidator = (type: string): boolean => {
-    return ['primary', 'info', 'success', 'warning', 'danger', 'default'].includes(type)
+    return ['primary', 'info', 'success', 'warning', 'danger', 'default', ''].includes(type)
 }
 
 export const sizeValidator = (size: string): boolean => {
@@ -9,7 +9,9 @@ export const sizeValidator = (size: string): boolean => {
 }
 
 export const ButtonProps = {
-    type: String as PropType<'primary' | 'info' | 'success' | 'warning' | 'danger' | 'default'>,
+    type: String as PropType<
+        'primary' | 'info' | 'success' | 'warning' | 'danger' | 'default' | ''
+    >,
     size: String as PropType<'mini' | 'small' | 'normal' | 'large' | 'xlarge'>,
     color: String,
     textColor: {
@@ -18,5 +20,6 @@ export const ButtonProps = {
     round: Boolean,
     plain: Boolean,
     circle: Boolean,
-    disabled: Boolean
+    disabled: Boolean,
+    link: Boolean
 }

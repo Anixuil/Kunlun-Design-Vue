@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { KlButton } from 'kunlun-design'
-</script>
-
 <template>
     <div>
         <h2>基础按钮</h2>
@@ -49,8 +45,28 @@ import { KlButton } from 'kunlun-design'
         <h2>禁用按钮</h2>
         <kl-button disabled type="primary" plain>button</kl-button>
         <kl-button type="primary">button</kl-button>
+        <h2>链接按钮</h2>
+        <kl-button v-for="item in link_button" :key="item.text" :type="item.type" link>{{
+            item.text
+        }}</kl-button
+        ><br />
+        <kl-button v-for="item in link_button" :key="item.text" :type="item.type" disabled link>{{
+            item.text
+        }}</kl-button>
     </div>
 </template>
+
+<script setup lang="ts">
+import { KlButton } from 'kunlun-design'
+
+const link_button = [
+    { type: '', text: 'default' },
+    { type: 'primary', text: 'primary' },
+    { type: 'success', text: 'success' },
+    { type: 'danger', text: 'danger' },
+    { type: 'info', text: 'info' }
+] as const
+</script>
 
 <style scoped lang="scss">
 button {

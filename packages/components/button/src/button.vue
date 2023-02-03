@@ -7,13 +7,16 @@
             round && 'kl-round',
             plain && 'kl-plain',
             circle && 'kl-circle',
-            disabled && 'kl-disabled'
+            disabled && 'kl-disabled',
+            link && 'kl-link'
         ]"
         :style="{
             ...style
         }"
     >
-        <slot></slot>
+        <span>
+            <slot></slot>
+        </span>
     </button>
 </template>
 
@@ -38,7 +41,7 @@ const style = computed(() => {
 //检测type是否符合规范
 const type = computed(() => {
     //首先验证的函数不允许是undefined 只允许string类型 如果类型非法就转换到默认类型
-    if (props.type === undefined) return 'default'
+    if (props.type === undefined || props.type === '') return 'default'
     return typevalidator(props.type) ? props.type : 'default'
 })
 
