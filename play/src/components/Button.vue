@@ -38,8 +38,8 @@
         <kl-button size="normal">button</kl-button>
         <kl-button size="large">button</kl-button>
         <kl-button size="xlarge">button</kl-button>
-        <h2>prop属性</h2>
-        <kl-button color="red" textColor="white">button</kl-button>
+        <!-- <h2>prop属性</h2>
+        <kl-button color="red" textColor="white">button</kl-button> -->
         <h2>自定义样式按钮</h2>
         <kl-button class="self-button" plain>button</kl-button>
         <h2>禁用按钮</h2>

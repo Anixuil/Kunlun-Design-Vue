@@ -37,14 +37,6 @@ export const config: UserConfig = {
     lastUpdated: true,
     //国际化
     locales: {
-        // root: {
-        //     lang: 'zh-CN',
-        //     title: 'Kunlun Design',
-        //     description: '一个基于 vue 3 的组件库',
-        //     label: '简体中文',
-        //     link: '/',
-        //     themeConfig: getChineseThemeConfig()
-        // },
         zh: {
             lang: 'zh-CN',
             title: 'Kunlun Design',

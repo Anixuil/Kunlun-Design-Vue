@@ -97,7 +97,8 @@ $defaultHoverBgColor: null;
                 }
             }
         } @else {
-            &:hover:not(.kl-disabled, .kl-link, .kl-text) {
+            &:hover:not(.kl-disabled, .kl-link, .kl-text),
+            &:focus:not(.kl-disabled, .kl-link, .kl-text) {
                 opacity: 0.6;
             }
 
@@ -141,6 +142,7 @@ $defaultHoverBgColor: null;
                 }
 
                 &:focus:not(.kl-disabled, .kl-link, .kl-text) {
+                    opacity: 1;
                     --kl-font-color: white;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                 }
@@ -161,14 +163,16 @@ $defaultHoverBgColor: null;
             &:not(.kl-disabled) {
                 cursor: auto;
             }
-            &:not(.kl-disabled) span {
-                cursor: pointer;
+            span {
                 color: var(--kl-font-color);
                 @if $key == 'default' {
                     @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
                 } @else {
                     @include kl-attribute($value, '--kl-font-color', 'kl-bg');
                 }
+            }
+            &:not(.kl-disabled) span {
+                cursor: pointer;
                 &:hover,
                 &:focus {
                     opacity: 0.6;
