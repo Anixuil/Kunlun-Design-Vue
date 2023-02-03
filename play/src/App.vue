@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { KlButton } from 'kunlun-design'
+import { KlButton, KlForm, KlInput } from 'kunlun-design'
 </script>
 
 <template>
@@ -49,6 +49,11 @@ import { KlButton } from 'kunlun-design'
         <h2>禁用按钮</h2>
         <kl-button disabled type="primary" plain>button</kl-button>
         <kl-button type="primary">button</kl-button>
+        <kl-form :model="{}">
+            <kl-input placeholder="请输入账号"></kl-input>
+            <kl-input type="password" placeholder="请输入密码"></kl-input>
+            <kl-input disabled placeholder="禁用输入框" />
+        </kl-form>
     </div>
 </template>
 
