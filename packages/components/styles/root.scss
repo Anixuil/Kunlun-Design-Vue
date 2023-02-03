@@ -2,19 +2,24 @@
 @import './size.scss';
 @import './variables.scss';
 
-$components: button, input, select;
 
+$components: button, input, select, list; //这是一个组件数组 
+
+//map-get根据 $key 参数，返回 $key 在 $map 中对应的 value 值  $type是一个map
 @function typed($type, $key) {
     @return map-get($type, $key);
 }
 
+// #{}=模板字符串
 @mixin kl-attribute($typeName, $attrKey, $attrName) {
     #{$attrKey}: typed($typeName, $attrName);
 }
 
-//复用匹配组件
+//复用匹配组件(混入=函数)
 @mixin matchComponent($typeKey) {
-    @each $comKey, $comValue in $components {
+
+    @each $comKey,
+    $comValue in $components {
         .kl-#{$comKey}--#{$typeKey} {
             @content;
         }
@@ -22,8 +27,10 @@ $components: button, input, select;
 }
 
 :root {
+
     //type类型判断
-    @each $typeKey, $typeValue in $typeStyle {
+    @each $typeKey,
+    $typeValue in $typeStyle {
         @include matchComponent($typeKey) {
             // box-sizing: border-box;
             border-radius: 5px;
@@ -34,12 +41,40 @@ $components: button, input, select;
         }
     }
 
+    // 写一个具体的例子就好理解了
+    /* typeKey=primary  typeName=typeValue=kl-bg: $primary-bgColor  
+
+    .kl-button-primary{
+         border-radius: 5px;
+        --kl-bg-color: $primary-bgColor        //由kl-bg在typeName里找到kl-bg，所以返回值是$primary-bgColor
+        --kl-font-color: $primary-fontColor  
+        --kl-border: $primary-border 
+
+    }
+    
+    */
+
+
     //size
-    @each $sizeKey, $sizeValue in $sizeStyle {
+    @each $sizeKey,
+    $sizeValue in $sizeStyle {
         @include matchComponent($sizeKey) {
             @include kl-attribute($sizeValue, '--kl-size-width', 'kl-width');
             @include kl-attribute($sizeValue, '--kl-size-height', 'kl-height');
             @include kl-attribute($sizeValue, '--kl-size-font', 'kl-fontSize');
         }
     }
+
+    // 具体的例子
+    /* sizeKey=mini  typeName=typeValue=kl-fontSize: $mini-fontSize
+
+    .kl-button-mini{
+        --kl-size-width: $mini-width,       
+        --kl-size-height: $mini-height
+        --kl-size-font:$mini-fontSize
+    }
+    
+    */
+
+
 }

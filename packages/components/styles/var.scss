@@ -2,18 +2,22 @@
 
 //全局通用样式
 
+// 这里是具体的数值，用来被引用
+
 //字体
 $font-color-white: white;
+//这是字体颜色吧
 
 //边框
 $border-none: none;
+// 把border设为“none”即没有，浏览器解析“none”时将不作出渲染动作，即不会消耗内存值。
 
 //过渡
 $transition-quick: 0.1s ease-in;
 $transition-normal: 0.3s ease;
 $transition-slow: 0.5s ease;
 
-// type
+// type    type引用的变量存放在这里
 // primary
 $primary-bgColor: #3a7afe;
 $primary-bgColor-active: #075aff;

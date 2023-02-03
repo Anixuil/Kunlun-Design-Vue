@@ -9,8 +9,8 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    min-width: var(--kl-size-width);
-    min-height: var(--kl-size-height);
+    min-width: var(--kl-size-width); //设置段落的最小宽度
+    min-height: var(--kl-size-height); //设置段落的最小高度
     font-size: var(--kl-size-font);
     padding: 0 10px;
     user-select: none;
@@ -18,7 +18,7 @@
     color: var(--kl-font-color);
     border: var(--kl-border);
 
-    & + & {
+    &+& {
         margin-left: 12px;
     }
 
@@ -37,6 +37,7 @@
     &.kl-round {
         border-radius: 20px;
     }
+
     //disabled
     &.kl-disabled {
         cursor: not-allowed;
@@ -46,10 +47,10 @@
 
 $defaultHoverBgColor: null;
 
-@each $key, $value in $typeStyle {
-    @if $key == 'primary' {
-        $defaultHoverBgColor: map-get(
-            $map: $value,
+@each $key,
+$value in $typeStyle {
+    @if $key =='primary' {
+        $defaultHoverBgColor: map-get($map: $value,
             $key: 'kl-bg'
         );
     }
@@ -57,25 +58,30 @@ $defaultHoverBgColor: null;
 
 //只有使用了type的才能正确使用plain
 //遍历type找到当前匹配的类型
-@each $key, $value in $typeStyle {
+@each $key,
+$value in $typeStyle {
     .kl-button--#{$key} {
-        @if $key == 'default' {
+        @if $key =='default' {
             &:hover:not(.kl-disabled) {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
                 --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
                 --kl-font-color: #{$defaultHoverBgColor};
                 --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
             }
+
             &:focus:not(.kl-disabled) {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
                 --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
                 --kl-font-color: #{$defaultHoverBgColor};
                 --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
             }
+
             &:active:not(.kl-disabled) {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 1)};
             }
-        } @else {
+        }
+
+        @else {
             &:hover:not(.kl-disabled) {
                 opacity: 0.6;
             }
@@ -88,20 +94,25 @@ $defaultHoverBgColor: null;
         }
 
         &.kl-plain {
+
             //如果是默认类型，不进行设置
-            @if $key == 'default' {
+            @if $key =='default' {
+
                 &:hover:not(.kl-disabled),
                 &:active:not(.kl-disabled) {
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
                 }
+
                 &:focus:not(.kl-disabled) {
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
                 }
-            } @else {
+            }
+
+            @else {
                 //给背景颜色设置透明度
                 --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 0.1)};
                 //给字体设置当前type主题色
@@ -115,10 +126,12 @@ $defaultHoverBgColor: null;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                     @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
                 }
+
                 &:focus:not(.kl-disabled) {
                     --kl-font-color: white;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                 }
+
                 &:active:not(.kl-disabled) {
                     opacity: 1 !important;
                     @include kl-attribute($value, '--kl-bg-color', 'kl-bg-active');

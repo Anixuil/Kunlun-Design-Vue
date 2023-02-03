@@ -14,8 +14,9 @@ const data: string[] = [
 <template>
     <!-- list测试 -->
 
-    <kl-list :dataSource="data"></kl-list>
-
+    <kl-list :dataSource="data" size="normal">normal</kl-list>
+    <kl-list :dataSource="data" size="small">small</kl-list>
+    <kl-list :dataSource="data" size="large">large</kl-list>
     <div>
         <h2>基础按钮</h2>
         <kl-button>default</kl-button>

@@ -1,0 +1,27 @@
+@import '../../styles/common.scss';
+
+
+.kl-list {
+    font-family: Arial;
+    list-style-type: none;
+    outline: none;
+    box-sizing: border-box;
+    position: relative;
+    // font-size: var(--kl-size-font);
+    padding: 0 10px;
+    min-width: var(--kl-size-width); //设置段落的最小宽度  去掉这个  设置padding
+    min-height: var(--kl-size-height); //设置段落的最小高度
+    background-color: var(--kl-bg-color);
+    color: var(--kl-font-color);
+    border: var(--kl-border);
+    font-size: var(--kl-size-font);
+    //要写一下才能进行改变 不绑定无法使用
+
+    &+& {
+        margin-left: 12px;
+    }
+
+    li {
+        border: 1px solid #f0f0f0;
+    }
+}
