@@ -53,6 +53,25 @@
         <kl-button v-for="item in link_button" :key="item.text" :type="item.type" disabled link>{{
             item.text
         }}</kl-button>
+        <h2>文本按钮</h2>
+        <kl-button v-for="item in link_button" :key="item.text" :type="item.type" text>{{
+            item.text
+        }}</kl-button
+        ><br />
+        <kl-button v-for="item in link_button" :key="item.text" :type="item.type" text bg>{{
+            item.text
+        }}</kl-button
+        ><br />
+        <kl-button
+            v-for="item in link_button"
+            :key="item.text"
+            :type="item.type"
+            link
+            text
+            bg
+            disabled
+            >{{ item.text }}</kl-button
+        >
     </div>
 </template>
 

@@ -21,5 +21,7 @@ export const ButtonProps = {
     plain: Boolean,
     circle: Boolean,
     disabled: Boolean,
-    link: Boolean
+    link: Boolean,
+    text: Boolean,
+    bg: Boolean
 }

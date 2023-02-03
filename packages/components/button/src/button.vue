@@ -8,7 +8,9 @@
             plain && 'kl-plain',
             circle && 'kl-circle',
             disabled && 'kl-disabled',
-            link && 'kl-link'
+            link && 'kl-link',
+            text && 'kl-text',
+            bg && 'kl-bg'
         ]"
         :style="{
             ...style
