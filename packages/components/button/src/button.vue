@@ -16,7 +16,7 @@
             ...style
         }"
     >
-        <span>
+        <span tabindex="0">
             <slot></slot>
         </span>
     </button>
