@@ -61,39 +61,14 @@ $value in $typeStyle {
 @each $key,
 $value in $typeStyle {
     .kl-button--#{$key} {
-<<<<<<< HEAD
         @if $key =='default' {
-            &:hover:not(.kl-disabled) {
-                --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
-                --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
-                --kl-font-color: #{$defaultHoverBgColor};
-                --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
-            }
 
-            &:focus:not(.kl-disabled) {
-                --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
-                --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
-                --kl-font-color: #{$defaultHoverBgColor};
-                --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
-            }
-
-            &:active:not(.kl-disabled) {
-                --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 1)};
-            }
-        }
-
-        @else {
-            &:hover:not(.kl-disabled) {
-=======
-        @if $key == 'default' {
             //当button 的 type 为 default 或者没有设置的时候
             //鼠标悬浮效果
             &:hover {
                 &:not(.kl-disabled, .kl-link, .kl-text) {
                     --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
-                    --kl-border: var(--kl-border-width)
-                        var(--kl-border-style)
-                        var(--kl-border-color);
+                    --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
                 }
@@ -103,9 +78,7 @@ $value in $typeStyle {
             &:focus {
                 &:not(.kl-disabled, .kl-link, .kl-text) {
                     --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
-                    --kl-border: var(--kl-border-width)
-                        var(--kl-border-style)
-                        var(--kl-border-color);
+                    --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
                 }
@@ -121,10 +94,12 @@ $value in $typeStyle {
                     opacity: 1 !important;
                 }
             }
-        } @else {
+        }
+
+        @else {
+
             &:hover:not(.kl-disabled, .kl-link, .kl-text),
             &:focus:not(.kl-disabled, .kl-link, .kl-text) {
->>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                 opacity: 0.6;
             }
 
@@ -140,26 +115,16 @@ $value in $typeStyle {
         &.kl-plain {
 
             //如果是默认类型，不进行设置
-<<<<<<< HEAD
             @if $key =='default' {
 
-                &:hover:not(.kl-disabled),
-                &:active:not(.kl-disabled) {
-=======
-            @if $key == 'default' {
                 &:hover:not(.kl-disabled, .kl-link, .kl-text),
                 &:active:not(.kl-disabled, .kl-link, .kl-text) {
->>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
                 }
 
-<<<<<<< HEAD
-                &:focus:not(.kl-disabled) {
-=======
                 &:focus:not(.kl-disabled, .kl-link, .kl-text) {
->>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
@@ -181,21 +146,13 @@ $value in $typeStyle {
                     @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
                 }
 
-<<<<<<< HEAD
-                &:focus:not(.kl-disabled) {
-=======
                 &:focus:not(.kl-disabled, .kl-link, .kl-text) {
                     opacity: 1;
->>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     --kl-font-color: white;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                 }
 
-<<<<<<< HEAD
-                &:active:not(.kl-disabled) {
-=======
                 &:active:not(.kl-disabled, .kl-link, .kl-text) {
->>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     opacity: 1 !important;
                     @include kl-attribute($value, '--kl-bg-color', 'kl-bg-active');
                     --kl-border-color: #{map-get($map: $value, $key: 'kl-bg-active')};
@@ -208,29 +165,39 @@ $value in $typeStyle {
         &.kl-link {
             --kl-bg-color: transparent;
             border: none;
+
             &:not(.kl-disabled) {
                 cursor: auto;
             }
+
             span {
                 color: var(--kl-font-color);
-                @if $key == 'default' {
+
+                @if $key =='default' {
                     @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
-                } @else {
+                }
+
+                @else {
                     @include kl-attribute($value, '--kl-font-color', 'kl-bg');
                 }
             }
+
             &:not(.kl-disabled) span {
                 cursor: pointer;
+
                 &:hover,
                 &:focus {
                     opacity: 0.6;
                 }
+
                 &:active {
                     opacity: 1 !important;
 
-                    @if $key == 'default' {
+                    @if $key =='default' {
                         --kl-font-color: black;
-                    } @else {
+                    }
+
+                    @else {
                         @include kl-attribute($value, '--kl-font-color', 'kl-bg-active');
                     }
                 }
@@ -251,9 +218,11 @@ $value in $typeStyle {
                 --kl-bg-color: rgb(198, 203, 210);
             }
 
-            @if $key == 'default' {
+            @if $key =='default' {
                 @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
-            } @else {
+            }
+
+            @else {
                 @include kl-attribute($value, '--kl-font-color', 'kl-bg');
             }
 
@@ -267,6 +236,7 @@ $value in $typeStyle {
                 &:focus:not(.kl-disabled) {
                     --kl-bg-color: rgb(220, 222, 226);
                 }
+
                 &:active:not(.kl-disabled) {
                     --kl-bg-color: rgb(198, 203, 210);
                 }
