@@ -3,7 +3,7 @@ import { PropType } from 'vue'
 
 export const ListProps = {
     dataSource: {
-        type: Array<string>,
+        type: Array,
         default: []
     },
     size: String as PropType<'mini' | 'small' | 'normal' | 'large' | 'xlarge'>,

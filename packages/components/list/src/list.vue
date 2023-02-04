@@ -1,14 +1,14 @@
 <template>
-    <!-- 这里应该用ul来做封装吗 -->
-    <ul :class="[n(), size && n(`--${size}`)]" :style="{ ...style }">
-        <slot></slot>
-        <li>header</li>
+    <!-- 逻辑搞错了 是按ul li 那样的模式去让别人用-->
+    <div :class="[n(), size && n(`--${size}`)]" :style="{ ...style }">
+        <slot name="header"></slot>
+        <!-- 这样的for循环结构才是对的，有多少数据就会生成多少插槽 -->
         <template v-for="item in props.dataSource" :key="item">
-
-            <li>{{ item }}</li>
+            <slot name="renderItem" :item="item"></slot>
         </template>
-        <li>footer</li>
-    </ul>
+        <slot name="footer"></slot>
+
+    </div>
 
 </template>
 
