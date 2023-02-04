@@ -16,9 +16,10 @@
             ...style
         }"
     >
-        <span tabindex="0">
+        <span v-if="link" tabindex="0">
             <slot></slot>
         </span>
+        <slot v-else></slot>
     </button>
 </template>
 
