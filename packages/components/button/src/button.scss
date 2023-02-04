@@ -61,6 +61,7 @@ $value in $typeStyle {
 @each $key,
 $value in $typeStyle {
     .kl-button--#{$key} {
+<<<<<<< HEAD
         @if $key =='default' {
             &:hover:not(.kl-disabled) {
                 --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
@@ -83,29 +84,82 @@ $value in $typeStyle {
 
         @else {
             &:hover:not(.kl-disabled) {
+=======
+        @if $key == 'default' {
+            //当button 的 type 为 default 或者没有设置的时候
+            //鼠标悬浮效果
+            &:hover {
+                &:not(.kl-disabled, .kl-link, .kl-text) {
+                    --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
+                    --kl-border: var(--kl-border-width)
+                        var(--kl-border-style)
+                        var(--kl-border-color);
+                    --kl-font-color: #{$defaultHoverBgColor};
+                    --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
+                }
+            }
+
+            //聚焦效果
+            &:focus {
+                &:not(.kl-disabled, .kl-link, .kl-text) {
+                    --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.5)};
+                    --kl-border: var(--kl-border-width)
+                        var(--kl-border-style)
+                        var(--kl-border-color);
+                    --kl-font-color: #{$defaultHoverBgColor};
+                    --kl-bg-color: #{rgba($color: $defaultHoverBgColor, $alpha: 0.1)};
+                }
+            }
+
+            //激活效果
+            &:active {
+                &:not(.kl-disabled, .kl-link, .kl-text) {
+                    --kl-border-color: #{rgba($color: $defaultHoverBgColor, $alpha: 1)};
+                }
+
+                &:not(.kl-disabled, .kl-text) {
+                    opacity: 1 !important;
+                }
+            }
+        } @else {
+            &:hover:not(.kl-disabled, .kl-link, .kl-text),
+            &:focus:not(.kl-disabled, .kl-link, .kl-text) {
+>>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                 opacity: 0.6;
             }
 
             //激活样式
-            &:active:not(.kl-disabled) {
-                opacity: 1 !important;
-                @include kl-attribute($value, '--kl-bg-color', 'kl-bg-active');
+            &:active {
+                &:not(.kl-disabled, .kl-link, .kl-text) {
+                    opacity: 1 !important;
+                    @include kl-attribute($value, '--kl-bg-color', 'kl-bg-active');
+                }
             }
         }
 
         &.kl-plain {
 
             //如果是默认类型，不进行设置
+<<<<<<< HEAD
             @if $key =='default' {
 
                 &:hover:not(.kl-disabled),
                 &:active:not(.kl-disabled) {
+=======
+            @if $key == 'default' {
+                &:hover:not(.kl-disabled, .kl-link, .kl-text),
+                &:active:not(.kl-disabled, .kl-link, .kl-text) {
+>>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
                 }
 
+<<<<<<< HEAD
                 &:focus:not(.kl-disabled) {
+=======
+                &:focus:not(.kl-disabled, .kl-link, .kl-text) {
+>>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     --kl-border-color: #{$defaultHoverBgColor};
                     --kl-font-color: #{$defaultHoverBgColor};
                     --kl-bg-color: #{$default-bgColor};
@@ -121,21 +175,100 @@ $value in $typeStyle {
                 --kl-border-color: #{map-get($map: $value, $key: 'kl-bg')};
                 --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
 
-                &:hover:not(.kl-disabled) {
+                &:hover:not(.kl-disabled, .kl-link, .kl-text) {
                     opacity: 1 !important;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                     @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
                 }
 
+<<<<<<< HEAD
                 &:focus:not(.kl-disabled) {
+=======
+                &:focus:not(.kl-disabled, .kl-link, .kl-text) {
+                    opacity: 1;
+>>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     --kl-font-color: white;
                     --kl-bg-color: #{rgba($color: map-get($map: $value, $key: 'kl-bg'), $alpha: 1)};
                 }
 
+<<<<<<< HEAD
                 &:active:not(.kl-disabled) {
+=======
+                &:active:not(.kl-disabled, .kl-link, .kl-text) {
+>>>>>>> a78cda46958a0dbfdff17037488b3074e5ba71b0
                     opacity: 1 !important;
                     @include kl-attribute($value, '--kl-bg-color', 'kl-bg-active');
                     --kl-border-color: #{map-get($map: $value, $key: 'kl-bg-active')};
+                }
+            }
+        }
+
+        //link
+        //链接按钮样式 不需要背景颜色 default 和其他 type 稍微有一些区别
+        &.kl-link {
+            --kl-bg-color: transparent;
+            border: none;
+            &:not(.kl-disabled) {
+                cursor: auto;
+            }
+            span {
+                color: var(--kl-font-color);
+                @if $key == 'default' {
+                    @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
+                } @else {
+                    @include kl-attribute($value, '--kl-font-color', 'kl-bg');
+                }
+            }
+            &:not(.kl-disabled) span {
+                cursor: pointer;
+                &:hover,
+                &:focus {
+                    opacity: 0.6;
+                }
+                &:active {
+                    opacity: 1 !important;
+
+                    @if $key == 'default' {
+                        --kl-font-color: black;
+                    } @else {
+                        @include kl-attribute($value, '--kl-font-color', 'kl-bg-active');
+                    }
+                }
+            }
+        }
+
+        //文本按钮
+        &.kl-text {
+            --kl-bg-color: transparent;
+            border: none;
+
+            &:hover:not(.kl-disabled),
+            &:focus:not(.kl-disabled) {
+                --kl-bg-color: rgb(233, 236, 243);
+            }
+
+            &:active:not(.kl-disabled) {
+                --kl-bg-color: rgb(198, 203, 210);
+            }
+
+            @if $key == 'default' {
+                @include kl-attribute($value, '--kl-font-color', 'kl-fontColor');
+            } @else {
+                @include kl-attribute($value, '--kl-font-color', 'kl-bg');
+            }
+
+            //背景
+            //bg
+            &.kl-bg {
+                border: none;
+                --kl-bg-color: rgb(233, 236, 243);
+
+                &:hover:not(.kl-disabled),
+                &:focus:not(.kl-disabled) {
+                    --kl-bg-color: rgb(220, 222, 226);
+                }
+                &:active:not(.kl-disabled) {
+                    --kl-bg-color: rgb(198, 203, 210);
                 }
             }
         }

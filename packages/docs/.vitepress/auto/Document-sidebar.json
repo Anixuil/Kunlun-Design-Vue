@@ -8,6 +8,15 @@
                     "link": "/basic/button"
                 }
             ]
+        },
+        "form": {
+            "text": "表单组件",
+            "children": [
+                {
+                    "text": "DatePicker 日期选择框",
+                    "link": "/form/datepicker"
+                }
+            ]
         }
     },
     "en": {
@@ -17,6 +26,15 @@
                 {
                     "text": "Button",
                     "link": "/basic/button"
+                }
+            ]
+        },
+        "form": {
+            "text": "Form Component",
+            "children": [
+                {
+                    "text": "DatePicker",
+                    "link": "/form/datepicker"
                 }
             ]
         }

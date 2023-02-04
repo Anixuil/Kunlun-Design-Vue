@@ -1,7 +1,7 @@
 {
     "name": "kunlun-design",
     "private": false,
-    "version": "0.0.16-alpha.02",
+    "version": "0.0.17-alpha.03",
     "author": "anixuil",
     "description": "Kunlun Design - A Vue.js 3 UI library",
     "keywords": [
@@ -11,10 +11,10 @@
         "Kunlun Design",
         "kunlun-design-vue"
     ],
-    "homepage": "https://github.com/1140040227/Kunlun-Design-Vue/tree/vitedev",
+    "homepage": "https://anixuil.github.io/zh/",
     "repository": {
         "type": "git",
-        "url": "https://github.com/1140040227/Kunlun-Design-Vue.git"
+        "url": "https://github.com/Anixuil/Kunlun-Design-Vue.git"
     },
     "files": [
         "lib/*",

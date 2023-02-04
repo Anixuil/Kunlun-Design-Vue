@@ -3,3 +3,4 @@ cache
 .temp
 dist
 lib
+coverage

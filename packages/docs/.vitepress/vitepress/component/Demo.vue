@@ -177,4 +177,16 @@ function toggleSourceVisible() {
     margin: 0;
     border-top: 1px solid var(--demo-border);
 }
+
+.content-container .vp-doc .example [class*='language-'] pre {
+    // user-select: none;
+    &::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(57 183 84);
+        border-radius: 10px;
+    }
+}
 </style>

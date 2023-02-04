@@ -7,7 +7,7 @@
         "esModuleInterop": true,
         "strict": true,
         "jsx": "preserve",
-        "types": ["unplugin-vue-define-options/macros-global"],
+        "types": ["unplugin-vue-define-options/macros-global", "vitest/globals"],
         "rootDir": ".",
         "moduleResolution": "node",
         "declaration": true
