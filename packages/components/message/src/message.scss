@@ -1,1 +1,26 @@
 @import '../../styles/common.scss';
+
+:root {
+    --bg-color: rgb(244, 244, 245);
+    --font-color: rgb(52, 52, 52);
+}
+
+.kl-message {
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, 70%);
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 5px;
+    z-index: 999;
+    opacity: 0;
+    overflow: hidden;
+
+    & div {
+        box-sizing: border-box;
+        padding: 15px 40px;
+        background-color: var(--bg-color);
+        color: var(--font-color);
+        font-size: 14px;
+    }
+}

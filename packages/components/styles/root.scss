@@ -2,7 +2,7 @@
 @import './size.scss';
 @import './variables.scss';
 
-$components: button, input, select;
+$components: button, input, select, message;
 
 @function typed($type, $key) {
     @return map-get($type, $key);
@@ -23,10 +23,9 @@ $components: button, input, select;
 
 :root {
     //type类型判断
-    @each $typeKey, $typeValue in $typeStyle {
+    @each $typeKey, $typeValue in $buttonType {
         @include matchComponent($typeKey) {
             // box-sizing: border-box;
-            border-radius: 5px;
             //button
             @include kl-attribute($typeValue, '--kl-bg-color', 'kl-bg');
             @include kl-attribute($typeValue, '--kl-font-color', 'kl-fontColor');
@@ -40,6 +39,14 @@ $components: button, input, select;
             @include kl-attribute($sizeValue, '--kl-size-width', 'kl-width');
             @include kl-attribute($sizeValue, '--kl-size-height', 'kl-height');
             @include kl-attribute($sizeValue, '--kl-size-font', 'kl-fontSize');
+        }
+    }
+
+    //message
+    @each $key, $value in $messageType {
+        @include matchComponent($key) {
+            @include kl-attribute($value, '--bg-color', 'bg');
+            @include kl-attribute($value, '--font-color', 'fontColor');
         }
     }
 }

@@ -1,6 +1,6 @@
 @import './var.scss';
 //type样式管理
-$typeStyle: (
+$buttonType: (
     'primary': (
         kl-bg: $primary-bgColor,
         kl-fontColor: $primary-fontColor,
@@ -37,5 +37,25 @@ $typeStyle: (
         kl-fontColor: $default-fontColor,
         kl-border: $default-border,
         kl-border-active: $default-border-active
+    )
+);
+
+//message
+$messageType: (
+    'text': (
+        bg: rgb(244, 244, 245),
+        fontColor: rgb(52, 52, 52)
+    ),
+    'success': (
+        bg: rgb(103, 194, 58),
+        fontColor: white
+    ),
+    'error': (
+        bg: rgb(245, 108, 108),
+        fontColor: white
+    ),
+    'warning': (
+        bg: rgb(230, 162, 60),
+        fontColor: white
     )
 );

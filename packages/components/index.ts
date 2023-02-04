@@ -1,3 +1,3 @@
-import './styles/common.scss'
+export * from './message'
 export * from './button'
 export * from './datepicker'

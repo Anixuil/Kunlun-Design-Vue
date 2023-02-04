@@ -123,6 +123,6 @@ const disabledTime = [
 
 <style lang="scss" scoped>
 .app {
-    height: 2800px;
+    margin-bottom: 100px;
 }
 </style>
