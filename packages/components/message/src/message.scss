@@ -15,6 +15,7 @@
     z-index: 999;
     opacity: 0;
     overflow: hidden;
+    max-width: 95%;
 
     & div {
         box-sizing: border-box;
@@ -22,5 +23,8 @@
         background-color: var(--bg-color);
         color: var(--font-color);
         font-size: 14px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }

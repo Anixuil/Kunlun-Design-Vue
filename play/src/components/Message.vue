@@ -15,7 +15,10 @@ KlMessage({ type: 'success', text: '这是api调用', duration: 5000 })
 const handleClick = (type: number) => {
     switch (type) {
         case 0:
-            Message.success('这是一条成功消息', 5000)
+            Message.success(
+                '这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息',
+                5000
+            )
             break
         case 1:
             Message.warning('这是一条警告消息', 5000)

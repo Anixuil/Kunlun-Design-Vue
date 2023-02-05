@@ -18,17 +18,27 @@ export const createNode = () => {
 }
 
 // 重新计算 message 消息提示框的高度
-export const resetMsgTop = (newArr: NodeListOf<HTMLElement>, height: number, time: number) => {
+export const resetMsgTop = (arr: NodeListOf<HTMLElement>, height: number, time: number): void => {
     let num = 0
-    for (let i = 0; i < newArr.length; i++) {
-        if (newArr[i].getAttribute('state') == 'true') {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].getAttribute('state') == 'true') {
             num++
         } else {
-            gsap.to(newArr[i], {
-                top: (i - num) * height,
+            gsap.to(arr[i], {
+                top: (i - num) * (i == 0 ? height : height + arr[i - 1].offsetHeight),
                 duration: time / 1000,
                 ease: 'Power1.ease'
             })
         }
     }
+}
+
+//判断情况使用距离变量
+//计算初始位置
+export const startPositionFn = (arr: NodeListOf<HTMLElement>, height: number): number => {
+    //如果数组为0则证明当前的message是页面当中第一个message
+    if (arr.length === 0) {
+        return -(height * 7)
+    }
+    return arr[arr.length - 1].offsetTop
 }
