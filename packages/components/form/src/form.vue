@@ -22,7 +22,8 @@ const props = defineProps({
         default: '80px'
     }
 })
-provide('data', props)
+provide('model', props.model)
+provide('labelWidth', props.labelWidth)
 
 const { n } = createNamespace('form')
 </script>
