@@ -42,3 +42,33 @@ export const startPositionFn = (arr: NodeListOf<HTMLElement>, height: number): n
     }
     return arr[arr.length - 1].offsetTop
 }
+
+import type { Ref } from 'vue'
+type htmlType = {
+    clientWidth: 0
+    offsetWidth: 0
+}
+export const htmlstr: htmlType = { clientWidth: 0, offsetWidth: 0 }
+//文字滚动方法
+export const textScroll = (wrapper: Ref<htmlType>, container: Ref<htmlType>): Promise<boolean> => {
+    return new Promise(resolve => {
+        //容器宽度
+        const wrapperWidth = wrapper.value.clientWidth - 80
+        //内容应有宽度
+        const containerWidth = container.value.offsetWidth
+        //如果文字内容宽度比容器宽度大 证明文字需要滚动
+        if (wrapperWidth < containerWidth) {
+            setTimeout(() => {
+                gsap.to(container.value, {
+                    translateX: -(containerWidth - wrapperWidth),
+                    duration: 5,
+                    ease: 'none.none'
+                }).then(() => {
+                    resolve(true)
+                })
+            }, 2000)
+        } else {
+            resolve(false)
+        }
+    })
+}

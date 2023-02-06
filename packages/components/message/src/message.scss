@@ -4,7 +4,6 @@
     --bg-color: rgb(244, 244, 245);
     --font-color: rgb(52, 52, 52);
 }
-
 .kl-message {
     position: fixed;
     top: -10%;
@@ -17,7 +16,7 @@
     overflow: hidden;
     max-width: 95%;
 
-    & div {
+    & > div {
         box-sizing: border-box;
         padding: 10px 40px;
         background-color: var(--bg-color);
@@ -27,6 +26,15 @@
         text-overflow: ellipsis;
         overflow: hidden;
         position: relative;
+
+        .scroll-wrapper {
+            overflow: hidden;
+        }
+
+        & .kl-message--scroll {
+            display: inline-block;
+        }
+
         & i {
             position: absolute;
             right: 10px;
@@ -34,6 +42,8 @@
             transform: translate(0, -50%);
             cursor: pointer;
             color: rgb(52, 52, 52);
+            user-select: none;
+            font-size: inherit;
 
             &:hover {
                 color: black;

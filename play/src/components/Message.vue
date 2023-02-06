@@ -5,29 +5,41 @@
         <kl-button type="warning" @click="handleClick(1)">警告</kl-button>
         <kl-button type="danger" @click="handleClick(2)">错误</kl-button>
         <kl-button type="info" @click="handleClick(3)">信息</kl-button>
+        <h2>message文字自动滚动</h2>
+        <kl-button type="success" @click="handleClick(4)">成功</kl-button>
     </div>
 </template>
 
 <script setup lang="ts">
 import { KlButton, Message, KlMessage } from 'kunlun-design'
-KlMessage({ type: 'success', text: '这是api调用', duration: 5000 })
+KlMessage({ type: 'success', text: '这是api调用', duration: 5000, close: true })
 
 const handleClick = (type: number) => {
     switch (type) {
         case 0:
             Message.success(
                 '这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息',
-                5000
+                5000,
+                true
             )
             break
         case 1:
             Message.warning('这是一条警告消息', 5000, true)
             break
         case 2:
-            Message.error('这是一条错误消息', 5000)
+            Message.error('这是一条错误消息', 5000, true)
             break
         case 3:
-            Message.text('这是一条普通消息', 5000)
+            Message.text('这是一条普通消息', 5000, true)
+            break
+        case 4:
+            Message.success(
+                '这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息',
+                5000,
+                false,
+                true
+            )
+            break
     }
 }
 </script>

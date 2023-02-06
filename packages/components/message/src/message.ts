@@ -4,7 +4,16 @@ import { createApp } from 'vue'
 import Message from './message.vue'
 import { createNode, resetMsgTop, startPositionFn } from './utils'
 
-const createMessage = (cfg: object) => {
+type cfgType = {
+    type: string
+    text: string
+    duration?: number
+    close?: boolean
+    scroll?: boolean
+}
+const createMessage = (cfg: cfgType) => {
+    cfg.close = cfg.close || false
+    cfg.scroll = cfg.scroll || false
     //获取传过来的参数，如果没有就是一个空对象
     const config = cfg || {}
     //获取已经存在的 message 节点数组
