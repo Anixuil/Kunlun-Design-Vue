@@ -20,6 +20,9 @@
             <kl-form-item label="disabled">
                 <kl-input disabled placeholder="禁用输入框" />
             </kl-form-item>
+            <kl-form-item label="checkbox">
+                <kl-checkbox v-model="form.isVIP" label="VIP" />
+            </kl-form-item>
             <kl-form-item>
                 <kl-button type="primary" @click="onSubmit">submit</kl-button>
                 <kl-button>Create</kl-button>
@@ -29,12 +32,13 @@
 </template>
 
 <script setup lang="ts">
-import { KlForm, KlInput, KlFormItem, KlButton } from 'kunlun-design'
+import { KlForm, KlInput, KlFormItem, KlButton, KlCheckbox } from 'kunlun-design'
 import { reactive } from 'vue'
 
 const form = reactive({
     name: '',
-    password: ''
+    password: '',
+    isVIP: true
 })
 
 const onSubmit = () => {
