@@ -22,10 +22,13 @@
         background-color: var(--bg-color);
         color: var(--font-color);
         font-size: 14px;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
         position: relative;
+
+        & div {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
 
         .scroll-wrapper {
             overflow: hidden;
@@ -35,7 +38,7 @@
             display: inline-block;
         }
 
-        & i {
+        & > i {
             position: absolute;
             right: 10px;
             top: 50%;

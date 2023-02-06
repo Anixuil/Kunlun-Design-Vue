@@ -7,7 +7,9 @@ import { messageCfgInt } from './utils/type'
 
 const createMessage = (cfg: messageCfgInt) => {
     cfg.type = cfg.type || 'text'
-    cfg.duration = cfg.duration || 3000
+    if (!(cfg.duration === 0) && cfg.duration == undefined) {
+        cfg.duration = 3000
+    }
     cfg.close = cfg.close || false
     cfg.scroll = cfg.scroll || false
     //获取传过来的参数，如果没有就是一个空对象

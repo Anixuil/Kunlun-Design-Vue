@@ -44,13 +44,17 @@ export const startPositionFn = (arr: NodeListOf<HTMLElement>, height: number): n
 }
 
 import type { Ref } from 'vue'
-type htmlType = {
+export type htmlType = {
     clientWidth: 0
     offsetWidth: 0
 }
 export const htmlstr: htmlType = { clientWidth: 0, offsetWidth: 0 }
 //文字滚动方法
-export const textScroll = (wrapper: Ref<htmlType>, container: Ref<htmlType>): Promise<boolean> => {
+export const textScroll = (
+    wrapper: Ref<HTMLElement | htmlType>,
+    container: Ref<HTMLElement | htmlType>,
+    duration: number
+): Promise<boolean> => {
     return new Promise(resolve => {
         //容器宽度
         const wrapperWidth = wrapper.value.clientWidth - 80
@@ -61,7 +65,7 @@ export const textScroll = (wrapper: Ref<htmlType>, container: Ref<htmlType>): Pr
             setTimeout(() => {
                 gsap.to(container.value, {
                     translateX: -(containerWidth - wrapperWidth),
-                    duration: 5,
+                    duration: duration / 1000,
                     ease: 'none.none'
                 }).then(() => {
                     resolve(true)
