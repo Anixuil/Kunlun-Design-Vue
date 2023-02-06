@@ -29,34 +29,38 @@ const defaultDuration = 3000
 
 export const Message = {
     // 纯文本消息
-    text(cfg = '', duration = defaultDuration) {
+    text(cfg = '', duration = defaultDuration, close = false) {
         const textCfg = {
             type: 'text',
-            duration
+            duration,
+            close
         }
         return renderMsg(textCfg, cfg)
     },
     // 成功提示
-    success(cfg = '', duration = defaultDuration) {
+    success(cfg = '', duration = defaultDuration, close = false) {
         const successCfg = {
             type: 'success',
-            duration
+            duration,
+            close
         }
         return renderMsg(successCfg, cfg)
     },
     //警告提示
-    warning(cfg = '', duration = defaultDuration) {
+    warning(cfg = '', duration = defaultDuration, close = false) {
         const warningCfg = {
             type: 'warning',
-            duration
+            duration,
+            close
         }
         return renderMsg(warningCfg, cfg)
     },
     //错误提示
-    error(cfg = '', duration = defaultDuration) {
+    error(cfg = '', duration = defaultDuration, close = false) {
         const errorCfg = {
             type: 'error',
-            duration
+            duration,
+            close
         }
         return renderMsg(errorCfg, cfg)
     }

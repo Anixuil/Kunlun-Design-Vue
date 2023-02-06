@@ -21,7 +21,7 @@ const handleClick = (type: number) => {
             )
             break
         case 1:
-            Message.warning('这是一条警告消息', 5000)
+            Message.warning('这是一条警告消息', 5000, true)
             break
         case 2:
             Message.error('这是一条错误消息', 5000)

@@ -1,6 +1,7 @@
 <template>
     <div :class="[config.type && n(`--${config.type}`)]">
         <span v-text="config.text"></span>
+        <i v-if="config.close" @click="closeMessage">❌</i>
     </div>
 </template>
 
@@ -21,11 +22,19 @@ const config = computed(() => {
     return props.config
 })
 
+let time: any
 nextTick(() => {
-    setTimeout(() => {
+    time = setTimeout(() => {
         props.remove!()
     }, config.value.duration)
 })
+
+//按钮关闭 message
+const closeMessage = () => {
+    //必须清空定时器，不清空定时器还是会执行，就会报错
+    clearTimeout(time)
+    props.remove!()
+}
 
 defineOptions({
     name: 'KlMessage'

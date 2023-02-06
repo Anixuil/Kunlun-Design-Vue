@@ -36,6 +36,7 @@ const createMessage = (cfg: object) => {
             //更新位置
             // hideFn(currentMessageList,height,time)
             resetMsgTop(currentMessageList, height, time)
+
             //移除
             gsap.to(messageNode, {
                 top: messageNode.offsetTop - messageNode.offsetHeight,

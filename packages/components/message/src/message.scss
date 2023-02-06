@@ -26,5 +26,18 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        position: relative;
+        & i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+            color: rgb(52, 52, 52);
+
+            &:hover {
+                color: black;
+            }
+        }
     }
 }
