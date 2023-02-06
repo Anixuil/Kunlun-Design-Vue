@@ -16,3 +16,8 @@ lang: zh-CN
 :::demo
 feedback/message-normal
 :::
+
+## 不同状态
+
+用来显示 [成功、警告、消息、错误]类的操作反馈。
+当需要自定义更多属性时，Message 也可以接口一个对象为参数。

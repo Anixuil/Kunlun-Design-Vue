@@ -1,8 +1,8 @@
 <template>
     <div :class="[config.type && n(`--${config.type}`)]" ref="wrapper">
-        <span v-if="!config.scroll" v-text="config.text" ref="container"></span>
+        <span v-if="!config.scroll" v-text="config.content" ref="container"></span>
         <div class="scroll-wrapper" v-else>
-            <span v-text="config.text" class="kl-message--scroll" ref="container"></span>
+            <span v-text="config.content" class="kl-message--scroll" ref="container"></span>
         </div>
         <i v-if="config.close" @click="closeMessage">❌</i>
     </div>
@@ -12,18 +12,13 @@
 import { createNamespace } from '@kunlun-design/utils'
 import { computed, nextTick, ref } from 'vue'
 import { htmlstr, textScroll } from './utils/index'
+import { messageCfgInt } from './utils/type'
 import './message.scss'
 
 const props = defineProps({ config: Object, remove: Function })
 
-interface IntConfig {
-    text: String
-    duration: number
-    scroll: boolean
-}
-
 const config = computed(() => {
-    if (props.config === undefined || props.config === null) return {} as IntConfig
+    if (props.config === undefined || props.config === null) return {} as messageCfgInt
     return props.config
 })
 

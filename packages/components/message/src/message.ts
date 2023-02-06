@@ -3,15 +3,11 @@ import gsap from 'gsap'
 import { createApp } from 'vue'
 import Message from './message.vue'
 import { createNode, resetMsgTop, startPositionFn } from './utils'
+import { messageCfgInt } from './utils/type'
 
-type cfgType = {
-    type: string
-    text: string
-    duration?: number
-    close?: boolean
-    scroll?: boolean
-}
-const createMessage = (cfg: cfgType) => {
+const createMessage = (cfg: messageCfgInt) => {
+    cfg.type = cfg.type || 'text'
+    cfg.duration = cfg.duration || 3000
     cfg.close = cfg.close || false
     cfg.scroll = cfg.scroll || false
     //获取传过来的参数，如果没有就是一个空对象

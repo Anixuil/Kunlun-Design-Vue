@@ -11,29 +11,29 @@
 </template>
 
 <script setup lang="ts">
-import { KlButton, Message, KlMessage } from 'kunlun-design'
-KlMessage({ type: 'success', text: '这是api调用', duration: 5000, close: true })
+import { KlButton, KlMessage } from 'kunlun-design'
+KlMessage({ type: 'success', content: '这是api调用', duration: 5000, close: true })
 
 const handleClick = (type: number) => {
     switch (type) {
         case 0:
-            Message.success(
+            KlMessage.success(
                 '这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息',
                 5000,
                 true
             )
             break
         case 1:
-            Message.warning('这是一条警告消息', 5000, true)
+            KlMessage.warning('这是一条警告消息', 5000, true)
             break
         case 2:
-            Message.error('这是一条错误消息', 5000, true)
+            KlMessage.error('这是一条错误消息', 5000, true)
             break
         case 3:
-            Message.text('这是一条普通消息', 5000, true)
+            KlMessage.text('这是一条普通消息', 5000, true)
             break
         case 4:
-            Message.success(
+            KlMessage.success(
                 '这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息这是一条成功消息',
                 5000,
                 false,
