@@ -6,18 +6,21 @@
             :placeholder="placeholder"
             :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
             :name="name"
-            :value="value"
+            :value="modelValue"
             @input="handleInput"
             :disabled="disabled"
         />
-        <!--        <span class="kl-input_suffix">-->
-        <!--            <i class="on-input_icon kl-icon-cancel" v-if="clearable && value" @click="clear"></i>-->
-        <!--            <i-->
-        <!--                class="on-input_icon kl-icon-visible"-->
-        <!--                v-if="showPassword && type == 'password'"-->
-        <!--                @click="handlePassword"-->
-        <!--            ></i>-->
-        <!--        </span>-->
+        <span class="kl-input_suffix">
+            <i class="on-input_icon kl-icon-cancel" v-if="clearable && modelValue" @click="clear"
+                >c</i
+            >
+            <i
+                class="on-input_icon kl-icon-visible"
+                v-if="showPassword && type === 'password'"
+                @click="handlePassword"
+                >v</i
+            >
+        </span>
     </div>
 </template>
 
@@ -48,10 +51,7 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
-    value: {
-        type: String,
-        default: ''
-    },
+    modelValue: {},
     clearable: {
         type: Boolean,
         default: false
@@ -65,9 +65,12 @@ const props = defineProps({
 const showSuffix = computed(() => props.clearable || props.showPassword)
 
 const passwordVisible = ref(false)
-
 const handleInput = (e: { target: { value: any } }) => {
-    emit('input', e.target.value)
+    emit('update:modelValue', e.target.value)
+}
+
+const clear = (e: { target: { value: any } }) => {
+    emit('update:modelValue', '')
 }
 
 const handlePassword = () => {
