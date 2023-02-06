@@ -12,13 +12,13 @@
         />
         <span class="kl-input_suffix">
             <i class="on-input_icon kl-icon-cancel" v-if="clearable && modelValue" @click="clear"
-                >c</i
+                >X</i
             >
             <i
                 class="on-input_icon kl-icon-visible"
                 v-if="showPassword && type === 'password'"
                 @click="handlePassword"
-                >v</i
+                >👀</i
             >
         </span>
     </div>
@@ -32,7 +32,7 @@ defineOptions({
     name: 'KlInput'
 })
 
-const emit = defineEmits(['input'])
+const emit = defineEmits(['update:modelValue'])
 
 const props = defineProps({
     placeholder: {
