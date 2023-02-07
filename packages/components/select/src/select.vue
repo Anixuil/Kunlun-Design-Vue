@@ -5,6 +5,7 @@
             :disabled="disabled"
             :placeholder="placeholder"
             :multiple="multiple"
+            v-model="t"
         >
             <slot></slot>
         </select>
@@ -13,13 +14,18 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { computed, ref } from 'vue'
+import { ref, watch } from 'vue'
 
 defineOptions({
     name: 'KlSelect'
 })
 
+const emit = defineEmits(['update:modelValue'])
 const props = defineProps({
+    modelValue: {
+        type: String,
+        default: ''
+    },
     placeholder: {
         type: String,
         required: false,
@@ -37,8 +43,10 @@ const props = defineProps({
     optionList: Array
 })
 
-const list = computed(() => {
-    return props.optionList
+const t = ref('')
+
+watch(t, value => {
+    emit('update:modelValue', value)
 })
 
 const { n } = createNamespace('select')

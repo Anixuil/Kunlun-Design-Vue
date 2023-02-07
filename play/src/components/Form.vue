@@ -28,10 +28,10 @@
                 <kl-switch v-model="form.isON" activeColor="#000" inactiveColor="#fff"></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select placeholder="22222">
-                    <option>123</option>
-                    <option>456</option>
-                    <option>789</option>
+                <kl-select v-model="form.selectData">
+                    <option value="1" label="123"></option>
+                    <option value="2" label="456"></option>
+                    <option value="3" label="789"></option>
                 </kl-select>
             </kl-form-item>
             <kl-form-item>
@@ -58,7 +58,8 @@ const form = reactive({
     name: '',
     password: '',
     isVIP: true,
-    isON: true
+    isON: true,
+    selectData: ''
 })
 
 const model = reactive({
@@ -89,10 +90,6 @@ const model = reactive({
     disables: '02'
 })
 
-const selectChange = (val: String, valObj: Object) => {
-    // model.model = val
-    console.log('valObj=>', valObj)
-}
 const onSubmit = () => {
     console.log(JSON.parse(JSON.stringify(form)))
 }
