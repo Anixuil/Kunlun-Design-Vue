@@ -28,7 +28,11 @@
                 <kl-switch v-model="form.isON" activeColor="#000" inactiveColor="#fff"></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select></kl-select>
+                <kl-select placeholder="22222">
+                    <option>123</option>
+                    <option>456</option>
+                    <option>789</option>
+                </kl-select>
             </kl-form-item>
             <kl-form-item>
                 <kl-button type="primary" @click="onSubmit">submit</kl-button>
