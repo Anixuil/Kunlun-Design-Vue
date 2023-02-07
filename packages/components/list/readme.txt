@@ -1,2 +1,0 @@
-# size
- normal small large

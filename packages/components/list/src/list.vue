@@ -1,13 +1,30 @@
 <template>
-    <!-- 逻辑搞错了 是按ul li 那样的模式去让别人用-->
-    <div :class="[n(), size && n(`--${size}`)]" :style="{ ...style }">
-        <slot name="header"></slot>
-        <!-- 这样的for循环结构才是对的，有多少数据就会生成多少插槽 -->
-        <template v-for="item in props.dataSource" :key="item">
-            <slot name="renderItem" :item="item"></slot>
-        </template>
-        <slot name="footer"></slot>
 
+    <div :class="[n(), size && n(`--${size}`), bordered && n(`--bordered`)]" :style="{ ...style }">
+        <!-- 第一层 kl-list 绑定的是kl-list kl-list--size kl-list--bordered -->
+
+        <!-- 第二层 1.header kl-list--header kl-list-item--bordered -->
+        <div :class="[header && 'kl-list--header', header && bordered && 'kl-list-item--bordered']">
+            <slot name="header"></slot>
+        </div>
+        <!-- 第二层 2. ui kl-list-items  -->
+        <ul class="kl-list-items">
+            <template v-for=" item in props.dataSource" :key="item">
+                <!-- 第三层 1. li kl-list-item--bordered  -->
+                <li :class="bordered && 'kl-list-item--bordered'">
+                    <slot name="renderItem" :item="item"></slot>
+                </li>
+            </template>
+
+        </ul>
+        <!-- 第二层 3.footer  -->
+        <div :class="[footer && 'kl-list--footer ', footer && bordered && 'kl-list-item--bordered']">
+            <slot name="footer"></slot>
+        </div>
+
+        <div :class="extra && 'kl-list--extra '">
+            <slot name="extra"></slot>
+        </div>
     </div>
 
 </template>
@@ -42,6 +59,7 @@ defineOptions({
     name: 'KlList'
 })
 const { n } = createNamespace('list')
+
 </script>
 
 <style scoped lang="scss">

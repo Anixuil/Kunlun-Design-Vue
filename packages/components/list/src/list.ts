@@ -6,6 +6,10 @@ export const ListProps = {
         type: Array,
         default: []
     },
+    bordered: Boolean,
+    extra: Boolean,
+    header: Boolean,
+    footer: Boolean,
     size: String as PropType<'mini' | 'small' | 'normal' | 'large' | 'xlarge'>,
     color: String,
     textColor: {

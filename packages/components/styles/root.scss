@@ -62,6 +62,7 @@ $components: button, input, select, list; //这是一个组件数组
             @include kl-attribute($sizeValue, '--kl-size-width', 'kl-width');
             @include kl-attribute($sizeValue, '--kl-size-height', 'kl-height');
             @include kl-attribute($sizeValue, '--kl-size-font', 'kl-fontSize');
+            @include kl-attribute($sizeValue, '--kl-size-padding', 'kl-paddingSize');
         }
     }
 

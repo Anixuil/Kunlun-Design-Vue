@@ -1,28 +1,63 @@
 @import '../../styles/common.scss';
 
-// 如何让border是自己撑开的
 .kl-list {
+    * {
+        outline: none;
+
+    }
+
+    width: 40%;
     font-family: Arial;
-    list-style-type: none;
-    outline: none;
+    list-style: none;
     box-sizing: border-box;
-    position: relative;
+    position: relative; // 为子盒子使用绝对定位做基础
     font-size: var(--kl-size-font);
-    padding: 0 10px;
-    // min-width: var(--kl-size-width); //设置段落的最小宽度  去掉这个  设置padding
-    // min-height: var(--kl-size-height); //设置段落的最小高度
-    padding: var(--kl-padding);
     background-color: var(--kl-bg-color);
     color: var(--kl-font-color);
-    border: var(--kl-border);
-    font-size: var(--kl-size-font);
     //要写一下才能进行改变 不绑定初始值无法使用
 
+    //两个连在一起要留一些间隙，那就上下有一点就行
     &+& {
-        margin-left: 12px;
+        margin-top: 10px;
     }
 
-    .item {
-        border: 1px solid #f0f0f0;
+    &--header,
+    &--footer {
+        padding: var(--kl-padding);
     }
+
+    &-items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &--bordered {
+        border: var(--kl-border);
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--kl-padding);
+        flex-wrap: wrap;
+    }
+
+    &-item--bordered {
+        border-bottom: var(--kl-border);
+        margin-bottom: -1px;
+        border-collapse: collapse;
+    }
+
+    &-item-meta {
+        display: flex;
+        flex: 1;
+        align-items: flex-start;
+        max-width: 100%;
+
+    }
+
+
+
 }

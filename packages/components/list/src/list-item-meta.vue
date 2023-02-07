@@ -1,10 +1,11 @@
 <template>
     <!-- 这里是不是不应该放样式，在li那里放 -->
     <div :class="[n()]">
-
-        <slot name="extra"></slot>
-        <slot name="actions"></slot>
-        <slot name="content"></slot>
+        <div class="kl-list-item-meta-content">
+            <slot name="title"></slot>
+            <slot name="description"></slot>
+        </div>
+        <!-- <slot name="avatar"></slot> -->
 
     </div>
 
@@ -20,9 +21,9 @@ import { createNamespace } from '@kunlun-design/utils'
 
 
 defineOptions({
-    name: 'KlListItem'
+    name: 'KlListItemMeta'
 })
-const { n } = createNamespace('list-item')
+const { n } = createNamespace('list-item-meta')
 </script>
 
 
