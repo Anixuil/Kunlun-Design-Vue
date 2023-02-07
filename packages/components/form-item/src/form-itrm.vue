@@ -15,7 +15,7 @@ defineOptions({
     name: 'KlFormItem'
 })
 
-defineProps({
+const props = defineProps({
     label: {
         type: String,
         default: ''
