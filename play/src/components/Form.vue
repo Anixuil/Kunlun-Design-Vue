@@ -23,6 +23,10 @@
             <kl-form-item label="checkbox">
                 <kl-checkbox v-model="form.isVIP" label="VIP" />
             </kl-form-item>
+            <kl-form-item label="switch">
+                <kl-switch v-model="form.isON"></kl-switch>
+                <kl-switch v-model="form.isON" activeColor="#000" inactiveColor="#fff"></kl-switch>
+            </kl-form-item>
             <kl-form-item>
                 <kl-button type="primary" @click="onSubmit">submit</kl-button>
                 <kl-button>Create</kl-button>
@@ -32,13 +36,14 @@
 </template>
 
 <script setup lang="ts">
-import { KlForm, KlInput, KlFormItem, KlButton, KlCheckbox } from 'kunlun-design'
+import { KlForm, KlInput, KlFormItem, KlButton, KlCheckbox, KlSwitch } from 'kunlun-design'
 import { reactive } from 'vue'
 
 const form = reactive({
     name: '',
     password: '',
-    isVIP: true
+    isVIP: true,
+    isON: true
 })
 
 const onSubmit = () => {

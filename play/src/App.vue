@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import Button from './components/Button.vue'
 import Form from './components/Form.vue'
-import Switch from './components/Switch.vue'
 </script>
 
 <template>
     <Button></Button>
     <Form></Form>
-    <Switch />
 </template>
 
 <style scoped lang="scss">
