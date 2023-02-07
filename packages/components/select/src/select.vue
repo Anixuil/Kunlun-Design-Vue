@@ -1,0 +1,81 @@
+<template>
+    <div class="kl-select">
+        <select
+            class="kl-select_inner"
+            :disabled="disabled"
+            :placeholder="placeholder"
+            :multiple="multiple"
+        >
+            <slot></slot>
+        </select>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { createNamespace } from '@kunlun-design/utils'
+import { computed, ref } from 'vue'
+
+defineOptions({
+    name: 'KlSelect'
+})
+
+const props = defineProps({
+    placeholder: {
+        type: String,
+        required: false,
+        default: ''
+    },
+    multiple: {
+        type: Boolean,
+        required: false,
+        default: false
+    },
+    disabled: {
+        type: Boolean,
+        default: false
+    },
+    optionList: Array
+})
+
+const list = computed(() => {
+    return props.optionList
+})
+
+const { n } = createNamespace('select')
+</script>
+
+<style scoped lang="scss">
+.kl-select {
+    width: 100%;
+    position: relative;
+    font-size: 14px;
+    display: inline-block;
+    .kl-select_inner {
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #dcdfe6;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        height: 40px;
+        line-height: 40px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
+        width: 100%;
+        &:focus {
+            outline: none;
+            border-color: #409eff;
+        }
+        // input禁用样式
+        &.is-disabled {
+            background-color: #f5f7fa;
+            border-color: #e4e7ed;
+            color: #c0c4cc;
+            cursor: not-allowed;
+        }
+    }
+}
+</style>
