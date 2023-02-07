@@ -24,8 +24,11 @@
                 <kl-checkbox v-model="form.isVIP" label="VIP" />
             </kl-form-item>
             <kl-form-item label="switch">
-                <kl-switch v-model="form.isON"></kl-switch>
+                <kl-switch v-model="form.isON" disabled></kl-switch>
                 <kl-switch v-model="form.isON" activeColor="#000" inactiveColor="#fff"></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="select">
+                <kl-select></kl-select>
             </kl-form-item>
             <kl-form-item>
                 <kl-button type="primary" @click="onSubmit">submit</kl-button>
@@ -36,7 +39,15 @@
 </template>
 
 <script setup lang="ts">
-import { KlForm, KlInput, KlFormItem, KlButton, KlCheckbox, KlSwitch } from 'kunlun-design'
+import {
+    KlForm,
+    KlInput,
+    KlFormItem,
+    KlButton,
+    KlCheckbox,
+    KlSwitch,
+    KlSelect
+} from 'kunlun-design'
 import { reactive } from 'vue'
 
 const form = reactive({
@@ -46,6 +57,38 @@ const form = reactive({
     isON: true
 })
 
+const model = reactive({
+    model: '',
+    options: JSON.stringify([
+        {
+            valueKey: '01',
+            labelKey: '选项1',
+            dis: '说明1',
+            disA: '说明2'
+        },
+        {
+            valueKey: '02',
+            labelKey: '选项2',
+            dis: '说明3',
+            disA: '说明4'
+        }
+    ]),
+    urlParams: JSON.stringify({
+        key1: '01',
+        key2: 'Y'
+    }),
+    optionKeys: JSON.stringify({
+        value: 'valueKey',
+        label: 'labelKey'
+    }),
+    showLabels: 'labelKey,dis,disA',
+    disables: '02'
+})
+
+const selectChange = (val: String, valObj: Object) => {
+    // model.model = val
+    console.log('valObj=>', valObj)
+}
 const onSubmit = () => {
     console.log(JSON.parse(JSON.stringify(form)))
 }
