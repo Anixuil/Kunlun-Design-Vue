@@ -2,7 +2,6 @@
 @import './type.scss';
 @import './size.scss';
 @import './variables.scss';
-
 $components: button, input, select, message, list;
 
 //map-get根据 $key 参数，返回 $key 在 $map 中对应的 value 值  $type是一个map
@@ -35,19 +34,6 @@ $components: button, input, select, message, list;
             @include kl-attribute($typeValue, '--kl-border', 'kl-border');
         }
     }
-
-    // 写一个具体的例子就好理解了
-    /* typeKey=primary  typeName=typeValue=kl-bg: $primary-bgColor  
-
-    .kl-button-primary{
-         border-radius: 5px;
-        --kl-bg-color: $primary-bgColor        //由kl-bg在typeName里找到kl-bg，所以返回值是$primary-bgColor
-        --kl-font-color: $primary-fontColor  
-        --kl-border: $primary-border 
-
-    }
-    
-    */
 
     //size
     @each $sizeKey, $sizeValue in $sizeStyle {
