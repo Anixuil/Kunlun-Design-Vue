@@ -2,24 +2,34 @@
 //size样式管理
 // 感觉这里就是重新封装了一下 这样就加上了kl作为样式前缀
 $sizeStyle: (
-    'mini': (kl-fontSize: $mini-fontSize,
+    'mini': (
+        kl-fontSize: $mini-fontSize,
         kl-paddingSize: $mini-paddingSize,
         kl-width: $mini-width,
-        kl-height: $mini-height ),
-    'small': (kl-fontSize: $small-fontSize,
+        kl-height: $mini-height
+    ),
+    'small': (
+        kl-fontSize: $small-fontSize,
         kl-paddingSize: $small-paddingSize,
         kl-width: $small-width,
-        kl-height: $small-height ),
-    'normal': (kl-fontSize: $normal-fontSize,
+        kl-height: $small-height
+    ),
+    'normal': (
+        kl-fontSize: $normal-fontSize,
         kl-paddingSize: $normal-paddingSize,
         kl-width: $normal-width,
-        kl-height: $normal-height ),
-    'large': (kl-fontSize: $large-fontSize,
+        kl-height: $normal-height
+    ),
+    'large': (
+        kl-fontSize: $large-fontSize,
         kl-paddingSize: $large-paddingSize,
         kl-width: $large-width,
-        kl-height: $large-height ),
-    'xlarge': (kl-fontSize: $xlarge-fontSize,
+        kl-height: $large-height
+    ),
+    'xlarge': (
+        kl-fontSize: $xlarge-fontSize,
         kl-paddingSize: $xlarge-paddingSize,
         kl-width: $xlarge-width,
-        kl-height: $xlarge-heigth )
+        kl-height: $xlarge-heigth
+    )
 );

@@ -1,6 +1,5 @@
 import { PropType } from 'vue'
 
-
 export const ListProps = {
     dataSource: {
         type: Array,
@@ -22,4 +21,3 @@ export const ListProps = {
 export const sizeValidatorList = (size: string): boolean => {
     return ['mini', 'normal', 'large', 'small', 'xlarge'].includes(size)
 }
-

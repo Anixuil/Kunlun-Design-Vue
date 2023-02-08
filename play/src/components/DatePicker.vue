@@ -5,7 +5,10 @@
         <br />
         <br />
         <h1>placeholderRange属性</h1>
-        <KlDatePicker :isRangePicker="true" :placeholderRange="['花无凋零之时', '爱无传达之日']"></KlDatePicker>
+        <KlDatePicker
+            :isRangePicker="true"
+            :placeholderRange="['花无凋零之时', '爱无传达之日']"
+        ></KlDatePicker>
         <br />
         <br />
         <h1>picker属性</h1>
@@ -51,11 +54,19 @@
         <KlDatePicker :disabledDate="disabledDate" :isRangePicker="true"></KlDatePicker>
         <br />
         <br />
-        <KlDatePicker :disabledDate="disabledDate" :isRangePicker="true" :isDateTime="true"></KlDatePicker>
+        <KlDatePicker
+            :disabledDate="disabledDate"
+            :isRangePicker="true"
+            :isDateTime="true"
+        ></KlDatePicker>
         <br />
         <br />
         <h1>disabledTime属性</h1>
-        <KlDatePicker :disabledTime="disabledTime" :isRangePicker="true" :isDateTime="true"></KlDatePicker>
+        <KlDatePicker
+            :disabledTime="disabledTime"
+            :isRangePicker="true"
+            :isDateTime="true"
+        ></KlDatePicker>
         <br />
         <br />
         <h1>showHolidays属性</h1>

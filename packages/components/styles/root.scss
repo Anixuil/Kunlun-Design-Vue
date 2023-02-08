@@ -3,8 +3,7 @@
 @import './size.scss';
 @import './variables.scss';
 
-
-$components: button, input, select, list; //这是一个组件数组 
+$components: button, input, select, list; //这是一个组件数组
 
 //map-get根据 $key 参数，返回 $key 在 $map 中对应的 value 值  $type是一个map
 @function typed($type, $key) {
@@ -18,9 +17,7 @@ $components: button, input, select, list; //这是一个组件数组
 
 //复用匹配组件(混入=函数)
 @mixin matchComponent($typeKey) {
-
-    @each $comKey,
-    $comValue in $components {
+    @each $comKey, $comValue in $components {
         .kl-#{$comKey}--#{$typeKey} {
             @content;
         }
@@ -28,10 +25,8 @@ $components: button, input, select, list; //这是一个组件数组
 }
 
 :root {
-
     //type类型判断
-    @each $typeKey,
-    $typeValue in $typeStyle {
+    @each $typeKey, $typeValue in $typeStyle {
         @include matchComponent($typeKey) {
             // box-sizing: border-box;
             border-radius: 5px;
@@ -55,10 +50,8 @@ $components: button, input, select, list; //这是一个组件数组
     
     */
 
-
     //size
-    @each $sizeKey,
-    $sizeValue in $sizeStyle {
+    @each $sizeKey, $sizeValue in $sizeStyle {
         @include matchComponent($sizeKey) {
             @include kl-attribute($sizeValue, '--kl-size-width', 'kl-width');
             @include kl-attribute($sizeValue, '--kl-size-height', 'kl-height');
@@ -77,6 +70,4 @@ $components: button, input, select, list; //这是一个组件数组
     }
     
     */
-
-
 }
