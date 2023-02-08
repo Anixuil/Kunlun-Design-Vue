@@ -32,6 +32,7 @@ input/disabled
 :::
 
 ## Textarea
+
 By setting the 'type' property to 'textarea', it can be customized as a text box; The 'rows' property can set the height of the text box, which defaults to 4 rows; The 'disabled' attribute disables the text box
 
 :::demo

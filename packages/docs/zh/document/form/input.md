@@ -32,8 +32,10 @@ input/disabled
 :::
 
 ## 文本框
-通过设置`type`属性为`textarea`，可以自定义为文本框；`rows`属性可以设置文本框的高度，默认为4行；`disabled`属性可以禁用文本框
+
+通过设置`type`属性为`textarea`，可以自定义为文本框；`rows`属性可以设置文本框的高度，默认为 4 行；`disabled`属性可以禁用文本框
 
 :::demo
 input/textarea
 :::
+

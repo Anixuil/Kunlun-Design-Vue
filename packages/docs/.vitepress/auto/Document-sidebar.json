@@ -48,6 +48,10 @@
                 {
                     "text": "DatePicker",
                     "link": "/form/datepicker"
+                },
+                {
+                    "text": "Input",
+                    "link": "/form/input"
                 }
             ]
         },
