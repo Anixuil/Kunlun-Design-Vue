@@ -1,0 +1,56 @@
+@import '../../styles/common.scss';
+
+:root {
+    --bg-color: rgb(244, 244, 245);
+    --font-color: rgb(52, 52, 52);
+}
+.kl-message {
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, 70%);
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 5px;
+    z-index: 999;
+    opacity: 0;
+    overflow: hidden;
+    max-width: 95%;
+
+    & > div {
+        box-sizing: border-box;
+        padding: 10px 40px;
+        background-color: var(--bg-color);
+        color: var(--font-color);
+        font-size: 14px;
+        position: relative;
+
+        & div {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .scroll-wrapper {
+            overflow: hidden;
+        }
+
+        & .kl-message--scroll {
+            display: inline-block;
+        }
+
+        & > i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+            color: rgb(52, 52, 52);
+            user-select: none;
+            font-size: inherit;
+
+            &:hover {
+                color: black;
+            }
+        }
+    }
+}

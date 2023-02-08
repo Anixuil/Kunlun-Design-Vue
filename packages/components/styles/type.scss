@@ -1,9 +1,11 @@
 @import './var.scss';
 //type样式管理
+
 //  这是对变量的封装，变成一个类型 是输入primary这些参数之后对应的样式
 // 是一个map里面还有map，理解成对象里面的变量是一个对象
-$typeStyle: (
-    'primary': (kl-bg: $primary-bgColor,
+$buttonType: (
+    'primary': (
+        kl-bg: $primary-bgColor,
         kl-fontColor: $primary-fontColor,
         kl-border: $primary-border,
         kl-bg-active: $primary-bgColor-active ),
@@ -27,5 +29,28 @@ $typeStyle: (
         kl-bg-active: $primary-bgColor-active,
         kl-fontColor: $default-fontColor,
         kl-border: $default-border,
-        kl-border-active: $default-border-active )
+
+
+        kl-border-active: $default-border-active
+    )
+);
+
+//message
+$messageType: (
+    'text': (
+        bg: rgb(244, 244, 245),
+        fontColor: rgb(52, 52, 52)
+    ),
+    'success': (
+        bg: rgb(103, 194, 58),
+        fontColor: white
+    ),
+    'error': (
+        bg: rgb(245, 108, 108),
+        fontColor: white
+    ),
+    'warning': (
+        bg: rgb(230, 162, 60),
+        fontColor: white
+    )
 );

@@ -17,6 +17,7 @@
     background-color: var(--kl-bg-color);
     color: var(--kl-font-color);
     border: var(--kl-border);
+    border-radius: 5px;
 
     &+& {
         margin-left: 12px;
@@ -29,8 +30,10 @@
     &.kl-circle {
         border-radius: 50%;
         padding: 15px;
-        min-width: 20px;
-        height: 20px;
+        min-width: var(--kl-size-height);
+        min-height: var(--kl-size-height);
+        max-height: var(--kl-size-height);
+        max-width: var(--kl-size-height);
     }
 
     //round
@@ -47,10 +50,12 @@
 
 $defaultHoverBgColor: null;
 
-@each $key,
-$value in $typeStyle {
-    @if $key =='primary' {
-        $defaultHoverBgColor: map-get($map: $value,
+
+
+@each $key, $value in $buttonType {
+    @if $key == 'primary' {
+        $defaultHoverBgColor: map-get(
+            $map: $value,
             $key: 'kl-bg'
         );
     }
@@ -58,8 +63,8 @@ $value in $typeStyle {
 
 //只有使用了type的才能正确使用plain
 //遍历type找到当前匹配的类型
-@each $key,
-$value in $typeStyle {
+
+@each $key, $value in $buttonType {
     .kl-button--#{$key} {
         @if $key =='default' {
 

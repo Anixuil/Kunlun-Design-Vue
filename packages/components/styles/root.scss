@@ -4,7 +4,7 @@
 @import './variables.scss';
 
 
-$components: button, input, select, list; //这是一个组件数组 
+$components: button, input, select, message,list;
 
 //map-get根据 $key 参数，返回 $key 在 $map 中对应的 value 值  $type是一个map
 @function typed($type, $key) {
@@ -30,11 +30,10 @@ $components: button, input, select, list; //这是一个组件数组
 :root {
 
     //type类型判断
-    @each $typeKey,
-    $typeValue in $typeStyle {
+    @each $typeKey, $typeValue in $buttonType {
+
         @include matchComponent($typeKey) {
             // box-sizing: border-box;
-            border-radius: 5px;
             //button
             @include kl-attribute($typeValue, '--kl-bg-color', 'kl-bg');
             @include kl-attribute($typeValue, '--kl-font-color', 'kl-fontColor');
@@ -67,16 +66,12 @@ $components: button, input, select, list; //这是一个组件数组
         }
     }
 
-    // 具体的例子
-    /* sizeKey=mini  typeName=typeValue=kl-fontSize: $mini-fontSize
-
-    .kl-button-mini{
-        --kl-size-width: $mini-width,       
-        --kl-size-height: $mini-height
-        --kl-size-font:$mini-fontSize
+    //message
+    @each $key, $value in $messageType {
+        @include matchComponent($key) {
+            @include kl-attribute($value, '--bg-color', 'bg');
+            @include kl-attribute($value, '--font-color', 'fontColor');
+        }
     }
-    
-    */
-
-
 }
+
