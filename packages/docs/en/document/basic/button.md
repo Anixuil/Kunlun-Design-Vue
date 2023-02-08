@@ -44,3 +44,13 @@ Use the `text` property to control whether the button is a text button. This pro
 :::demo
 button/text
 :::
+
+## Resize
+
+In addition to the default strip, the button component is available in several additional sizes for different scenarios.
+
+Use the `size` attribute to configure additional dimensions, with five values available: `mini`, `small`, `normal`, `large` and `xlarge`.
+
+:::demo
+button/size
+:::

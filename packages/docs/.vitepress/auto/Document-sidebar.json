@@ -17,6 +17,15 @@
                     "link": "/form/datepicker"
                 }
             ]
+        },
+        "feedback": {
+            "text": "反馈组件",
+            "children": [
+                {
+                    "text": "Message 消息提示",
+                    "link": "/feedback/message"
+                }
+            ]
         }
     },
     "en": {
@@ -35,6 +44,15 @@
                 {
                     "text": "DatePicker",
                     "link": "/form/datepicker"
+                }
+            ]
+        },
+        "feedback": {
+            "text": "Feedback Component",
+            "children": [
+                {
+                    "text": "Message Tips",
+                    "link": "/feedback/message"
                 }
             ]
         }

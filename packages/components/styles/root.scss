@@ -2,8 +2,7 @@
 @import './type.scss';
 @import './size.scss';
 @import './variables.scss';
-
-$components: button, input, select, list; //这是一个组件数组
+$components: button, input, select, message, list;
 
 //map-get根据 $key 参数，返回 $key 在 $map 中对应的 value 值  $type是一个map
 @function typed($type, $key) {
@@ -17,7 +16,9 @@ $components: button, input, select, list; //这是一个组件数组
 
 //复用匹配组件(混入=函数)
 @mixin matchComponent($typeKey) {
-    @each $comKey, $comValue in $components {
+
+    @each $comKey,
+    $comValue in $components {
         .kl-#{$comKey}--#{$typeKey} {
             @content;
         }
@@ -25,11 +26,12 @@ $components: button, input, select, list; //这是一个组件数组
 }
 
 :root {
+
     //type类型判断
-    @each $typeKey, $typeValue in $typeStyle {
+    @each $typeKey,
+    $typeValue in $buttonType {
         @include matchComponent($typeKey) {
             // box-sizing: border-box;
-            border-radius: 5px;
             //button
             @include kl-attribute($typeValue, '--kl-bg-color', 'kl-bg');
             @include kl-attribute($typeValue, '--kl-font-color', 'kl-fontColor');
@@ -37,21 +39,9 @@ $components: button, input, select, list; //这是一个组件数组
         }
     }
 
-    // 写一个具体的例子就好理解了
-    /* typeKey=primary  typeName=typeValue=kl-bg: $primary-bgColor  
-
-    .kl-button-primary{
-         border-radius: 5px;
-        --kl-bg-color: $primary-bgColor        //由kl-bg在typeName里找到kl-bg，所以返回值是$primary-bgColor
-        --kl-font-color: $primary-fontColor  
-        --kl-border: $primary-border 
-
-    }
-    
-    */
-
     //size
-    @each $sizeKey, $sizeValue in $sizeStyle {
+    @each $sizeKey,
+    $sizeValue in $sizeStyle {
         @include matchComponent($sizeKey) {
             @include kl-attribute($sizeValue, '--kl-size-width', 'kl-width');
             @include kl-attribute($sizeValue, '--kl-size-height', 'kl-height');
@@ -60,14 +50,12 @@ $components: button, input, select, list; //这是一个组件数组
         }
     }
 
-    // 具体的例子
-    /* sizeKey=mini  typeName=typeValue=kl-fontSize: $mini-fontSize
-
-    .kl-button-mini{
-        --kl-size-width: $mini-width,       
-        --kl-size-height: $mini-height
-        --kl-size-font:$mini-fontSize
+    //message
+    @each $key,
+    $value in $messageType {
+        @include matchComponent($key) {
+            @include kl-attribute($value, '--bg-color', 'bg');
+            @include kl-attribute($value, '--font-color', 'fontColor');
+        }
     }
-    
-    */
 }

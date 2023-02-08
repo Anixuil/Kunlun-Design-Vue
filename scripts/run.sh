@@ -5,8 +5,6 @@ set -e
 cd ../
 pnpm install
 pnpm prettier
-pnpm lint
-pnpm lint:stylelint
 # 运行本地文档站
 start "http://localhost:2001/"
 pnpm run docs

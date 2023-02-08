@@ -5,6 +5,7 @@ import { sidebar } from './config/sidebar'
 export const config: UserConfig = {
     outDir: './dist',
     title: 'Kunun Design',
+    head: [['link', { rel: 'icon', href: '/images/logo.svg' }]],
     themeConfig: {
         nav: [
             {

@@ -44,3 +44,13 @@ button/link
 :::demo
 button/text
 :::
+
+## 调整尺寸
+
+除了默认的带下，按钮组件还提供了几种额外的尺寸可供选择，以便适配不同的场景。
+
+使用 `size` 属性额外配置尺寸，可使用 `mini` `small` `normal` `large` 和 `xlarge` 五种值。
+
+:::demo
+button/size
+:::
