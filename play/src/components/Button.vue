@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :style="{ margin: '16px' }">
         <h2>基础按钮</h2>
         <kl-button>default</kl-button>
         <kl-button type="default">default</kl-button>
@@ -48,30 +48,19 @@
         <h2>链接按钮</h2>
         <kl-button v-for="item in link_button" :key="item.text" :type="item.type" link>{{
             item.text
-        }}</kl-button
-        ><br />
+        }}</kl-button><br />
         <kl-button v-for="item in link_button" :key="item.text" :type="item.type" disabled link>{{
             item.text
         }}</kl-button>
         <h2>文本按钮</h2>
         <kl-button v-for="item in link_button" :key="item.text" :type="item.type" text>{{
             item.text
-        }}</kl-button
-        ><br />
+        }}</kl-button><br />
         <kl-button v-for="item in link_button" :key="item.text" :type="item.type" text bg>{{
             item.text
-        }}</kl-button
-        ><br />
-        <kl-button
-            v-for="item in link_button"
-            :key="item.text"
-            :type="item.type"
-            link
-            text
-            bg
-            disabled
-            >{{ item.text }}</kl-button
-        >
+        }}</kl-button><br />
+        <kl-button v-for="item in link_button" :key="item.text" :type="item.type" link text bg
+            disabled>{{ item.text }}</kl-button>
     </div>
 </template>
 
