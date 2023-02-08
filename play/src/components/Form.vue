@@ -34,6 +34,15 @@
                     <option value="七七" label="七七"></option>
                 </kl-select>
             </kl-form-item>
+            <kl-form-item label="textarea">
+                <kl-input
+                    placeholder="请输入文本"
+                    v-model="form.text"
+                    :clearable="true"
+                    type="textarea"
+                    rows="4"
+                ></kl-input>
+            </kl-form-item>
             <kl-form-item>
                 <kl-button type="primary" @click="onSubmit">submit</kl-button>
                 <kl-button>Create</kl-button>
@@ -59,7 +68,8 @@ const form = reactive({
     password: '',
     isVIP: true,
     isON: true,
-    selectData: ''
+    selectData: '',
+    text: ''
 })
 
 const model = reactive({

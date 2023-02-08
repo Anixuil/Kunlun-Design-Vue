@@ -1,5 +1,5 @@
 <template>
-    <div class="kl-input" :class="{ 'kl-input_suffix': showSuffix }">
+    <div v-if="type !== 'textarea'" class="kl-input" :class="{ 'kl-input_suffix': showSuffix }">
         <input
             class="kl-input_inner"
             :class="{ 'is-disabled': disabled }"
@@ -21,6 +21,18 @@
                 >👀</i
             >
         </span>
+    </div>
+    <div v-else class="kl-input" :class="{ 'kl-input_suffix': showSuffix }">
+        <textarea
+            class="kl-textarea_inner"
+            :class="{ 'is-disabled': disabled }"
+            :placeholder="placeholder"
+            :name="name"
+            :value="modelValue"
+            @input="handleInput"
+            :disabled="disabled"
+            :rows="rows"
+        />
     </div>
 </template>
 
@@ -59,6 +71,10 @@ const props = defineProps({
     showPassword: {
         type: Boolean,
         default: false
+    },
+    rows: {
+        type: Number,
+        default: 4
     }
 })
 
@@ -105,7 +121,35 @@ const { n } = createNamespace('input')
             outline: none;
             border-color: #409eff;
         }
-        // input禁用样式
+        // 禁用样式
+        &.is-disabled {
+            background-color: #f5f7fa;
+            border-color: #e4e7ed;
+            color: #c0c4cc;
+            cursor: not-allowed;
+        }
+    }
+    // textarea样式
+    .kl-textarea_inner {
+        -webkit-appearance: none;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #dcdfe6;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #606266;
+        display: inline-block;
+        font-size: inherit;
+        line-height: 40px;
+        outline: none;
+        padding: 0 15px;
+        transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
+        width: 100%;
+        &:focus {
+            outline: none;
+            border-color: #409eff;
+        }
+        // 禁用样式
         &.is-disabled {
             background-color: #f5f7fa;
             border-color: #e4e7ed;
