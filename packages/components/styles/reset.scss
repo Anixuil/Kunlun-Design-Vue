@@ -1,0 +1,64 @@
+// css初始化
+
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+body,
+html {
+    font: 14px "微软雅黑", Arial;
+    color: #333;
+}
+
+input {
+    outline: none;
+}
+
+// 为父级元素 添加 .clearfix 类可以很容易地清除内部的浮动
+.clearfix {
+    zoom: 1; //用来清除浮动、避免容器高度崩塌的
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
