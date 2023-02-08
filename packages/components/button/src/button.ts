@@ -1,5 +1,5 @@
 import type { PropType } from 'vue'
-
+// 类型验证器
 export const typevalidator = (type: string): boolean => {
     return ['primary', 'info', 'success', 'warning', 'danger', 'default', ''].includes(type)
 }

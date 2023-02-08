@@ -1,6 +1,8 @@
 //样式变量声明
 @import './var.scss';
 
+// 公共全局变量   这里是再封装,这样修改的时候改这里的元素就行了，不用一个个去改
+// 原生的css变量命名 --变量名:变量值 var(--变量名)进行使用
 :root {
     //基本变量
     //背景
@@ -9,11 +11,14 @@
     --kl-font-color: rgb(59, 59, 59);
     //边框
     --kl-border-color: rgb(59, 59, 59);
+    --kl-list-border-color: #484646;
     --kl-border-width: 1px;
     --kl-border-style: solid;
     --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
+    --kl-list-border: var(--kl-border-width) var(--kl-border-style) var(--kl-list-border-color);
     //尺寸
     --kl-size-width: #{$normal-width};
     --kl-size-height: #{$normal-height};
     --kl-size-font: #{$normal-fontSize};
+    --kl-padding:#{$normal-paddingSize};
 }

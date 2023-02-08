@@ -1,4 +1,4 @@
 import type { Plugin } from 'vue'
-import { KlButton, KlDatePicker } from '@kunlun-design/components'
+import { KlButton, KlList, KlListItem, KlListItemMeta, KlDatePicker } from '@kunlun-design/components'
 
-export default [KlButton, KlDatePicker] as Plugin[]
+export default [KlButton, KlList, KlListItem, KlListItemMeta, KlDatePicker] as Plugin[]

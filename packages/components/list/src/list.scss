@@ -1,0 +1,82 @@
+@import '../../styles/common.scss';
+
+.kl-list {
+
+    width: 40%;
+    font-family: Arial;
+    list-style: none;
+    box-sizing: border-box;
+    position: relative; // 为子盒子使用绝对定位做基础
+    font-size: var(--kl-size-font);
+    background-color: var(--kl-bg-color);
+    color: var(--kl-font-color);
+    //要写一下才能进行改变 不绑定初始值无法使用
+
+    //两个连在一起要留一些间隙，那就上下有一点就行
+    &+& {
+        margin-top: 10px;
+    }
+
+    &--header,
+    &--footer {
+        padding: var(--kl-padding);
+    }
+
+    &-items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &--bordered {
+        border: var(--kl-list-border);
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--kl-padding);
+        flex-wrap: wrap;
+    }
+
+    &-item--bordered {
+        border-bottom: var(--kl-list-border);
+        margin-bottom: -1px;
+        border-collapse: collapse;
+    }
+
+    &-item-meta {
+        display: flex;
+        flex: 1;
+        align-items: flex-start;
+        max-width: 100%;
+
+
+        &-title {
+
+            // transition: all .3s;
+            background-color: transparent;
+            cursor: pointer;
+            margin-bottom: 4px;
+
+            a {
+                color: #000000d9;
+                transition: all .3s;
+            }
+
+            a:hover {
+                color: #1890ff
+            }
+
+        }
+
+        &-description {
+            color: #00000073;
+        }
+
+    }
+
+
+
+}
