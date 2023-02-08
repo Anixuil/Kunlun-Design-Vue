@@ -29,9 +29,9 @@
             </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.selectData">
-                    <option value="1" label="123"></option>
-                    <option value="2" label="456"></option>
-                    <option value="3" label="789"></option>
+                    <option value="胡桃" label="胡桃"></option>
+                    <option value="夜兰" label="夜兰"></option>
+                    <option value="七七" label="七七"></option>
                 </kl-select>
             </kl-form-item>
             <kl-form-item>
