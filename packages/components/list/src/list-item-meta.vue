@@ -2,10 +2,15 @@
     <!-- 这里是不是不应该放样式，在li那里放 -->
     <div :class="[n()]">
         <div class="kl-list-item-meta-content">
-            <slot name="title"></slot>
-            <slot name="description"></slot>
+            <div class="kl-list-item-meta-title">
+                <slot name="title"></slot>
+            </div>
+            <div class="kl-list-item-meta-description">
+                <slot name="description"></slot>
+            </div>
+
         </div>
-        <!-- <slot name="avatar"></slot> -->
+        <slot name="avatar"></slot>
 
     </div>
 
