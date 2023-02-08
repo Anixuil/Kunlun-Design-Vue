@@ -1,7 +1,6 @@
 //message 的一些工具方法
 import gsap from 'gsap'
 //创建节点
-
 export const createNode = () => {
     //创建 message 容器 并设置 class state
     const node = document.createElement('div')
@@ -45,10 +44,10 @@ export const startPositionFn = (arr: NodeListOf<HTMLElement>, height: number): n
 
 import type { Ref } from 'vue'
 export type htmlType = {
-    clientWidth: 0
-    offsetWidth: 0
+    clientWidth: number
+    offsetWidth: number
 }
-export const htmlstr: htmlType = { clientWidth: 0, offsetWidth: 0 }
+
 //文字滚动方法
 export const textScroll = (
     wrapper: Ref<HTMLElement | htmlType>,

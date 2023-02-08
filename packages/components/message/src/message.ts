@@ -41,7 +41,6 @@ const createMessage = (cfg: messageCfgInt) => {
             //状态变更就更新队列
             currentMessageList = document.querySelectorAll('.kl-message')
             //更新位置
-            // hideFn(currentMessageList,height,time)
             resetMsgTop(currentMessageList, height, time)
 
             //移除
