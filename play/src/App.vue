@@ -5,9 +5,7 @@ import Message from './components/Message.vue'
 import Button from './components/Button.vue'
 import Form from './components/Form.vue'
 import Input from './components/Input.vue'
-
 </script>
-
 
 <template>
     <List></List>
