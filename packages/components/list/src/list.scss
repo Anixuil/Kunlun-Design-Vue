@@ -1,10 +1,6 @@
 @import '../../styles/common.scss';
 
 .kl-list {
-    * {
-        outline: none;
-
-    }
 
     width: 40%;
     font-family: Arial;
@@ -33,7 +29,7 @@
     }
 
     &--bordered {
-        border: var(--kl-border);
+        border: var(--kl-list-border);
     }
 
     &-item {
@@ -45,7 +41,7 @@
     }
 
     &-item--bordered {
-        border-bottom: var(--kl-border);
+        border-bottom: var(--kl-list-border);
         margin-bottom: -1px;
         border-collapse: collapse;
     }
@@ -55,6 +51,29 @@
         flex: 1;
         align-items: flex-start;
         max-width: 100%;
+
+
+        &-title {
+
+            // transition: all .3s;
+            background-color: transparent;
+            cursor: pointer;
+            margin-bottom: 4px;
+
+            a {
+                color: #000000d9;
+                transition: all .3s;
+            }
+
+            a:hover {
+                color: #1890ff
+            }
+
+        }
+
+        &-description {
+            color: #00000073;
+        }
 
     }
 
