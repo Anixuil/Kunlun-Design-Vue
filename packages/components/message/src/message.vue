@@ -62,8 +62,6 @@ nextTick(async () => {
         //进入滚动状态
         scrollState = true
         let isContinue = await textScroll(wrapper, container, config.value.duration)
-
-        console.log(scrollState, isContinue)
         //如果滚动成功且消息框没有中途暴毙，则往后继续执行
         if (isContinue && scrollState) {
             //如果延迟为0则是永不消失
