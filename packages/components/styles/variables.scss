@@ -11,9 +11,11 @@
     --kl-font-color: rgb(59, 59, 59);
     //边框
     --kl-border-color: rgb(59, 59, 59);
+    --kl-list-border-color: #484646;
     --kl-border-width: 1px;
     --kl-border-style: solid;
     --kl-border: var(--kl-border-width) var(--kl-border-style) var(--kl-border-color);
+    --kl-list-border: var(--kl-border-width) var(--kl-border-style) var(--kl-list-border-color);
     //尺寸
     --kl-size-width: #{$normal-width};
     --kl-size-height: #{$normal-height};
