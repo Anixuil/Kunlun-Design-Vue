@@ -17,16 +17,18 @@ input/basic
 
 ## 密码框
 
-通过设置`type`属性为`password`，可设置为密码框
+通过设置`type`属性为`password`，可设置为密码框，
+添加`showPassword`属性可以控制密码是否可查看
 
 :::demo
 input/password
 :::
 
-##
+## 禁用状态
 
-通过设置`type`属性为`password`，可设置为密码框
+添加`disabled`属性，可设置为禁用状态的输入框
 
 :::demo
-input/password
+input/disabled
 :::
+
