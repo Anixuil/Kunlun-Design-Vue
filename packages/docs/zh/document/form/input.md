@@ -17,7 +17,15 @@ input/basic
 
 ## 密码框
 
-通过`type`属性，可设置为密码框
+通过设置`type`属性为`password`，可设置为密码框
+
+:::demo
+input/password
+:::
+
+##
+
+通过设置`type`属性为`password`，可设置为密码框
 
 :::demo
 input/password

@@ -15,6 +15,10 @@
                 {
                     "text": "DatePicker 日期选择框",
                     "link": "/form/datepicker"
+                },
+                {
+                    "text": "Input 输入框",
+                    "link": "/form/input"
                 }
             ]
         },
