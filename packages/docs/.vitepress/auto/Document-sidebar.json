@@ -6,6 +6,10 @@
                 {
                     "text": "Button 按钮",
                     "link": "/basic/button"
+                },
+                {
+                    "text": "Icon 图标",
+                    "link": "/basic/icon"
                 }
             ]
         },
@@ -15,6 +19,10 @@
                 {
                     "text": "DatePicker 日期选择框",
                     "link": "/form/datepicker"
+                },
+                {
+                    "text": "Input 输入框",
+                    "link": "/form/input"
                 }
             ]
         },
@@ -44,6 +52,10 @@
                 {
                     "text": "Button",
                     "link": "/basic/button"
+                },
+                {
+                    "text": "Icon",
+                    "link": "/basic/icon"
                 }
             ]
         },
@@ -53,6 +65,10 @@
                 {
                     "text": "DatePicker",
                     "link": "/form/datepicker"
+                },
+                {
+                    "text": "Input",
+                    "link": "/form/input"
                 }
             ]
         },

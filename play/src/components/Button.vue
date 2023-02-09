@@ -124,26 +124,4 @@ button {
         background-color: darkred;
     }
 }
-
-.test {
-    padding: 5px 10px;
-    background-color: skyblue;
-    color: white;
-    border-radius: 5px;
-    transition: opacity 0.3s ease;
-
-    &:hover,
-    &:active {
-        opacity: 0.6;
-    }
-
-    outline: none;
-    cursor: pointer;
-    border: none;
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
 </style>

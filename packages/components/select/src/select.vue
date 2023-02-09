@@ -5,7 +5,7 @@
             :disabled="disabled"
             :placeholder="placeholder"
             :multiple="multiple"
-            v-model="t"
+            v-model="val"
         >
             <slot></slot>
         </select>
@@ -43,9 +43,9 @@ const props = defineProps({
     optionList: Array
 })
 
-const t = ref('')
+const val = ref('')
 
-watch(t, value => {
+watch(val, value => {
     emit('update:modelValue', value)
 })
 
