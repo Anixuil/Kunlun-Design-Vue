@@ -97,7 +97,7 @@ importers:
 
   packages/docs:
     specifiers:
-      '@kl-design/icons': 1.0.9
+      '@kl-design/icons': 1.0.10
       '@types/node': ^18.11.18
       markdown-it: ^13.0.1
       markdown-it-container: ^3.0.0
@@ -107,7 +107,7 @@ importers:
       vitepress: 1.0.0-alpha.38
       vitepress-theme-demoblock: ^2.0.2
     dependencies:
-      '@kl-design/icons': 1.0.9
+      '@kl-design/icons': 1.0.10
       markdown-it: registry.npmmirror.com/markdown-it/13.0.1
       markdown-it-container: registry.npmmirror.com/markdown-it-container/3.0.0
       prism-theme-vars: registry.npmmirror.com/prism-theme-vars/0.2.4
@@ -360,8 +360,8 @@ packages:
     dev: true
     optional: true
 
-  /@kl-design/icons/1.0.9:
-    resolution: {integrity: sha512-BqFGpmU8Y9Mtqa9x+9NLl2mSQnheso0lkfVyVJwJoK40yhOb+ZjZYaRe5R8teoJ5QLiTn0pdCc4CfTf6lseJxg==}
+  /@kl-design/icons/1.0.10:
+    resolution: {integrity: sha512-3lrWb7YUsjKmBUZds58RH1IFjVRQdF1nEPipX+ZRiqn1RFmaniUXLwnPwVZ+f+7A1230LCf19Be2p/MSH9v1cg==}
     dev: false
 
   /commander/9.5.0:
