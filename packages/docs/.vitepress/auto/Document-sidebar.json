@@ -26,6 +26,15 @@
                     "link": "/feedback/message"
                 }
             ]
+        },
+        " data-display": {
+            "text": "数据展示组件",
+            "children": [
+                {
+                    "text": "List 列表",
+                    "link": "/data-display/list/list"
+                }
+            ]
         }
     },
     "en": {
@@ -53,6 +62,15 @@
                 {
                     "text": "Message Tips",
                     "link": "/feedback/message"
+                }
+            ]
+        },
+        " data-display": {
+            "text": "data-display Components",
+            "children": [
+                {
+                    "text": "List",
+                    "link": "/data-display/list/list"
                 }
             ]
         }

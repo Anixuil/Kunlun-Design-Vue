@@ -1,5 +1,6 @@
 <template>
     <div :class="[n()]">
+        <slot name="avatar"></slot>
         <div class="kl-list-item-meta-content">
             <div class="kl-list-item-meta-title">
                 <slot name="title"></slot>
@@ -8,7 +9,6 @@
                 <slot name="description"></slot>
             </div>
         </div>
-        <slot name="avatar"></slot>
     </div>
 </template>
 

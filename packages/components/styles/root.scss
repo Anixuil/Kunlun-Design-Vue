@@ -16,9 +16,7 @@ $components: button, input, select, message, list;
 
 //复用匹配组件(混入=函数)
 @mixin matchComponent($typeKey) {
-
-    @each $comKey,
-    $comValue in $components {
+    @each $comKey, $comValue in $components {
         .kl-#{$comKey}--#{$typeKey} {
             @content;
         }
@@ -26,10 +24,8 @@ $components: button, input, select, message, list;
 }
 
 :root {
-
     //type类型判断
-    @each $typeKey,
-    $typeValue in $buttonType {
+    @each $typeKey, $typeValue in $buttonType {
         @include matchComponent($typeKey) {
             // box-sizing: border-box;
             //button
@@ -40,8 +36,7 @@ $components: button, input, select, message, list;
     }
 
     //size
-    @each $sizeKey,
-    $sizeValue in $sizeStyle {
+    @each $sizeKey, $sizeValue in $sizeStyle {
         @include matchComponent($sizeKey) {
             @include kl-attribute($sizeValue, '--kl-size-width', 'kl-width');
             @include kl-attribute($sizeValue, '--kl-size-height', 'kl-height');
@@ -51,8 +46,7 @@ $components: button, input, select, message, list;
     }
 
     //message
-    @each $key,
-    $value in $messageType {
+    @each $key, $value in $messageType {
         @include matchComponent($key) {
             @include kl-attribute($value, '--bg-color', 'bg');
             @include kl-attribute($value, '--font-color', 'fontColor');

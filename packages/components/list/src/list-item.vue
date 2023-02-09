@@ -1,8 +1,9 @@
 <template>
     <div :class="[n()]">
-        <slot name="extra"></slot>
-        <slot name="actions"></slot>
         <slot name="content"></slot>
+        <slot name="extra"></slot>
+
+        <slot name="actions"></slot>
     </div>
 </template>
 
