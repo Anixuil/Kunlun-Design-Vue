@@ -6,6 +6,10 @@
                 {
                     "text": "Button 按钮",
                     "link": "/basic/button"
+                },
+                {
+                    "text": "Icon 图标",
+                    "link": "/basic/icon"
                 }
             ]
         },
@@ -39,6 +43,10 @@
                 {
                     "text": "Button",
                     "link": "/basic/button"
+                },
+                {
+                    "text": "Icon",
+                    "link": "/basic/icon"
                 }
             ]
         },

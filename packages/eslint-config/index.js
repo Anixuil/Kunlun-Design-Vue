@@ -33,6 +33,7 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-module-boundary-types': 'off',
-        '@typescript-eslint/no-empty-interface': 'off'
+        '@typescript-eslint/no-empty-interface': 'off',
+        'vue/require-component-is': 'off'
     }
 }
