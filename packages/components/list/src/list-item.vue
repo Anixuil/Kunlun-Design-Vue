@@ -1,9 +1,9 @@
 <template>
-    <!-- 这里是不是不应该放样式，在li那里放 -->
     <div :class="[n()]">
-        <slot name="extra"></slot>
-        <slot name="actions"></slot>
         <slot name="content"></slot>
+        <slot name="extra"></slot>
+
+        <slot name="actions"></slot>
     </div>
 </template>
 

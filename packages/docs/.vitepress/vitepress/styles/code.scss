@@ -10,6 +10,7 @@ body {
         // background-color: rgba(0, 154, 0, 0.074);
         background-color: transparent;
     }
+
     // //滚动条轨道
     // &::-webkit-scrollbar-track{
 
@@ -42,6 +43,7 @@ span[class~='language-css']:before {
     --prism-marker-color: var(--code-text-color);
     --prism-line-height: var(--code-line-height);
 }
+
 @mixin common {
     /* 主题色 */
     --theme-color-light: rgb(58, 186, 85);
@@ -212,11 +214,19 @@ html.dark {
         width: 100%;
         font-size: 14px;
         line-height: 1.5em;
+
         th,
         td {
             border-color: var(--border-color);
         }
     }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
     h2 {
         border-top: 0;
     }
@@ -234,6 +244,7 @@ html.dark {
     transform: translate(-50%, -40%);
     animation: logo-wave 6s infinite linear;
 }
+
 .VPNavBar {
     .VPImage.logo {
         height: 32px;
@@ -244,18 +255,23 @@ html.dark {
     0% {
         transform: translate(-42%, -42%);
     }
+
     20% {
         transform: translate(-58%, -42%);
     }
+
     40% {
         transform: translate(-58%, -58%);
     }
+
     60% {
         transform: translate(-52%, -42%);
     }
+
     80% {
         transform: translate(-42%, -58%);
     }
+
     100% {
         transform: translate(-42%, -42%);
     }
