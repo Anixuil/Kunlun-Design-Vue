@@ -4,6 +4,7 @@ import type { Theme as ThemeType } from 'vitepress'
 import Theme from 'vitepress/dist/client/theme-default/index'
 import { globals } from '../vitepress'
 import * as KunlunDesign from '@kunlun-design/components'
+import registryIcons from '../utils/registerIcons'
 
 export default define<ThemeType>({
     ...Theme,
@@ -14,5 +15,7 @@ export default define<ThemeType>({
             }
         })
         globals.forEach(([name, comp]) => app.component(name, comp))
+        // 注册全部图标
+        registryIcons(app)
     }
 })

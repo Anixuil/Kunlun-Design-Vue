@@ -6,6 +6,10 @@
                 {
                     "text": "Button 按钮",
                     "link": "/basic/button"
+                },
+                {
+                    "text": "Icon 图标",
+                    "link": "/basic/icon"
                 }
             ]
         },
@@ -30,6 +34,15 @@
                     "link": "/feedback/message"
                 }
             ]
+        },
+        " data-display": {
+            "text": "数据展示组件",
+            "children": [
+                {
+                    "text": "List 列表",
+                    "link": "/data-display/list/list"
+                }
+            ]
         }
     },
     "en": {
@@ -39,6 +52,10 @@
                 {
                     "text": "Button",
                     "link": "/basic/button"
+                },
+                {
+                    "text": "Icon",
+                    "link": "/basic/icon"
                 }
             ]
         },
@@ -61,6 +78,15 @@
                 {
                     "text": "Message Tips",
                     "link": "/feedback/message"
+                }
+            ]
+        },
+        " data-display": {
+            "text": "data-display Components",
+            "children": [
+                {
+                    "text": "List",
+                    "link": "/data-display/list/list"
                 }
             ]
         }

@@ -1,9 +1,5 @@
 <template>
     <div :style="{ margin: '16px' }">
-        <div :style="{ margin: '16px 0' }">
-            <h2>基础列表</h2>
-            <p>可通过设置bordered来展示边框，并预留avatar来放置头像</p>
-        </div>
         <kl-list :dataSource="data1" size="small" bordered>
             <template #renderItem="{ item }">
                 <kl-list-item size="large">
@@ -19,18 +15,13 @@
                             </template>
                         </kl-list-item-meta>
                     </template>
+                    <template #actions>
+                        <kl-button link type="primary">edit</kl-button>
+                    </template>
                 </kl-list-item>
             </template>
         </kl-list>
 
-        <div :style="{ width: '40%', margin: '16px 0' }">
-            <h2>简单列表</h2>
-            <p>
-                列表拥有超大、大、中、小、迷你五种尺寸。 通过设置 size 为 xlarge、large、small、mini
-                分别把列表设为超大、大、小、迷你尺寸。 若不设置 size,则尺寸为中。 可通过设置 header
-                和 footer,来自定义列表头部和尾部。
-            </p>
-        </div>
         <h3 :style="{ margin: '16px 0' }">Small Size</h3>
         <kl-list :dataSource="data" size="small" bordered header footer>
             <template #renderItem="{ item }">
@@ -100,7 +91,7 @@
 </template>
 
 <script setup lang="ts">
-import { KlList, KlListItem, KlListItemMeta } from 'kunlun-design'
+import { KlList, KlListItem, KlListItemMeta, KlButton } from 'kunlun-design'
 
 const data: string[] = [
     'Racing car sprays burning fuel into crowd.',
