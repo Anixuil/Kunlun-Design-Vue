@@ -11,3 +11,6 @@ export * from './switch'
 
 export * from './datepicker'
 export * from './select'
+
+export * from './col'
+export * from './row'

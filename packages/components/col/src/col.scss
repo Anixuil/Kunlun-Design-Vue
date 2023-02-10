@@ -1,0 +1,91 @@
+@use 'sass:math';
+@import '../../styles/var.scss';
+
+.kl-col {
+    box-sizing: border-box;  //为了计算宽度包含border+padding+border
+    background-clip: content-box;//去除背景颜色包含padding+border的情况，为了gutter间隔有效果
+    .kl-guttered {
+      display: block;
+      min-height: 1px;
+    }
+    &.kl-col--0 {
+        display: none;
+    }
+    //每一个分为24份，通过for循环
+    @for $i from 0 through 24 {
+        //span属性
+        &.kl-col--#{$i} {
+            max-width: (math.div(1, 24) * $i * 100) * 1%;
+            flex: 0 0 (math.div(1, 24) * $i * 100) * 1%;
+        }
+        //offset
+        &.kl-col--offset-#{$i} {
+            margin-left: (math.div(1, 24) * $i * 100) * 1%;
+        }
+        //pull向左
+        &.kl-col--pull-#{$i} {
+            position: relative;
+            right: (math.div(1, 24) * $i * 100) * 1%;
+        }
+        //push向右
+        &.kl-col--push-#{$i} {
+            position: relative;
+            left: (math.div(1, 24) * $i * 100) * 1%;
+        }
+        //order
+        &.kl-col--order-#{$i} {
+            order: $i;
+        }
+    }
+    //媒体查询封装，key是xs,sm等这些
+    @mixin res($key, $map: $--breakpoints) {
+        //判断输入的key值在不在我们的map里面
+        @if map-has-key($map, $key) {
+            //给媒体查询传值,inspect把变量变成字符串
+            @media screen and #{inspect(map-get($map,$key))} {
+                @content;
+            }
+        } @else {
+            @warn "Undefined key:`#{$map}`"; //如果key不存在要返回@warn
+        }
+    }
+    //获取每一种宽度的情况，用for遍历出24个类
+    @mixin col-size($size) {
+        @include res($size) {
+            @for $i from 0 through 24 {
+                //span属性
+                &.kl-col--#{$size}-#{$i} {
+                    max-width: (math.div(1, 24) * $i * 100) * 1%;
+                    flex: 0 0 (math.div(1, 24) * $i * 100) * 1%;
+                }
+                //offset
+                &.kl-col--#{$size}-offset-#{$i} {
+                    margin-left: (math.div(1, 24) * $i * 100) * 1%;
+                }
+                //pull向左
+                &.kl-col--#{$size}-pull-#{$i} {
+                    position: relative;
+                    right: (math.div(1, 24) * $i * 100) * 1%;
+                }
+                //push向右
+                &.kl-col--#{$size}-push-#{$i} {
+                    position: relative;
+                    left: (math.div(1, 24) * $i * 100) * 1%;
+                }
+                //order
+                &.kl-col--#{$size}-order-#{$i} {
+                    order: $i;
+                }
+            }
+        }
+    }
+    @include col-size(xs);
+
+    @include col-size(sm);
+
+    @include col-size(md);
+
+    @include col-size(lg);
+
+    @include col-size(xl);
+}
