@@ -4,6 +4,7 @@ import List from './components/List.vue'
 import Message from './components/Message.vue'
 import Button from './components/Button.vue'
 import Form from './components/Form.vue'
+import Layout from './components/layout.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Form from './components/Form.vue'
     <DatePicker></DatePicker>
     <Message></Message>
     <Form></Form>
+    <Layout></Layout>
 </template>
 
 <style scoped lang="scss"></style>

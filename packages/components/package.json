@@ -15,7 +15,9 @@
         "coverage": "vitest run --coverage"
     },
     "dependencies": {
+        "@types/lodash": "^4.14.191",
         "dayjs": "^1.11.7",
+        "lodash": "^4.17.21",
         "solarlunar-es": "^1.0.9"
     }
 }

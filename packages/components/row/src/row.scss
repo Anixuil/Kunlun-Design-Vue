@@ -1,0 +1,45 @@
+//is-xx类的组合方法
+@mixin when($state) {
+    @at-root {
+        &.kl-#{$state} {
+            @content;
+        }
+    }
+}
+.kl-row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-sizing: border-box; //为了实现加margin padding还在一行
+    @include when(wrap) {
+        flex-wrap: wrap;//溢出换行
+    }
+
+    @include when(justify-start) {
+        justify-content: flex-start;
+    }
+    @include when(justify-center) {
+        justify-content: center;
+    }
+    @include when(justify-end) {
+        justify-content: flex-end;
+    }
+    @include when(justify-space-between) {
+        justify-content: space-between;
+    }
+    @include when(justify-space-around) {
+        justify-content: space-around;
+    }
+    @include when(justify-space-evenly) {
+        justify-content: space-evenly; //使每个元素的间隔都相等
+    }
+    @include when(align-middle) {
+        align-items: center;
+    }
+    @include when(align-top) {
+        align-items: flex-start;
+    }
+    @include when(align-bottom) {
+        align-items: flex-end;
+    }
+}
