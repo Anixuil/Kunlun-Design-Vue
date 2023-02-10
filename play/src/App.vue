@@ -5,9 +5,11 @@ import Message from './components/Message.vue'
 import Button from './components/Button.vue'
 import Form from './components/Form.vue'
 import Layout from './components/layout.vue'
+import Icon from './components/Icon.vue'
 </script>
 
 <template>
+    <Icon></Icon>
     <List></List>
     <Button></Button>
     <DatePicker></DatePicker>
