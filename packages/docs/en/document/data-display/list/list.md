@@ -31,10 +31,7 @@ If `size` is not set, the size is medium. You can customize the header and tail 
 list/simple
 :::
 
-
 Parameter description type
-
-
 
 ## API
 
@@ -48,8 +45,6 @@ Parameter description type
 | header     | List header                                | slot                                                |
 | renderItem | List cell content use #renderItem="{item}" | slot                                                |
 | size       | Size of list                               | `xlarge` \| `large` \|`normal` \| `small` \| `mini` |
-
-
 
 ### List.Item
 
@@ -66,4 +61,3 @@ Parameter description type
 | avatar      | The icon of the list element                | slot |
 | title       | The title of the list element               | slot |
 | description | The description content of the list element | slot |
-
