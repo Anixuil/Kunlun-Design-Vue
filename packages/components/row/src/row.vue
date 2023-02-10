@@ -4,14 +4,15 @@
         :class="[
             n(),
             wrap && 'kl-wrap',
-            'center' === justify && 'justify-center',
-            'end' === justify && 'justify-end',
-            'space-between' === justify && 'justify-space-between',
-            'space-around' === justify && 'justify-space-around',
-            'space-evenly' === justify && 'justify-space-evenly',
-            'middle' === align && 'align-middle',
-            'bottom' === align && 'align-bottom',
-            'top' === align && 'align-top'
+            'center' === justify && 'kl-justify-center',
+            'start' === justify && 'kl-justify-start',
+            'end' === justify && 'kl-justify-end',
+            'space-between' === justify && 'kl-justify-space-between',
+            'space-around' === justify && 'kl-justify-space-around',
+            'space-evenly' === justify && 'kl-justify-space-evenly',
+            'middle' === align && 'kl-align-middle',
+            'bottom' === align && 'kl-align-bottom',
+            'top' === align && 'kl-align-top'
         ]"
         :style="gutterStyle"
     >
@@ -30,7 +31,7 @@ import { createNamespace } from '@kunlun-design/utils'
 import { isArray, isNumber } from 'lodash'
 import './row.scss'
 const props = defineProps(rowProps)
-console.log(props.gutter)
+console.log(props.wrap)
 const { n } = createNamespace('row')
 const gutterStyle = computed(() => {
     let value = props.gutter

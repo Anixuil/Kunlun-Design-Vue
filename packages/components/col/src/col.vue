@@ -44,9 +44,11 @@ const colClass = computed(() => {
             //以下几个可能是object,写法是
         } else if (
             (prop === 'xs' || prop === 'sm' || prop === 'md' || prop === 'lg' || prop === 'xl') &&
-            Object.prototype.hasOwnProperty.call(prop, 'order')
+            value instanceof Object
         ) {
-            classes.push(n(`--${prop}-order-${prop[<any>'order']}`))
+            for (let key in value) {
+                classes.push(n(`--${prop}-${key}-${value[key]}`))
+            }
         }
     })
     return [n(), gutter && 'kl-guttered', classes]

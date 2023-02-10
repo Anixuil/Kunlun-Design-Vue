@@ -31,7 +31,7 @@ export const colProps = {
         default: 0
     },
     xs: {
-        type: Number || Object
+        type: [Number, Object] //让prop可以满足多个类型必须写成这种数组形式
     },
     sm: {
         type: Number || Object

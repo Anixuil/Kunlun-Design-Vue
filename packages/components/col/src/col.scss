@@ -2,38 +2,38 @@
 @import '../../styles/var.scss';
 
 .kl-col {
-    //kl-col
-    box-sizing: border-box;
-    // @include when(guttered) {
-    //   display: block;
-    //   min-height: 1px;
-    // }
-    &.kl-col-0 {
+    box-sizing: border-box;  //为了计算宽度包含border+padding+border
+    background-clip: content-box;//去除背景颜色包含padding+border的情况，为了gutter间隔有效果
+    .kl-guttered {
+      display: block;
+      min-height: 1px;
+    }
+    &.kl-col--0 {
         display: none;
     }
     //每一个分为24份，通过for循环
     @for $i from 0 through 24 {
         //span属性
-        &.kl-col-#{$i} {
+        &.kl-col--#{$i} {
             max-width: (math.div(1, 24) * $i * 100) * 1%;
             flex: 0 0 (math.div(1, 24) * $i * 100) * 1%;
         }
         //offset
-        &.kl-col-offset-#{$i} {
+        &.kl-col--offset-#{$i} {
             margin-left: (math.div(1, 24) * $i * 100) * 1%;
         }
         //pull向左
-        &.kl-col-pull-#{$i} {
+        &.kl-col--pull-#{$i} {
             position: relative;
             right: (math.div(1, 24) * $i * 100) * 1%;
         }
         //push向右
-        &.kl-col-push-#{$i} {
+        &.kl-col--push-#{$i} {
             position: relative;
             left: (math.div(1, 24) * $i * 100) * 1%;
         }
         //order
-        &.kl-col-order-#{$i} {
+        &.kl-col--order-#{$i} {
             order: $i;
         }
     }
@@ -54,26 +54,26 @@
         @include res($size) {
             @for $i from 0 through 24 {
                 //span属性
-                &.kl-col-#{$size}-#{$i} {
+                &.kl-col--#{$size}-#{$i} {
                     max-width: (math.div(1, 24) * $i * 100) * 1%;
                     flex: 0 0 (math.div(1, 24) * $i * 100) * 1%;
                 }
                 //offset
-                &.kl-col-#{$size}-offset-#{$i} {
+                &.kl-col--#{$size}-offset-#{$i} {
                     margin-left: (math.div(1, 24) * $i * 100) * 1%;
                 }
                 //pull向左
-                &.kl-col-#{$size}-pull-#{$i} {
+                &.kl-col--#{$size}-pull-#{$i} {
                     position: relative;
                     right: (math.div(1, 24) * $i * 100) * 1%;
                 }
                 //push向右
-                &.kl-col-#{$size}-push-#{$i} {
+                &.kl-col--#{$size}-push-#{$i} {
                     position: relative;
                     left: (math.div(1, 24) * $i * 100) * 1%;
                 }
                 //order
-                &.kl-col-#{$size}-order-#{$i} {
+                &.kl-col--#{$size}-order-#{$i} {
                     order: $i;
                 }
             }

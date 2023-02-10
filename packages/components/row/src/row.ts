@@ -7,11 +7,11 @@ export const rowProps = {
     },
     justify: {
         type: String,
-        default: 'center'
+        default: ''
     },
     align: {
         type: String,
-        default: 'middle'
+        default: ''
     },
     gutter: {
         type: [Number, Array<number>],
@@ -19,7 +19,7 @@ export const rowProps = {
     },
     wrap: {
         type: Boolean,
-        default: true
+        default: false
     }
 }
 //type就是指定buttonProps是一个类型
