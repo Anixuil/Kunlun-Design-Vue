@@ -12,7 +12,7 @@
     position: relative;
     box-sizing: border-box; //为了实现加margin padding还在一行
     @include when(wrap) {
-        flex-wrap: wrap;//溢出换行
+        flex-wrap: wrap; //溢出换行
     }
 
     @include when(justify-start) {
