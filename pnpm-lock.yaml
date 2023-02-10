@@ -5,6 +5,7 @@ importers:
         specifiers:
             '@commitlint/cli': ^17.4.2
             '@commitlint/config-conventional': ^17.4.2
+            '@kl-design/icons': 1.0.10
             '@kunlun-design/components': workspace:*
             '@kunlun-design/eslint-config': workspace:*
             '@kunlun-design/utils': workspace:*
@@ -44,6 +45,7 @@ importers:
             vitest: ^0.28.3
             vue: ^3.2.45
         dependencies:
+            '@kl-design/icons': registry.npmmirror.com/@kl-design/icons/1.0.10
             escape-html: registry.npmmirror.com/escape-html/1.0.3
         devDependencies:
             '@commitlint/cli': registry.npmmirror.com/@commitlint/cli/17.4.2
@@ -100,7 +102,6 @@ importers:
 
     packages/docs:
         specifiers:
-            '@kl-design/icons': 1.0.10
             '@types/node': ^18.11.18
             markdown-it: ^13.0.1
             markdown-it-container: ^3.0.0
@@ -110,7 +111,6 @@ importers:
             vitepress: 1.0.0-alpha.38
             vitepress-theme-demoblock: ^2.0.2
         dependencies:
-            '@kl-design/icons': 1.0.10
             markdown-it: registry.npmmirror.com/markdown-it/13.0.1
             markdown-it-container: registry.npmmirror.com/markdown-it-container/3.0.0
             prism-theme-vars: registry.npmmirror.com/prism-theme-vars/0.2.4
@@ -164,13 +164,6 @@ importers:
             vue-tsc: registry.npmmirror.com/vue-tsc/1.0.24_typescript@4.9.4
 
 packages:
-    /@kl-design/icons/1.0.10:
-        resolution:
-            {
-                integrity: sha512-3lrWb7YUsjKmBUZds58RH1IFjVRQdF1nEPipX+ZRiqn1RFmaniUXLwnPwVZ+f+7A1230LCf19Be2p/MSH9v1cg==
-            }
-        dev: false
-
     /picocolors/1.0.0:
         resolution:
             {
@@ -2133,6 +2126,17 @@ packages:
             '@jridgewell/resolve-uri': registry.npmmirror.com/@jridgewell/resolve-uri/3.1.0
             '@jridgewell/sourcemap-codec': registry.npmmirror.com/@jridgewell/sourcemap-codec/1.4.14
         dev: true
+
+    registry.npmmirror.com/@kl-design/icons/1.0.10:
+        resolution:
+            {
+                integrity: sha512-3lrWb7YUsjKmBUZds58RH1IFjVRQdF1nEPipX+ZRiqn1RFmaniUXLwnPwVZ+f+7A1230LCf19Be2p/MSH9v1cg==,
+                registry: https://registry.npm.taobao.org/,
+                tarball: https://registry.npmmirror.com/@kl-design/icons/-/icons-1.0.10.tgz
+            }
+        name: '@kl-design/icons'
+        version: 1.0.10
+        dev: false
 
     registry.npmmirror.com/@mdit-vue/plugin-sfc/0.11.1:
         resolution:
