@@ -1,28 +1,14 @@
 <script setup lang="ts">
 import icons from '@kl-design/icons/icons.json'
+import { KlMessage } from '@kunlun-design/components'
 const props = defineProps<{ type: string }>()
 const iconCpns = icons.filter((icon: string) => icon.includes(props.type))
-const messageBox = () => {
-    let timer: NodeJS.Timeout | null = null
-    return (status: 'success' | 'failure', text: string) => {
-        if (timer) return
-        const dialogEl = document.createElement('div')
-        dialogEl.className = 'dialog-' + status
-        dialogEl.innerText = text
-        document.body.appendChild(dialogEl)
-        timer = setTimeout(() => {
-            document.body.removeChild(dialogEl)
-            timer = null
-        }, 1000)
-    }
-}
-const message = messageBox()
 const copyText = async (text: string) => {
     try {
         await navigator.clipboard.writeText(text)
-        message('success', `${text} 复制成功`)
+        KlMessage.success(`${text} 复制成功`)
     } catch (error) {
-        message('failure', `${text} 复制失败`)
+        KlMessage.error(`${text} 复制失败`)
     }
 }
 const handleCopy = (cpn: string) => {
@@ -56,6 +42,7 @@ const handleCopy = (cpn: string) => {
     border: 1px solid #67c23a;
     z-index: 999;
 }
+
 :global(.dialog-failure) {
     position: fixed;
     left: 50%;
@@ -68,11 +55,13 @@ const handleCopy = (cpn: string) => {
     border: 1px solid #f56c6c;
     z-index: 999;
 }
+
 .title {
     margin: 30px 0 20px;
     font-size: 24px;
-    font-family: '楷体';
+    font-family: '楷体', sans-serif;
 }
+
 .icon-box {
     display: flex;
     flex-wrap: wrap;

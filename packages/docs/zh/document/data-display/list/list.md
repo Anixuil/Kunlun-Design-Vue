@@ -32,7 +32,6 @@ list/basic
 list/simple
 :::
 
-
 ## API
 
 ### List
@@ -45,8 +44,6 @@ list/simple
 | header     | 列表头部                               | slot                                                |
 | renderItem | 列表单元内容 使用 #renderItem="{item}" | slot                                                |
 | size       | list 的尺寸                            | `xlarge` \| `large` \|`normal` \| `small` \| `mini` |
-
-
 
 ### List.Item
 
@@ -63,4 +60,3 @@ list/simple
 | avatar      | 列表元素的图标     | slot |
 | title       | 列表元素的标题     | slot |
 | description | 列表元素的描述内容 | slot |
-
