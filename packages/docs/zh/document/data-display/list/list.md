@@ -31,3 +31,36 @@ list/basic
 :::demo
 list/simple
 :::
+
+
+## API
+
+### List
+
+| 参数       | 说明                                   | 类型                                                |
+| ---------- | -------------------------------------- | --------------------------------------------------- |
+| bordered   | 是否展示边框                           | boolean                                             |
+| dataSource | 列表数据源                             | any\[]                                              |
+| footer     | 列表底部                               | slot                                                |
+| header     | 列表头部                               | slot                                                |
+| renderItem | 列表单元内容 使用 #renderItem="{item}" | slot                                                |
+| size       | list 的尺寸                            | `xlarge` \| `large` \|`normal` \| `small` \| `mini` |
+
+
+
+### List.Item
+
+| 参数    | 说明                             | 类型 |
+| ------- | -------------------------------- | ---- |
+| content | 列表单元内容，位置在最左边       | slot |
+| actions | 列表操作组，位置在最右侧         | slot |
+| extra   | 额外内容, 展展示在列表元素最右侧 | slot |
+
+### List.Item.Meta
+
+| 参数        | 说明               | 类型 |
+| ----------- | ------------------ | ---- |
+| avatar      | 列表元素的图标     | slot |
+| title       | 列表元素的标题     | slot |
+| description | 列表元素的描述内容 | slot |
+

@@ -12,13 +12,17 @@
     //要写一下才能进行改变 不绑定初始值无法使用
 
     //两个连在一起要留一些间隙，那就上下有一点就行
-    & + & {
+    &+& {
         margin-top: 10px;
     }
 
     &--header,
     &--footer {
         padding: var(--kl-padding);
+
+        &:hover {
+            background-color: #fafafa;
+        }
     }
 
     &-items {
@@ -37,6 +41,10 @@
         justify-content: space-between;
         padding: var(--kl-padding);
         flex-wrap: wrap;
+
+        &:hover {
+            background-color: #fafafa;
+        }
     }
 
     &-item--bordered {
