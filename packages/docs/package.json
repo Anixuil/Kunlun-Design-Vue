@@ -18,7 +18,6 @@
         "vitepress-theme-demoblock": "^2.0.2"
     },
     "dependencies": {
-        "@kl-design/icons": "1.0.10",
         "markdown-it": "^13.0.1",
         "markdown-it-container": "^3.0.0",
         "prism-theme-vars": "^0.2.4",
