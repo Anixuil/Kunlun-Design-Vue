@@ -14,7 +14,7 @@ lang: zh-CN
 **Message** 在配置上与 **Notifications** 非常相似，所以部分 options 在此不做详尽解释。
 
 :::demo
-feedback/basic
+feedback/message/basic
 :::
 
 ## 不同状态
@@ -26,7 +26,7 @@ feedback/basic
 同时，我们也为 Message 的各种 type 注册了方法，可以在不传入 type 字段的情况下直接调用。
 
 :::demo
-feedback/status
+feedback/message/status
 :::
 
 ## 可关闭的消息提示
@@ -36,7 +36,7 @@ feedback/status
 默认的 Message 是不可以被人工关闭的。如果你需要手动关闭功能，你可以把 `close` 设置为 true。Message 拥有可控的 `duration`，默认的关闭时间为 3000 毫秒，当把这个属性的值设置为 `0` 便表示该消息不会被自动关闭。
 
 :::demo
-feedback/close
+feedback/message/close
 :::
 
 ## 可滚动的消息提示
@@ -52,5 +52,5 @@ feedback/close
 **`注意：在宽度尺寸较窄的窗口测试本功能，且不建议文本太长，长文本可以使用其他的通知提示组件`**
 
 :::demo
-feedback/scroll
+feedback/message/scroll
 :::

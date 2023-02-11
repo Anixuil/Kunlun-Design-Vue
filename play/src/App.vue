@@ -6,7 +6,7 @@ import Button from './components/Button.vue'
 import Form from './components/Form.vue'
 import Layout from './components/layout.vue'
 import Icon from './components/Icon.vue'
-import Dialog from './components/Dialog.vue'
+import Dialog from './components/dialog.vue'
 </script>
 
 <template>

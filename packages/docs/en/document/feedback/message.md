@@ -1,6 +1,6 @@
 ---
 layout: doc
-lang: zh-CN
+lang: en-US
 ---
 
 # Message Prompt
@@ -14,7 +14,7 @@ It appears from the top and disappears after 3 seconds.
 **Message** is very similar in configuration to **Notifications**, so some of the options are not explained here.
 
 :::demo
-feedback/basic
+feedback/message/basic
 :::
 
 ## Different states
@@ -28,7 +28,7 @@ For example, setting the `type` field can define different states, defaulting to
 We have also registered methods for the various types of Message that can be called without passing the type field.
 
 :::demo
-feedback/status
+feedback/message/status
 :::
 
 ## Message prompt that can be turned off
@@ -38,7 +38,7 @@ Can be used to add a close button
 The default Message cannot be manually closed. If you need to turn the function off manually, you can set `close` to true. Message has a controlled `duration` with a default shutdown time of 3000 ms. Setting this property to `0` means that the message will not be automatically closed.
 
 :::demo
-feedback/close
+feedback/message/close
 :::
 
 ## Scrollable message prompt
@@ -54,5 +54,5 @@ With `scroll` set to true, `duration` will be the length of the scroll animation
 **`Note: Test this feature on Windows with narrow width dimensions, and it is not recommended that the text be too long. Other notification prompt components can be used for long text`**
 
 :::demo
-feedback/scroll
+feedback/message/scroll
 :::
