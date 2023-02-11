@@ -6,12 +6,6 @@
                 <span>Tips</span>
             </template>
             this is a message
-            <template #footer>
-                <span class="footer">
-                    <kl-button @click="dialogFlag = false">Cancel</kl-button>
-                    <kl-button type="primary" @click="dialogFlag = false">Enter</kl-button>
-                </span>
-            </template>
         </kl-dialog>
     </div>
 </template>
