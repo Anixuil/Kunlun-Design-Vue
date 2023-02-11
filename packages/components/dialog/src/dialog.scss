@@ -1,4 +1,49 @@
 @import '../../styles/common.scss';
 
-.kl-dialog {
+.kl-dialog-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 1, 1, 0.3);
+    transition: all 0.3s ease;
+    z-index: 98;
+    .kl-dialog {
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: white;
+        z-index: 99;
+        //默认对话框样式
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        &.kl-dialog--default {
+            animation: dialog-show 0.2 ease;
+            width: 100vw;
+        }
+
+        &.kl-dialog--normal {
+            animation: dialog-normal-show 0.3s ease;
+        }
+    }
+}
+@keyframes dialog-show {
+    from {
+        opacity: 0;
+        left: 150%;
+    }
+    to {
+    }
+}
+@keyframes dialog-normal-show {
+    from {
+        transform: translate(-50%, -100%) rotateX(90deg);
+    }
+    to {
+        transform: translate(-50%, -50%);
+    }
 }
