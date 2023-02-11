@@ -6,9 +6,11 @@ import Button from './components/Button.vue'
 import Form from './components/Form.vue'
 import Layout from './components/layout.vue'
 import Icon from './components/Icon.vue'
+import Dialog from './components/Dialog.vue'
 </script>
 
 <template>
+    <Dialog></Dialog>
     <Icon></Icon>
     <List></List>
     <Button></Button>
