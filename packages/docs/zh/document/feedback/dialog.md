@@ -54,3 +54,28 @@ kunlun design 支持您在关闭对话框前，执行一些您业务上所想执
 :::demo
 feedback/dialog/beforeClose
 :::
+
+## 自定义对话框基本样式
+
+kunlun design 支持您在属性上对对话框基本样式进行快速设置。
+
+您可以通过 `width` 属性对对话框宽度进行设置，如不设置，组件宽度则是被内容撑开。您可以通过 `top` 和 `left` 对对话框位置进行设置，让对话框出现在您想要它出现在的位置。您还可以通过 `bgColor` 属性对对话框背景颜色进行配置。
+
+:::demo
+feedback/dialog/position
+:::
+
+## 属性
+
+| 属性                 | 说明                     | 类型     | 默认值  | 可选值                  |
+| -------------------- | ------------------------ | -------- | ------- | ----------------------- |
+| modelValue / v-model | 是否显示 Dialog          | boolean  |         |                         |
+| width                | 对话框宽度               | string   |         |                         |
+| mode                 | 对话框模式               | string   | default | kunlun                  |
+| left \| top          | 对话框位置               | string   |         | 带单位的值              |
+| cxtPosition          | 对话框内容对齐方式       | string   | center  | left \| center \| right |
+| footPosition         | 对话框底部对齐方式       | string   | center  | left \| center \| right |
+| bgColor              | 对话框颜色               | string   | white   | 任何代表颜色的值        |
+| show-close           | 是否显示关闭按钮         | boolean  | true    | false                   |
+| before-close         | 对话框关闭前的回调       | function |         |                         |
+| close-on-click-modal | 点击模态框是否关闭对话框 | boolean  | true    | false                   |

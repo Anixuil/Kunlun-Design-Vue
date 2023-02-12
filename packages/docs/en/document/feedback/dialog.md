@@ -45,7 +45,7 @@ kunlun design allows you to customize the header of the Dialog
 feedback/dialog/head
 :::
 
-## 关闭前回调
+## Call back before closing
 
 Call back before closing
 
@@ -54,3 +54,28 @@ The `before-close` property accepts a method as an argument.
 :::demo
 feedback/dialog/beforeClose
 :::
+
+## Customize the basic style of the dialog box
+
+kunlun design supports you to quickly set basic dialog box styles on the property.
+
+You can set the width of the dialog box with the `width` property. If not, the component width is stretched by the content. You can set the dialog box position with `top` and `left` to make the dialog appear where you want it to appear. You can also configure the dialog background color through the `bgColor` property.
+
+:::demo
+feedback/dialog/position
+:::
+
+## Attribute
+
+| attribute            | description                            | type     | default | Optional value                    |
+| -------------------- | -------------------------------------- | -------- | ------- | --------------------------------- |
+| modelValue / v-model | Show Dialog or not                     | boolean  |         |                                   |
+| width                | Dialog width                           | string   |         |                                   |
+| mode                 | Dialog mode                            | string   | default | kunlun                            |
+| left \| top          | Dialog box location                    | string   |         | Values with units                 |
+| cxtPosition          | Dialog box content alignment           | string   | center  | left \| center \| right           |
+| footPosition         | Dialog box bottom alignment            | string   | center  | left \| center \| right           |
+| bgColor              | Dialog color                           | string   | white   | Any value that represents a color |
+| show-close           | Whether the close button is displayed  | boolean  | true    | false                             |
+| before-close         | The callback before the dialog closes  | function |         |                                   |
+| close-on-click-modal | Click Mode box to close the dialog box | boolean  | true    | false                             |

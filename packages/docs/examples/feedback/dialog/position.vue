@@ -1,7 +1,7 @@
 <template>
     <div>
         <kl-button @click="dialogFlag = true">click to open the dialog</kl-button>
-        <kl-dialog v-model="dialogFlag" top="-25%">
+        <kl-dialog v-model="dialogFlag" top="-25%" bgColor="rgb(57,183,84)">
             <template #header>Tips</template>
             <span>this is a message</span>
             <template #footer>

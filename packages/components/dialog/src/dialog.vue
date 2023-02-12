@@ -4,13 +4,7 @@
         <div class="kl-dialog-wrapper" v-if="visiable" @click.self="handleModalClose">
             <!-- 对话框主体 -->
             <div
-                :class="[
-                    n(),
-                    mode && n(`--${mode}`),
-                    left && 'dialog-left',
-                    right && 'dialog-right',
-                    center && 'dialog-center'
-                ]"
+                :class="[n(), mode && n(`--${mode}`)]"
                 :style="{
                     ...style
                 }"
@@ -38,7 +32,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { DialogProps, modeValidator, positionValidator } from './dialog'
+import { DialogProps } from './dialog'
 import { computed } from 'vue'
 import './dialog.scss'
 
@@ -53,16 +47,19 @@ const visiable = computed({
         emit('update:modelValue', value)
     }
 })
-//对话框mode属性
-const mode = computed(() => {
-    if (props.mode === undefined) return 'default'
-    return modeValidator(props.mode) ? props.mode : 'default'
-})
 
+//对话框自定义位置
 //自定义背景颜色
 const style = computed(() => {
+    const bgColor = props.bgColor || ''
+    const width = props.width || ''
+    const left = props.left || ''
+    const top = props.top || ''
     return {
-        'background-color': props.bgColor
+        'background-color': bgColor,
+        width: width,
+        left: `calc(50% + ${left})`,
+        top: `calc(50% + ${top})`
     }
 })
 //复用关闭方法
@@ -87,16 +84,6 @@ const handleModalClose = () => {
         }
     }
 }
-//内容对齐方式
-const cxtPosition = computed(() => {
-    if (props.cxtPosition === undefined) return 'left'
-    return positionValidator(props.cxtPosition) ? props.cxtPosition : 'left'
-})
-//尾部对齐方式
-const footPosition = computed(() => {
-    if (props.footPosition === undefined) return 'center'
-    return positionValidator(props.footPosition) ? props.footPosition : 'center'
-})
 
 defineOptions({
     name: 'KlDialog'

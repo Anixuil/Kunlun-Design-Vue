@@ -4,25 +4,29 @@ export const modeValidator = (mode: string): boolean => {
     return ['kunlun', 'default'].includes(mode)
 }
 
-export const positionValidator = (position: string): boolean => {
-    return ['left', 'center', 'right'].includes(position)
-}
-
 export const DialogProps = {
     //对话框显示与隐藏
     modelValue: Boolean,
+    //对话框的宽度自定义
+    width: String,
     //对话框模式
-    mode: String as PropType<'default' | 'kunlun'>,
+    mode: {
+        type: String as PropType<'default' | 'kunlun'>,
+        default: 'default'
+    },
     //对话框位置
-    left: Boolean,
-    right: Boolean,
-    center: Boolean,
+    left: String,
+    top: String,
     //对话框内容对齐方式
-    cxtPosition: String as PropType<'left' | 'center' | 'right'>,
-    //头部对齐方式
-    headPosition: String as PropType<'left' | 'center' | 'right'>,
+    cxtPosition: {
+        type: String as PropType<'left' | 'center' | 'right'>,
+        default: 'center'
+    },
     //底部对齐方式
-    footPosition: String as PropType<'left' | 'center' | 'right'>,
+    footPosition: {
+        type: String as PropType<'left' | 'center' | 'right'>,
+        default: 'center'
+    },
     //对话框背景颜色
     bgColor: String,
     //是否显示关闭按钮
