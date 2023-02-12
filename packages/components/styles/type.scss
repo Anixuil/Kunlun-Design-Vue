@@ -48,18 +48,30 @@ $buttonType: (
 $messageType: (
     'text': (
         bg: rgb(244, 244, 245),
-        fontColor: rgb(52, 52, 52)
+        fontColor: rgb(52, 52, 52),
+        border: 1px solid rgb(244, 244, 245),
+        border-active: 1px solid rgb(52, 52, 52),
+        iconTitle: rgb(52, 52, 52)
     ),
     'success': (
         bg: rgb(103, 194, 58),
-        fontColor: white
+        fontColor: white,
+        border: 1px solid rgb(103, 194, 58),
+        border-active: 1px solid rgb(35, 105, 0),
+        iconTitle: rgb(68, 124, 39)
     ),
     'error': (
         bg: rgb(245, 108, 108),
-        fontColor: white
+        fontColor: white,
+        border: 1px solid rgb(245, 108, 108),
+        border-active: 1px solid rgb(175, 10, 10),
+        iconTitle: red
     ),
     'warning': (
         bg: rgb(230, 162, 60),
-        fontColor: white
+        fontColor: white,
+        border: 1px solid rgb(230, 162, 60),
+        border-active: 1px solid rgb(138, 84, 4),
+        iconTitle: rgb(240, 152, 20)
     )
 );

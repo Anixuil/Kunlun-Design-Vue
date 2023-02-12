@@ -1,5 +1,10 @@
 <template>
     <div :class="[config.type && n(`--${config.type}`)]" ref="wrapper">
+        <KlOtherCorrectCircleFill class="left-icon" v-if="config.type === 'success'" />
+        <KlOtherWarningFill class="left-icon" v-if="config.type === 'warning'" />
+        <KlOtherErrorCircle class="left-icon" v-if="config.type === 'error'" />
+        <KlOtherAlertFill class="left-icon" v-if="config.type === 'text'" />
+
         <div class="scroll-wrapper" v-if="config.scroll">
             <contentVNode v-if="renderFlag" />
             <span v-else class="kl-message--scroll" ref="container">{{ contentStr }}</span>
@@ -8,12 +13,18 @@
             <contentVNode v-if="renderFlag" />
             <span v-else>{{ contentStr }}</span>
         </div>
-
-        <i v-if="config.close" @click="closeMessage">❌</i>
+        <KlOtherError class="right-icon" v-if="config.close" @click="closeMessage" />
     </div>
 </template>
 
 <script setup lang="ts">
+import {
+    KlOtherError,
+    KlOtherCorrectCircleFill,
+    KlOtherAlertFill,
+    KlOtherErrorCircle,
+    KlOtherWarningFill
+} from '@kl-design/icons'
 import { createNamespace } from '@kunlun-design/utils'
 import { ComponentOptions, computed, defineComponent, nextTick, ref, Ref } from 'vue'
 import { textScroll } from './utils/index'

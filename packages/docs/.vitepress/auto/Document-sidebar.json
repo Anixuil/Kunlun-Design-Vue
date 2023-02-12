@@ -32,6 +32,10 @@
                 {
                     "text": "Message 消息提示",
                     "link": "/feedback/message"
+                },
+                {
+                    "text": "Dialog 对话框",
+                    "link": "/feedback/dialog"
                 }
             ]
         },
@@ -78,11 +82,15 @@
                 {
                     "text": "Message Tips",
                     "link": "/feedback/message"
+                },
+                {
+                    "text": "Dialog",
+                    "link": "/feedback/dialog"
                 }
             ]
         },
-        " data-display": {
-            "text": "data-display Components",
+        "data-display": {
+            "text": "Data-display Components",
             "children": [
                 {
                     "text": "List",

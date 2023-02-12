@@ -49,6 +49,9 @@ $components: button, input, select, message, list;
         @include matchComponent($key) {
             @include kl-attribute($value, '--bg-color', 'bg');
             @include kl-attribute($value, '--font-color', 'fontColor');
+            @include kl-attribute($value, '--border', 'border');
+            @include kl-attribute($value, '--border-active', 'border-active');
+            @include kl-attribute($value, '--icon-title', 'iconTitle');
         }
     }
 }
