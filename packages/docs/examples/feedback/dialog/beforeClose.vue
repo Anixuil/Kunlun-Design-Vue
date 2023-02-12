@@ -15,18 +15,9 @@ import { KlMessage } from '@kunlun-design/components'
 import { ref } from 'vue'
 const dialogFlag = ref(false)
 const handleClose = (done: () => void) => {
-    let num = 3
-    KlMessage.warning(`${num}s 后关闭对话框`)
-    let time = setInterval(() => {
-        num--
-        if (num == 0) {
-            KlMessage.success(`关闭对话框`)
-        } else {
-            KlMessage.warning(`${num}s 后关闭对话框`)
-        }
-    }, 1000)
+    KlMessage.warning(`3s 后关闭对话框`, 3000)
     setTimeout(() => {
-        clearInterval(time)
+        KlMessage.success(`关闭对话框`)
         done()
     }, 3000)
 }
