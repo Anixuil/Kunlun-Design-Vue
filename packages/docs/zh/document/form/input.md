@@ -31,6 +31,13 @@ input/password
 input/disabled
 :::
 
+## 尺寸
+使用 size 属性改变输入框大小。 除了默认大小外，还有另外两个选项： large, small。
+
+:::demo
+input/size
+:::
+
 ## 文本框
 
 通过设置`type`属性为`textarea`，可以自定义为文本框；`rows`属性可以设置文本框的高度，默认为 4 行；`disabled`属性可以禁用文本框
@@ -39,21 +46,25 @@ input/disabled
 input/textarea
 :::
 
+## API
+
 ### 属性
 
-| 属性名           | 说明                               | 类型            | 默认值   |
-|---------------|----------------------------------|---------------|-------|
-| placeholder   | 自定义输入框提示                         | String        | —     |
-| type          | 类型                               | String        | text  |
-| v-model       | 绑定值                              | string/number | —     |
-| clearable     | 是否显示清除按钮，只有当 type 不是 textarea时生效 | boolean       | fales |
-| show-password | 是否显示切换密码图标                       | boolean       | fales |
-| disabled      | 是否禁用                             | boolean       | fales |
-| rows	         | 输入框行数，仅 type 为 'textarea' 时有效    | number        | 4     |
-| name	         | 等价于原生 input name 属性              | string        | —     |
-| max	          | 原生 max 属性，设置最大值	                 | —	            | —     |
-| min           | 	原生属性，设置最小值	                     | —	            | —     |
-| step	         | 原生属性，设置输入字段的合法数字间隔	              | —	            | —     |
-| autofocus	    | 原生属性，自动获取焦点                      | boolean       | false |
-| form	         | 原生属性	                            | string	       | —     |
-| input-style	  | input 元素或 textarea 元素的 style     | string/object | {}    |
+| 属性名           | 说明                               | 类型                             | 默认值     |
+|---------------|----------------------------------|--------------------------------|---------|
+| placeholder   | 自定义输入框提示                         | String                         | —       |
+| type          | 类型                               | String                         | text    |
+| v-model       | 绑定值                              | string/number                  | —       |
+| clearable     | 是否显示清除按钮，只有当 type 不是 textarea时生效 | boolean                        | fales   |
+| show-password | 是否显示切换密码图标                       | boolean                        | fales   |
+| disabled      | 是否禁用                             | boolean                        | fales   |
+| rows	         | 输入框行数，仅 type 为 'textarea' 时有效    | number                         | 4       |
+| name	         | 等价于原生 input name 属性              | string                         | —       |
+| readonly	     | 原生  readonly 属性，是否只读             | boolean                        | false   |
+| size	         | 输入框尺寸，只在 type 不为 'textarea' 时有效  | 'large' / 'default'  / 'small' | default |
+| max	          | 原生 max 属性，设置最大值	                 | —	                             | —       |
+| min           | 	原生属性，设置最小值	                     | —	                             | —       |
+| step	         | 原生属性，设置输入字段的合法数字间隔	              | —	                             | —       |
+| autofocus	    | 原生属性，自动获取焦点                      | boolean                        | false   |
+| form	         | 原生属性	                            | string	                        | —       |
+| input-style	  | input 元素或 textarea 元素的 style     | string/object                  | {}      |
