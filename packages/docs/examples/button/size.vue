@@ -32,6 +32,7 @@ import { KlSystemEdit } from '@kl-design/icons'
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: center;
 
     & > button {
         margin-bottom: 10px;

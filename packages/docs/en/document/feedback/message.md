@@ -56,3 +56,16 @@ With `scroll` set to true, `duration` will be the length of the scroll animation
 :::demo
 feedback/message/scroll
 :::
+
+## Attribute
+
+| attribute | description                           | type    | optional                      | default |
+| --------- | ------------------------------------- | ------- | ----------------------------- | ------- |
+| success   | Success message                       |         |                               |         |
+| error     | Error prompt                          |         |                               |         |
+| warning   | Warning prompt                        |         |                               |         |
+| text      | General prompt                        |         |                               |         |
+| type      | Prompt type                           | string  | success\|error\|warning\|text | text    |
+| duration  | Prompt duration                       | number  |                               | 3000    |
+| close     | Whether the close button is displayed | boolean |                               | false   |
+| scroll    | Whether out-of-roll is supported      | boolean |                               | false   |

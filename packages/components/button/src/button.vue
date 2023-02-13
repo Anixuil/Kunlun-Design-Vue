@@ -49,19 +49,6 @@ const type = computed(() => {
     return props.type
 })
 
-//icon属性
-console.log(props.icon)
-
-// const icon = computed(()=>{
-//     console.log(props.icon);
-
-//     if(props.icon !== null && props.icon !== undefined){
-//         let str = `<${props.icon} />`
-//         return str
-//     }
-//     return props.icon
-// })
-
 defineOptions({
     name: 'KlButton'
 })

@@ -64,3 +64,21 @@ datadisplay/progress/container
 :::demo
 datadisplay/progress/animate
 :::
+
+## 属性
+
+| 属性            | 说明                   | 类型            | 可选                            | 默认  |
+| --------------- | ---------------------- | --------------- | ------------------------------- | ----- |
+| percentage      | **必填** ，百分比      | number          | 0-100                           | 0     |
+| cw              | 环形大小               | number          |                                 | 125   |
+| type            | 进度条类型             | string          | line \| circle \| dashboard     | line  |
+| text-inside     | 文字内侧显示           | boolean         |                                 | false |
+| storke-width    | 进度条宽度             | number          |                                 | 10    |
+| status          | 当前状态               | string          | success \| exception \| warning |       |
+| indeterminate   | 动画进度条             | boolean         |                                 | false |
+| duration        | 进度条速度\|动画速度   | number          |                                 | 0.3   |
+| color           | 进度条颜色             | string \| array |                                 | ''    |
+| width           | 条形进度条长度         | string          |                                 | 300px |
+| show-text       | 是否显示进度条文字内容 | boolean         |                                 | true  |
+| storke-line-cap | 进度条的形状           | string          | round \| square                 | round |
+| format          | 指定文字内容           | function        |                                 |       |

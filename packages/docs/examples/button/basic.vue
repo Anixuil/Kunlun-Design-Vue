@@ -42,7 +42,6 @@ import {
     KlMediaCameraLine,
     KlMediaDiscFill
 } from '@kl-design/icons'
-console.log(typeof KlSystemEdit)
 </script>
 
 <style scoped lang="scss">
