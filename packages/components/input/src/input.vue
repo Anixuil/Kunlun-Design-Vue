@@ -170,8 +170,8 @@ const { n } = createNamespace('input')
         font-size: 16px;
     }
     .small {
-        height: 30px;
-        line-height: 30px;
+        height: 33px;
+        line-height: 33px;
         font-size: 12px;
     }
     // textarea样式
