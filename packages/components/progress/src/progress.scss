@@ -1,0 +1,135 @@
+@import '../../styles/common.scss';
+
+:root {
+    --progress-color: rgb(96, 190, 107);
+    --progress-duration: 0.3s;
+}
+.kl-progress {
+    position: relative;
+
+    &.kl-progress--success {
+        --progress-color: green;
+    }
+    &.kl-progress--warning {
+        --progress-color: rgb(230, 162, 60);
+    }
+    &.kl-progress--exception {
+        --progress-color: rgb(246, 16, 16);
+    }
+    &.kl-progress--animate {
+        .progress-line {
+            .progress-line-slider {
+                animation: line-animate var(--progress-duration) ease-in-out infinite;
+            }
+        }
+    }
+
+    &.kl-progress--line {
+        .progress-line {
+            width: 100%;
+            background-color: rgb(235, 238, 245);
+            height: 10px;
+            transition: all var(--progress-duration) ease;
+            position: relative;
+            overflow: hidden;
+            &.kl-progress--round {
+                border-radius: 20px;
+                .progress-line-slider {
+                    border-radius: 20px;
+                }
+            }
+
+            &.kl-progress--square {
+                border-radius: 0px;
+                .progress-line-slider {
+                    border-radius: 0px;
+                }
+            }
+
+            .progress-line-slider {
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: var(--progress-color);
+                height: 100%;
+                transition: all var(--progress-duration) ease;
+                overflow: hidden;
+                & > * {
+                    font-size: 14px;
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translate(0%, -50%);
+                    color: white;
+                    box-sizing: border-box;
+                    padding: 0 10px;
+                }
+            }
+        }
+        .progress-line-outtertext {
+            font-size: 14px;
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(125%, -50%);
+            color: var(--progress-color);
+            transition: all var(--progress-duration) ease;
+        }
+        & > *:nth-child(2) {
+            font-size: 14px;
+            display: inline-block;
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translate(100%, -50%);
+            box-sizing: border-box;
+        }
+    }
+    &.kl-progress--circle,
+    &.kl-progress--dashboard {
+        position: relative;
+        // border: 1px solid red;
+        svg {
+            margin: 0 auto;
+            .circle-bg {
+                stroke: var(--progress-color);
+                opacity: 0.3;
+                transition: all var(--progress-duration) ease;
+            }
+            .circle-path {
+                stroke: var(--progress-color);
+                transition: all var(--progress-duration) ease;
+            }
+        }
+        .progress-circle-text,
+        & > *:not(svg) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--progress-color);
+            transition: all var(--progress-duration) ease;
+        }
+    }
+    &.kl-progress--dashboard {
+        .circle-bg,
+        .circle-path {
+            transform-origin: 100% 100%;
+            transform: rotate(-125deg);
+        }
+    }
+    & + & {
+        margin: 20px 0;
+    }
+}
+
+@keyframes line-animate {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 100%;
+    }
+}
