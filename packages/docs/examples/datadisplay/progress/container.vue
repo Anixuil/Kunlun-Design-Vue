@@ -13,9 +13,9 @@
         >
             <span>content</span>
         </kl-progress>
-        <div style="display: flex; align-items: center;">
+        <div style="display: flex; align-items: center">
             <kl-progress :percentage="percentage" type="circle" width="125">
-                <kl-button type="success" circle></kl-button>
+                <kl-button type="success" circle :icon="KlOtherCorrectCircleLine"></kl-button>
             </kl-progress>
             <kl-progress :percentage="percentage" type="circle" width="125">
                 <template #default="{ percentage }">
@@ -29,6 +29,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { KlOtherCorrectCircleLine } from '@kl-design/icons'
 const percentage = ref(0)
 
 setInterval(() => {

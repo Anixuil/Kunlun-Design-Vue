@@ -3,8 +3,8 @@
         <kl-progress :percentage="controlPercentage" :color="color" width="125" type="dashboard" />
         <kl-progress :percentage="percentage" width="125" :color="color" type="dashboard" />
     </div>
-    <kl-button plain size="mini" @click="decrease">-</kl-button>
-    <kl-button plain size="mini" @click="increase">+</kl-button>
+    <kl-button plain size="small" @click="decrease">-</kl-button>
+    <kl-button plain size="small" @click="increase">+</kl-button>
 </template>
 
 <script setup lang="ts">
@@ -46,5 +46,9 @@ const decrease = () => {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+.kl-button {
+    padding: 0 20px;
 }
 </style>

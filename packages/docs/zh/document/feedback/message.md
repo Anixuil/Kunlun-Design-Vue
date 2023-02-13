@@ -54,3 +54,16 @@ feedback/message/close
 :::demo
 feedback/message/scroll
 :::
+
+## 属性
+
+| 属性     | 说明             | 类型    | 可选                          | 默认  |
+| -------- | ---------------- | ------- | ----------------------------- | ----- |
+| success  | 成功提示         |         |                               |       |
+| error    | 错误提示         |         |                               |       |
+| warning  | 警告提示         |         |                               |       |
+| text     | 普通提示         |         |                               |       |
+| type     | 提示类型         | string  | success\|error\|warning\|text | text  |
+| duration | 提示持续时间     | number  |                               | 3000  |
+| close    | 是否显示关闭按钮 | boolean |                               | false |
+| scroll   | 是否支持超出滚动 | boolean |                               | false |

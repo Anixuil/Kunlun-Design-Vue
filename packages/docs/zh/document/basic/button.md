@@ -54,3 +54,20 @@ button/text
 :::demo
 button/size
 :::
+
+## 属性
+
+| 属性      | 说明                       | 类型    | 可选                                             | 默认    |
+| --------- | -------------------------- | ------- | ------------------------------------------------ | ------- |
+| type      | 按钮类型                   | string  | primary\|info\|success\|warning\|danger\|default | default |
+| size      | 按钮尺寸                   | string  | mini\|small\|normal\|large\|xlarge               | normal  |
+| color     | 按钮背景颜色               | string  |                                                  |         |
+| textColor | 按钮文字颜色               | string  |                                                  |         |
+| round     | 是否圆角                   | boolean |                                                  | false   |
+| plain     | 纯色按钮                   | boolean |                                                  | false   |
+| circle    | 圆                         | boolean |                                                  | false   |
+| disabled  | 禁用按钮                   | boolean |                                                  | false   |
+| link      | 链接按钮                   | boolean |                                                  | false   |
+| text      | 文字按钮                   | boolean |                                                  | false   |
+| bg        | 文字按钮模式下是否显示背景 | boolean |                                                  | false   |
+| icon      | 字体图标                   | object  |                                                  |         |

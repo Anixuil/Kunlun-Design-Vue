@@ -49,7 +49,7 @@ export const ProgressProps = {
         type: [String, Array<colorObj>],
         default: ''
     },
-    //环形进度条宽度
+    //条形进度条宽度
     width: {
         type: String,
         default: '300px'

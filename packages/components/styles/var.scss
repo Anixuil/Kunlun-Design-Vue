@@ -59,32 +59,32 @@ $default-border-active: 1px solid $primary-bgColor-active;
 //mini
 $mini-fontSize: 12px;
 $mini-paddingSize: 5px 10px;
-$mini-width: 55px;
-$mini-height: 26px;
+$mini-width: 30px;
+$mini-height: 10px;
 
 //small
 $small-fontSize: 14px;
 $small-paddingSize: 10px 15px;
-$small-width: 65px;
-$small-height: 36px;
+$small-width: 40px;
+$small-height: 30px;
 
 //normal
 $normal-fontSize: 16px;
 $normal-paddingSize: 10px 20px;
-$normal-width: 86px;
+$normal-width: 50px;
 $normal-height: 40px;
 
 //large
 $large-fontSize: 18px;
 $large-paddingSize: 10px 20px;
-$large-width: 95px;
+$large-width: 65px;
 $large-height: 43px;
 
 //xlarge
 $xlarge-fontSize: 20px;
 $xlarge-paddingSize: 10px 20px;
-$xlarge-width: 100px;
-$xlarge-heigth: 45px;
+$xlarge-width: 80px;
+$xlarge-heigth: 50px;
 
 /*col 媒体查询*/
 $--sm: 768px !default;

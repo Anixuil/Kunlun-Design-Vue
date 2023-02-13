@@ -54,3 +54,20 @@ Use the `size` attribute to configure additional dimensions, with five values av
 :::demo
 button/size
 :::
+
+## Attribute
+
+| attribute | description                                       | type    | optional                                         | default |
+| --------- | ------------------------------------------------- | ------- | ------------------------------------------------ | ------- |
+| type      | Button type                                       | string  | primary\|info\|success\|warning\|danger\|default | default |
+| size      | Button size                                       | string  | mini\|small\|normal\|large\|xlarge               | normal  |
+| color     | Button background color                           | string  |                                                  |         |
+| textColor | Button text color                                 | string  |                                                  |         |
+| round     | Rounded or not                                    | boolean |                                                  | false   |
+| plain     | Solid color button                                | boolean |                                                  | false   |
+| circle    | round                                             | boolean |                                                  | false   |
+| disabled  | Disable button                                    | boolean |                                                  | false   |
+| link      | Link button                                       | boolean |                                                  | false   |
+| text      | Text button                                       | boolean |                                                  | false   |
+| bg        | Whether to display background in text button mode | boolean |                                                  | false   |
+| icon      | Font icon                                         | object  |                                                  |         |

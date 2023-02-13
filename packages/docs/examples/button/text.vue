@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 const link_button = [
-    { type: '', text: 'default' },
+    { type: null, text: 'default' },
     { type: 'primary', text: 'primary' },
     { type: 'success', text: 'success' },
     { type: 'danger', text: 'danger' },

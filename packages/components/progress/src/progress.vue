@@ -39,7 +39,7 @@
     </div>
     <div
         :class="[n(), status && n(`--${status}`), type && n(`--${type}`)]"
-        :style="{ ...wrapperStyle }"
+        :style="{ ...circleStyle }"
         v-else
     >
         <svg
@@ -141,6 +141,12 @@ const wrapperStyle = computed(() => {
     }
     return {
         width: `${width}`,
+        '--progress-color': color.value,
+        '--progress-duration': `${props.duration}s`
+    }
+})
+const circleStyle = computed(() => {
+    return {
         '--progress-color': color.value,
         '--progress-duration': `${props.duration}s`
     }
