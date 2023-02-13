@@ -24,16 +24,26 @@
         <kl-button type="danger" round>Danger</kl-button>
     </div>
     <div class="kl-4">
-        <kl-button circle>K</kl-button>
-        <kl-button type="primary" circle>U</kl-button>
-        <kl-button type="success" circle>N</kl-button>
-        <kl-button type="info" circle>L</kl-button>
-        <kl-button type="warning" circle>U</kl-button>
-        <kl-button type="danger" circle>N</kl-button>
+        <kl-button circle :icon="KlSystemEdit"></kl-button>
+        <kl-button type="primary" circle :icon="KlSystemDelete"></kl-button>
+        <kl-button type="success" circle :icon="KlSystemSearch"></kl-button>
+        <kl-button type="info" circle :icon="KlSystemLoad"></kl-button>
+        <kl-button type="warning" circle :icon="KlMediaCameraLine"></kl-button>
+        <kl-button type="danger" circle :icon="KlMediaDiscFill"></kl-button>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {
+    KlSystemEdit,
+    KlSystemDelete,
+    KlSystemSearch,
+    KlSystemLoad,
+    KlMediaCameraLine,
+    KlMediaDiscFill
+} from '@kl-design/icons'
+console.log(typeof KlSystemEdit)
+</script>
 
 <style scoped lang="scss">
 .kl-4 {
@@ -41,6 +51,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: center;
 
     & > button {
         margin-bottom: 10px;

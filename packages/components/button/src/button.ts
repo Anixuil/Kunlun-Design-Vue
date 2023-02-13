@@ -1,18 +1,24 @@
 import type { PropType } from 'vue'
 // 类型验证器
-export const typevalidator = (type: string): boolean => {
-    return ['primary', 'info', 'success', 'warning', 'danger', 'default', ''].includes(type)
+const typevalidator = (type: string): boolean => {
+    return ['primary', 'info', 'success', 'warning', 'danger', 'default'].includes(type)
 }
 
-export const sizeValidator = (size: string): boolean => {
+const sizeValidator = (size: string): boolean => {
     return ['normal', 'mini', 'small', 'large', 'xlarge'].includes(size)
 }
 
 export const ButtonProps = {
-    type: String as PropType<
-        'primary' | 'info' | 'success' | 'warning' | 'danger' | 'default' | ''
-    >,
-    size: String as PropType<'mini' | 'small' | 'normal' | 'large' | 'xlarge'>,
+    type: {
+        type: String as PropType<'primary' | 'info' | 'success' | 'warning' | 'danger' | 'default'>,
+        validator: typevalidator,
+        default: 'default'
+    },
+    size: {
+        type: String as PropType<'mini' | 'small' | 'normal' | 'large' | 'xlarge'>,
+        validator: sizeValidator,
+        default: 'normal'
+    },
     color: String,
     textColor: {
         type: String
@@ -23,5 +29,6 @@ export const ButtonProps = {
     disabled: Boolean,
     link: Boolean,
     text: Boolean,
-    bg: Boolean
+    bg: Boolean,
+    icon: Object
 }

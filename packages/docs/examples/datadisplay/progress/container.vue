@@ -13,7 +13,7 @@
         >
             <span>content</span>
         </kl-progress>
-        <div style="display: flex; align-items: center;">
+        <div style="display: flex; align-items: center">
             <kl-progress :percentage="percentage" type="circle" width="125">
                 <kl-button type="success" circle></kl-button>
             </kl-progress>

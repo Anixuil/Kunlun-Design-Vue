@@ -16,6 +16,7 @@
             ...style
         }"
     >
+        <Component class="button-icon" :is="icon" />
         <span v-if="link" tabindex="0">
             <slot></slot>
         </span>
@@ -24,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { ButtonProps, typevalidator, sizeValidator } from './button'
+import { ButtonProps } from './button'
 import { createNamespace } from '@kunlun-design/utils'
 import { computed } from 'vue'
 import './button.scss'
@@ -41,18 +42,25 @@ const style = computed(() => {
         : {}
 })
 
-//检测type是否符合规范
 const type = computed(() => {
-    //首先验证的函数不允许是undefined 只允许string类型 如果类型非法就转换到默认类型
-    if (props.type === undefined || props.type === '') return 'default'
-    return typevalidator(props.type) ? props.type : 'default'
+    if (props.type === null || props.type === undefined) {
+        return 'default'
+    }
+    return props.type
 })
 
-//检测size是否符合规范
-const size = computed(() => {
-    if (props.size === undefined) return 'normal'
-    return sizeValidator(props.size) ? props.size : 'normal'
-})
+//icon属性
+console.log(props.icon)
+
+// const icon = computed(()=>{
+//     console.log(props.icon);
+
+//     if(props.icon !== null && props.icon !== undefined){
+//         let str = `<${props.icon} />`
+//         return str
+//     }
+//     return props.icon
+// })
 
 defineOptions({
     name: 'KlButton'
