@@ -40,7 +40,7 @@
                     v-model="form.text"
                     :clearable="true"
                     type="textarea"
-                    rows="4"
+                    :rows="4"
                 ></kl-input>
             </kl-form-item>
             <kl-form-item>

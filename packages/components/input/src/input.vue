@@ -2,13 +2,20 @@
     <div v-if="type !== 'textarea'" class="kl-input" :class="{ 'kl-input_suffix': showSuffix }">
         <input
             class="kl-input_inner"
-            :class="{ 'is-disabled': disabled }"
+            :class="[{ 'is-disabled': disabled }, size]"
             :placeholder="placeholder"
             :type="showPassword ? (passwordVisible ? 'text' : 'password') : type"
             :name="name"
             :value="modelValue"
             @input="handleInput"
             :disabled="disabled"
+            :style="inputStyle"
+            :readonly="readonly"
+            :max="max"
+            :min="min"
+            :step="step"
+            :autofocus="autofocus"
+            :form="form"
         />
         <span class="kl-input_suffix">
             <i class="on-input_icon kl-icon-cancel" v-if="clearable && modelValue" @click="clear"
@@ -32,6 +39,10 @@
             @input="handleInput"
             :disabled="disabled"
             :rows="rows"
+            :style="inputStyle"
+            :readonly="readonly"
+            :autofocus="autofocus"
+            :form="form"
         />
     </div>
 </template>
@@ -68,13 +79,34 @@ const props = defineProps({
         type: Boolean,
         default: false
     },
+    readonly: {
+        type: Boolean,
+        default: false
+    },
     showPassword: {
         type: Boolean,
         default: false
     },
     rows: {
+        type: Number,
+        default: 4
+    },
+    max: {},
+    min: {},
+    step: {},
+    autofocus: {
+        type: Boolean,
+        default: false
+    },
+    form: {
+        type: String
+    },
+    inputStyle: {
+        type: Object
+    },
+    size: {
         type: String,
-        default: '4'
+        default: 'default'
     }
 })
 
@@ -111,8 +143,6 @@ const { n } = createNamespace('input')
         color: #606266;
         display: inline-block;
         font-size: inherit;
-        height: 40px;
-        line-height: 40px;
         outline: none;
         padding: 0 15px;
         transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
@@ -128,6 +158,21 @@ const { n } = createNamespace('input')
             color: #c0c4cc;
             cursor: not-allowed;
         }
+    }
+    .default {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+    }
+    .large {
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+    }
+    .small {
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
     }
     // textarea样式
     .kl-textarea_inner {
