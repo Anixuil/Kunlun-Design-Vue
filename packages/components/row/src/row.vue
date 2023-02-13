@@ -31,7 +31,6 @@ import { createNamespace } from '@kunlun-design/utils'
 import { isArray, isNumber } from 'lodash'
 import './row.scss'
 const props = defineProps(rowProps)
-console.log(props.wrap)
 const { n } = createNamespace('row')
 const gutterStyle = computed(() => {
     let value = props.gutter
