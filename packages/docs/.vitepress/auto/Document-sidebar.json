@@ -40,15 +40,23 @@
                 {
                     "text": "Message 消息提示",
                     "link": "/feedback/message"
+                },
+                {
+                    "text": "Dialog 对话框",
+                    "link": "/feedback/dialog"
                 }
             ]
         },
-        " data-display": {
+        "data-display": {
             "text": "数据展示组件",
             "children": [
                 {
                     "text": "List 列表",
                     "link": "/data-display/list/list"
+                },
+                {
+                    "text": "Progress 进度条",
+                    "link": "/data-display/progress/progress"
                 }
             ]
         }
@@ -86,15 +94,23 @@
                 {
                     "text": "Message Tips",
                     "link": "/feedback/message"
+                },
+                {
+                    "text": "Dialog",
+                    "link": "/feedback/dialog"
                 }
             ]
         },
-        " data-display": {
-            "text": "data-display Components",
+        "data-display": {
+            "text": "Data-display Components",
             "children": [
                 {
                     "text": "List",
                     "link": "/data-display/list/list"
+                },
+                {
+                    "text": "Progress",
+                    "link": "/data-display/progress/progress"
                 }
             ]
         }

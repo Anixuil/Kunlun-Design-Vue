@@ -1,0 +1,116 @@
+@import '../../styles/common.scss';
+
+.kl-dialog-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(1, 1, 1, 0.3);
+    transition: all 0.3s ease;
+    z-index: 98;
+    .kl-dialog {
+        box-sizing: border-box;
+        background-color: white;
+        z-index: 99;
+        //默认对话框样式
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .kl-dialog-header,
+        .kl-dialog-footer,
+        .kl-dialog-container {
+            width: 100%;
+            box-sizing: border-box;
+            margin: 0 auto;
+            max-width: 1000px;
+            display: flex;
+        }
+        .kl-dialog-header {
+            justify-content: space-between;
+            align-items: center;
+            svg {
+                font-size: 12px;
+                cursor: pointer;
+                color: gray;
+                &:hover {
+                    color: black;
+                }
+            }
+        }
+        .kl-dialog-footer,
+        .kl-dialog-container {
+            &.kl-dialog--center {
+                justify-content: center;
+            }
+            &.kl-dialog--left {
+                justify-content: flex-start;
+            }
+            &.kl-dialog--right {
+                justify-content: flex-end;
+            }
+        }
+        .kl-dialog-header {
+            padding: 20px 20px 10px;
+        }
+        .kl-dialog-container {
+            padding: 30px 20px;
+        }
+        .kl-dialog-footer {
+            padding: 10px 20px 20px;
+        }
+
+        &.kl-dialog--kunlun {
+            animation: dialog-show 0.2 ease;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .kl-dialog-container {
+                animation: dialog-show-transition 0.6s ease;
+                font-size: 14px;
+            }
+            .kl-dialog-header {
+                animation: dialog-show-transition 0.5s ease;
+            }
+            .kl-dialog-footer {
+                animation: dialog-show-transition 0.6s ease;
+            }
+        }
+
+        &.kl-dialog--default {
+            animation: dialog-normal-show 0.2s ease-in-out;
+            border-radius: 0px;
+            .kl-dialog-header {
+                font-size: 18px;
+            }
+        }
+    }
+}
+@keyframes dialog-show {
+    from {
+        opacity: 0;
+        left: 150%;
+        transform: translate(-50%, -50%);
+    }
+    to {
+    }
+}
+@keyframes dialog-show-transition {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes dialog-normal-show {
+    from {
+        transform: translate(-50%, -75%);
+    }
+}
