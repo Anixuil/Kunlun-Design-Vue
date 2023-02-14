@@ -15,9 +15,6 @@ export * from './select'
 export * from './col'
 export * from './row'
 
-<<<<<<< HEAD
 export * from './layout'
-=======
 export * from './dialog'
 export * from './progress'
->>>>>>> maindev

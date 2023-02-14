@@ -13,7 +13,7 @@ import { createNamespace } from '@kunlun-design/utils'
 import { defineProps, withDefaults } from 'vue'
 import './styles/aside.scss'
 type Props = {
-    width: string
+    width?: string
 }
 withDefaults(defineProps<Props>(), {
     width: '300px'

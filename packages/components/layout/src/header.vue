@@ -13,7 +13,7 @@ import { createNamespace } from '@kunlun-design/utils'
 import { defineProps, withDefaults } from 'vue'
 import './styles/header.scss'
 type Props = {
-    height: string
+    height?: string
 }
 withDefaults(defineProps<Props>(), {
     height: '60px'
