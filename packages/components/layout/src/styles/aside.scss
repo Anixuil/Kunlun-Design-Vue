@@ -1,5 +1,5 @@
 .kl-aside {
-    overflow: auto;//如果内容被修剪那么浏览器会显示滚动条以便查看其余的内容
+    overflow: auto; //如果内容被修剪那么浏览器会显示滚动条以便查看其余的内容
     box-sizing: border-box;
     flex-shrink: 0;
-  }
+}

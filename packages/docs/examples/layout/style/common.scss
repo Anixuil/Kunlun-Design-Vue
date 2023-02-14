@@ -1,0 +1,27 @@
+.common-layout {
+    color: #fff;
+    .kl-header,
+    .kl-footer,
+    .kl-aside,
+    .kl-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .kl-header {
+        background-color: rgb(119, 198, 205);
+    }
+    .kl-main {
+        height: 200px;
+        background-color: rgb(116, 183, 190);
+    }
+    .kl-footer {
+        background-color: rgb(74, 164, 174);
+    }
+    .kl-aside {
+        background-color: rgb(33, 179, 192);
+    }
+}
+.box {
+    margin: 30px;
+}
