@@ -1,6 +1,6 @@
 <template>
     <div class="kl-switch" :class="{ 'is-checked': modelValue }" @click="handleClick">
-        <span class="kl-switch_core" ref="core" :style="switchColor">
+        <span class="kl-switch_core" :style="switchColor">
             <span class="kl-switch_button"></span>
         </span>
     </div>
@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
 defineOptions({
     name: 'KlSwitch'
@@ -34,8 +34,6 @@ const props = defineProps({
         default: ''
     }
 })
-
-const core = ref(null)
 
 // 开关颜色
 const switchColor = computed(() => ({

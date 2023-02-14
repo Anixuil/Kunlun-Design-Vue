@@ -24,8 +24,8 @@
                 <kl-checkbox v-model="form.isVIP" label="VIP" />
             </kl-form-item>
             <kl-form-item label="switch">
-                <kl-switch v-model="form.isON" disabled></kl-switch>
-                <kl-switch v-model="form.isON" activeColor="#000" inactiveColor="#fff"></kl-switch>
+                <kl-switch v-model="form.isON" disabled :title="form.isON"></kl-switch>
+                <kl-switch v-model="form.isON" activeColor="#000" inactiveColor="blue"></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.selectData">
