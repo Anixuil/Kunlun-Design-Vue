@@ -50,3 +50,56 @@ layout/hamf
 :::demo
 layout/ahm
 :::
+
+<br>
+
+# Layout API
+
+## Layout Attributes
+
+| 属性名    | 说明             | 类型     | 默认值                                                       |
+| :-------- | ---------------- | -------- | ------------------------------------------------------------ |
+| direction | 子元素的排列方向 | `string` | 子元素中有`kl-header`或`kl-footer`时为vertical，其余为horizontal |
+
+## Layout Slots
+
+| 插槽名  | 说明       | 子标签                          |
+| ------- | ---------- | ------------------------------- |
+| default | 自定义内容 | Layout/Header/Footer/Aside/Main |
+
+# Header/Footer API
+
+## Header/Footer Attributes
+
+| 属性名 | 说明     | 类型     | 默认值 |
+| ------ | -------- | -------- | ------ |
+| height | 顶栏高度 | `string` | 60px   |
+
+## Header/Footer Slots
+
+| 插槽名  | 说明       |
+| ------- | ---------- |
+| default | 自定义内容 |
+
+# Aside API
+
+## Aside Attributes
+
+| 属性名 | 说明     | 类型     | 默认值 |
+| ------ | -------- | -------- | ------ |
+| width  | 顶栏宽度 | `string` | 200px  |
+
+## Aside Slots
+
+| 插槽名  | 说明       |
+| ------- | ---------- |
+| default | 自定义内容 |
+
+# Main API
+
+## Aside Slots
+
+| 插槽名  | 说明       |
+| ------- | ---------- |
+| default | 自定义内容 |
+

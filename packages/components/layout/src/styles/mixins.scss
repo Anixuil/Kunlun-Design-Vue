@@ -1,4 +1,0 @@
-//获得值后设置值
-@mixin set-css-var($name, $value) {
-    #{$name}: #{$value};
-}
