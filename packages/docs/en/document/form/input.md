@@ -54,21 +54,21 @@ input/textarea
 
 ### Attributes
 
-| name          | Description                                                          | Type                           | Default |
-|---------------|----------------------------------------------------------------------|--------------------------------|---------|
-| placeholder   | placeholder of Input                                                 | String                         | —       |
-| type          | type of input                                                        | String                         | text    |
-| v-model       | binding value                                                        | string/number                  | —       |
-| clearable     | whether to show clear button, only works when type is not 'textarea' | boolean                        | fales   |
-| show-password | whether to show clear button, only works when type is not 'textarea' | boolean                        | fales   |
-| disabled      | whether Input is disabled                                            | boolean                        | fales   |
-| rows	         | number of rows of textarea, only works when type is 'textarea'       | number                         | 4       |
-| name	         | same as name in native input                                         | string                         | —       |
-| readonly	     | same as readonly in native input                                     | boolean                        | false   |
-| size	         | size of Input, works when type is not 'textarea'                     | 'large' / 'default'  / 'small' | default |
-| max	          | same as max in native input	                                         | —	                             | —       |
-| min           | 	same as min in native input	                                        | —	                             | —       |
-| step	         | same as step in native input	                                        | —	                             | —       |
-| autofocus	    | same as autofocus in native input                                    | boolean                        | false   |
-| form	         | same as form in native input	                                        | string	                        | —       |
-| input-style	  | the style of the input element or textarea element                   | string/object                  | {}      |
+| name          | Description                                                          | Type                          | Default |
+| ------------- | -------------------------------------------------------------------- | ----------------------------- | ------- |
+| placeholder   | placeholder of Input                                                 | String                        | —       |
+| type          | type of input                                                        | String                        | text    |
+| v-model       | binding value                                                        | string/number                 | —       |
+| clearable     | whether to show clear button, only works when type is not 'textarea' | boolean                       | fales   |
+| show-password | whether to show clear button, only works when type is not 'textarea' | boolean                       | fales   |
+| disabled      | whether Input is disabled                                            | boolean                       | fales   |
+| rows          | number of rows of textarea, only works when type is 'textarea'       | number                        | 4       |
+| name          | same as name in native input                                         | string                        | —       |
+| readonly      | same as readonly in native input                                     | boolean                       | false   |
+| size          | size of Input, works when type is not 'textarea'                     | 'large' / 'default' / 'small' | default |
+| max           | same as max in native input                                          | —                             | —       |
+| min           | same as min in native input                                          | —                             | —       |
+| step          | same as step in native input                                         | —                             | —       |
+| autofocus     | same as autofocus in native input                                    | boolean                       | false   |
+| form          | same as form in native input                                         | string                        | —       |
+| input-style   | the style of the input element or textarea element                   | string/object                 | {}      |
