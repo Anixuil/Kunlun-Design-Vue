@@ -1,6 +1,6 @@
 <template>
     <div class="kl-switch" :class="{ 'is-checked': modelValue }" @click="handleClick">
-        <span class="kl-switch_core" :style="switchColor">
+        <span class="kl-switch_core" :class="{ 'is-disabled': disabled }" :style="switchColor">
             <span class="kl-switch_button"></span>
         </span>
     </div>
@@ -32,6 +32,10 @@ const props = defineProps({
     name: {
         type: String,
         default: ''
+    },
+    disabled: {
+        type: Boolean,
+        default: false
     }
 })
 
@@ -42,6 +46,7 @@ const switchColor = computed(() => ({
 }))
 
 const handleClick = () => {
+    if (props.disabled) return
     emit('update:modelValue', !props.modelValue)
 }
 
@@ -80,15 +85,22 @@ const { n } = createNamespace('switch')
             height: 16px;
             background-color: #fff;
         }
+        // 是否禁用
+        &.is-disabled {
+            background-color: #e7effc;
+            border-color: #e7effc;
+            color: #c0c4cc;
+            cursor: not-allowed;
+        }
     }
-}
-// 选中样式
-.is-checked {
-    .kl-switch_core {
-        border-color: #409eff;
-        background-color: #409eff;
-        .kl-switch_button {
-            transform: translateX(20px);
+    // 选中样式
+    &.is-checked {
+        .kl-switch_core {
+            border-color: #409eff;
+            background-color: #409eff;
+            .kl-switch_button {
+                transform: translateX(20px);
+            }
         }
     }
 }

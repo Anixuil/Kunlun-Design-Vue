@@ -25,7 +25,17 @@
             </kl-form-item>
             <kl-form-item label="switch">
                 <kl-switch v-model="form.isON" disabled :title="form.isON"></kl-switch>
-                <kl-switch v-model="form.isON" activeColor="#000" inactiveColor="blue"></kl-switch>
+                <kl-switch
+                    v-model="form.isON"
+                    activeColor="#000"
+                    inactiveColor="#79CDCD"
+                ></kl-switch>
+                <kl-switch
+                    v-model="form.isON"
+                    disabled
+                    activeColor="#000"
+                    inactiveColor="#79CDCD"
+                ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.selectData">
