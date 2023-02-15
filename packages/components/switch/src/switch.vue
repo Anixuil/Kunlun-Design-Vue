@@ -1,7 +1,8 @@
 <template>
     <div class="kl-switch" :class="{ 'is-checked': modelValue }" @click="handleClick">
         <span
-            class="kl-switch-active"
+            class="kl-switch-inactive"
+            v-if="inactiveText"
             :style="{ ...textStyle, color: !props.modelValue ? '#409eff' : '#000' }"
             >{{ inactiveText }}</span
         >
@@ -13,7 +14,8 @@
             <span class="kl-switch_button"></span>
         </span>
         <span
-            class="kl-switch-inactive"
+            class="kl-switch-active"
+            v-if="activeText"
             :style="{ ...textStyle, color: !props.modelValue ? '#000' : '#409eff' }"
             >{{ activeText }}</span
         >
