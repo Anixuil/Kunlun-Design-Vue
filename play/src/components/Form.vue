@@ -33,10 +33,30 @@
                 <kl-switch v-model="form.isON" disabled></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-small">
-                <kl-switch v-model="form.isON" :title="form.isON" size="small"></kl-switch>
+                <kl-switch
+                    v-model="form.isON"
+                    :title="form.isON"
+                    activeText="开"
+                    inactiveText="关"
+                    size="small"
+                ></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-large">
-                <kl-switch v-model="form.isON" :title="form.isON" size="large"></kl-switch>
+                <kl-switch
+                    v-model="form.isON"
+                    :title="form.isON"
+                    activeText="开"
+                    inactiveText="关"
+                    size="large"
+                ></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="switch-text">
+                <kl-switch
+                    v-model="form.isON"
+                    :title="form.isON"
+                    activeText="开"
+                    inactiveText="关"
+                ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.selectData">
