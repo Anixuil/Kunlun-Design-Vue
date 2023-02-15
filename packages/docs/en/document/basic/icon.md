@@ -83,10 +83,10 @@ Click on the icon and copy and paste with one click.
 
 ### Attributes
 
-| Attribute name | description                 | type          | Default value   |
-| -------------- | --------------------------- | ------------- | --------------- |
-| color          | Icon component color        | string        | Inherited color |
-| size           | Icon component size         | number/string | 1.5em           |
-| className      | class of the icon component | string        | none            |
+| name      | description                 | type          | Default value | required |
+| --------- | --------------------------- | ------------- | ------------- | -------- |
+| color     | Icon component color        | string        |               | no       |
+| size      | Icon component size         | number/string |               | no       |
+| className | class of the icon component | string        |               | no       |
 
 ### [Source code](https://github.com/liliangCS/kunlun-design-icons)

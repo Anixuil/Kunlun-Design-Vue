@@ -33,6 +33,10 @@
                     "link": "/form/input"
                 },
                 {
+                    "text": "Upload 上传",
+                    "link": "/form/upload"
+                },
+                {
                     "text": "Switch 开关",
                     "link": "/form/switch"
                 }
