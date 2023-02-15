@@ -8,7 +8,7 @@
 }
 .kl-row {
     display: flex;
-    flex-wrap: nowrap;//默认不换行
+    flex-wrap: nowrap; //默认不换行
     position: relative;
     box-sizing: border-box; //为了实现加margin padding还在一行
     @include when(wrap) {
