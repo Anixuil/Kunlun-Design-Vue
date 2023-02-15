@@ -1,6 +1,6 @@
-export * from './src/form-itrm.vue'
+export * from './src/form-item.vue'
 import { withInstall } from '@kunlun-design/utils'
-import FormItem from './src/form-itrm.vue'
+import FormItem from './src/form-item.vue'
 
 export const KlFormItem = withInstall(FormItem)
 

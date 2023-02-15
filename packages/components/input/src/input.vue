@@ -16,17 +16,24 @@
             :step="step"
             :autofocus="autofocus"
             :form="form"
+            ref="input"
         />
         <span class="kl-input_suffix">
-            <i class="on-input_icon kl-icon-cancel" v-if="clearable && modelValue" @click="clear"
-                >X</i
-            >
-            <i
+            <KlOtherError
+                class="on-input_icon kl-icon-cancel"
+                color="#000"
+                :size="16"
+                v-if="clearable && modelValue"
+                @click="clear"
+            />
+            <Component
                 class="on-input_icon kl-icon-visible"
+                color="#000"
+                :size="18"
                 v-if="showPassword && type === 'password'"
                 @click="handlePassword"
-                >👀</i
-            >
+                :is="passwordVisible ? 'KlSystemEyeClose' : 'KlSystemEyeOpen'"
+            />
         </span>
     </div>
     <div v-else class="kl-input" :class="{ 'kl-input_suffix': showSuffix }">
@@ -50,6 +57,8 @@
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
 import { computed, ref } from 'vue'
+import { KlOtherError } from '@kl-design/icons'
+import './input.scss'
 
 defineOptions({
     name: 'KlInput'
@@ -110,6 +119,8 @@ const props = defineProps({
     }
 })
 
+const input = ref(null)
+
 const showSuffix = computed(() => props.clearable || props.showPassword)
 
 const passwordVisible = ref(false)
@@ -126,104 +137,3 @@ const handlePassword = () => {
 }
 const { n } = createNamespace('input')
 </script>
-
-<style scoped lang="scss">
-.kl-input {
-    width: 100%;
-    position: relative;
-    font-size: 14px;
-    display: inline-block;
-    .kl-input_inner {
-        -webkit-appearance: none;
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #dcdfe6;
-        border-radius: 4px;
-        box-sizing: border-box;
-        color: #606266;
-        display: inline-block;
-        font-size: inherit;
-        outline: none;
-        padding: 0 15px;
-        transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
-        width: 100%;
-        &:focus {
-            outline: none;
-            border-color: #409eff;
-        }
-        // 禁用样式
-        &.is-disabled {
-            background-color: #f5f7fa;
-            border-color: #e4e7ed;
-            color: #c0c4cc;
-            cursor: not-allowed;
-        }
-    }
-    .default {
-        height: 40px;
-        line-height: 40px;
-        font-size: 14px;
-    }
-    .large {
-        height: 50px;
-        line-height: 50px;
-        font-size: 16px;
-    }
-    .small {
-        height: 33px;
-        line-height: 33px;
-        font-size: 12px;
-    }
-    // textarea样式
-    .kl-textarea_inner {
-        -webkit-appearance: none;
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #dcdfe6;
-        border-radius: 4px;
-        box-sizing: border-box;
-        color: #606266;
-        display: inline-block;
-        font-size: inherit;
-        line-height: 40px;
-        outline: none;
-        padding: 0 15px;
-        transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
-        width: 100%;
-        &:focus {
-            outline: none;
-            border-color: #409eff;
-        }
-        // 禁用样式
-        &.is-disabled {
-            background-color: #f5f7fa;
-            border-color: #e4e7ed;
-            color: #c0c4cc;
-            cursor: not-allowed;
-        }
-    }
-}
-// 后面加suffix的意思是后面如果有后缀的话，触发该样式
-.kl-input_suffix {
-    .kl-input_inner {
-        padding-right: 30px;
-    }
-    .kl-input_suffix {
-        position: absolute;
-        right: 10px;
-        height: 100%;
-        top: 0;
-        line-height: 40px;
-        text-align: center;
-        color: #c0c4cc;
-        transition: all 0.3s;
-        z-index: 900;
-        i {
-            color: #c0c4cc;
-            font-size: 14px;
-            cursor: pointer;
-            transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-    }
-}
-</style>

@@ -1,4 +1,4 @@
-@import '../../../styles/var.scss' ;
+@import '../../../styles/var.scss';
 //dot尺寸方法
 @mixin dotSize($size) {
     @at-root {
@@ -10,16 +10,18 @@
     }
 }
 //dottype封装
-@mixin dotType($fill,$type) {
+@mixin dotType($fill, $type) {
     @at-root {
-            .#{$item}--dot--#{$fill}--#{$type} {
-                @extend %--dot-#{$type}-color;
-                @if $fill=='blank'{//空心
-                @extend  %--dot-blank-bgColor;
-            }@else{//实心
-                @extend  %--dot-#{$type}-bgColor;
+        .#{$item}--dot--#{$fill}--#{$type} {
+            @extend %--dot-#{$type}-color;
+            @if $fill== 'blank' {
+                //空心
+                @extend %--dot-blank-bgColor;
+            } @else {
+                //实心
+                @extend %--dot-#{$type}-bgColor;
             }
-            }   
+        }
     }
 }
 // //type封装
@@ -28,8 +30,8 @@
 //         .#{$item}--#{$type} {
 //             margin: 0;
 //             margin-bottom: 25px;
-//             min-width: 100px; 
-//             @content; 
+//             min-width: 100px;
+//             @content;
 // }
 //     }
 // }

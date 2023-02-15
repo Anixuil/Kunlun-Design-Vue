@@ -20,3 +20,4 @@ export * from './dialog'
 export * from './progress'
 
 export * from './timeline'
+export * from './upload'

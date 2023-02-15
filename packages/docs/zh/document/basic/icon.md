@@ -81,12 +81,12 @@ icon/class
 
 ## API
 
-### Attributes
+### 属性
 
-| 属性名    | 说明             | 类型          | 默认值   |
-| --------- | ---------------- | ------------- | -------- |
-| color     | 图标组件颜色     | string        | 继承颜色 |
-| size      | 图标组件大小     | number/string | 1.5em    |
-| className | 图标组件的 class | string        | 无       |
+| 名称      | 描述             | 类型          | 默认值 | 必填 |
+| --------- | ---------------- | ------------- | ------ | ---- |
+| color     | 图标组件颜色     | string        |        | 否   |
+| size      | 图标组件大小     | number/string |        | 否   |
+| className | 图标组件的 class | string        |        | 否   |
 
 ### [源代码](https://github.com/liliangCS/kunlun-design-icons)

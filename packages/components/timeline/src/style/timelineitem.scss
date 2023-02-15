@@ -58,11 +58,12 @@ $item: 'kl-timeline-item';
             position: absolute;
         }
 
-        .#{$item}--wrapper,.#{$item}--message{
+        .#{$item}--wrapper,
+        .#{$item}--message {
             margin-bottom: 25px;
-            min-width: 100px; 
+            min-width: 100px;
         }
-        .#{$item}--message{
+        .#{$item}--message {
             position: relative;
             padding: 10px 20px;
             border-radius: $--message-border-radius;
@@ -86,7 +87,7 @@ $item: 'kl-timeline-item';
         }
     }
 
-    @if $mode=='left' {
+    @if $mode== 'left' {
         .#{$item}--left {
             flex-direction: row;
 
@@ -113,52 +114,46 @@ $item: 'kl-timeline-item';
                     border: 10px solid transparent;
                     border-right-color: $--message-bgColor;
                 }
-
             }
         }
-
-    }
-
-    @else if $mode=='right' {
+    } @else if $mode== 'right' {
         .#{$item}--right {
             flex-direction: row-reverse;
 
             .#{$item}--dot {
+                left: 100%;
+                transform: translate(-50%, 0);
+            }
+
+            //自定义
+            .#{$item}--dot--customer {
+                transform: translate(50%, 0);
+            }
+
+            .#{$item}--tail {
+                left: 100%;
+                transform: translate(-50%, 0);
+            }
+
+            //type普通模式
+            .#{$item}--wrapper {
+                margin: 0;
+                margin-right: $--wrapper-margin;
+                text-align: right;
+            }
+
+            //type对话框形式
+            .#{$item}--message {
+                margin: 0;
+                & ::after {
                     left: 100%;
-                    transform: translate(-50%, 0);
-                }
-            
-                //自定义
-                .#{$item}--dot--customer {
-                    transform: translate(50%, 0);
-                }
-            
-                .#{$item}--tail {
-                    left: 100%;
-                    transform: translate(-50%, 0);
-                }
-            
-                //type普通模式
-                .#{$item}--wrapper {
-                    margin: 0;
-                    margin-right: $--wrapper-margin;
-                    text-align: right;
-                }
-            
-                //type对话框形式
-                .#{$item}--message {
-                    margin: 0;
-                    & ::after {
-                        left: 100%;
-                        border: 10px solid transparent;
-                        border: 10px solid transparent;
+                    border: 10px solid transparent;
+                    border: 10px solid transparent;
                     border-left-color: $--message-bgColor;
-                    }
-            
                 }
+            }
         }
-    }
-    @else {
+    } @else {
         .#{$item}--center {
             justify-content: center;
 
@@ -183,29 +178,28 @@ $item: 'kl-timeline-item';
             }
 
             &:nth-child(even) .#{$item}--wrapper {
-               margin: 0;
-               margin-right: 10%;
-               text-align: right;
+                margin: 0;
+                margin-right: 10%;
+                text-align: right;
             }
             &:nth-child(odd) .#{$item}--message {
                 margin: 0;
                 margin-left: 15%;
                 text-align: left;
-        
+
                 //画对话框箭头
                 & ::after {
                     right: 100%;
                     border: 10px solid transparent;
                     border-right-color: $--message-bgColor;
-        
                 }
             }
-        
+
             &:nth-child(even) .#{$item}--message {
                 margin: 0;
                 margin-right: 15%;
                 text-align: right;
-        
+
                 //画对话框箭头
                 & ::after {
                     left: 100%;
