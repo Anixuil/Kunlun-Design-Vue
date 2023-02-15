@@ -31,6 +31,10 @@
                 {
                     "text": "Input 输入框",
                     "link": "/form/input"
+                },
+                {
+                    "text": "Switch 开关",
+                    "link": "/form/switch"
                 }
             ]
         },
