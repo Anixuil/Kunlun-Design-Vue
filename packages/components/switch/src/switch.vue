@@ -1,6 +1,10 @@
 <template>
     <div class="kl-switch" :class="{ 'is-checked': modelValue }" @click="handleClick">
-        <span class="kl-switch_core" :class="{ 'is-disabled': disabled }" :style="switchColor">
+        <span
+            class="kl-switch_core"
+            :class="[{ 'is-disabled': disabled }, size]"
+            :style="switchColor"
+        >
             <span class="kl-switch_button"></span>
         </span>
     </div>
@@ -23,7 +27,7 @@ const props = defineProps({
     },
     activeColor: {
         type: String,
-        default: ''
+        default: '#409eff'
     },
     inactiveColor: {
         type: String,
@@ -36,6 +40,10 @@ const props = defineProps({
     disabled: {
         type: Boolean,
         default: false
+    },
+    size: {
+        type: String,
+        default: 'default'
     }
 })
 
@@ -65,11 +73,8 @@ const { n } = createNamespace('switch')
         margin: 0;
         display: inline-block;
         position: relative;
-        width: 40px;
-        height: 20px;
         border: 1px solid #dcdfe6;
         outline: none;
-        border-radius: 10px;
         box-sizing: border-box;
         background: #dcdfe6;
         cursor: pointer;
@@ -81,10 +86,9 @@ const { n } = createNamespace('switch')
             left: 1px;
             border-radius: 100%;
             transition: all 0.3s;
-            width: 16px;
-            height: 16px;
             background-color: #fff;
         }
+
         // 是否禁用
         &.is-disabled {
             background-color: #e7effc;
@@ -93,13 +97,48 @@ const { n } = createNamespace('switch')
             cursor: not-allowed;
         }
     }
+    .default {
+        border-radius: 10px;
+        width: 40px;
+        height: 20px;
+        .kl-switch_button {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .large {
+        border-radius: 12.5px;
+        width: 50px;
+        height: 25px;
+        .kl-switch_button {
+            width: 22px;
+            height: 22px;
+        }
+    }
+    .small {
+        border-radius: 7.5px;
+        width: 30px;
+        height: 15px;
+        .kl-switch_button {
+            width: 11px;
+            height: 11px;
+        }
+    }
     // 选中样式
     &.is-checked {
-        .kl-switch_core {
-            border-color: #409eff;
-            background-color: #409eff;
+        .default {
             .kl-switch_button {
                 transform: translateX(20px);
+            }
+        }
+        .large {
+            .kl-switch_button {
+                transform: translateX(25px);
+            }
+        }
+        .small {
+            .kl-switch_button {
+                transform: translateX(15px);
             }
         }
     }

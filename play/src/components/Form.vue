@@ -32,6 +32,12 @@
             <kl-form-item label="switch-disabled">
                 <kl-switch v-model="form.isON" disabled></kl-switch>
             </kl-form-item>
+            <kl-form-item label="switch-small">
+                <kl-switch v-model="form.isON" :title="form.isON" size="small"></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="switch-large">
+                <kl-switch v-model="form.isON" :title="form.isON" size="large"></kl-switch>
+            </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.selectData">
                     <option value="胡桃" label="胡桃"></option>
