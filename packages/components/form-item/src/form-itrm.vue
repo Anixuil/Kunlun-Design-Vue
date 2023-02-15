@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { inject } from 'vue'
+import { inject, onMounted } from 'vue'
 
 defineOptions({
     name: 'KlFormItem'
@@ -22,7 +22,7 @@ const props = defineProps({
     }
 })
 
-const labelWidth = inject<String>('labelWidth')
+const labelWidth = inject('labelWidth')
 
 const { n } = createNamespace('form-item')
 </script>

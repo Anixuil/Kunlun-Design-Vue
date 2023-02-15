@@ -16,17 +16,24 @@
             :step="step"
             :autofocus="autofocus"
             :form="form"
+            ref="input"
         />
         <span class="kl-input_suffix">
-            <i class="on-input_icon kl-icon-cancel" v-if="clearable && modelValue" @click="clear"
-                >X</i
-            >
-            <i
+            <KlOtherError
+                class="on-input_icon kl-icon-cancel"
+                color="#000"
+                :size="16"
+                v-if="clearable && modelValue"
+                @click="clear"
+            />
+            <Component
                 class="on-input_icon kl-icon-visible"
+                color="#000"
+                :size="18"
                 v-if="showPassword && type === 'password'"
                 @click="handlePassword"
-                >👀</i
-            >
+                :is="passwordVisible ? 'KlSystemEyeClose' : 'KlSystemEyeOpen'"
+            />
         </span>
     </div>
     <div v-else class="kl-input" :class="{ 'kl-input_suffix': showSuffix }">
@@ -49,7 +56,8 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { computed, ref } from 'vue'
+import { computed, nextTick, onMounted, ref } from 'vue'
+import { KlOtherError } from '@kl-design/icons'
 
 defineOptions({
     name: 'KlInput'
@@ -109,6 +117,8 @@ const props = defineProps({
         default: 'default'
     }
 })
+
+const input = ref(null)
 
 const showSuffix = computed(() => props.clearable || props.showPassword)
 
