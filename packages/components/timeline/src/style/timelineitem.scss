@@ -1,0 +1,215 @@
+@import '../../../styles/var.scss';
+@import './timemixins.scss';
+$item: 'kl-timeline-item';
+
+@mixin mode($mode) {
+    .#{$item} {
+        display: flex;
+        height: inherit;
+        position: relative;
+        //tail
+        .#{$item}--tail {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: $--tail-width;
+            z-index: -1;
+            background-color: $--tail-color;
+        }
+        //最后一个点的轴线隐藏
+        &:last-child .#{$item}--tail {
+            display: none;
+        }
+        //dot-公共
+        .#{$item}--dot {
+            position: absolute;
+            top: 0;
+            border-radius: 50%;
+            border-style: solid;
+        }
+        //dotnomal尺寸
+        @include dotSize(normal) {
+            left: 0;
+        }
+
+        //large尺寸
+        @include dotSize(large) {
+            left: -2.5px;
+        }
+
+        //dottype空心版
+        @include dotType(blank, default);
+        @include dotType(blank, primary);
+        @include dotType(blank, success);
+        @include dotType(blank, info);
+        @include dotType(blank, warning);
+        @include dotType(blank, danger);
+
+        //实心
+        @include dotType(solid, default);
+        @include dotType(solid, primary);
+        @include dotType(solid, success);
+        @include dotType(bsolid, info);
+        @include dotType(solid, warning);
+        @include dotType(solid, danger);
+
+        //自定义
+        .#{$item}--dot--customer {
+            position: absolute;
+        }
+
+        .#{$item}--wrapper,
+        .#{$item}--message {
+            margin-bottom: 25px;
+            min-width: 100px;
+        }
+        .#{$item}--message {
+            position: relative;
+            padding: 10px 20px;
+            border-radius: $--message-border-radius;
+            background-color: $--message-bgColor;
+            & ::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 20%;
+            }
+        }
+        //内容+时间
+        .#{$item}--timestamp {
+            color: $--timestamp-color;
+            font-size: $--timestamp-fontSize;
+        }
+
+        .#{$item}--content {
+            margin-bottom: 5px;
+        }
+    }
+
+    @if $mode== 'left' {
+        .#{$item}--left {
+            flex-direction: row;
+
+            .#{$item}--tail {
+                left: 5px;
+            }
+
+            //自定义
+            .#{$item}--dot--customer {
+                transform: translate(-25%, 0);
+            }
+
+            //type普通模式
+            .#{$item}--wrapper {
+                margin: 0;
+                margin-left: $--wrapper-margin;
+                text-align: left;
+            }
+            //type对话框形式
+            .#{$item}--message {
+                margin: 0;
+                & ::after {
+                    right: 100%;
+                    border: 10px solid transparent;
+                    border-right-color: $--message-bgColor;
+                }
+            }
+        }
+    } @else if $mode== 'right' {
+        .#{$item}--right {
+            flex-direction: row-reverse;
+
+            .#{$item}--dot {
+                left: 100%;
+                transform: translate(-50%, 0);
+            }
+
+            //自定义
+            .#{$item}--dot--customer {
+                transform: translate(50%, 0);
+            }
+
+            .#{$item}--tail {
+                left: 100%;
+                transform: translate(-50%, 0);
+            }
+
+            //type普通模式
+            .#{$item}--wrapper {
+                margin: 0;
+                margin-right: $--wrapper-margin;
+                text-align: right;
+            }
+
+            //type对话框形式
+            .#{$item}--message {
+                margin: 0;
+                & ::after {
+                    left: 100%;
+                    border: 10px solid transparent;
+                    border: 10px solid transparent;
+                    border-left-color: $--message-bgColor;
+                }
+            }
+        }
+    } @else {
+        .#{$item}--center {
+            justify-content: center;
+
+            .#{$item}--dot {
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+
+            //自定义
+            .#{$item}--dot--customer {
+                transform: translate(0, 0);
+            }
+
+            .#{$item}--tail {
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+            &:nth-child(odd) .#{$item}--wrapper {
+                margin: 0;
+                margin-left: 10%;
+                text-align: left;
+            }
+
+            &:nth-child(even) .#{$item}--wrapper {
+                margin: 0;
+                margin-right: 10%;
+                text-align: right;
+            }
+            &:nth-child(odd) .#{$item}--message {
+                margin: 0;
+                margin-left: 15%;
+                text-align: left;
+
+                //画对话框箭头
+                & ::after {
+                    right: 100%;
+                    border: 10px solid transparent;
+                    border-right-color: $--message-bgColor;
+                }
+            }
+
+            &:nth-child(even) .#{$item}--message {
+                margin: 0;
+                margin-right: 15%;
+                text-align: right;
+
+                //画对话框箭头
+                & ::after {
+                    left: 100%;
+                    border: 10px solid transparent;
+                    border-left-color: $--message-bgColor;
+                }
+            }
+        }
+    }
+}
+@include mode(left);
+@include mode(right);
+@include mode(center);
