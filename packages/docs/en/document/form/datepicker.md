@@ -1,6 +1,6 @@
 ---
 layout: doc
-lang: zh-CN
+lang: en-US
 ---
 
 # DatePicker
@@ -70,3 +70,20 @@ Set `lang` property to `en` and switch to English with one click. The default va
 :::demo
 datepicker/lang
 :::
+
+## API
+
+### Attribute
+
+| name             | description                                                               | type            | default value | required |
+| ---------------- | ------------------------------------------------------------------------- | --------------- | ------------- | -------- |
+| placeholder      | Input box placeholder text                                                | string          |               | no       |
+| placeholderRange | Range selection input box placeholder text                                | string[]        |               | no       |
+| picker           | Selector type                                                             | year/month/date | date          | no       |
+| format           | Display date format, configuration reference [dayjs](https://day.js.org/) | string          | YYYY-MM-DD    | no       |
+| isDateTime       | Support time selection                                                    | boolean         | false         | no       |
+| isRangePicker    | Choose a period of time                                                   | boolean         | false         | no       |
+| disabledDate     | Set an optional date                                                      | Array<number[]> |               | no       |
+| disabledTime     | Set an optional time                                                      | Array<number[]> |               | no       |
+| showHolidays     | Lunar calendar, holidays show                                             | boolean         | false         | no       |
+| lang             | Language setting                                                          | zh / en         | zh            | no       |

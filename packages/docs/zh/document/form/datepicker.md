@@ -70,3 +70,20 @@ datepicker/holiday
 :::demo
 datepicker/lang
 :::
+
+## API
+
+### 属性
+
+| 名称             | 描述                                                  | 类型            | 默认值     | 必填 |
+| ---------------- | ----------------------------------------------------- | --------------- | ---------- | ---- |
+| placeholder      | 输入框占位文本                                        | string          |            | 否   |
+| placeholderRange | 范围选择输入框占位文本                                | string[]        |            | 否   |
+| picker           | 选择器类型                                            | year/month/date | date       | 否   |
+| format           | 展示的日期格式，配置参考 [dayjs](https://day.js.org/) | string          | YYYY-MM-DD | 否   |
+| isDateTime       | 支持时间选择                                          | boolean         | false      | 否   |
+| isRangePicker    | 选择一段时间                                          | boolean         | false      | 否   |
+| disabledDate     | 设置不可选日期                                        | Array<number[]> |            | 否   |
+| disabledTime     | 设置不可选时间                                        | Array<number[]> |            | 否   |
+| showHolidays     | 农历，节假日显示                                      | boolean         | false      | 否   |
+| lang             | 语言设置                                              | zh / en         | zh         | 否   |
