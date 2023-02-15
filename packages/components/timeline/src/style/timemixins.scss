@@ -1,0 +1,35 @@
+@import '../../../styles/var.scss' ;
+//dot尺寸方法
+@mixin dotSize($size) {
+    @at-root {
+        .#{$item}--dot--#{$size} {
+            @extend %--dot-#{$size}-width;
+            @extend %--dot-#{$size}-border-width;
+            @content;
+        }
+    }
+}
+//dottype封装
+@mixin dotType($fill,$type) {
+    @at-root {
+            .#{$item}--dot--#{$fill}--#{$type} {
+                @extend %--dot-#{$type}-color;
+                @if $fill=='blank'{//空心
+                @extend  %--dot-blank-bgColor;
+            }@else{//实心
+                @extend  %--dot-#{$type}-bgColor;
+            }
+            }   
+    }
+}
+// //type封装
+// @mixin type($type){
+//     @at-root {
+//         .#{$item}--#{$type} {
+//             margin: 0;
+//             margin-bottom: 25px;
+//             min-width: 100px; 
+//             @content; 
+// }
+//     }
+// }
