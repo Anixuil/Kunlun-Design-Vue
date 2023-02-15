@@ -62,7 +62,7 @@ switch/icon
 ### Attribute
 
 | name           | Description                                            | Type             | The default value is |
-|----------------|--------------------------------------------------------|------------------|----------------------|
+| -------------- | ------------------------------------------------------ | ---------------- | -------------------- |
 | v-model        | Binding value                                          | boolean          | —                    |
 | disabled       | Whether to disable                                     | boolean          | fales                |
 | active-icon    | The icon displayed when the switch state is on, using  | with Icon string | —                    |
