@@ -17,6 +17,6 @@ checkbox/basic
 
 ### Attribute
 
-| name           | Description                                            | Type             | The default value is |
-| -------------- | ------------------------------------------------------ | ---------------- | -------------------- |
-| v-model        | Binding value                                          | boolean          | —                    |
+| name    | Description   | Type    | The default value is |
+| ------- | ------------- | ------- | -------------------- |
+| v-model | Binding value | boolean | —                    |

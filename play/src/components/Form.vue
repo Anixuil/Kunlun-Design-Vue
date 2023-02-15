@@ -1,7 +1,7 @@
 <template>
     <h1>Form</h1>
     <div class="form">
-        <kl-form :model="{}" labelWidth="120px">
+        <kl-form :model="form" labelWidth="120px">
             <kl-form-item label="username">
                 <kl-input placeholder="请输入账号" v-model="form.name" :clearable="true"></kl-input>
             </kl-form-item>
