@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { inject, onMounted } from 'vue'
+import { inject } from 'vue'
 
 defineOptions({
     name: 'KlFormItem'
