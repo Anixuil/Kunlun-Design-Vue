@@ -1,0 +1,11 @@
+.kl-layout {
+    display: flex;
+    flex-direction: row;
+    flex: 1; //因为容器支持嵌套，嵌套时它会占满剩余空间。
+    flex-basis: auto;
+    box-sizing: border-box; //不算padding和margin
+}
+
+.kl-vertical {
+    flex-direction: column;
+}

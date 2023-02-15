@@ -10,6 +10,14 @@
                 {
                     "text": "Icon 图标",
                     "link": "/basic/icon"
+                },
+                {
+                    "text": "Layout 布局容器",
+                    "link": "/basic/layout"
+                },
+                {
+                    "text": "Grid 栅格",
+                    "link": "/basic/grid"
                 }
             ]
         },
