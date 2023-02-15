@@ -23,11 +23,7 @@
                 <kl-switch v-model="form.isON" :title="form.isON"></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-颜色设置">
-                <kl-switch
-                    v-model="form.isON"
-                    activeColor="#000"
-                    inactiveColor="#79CDCD"
-                ></kl-switch>
+                <kl-switch v-model="form.isON" activeColor="red" inactiveColor="blue"></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-disabled">
                 <kl-switch v-model="form.isON" disabled></kl-switch>
@@ -36,8 +32,8 @@
                 <kl-switch
                     v-model="form.isON"
                     :title="form.isON"
-                    activeText="开"
-                    inactiveText="关"
+                    active-text="开"
+                    inactive-text="关"
                     size="small"
                 ></kl-switch>
             </kl-form-item>
@@ -56,6 +52,13 @@
                     :title="form.isON"
                     activeText="开"
                     inactiveText="关"
+                ></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="switch-icon">
+                <kl-switch
+                    v-model="form.isON"
+                    activeIcon="KlOtherCorrect"
+                    inactiveIcon="KlOtherError"
                 ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">

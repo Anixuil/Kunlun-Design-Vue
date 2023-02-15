@@ -1,5 +1,11 @@
 <template>
     <div class="kl-switch" :class="{ 'is-checked': modelValue }" @click="handleClick">
+        <Component
+            class="kl-switch-inactiveIcon"
+            v-if="inactiveIcon"
+            :size="textStyle.fontSize"
+            :is="inactiveIcon"
+        />
         <span
             class="kl-switch-inactive"
             v-if="inactiveText"
@@ -13,6 +19,12 @@
         >
             <span class="kl-switch_button"></span>
         </span>
+        <Component
+            class="kl-switch-activeIcon"
+            v-if="activeIcon"
+            :size="textStyle.fontSize"
+            :is="activeIcon"
+        />
         <span
             class="kl-switch-active"
             v-if="activeText"
@@ -52,6 +64,12 @@ const props = defineProps({
     inactiveText: {
         type: String
     },
+    activeIcon: {
+        type: String
+    },
+    inactiveIcon: {
+        type: String
+    },
     name: {
         type: String,
         default: ''
@@ -74,23 +92,23 @@ const switchColor = computed(() => ({
 
 // 字体大小
 const textStyle = computed(() => {
-    let fontSize
+    let size
     let lineHeight
     switch (props.size) {
         case 'small':
-            fontSize = '14px'
+            size = 14
             lineHeight = '20px'
             break
         case 'large':
-            fontSize = '18px'
+            size = 18
             lineHeight = '30px'
             break
         case 'default':
-            fontSize = '16px'
+            size = 16
             lineHeight = '25px'
             break
     }
-    return { lineHeight, fontSize }
+    return { lineHeight, fontSize: `${size}px` }
 })
 
 const handleClick = () => {
