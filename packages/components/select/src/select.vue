@@ -1,6 +1,6 @@
 <template>
     <!-- 下拉框 -->
-    <div class="kl-select">
+    <div class="kl-select" :class="{ 'is-disabled': disabled }">
         <div ref="select_button" class="kl-select-button" @click="selectOpen = !selectOpen">
             <!-- 选中内容 -->
             <span>{{ placeholder }}</span>
@@ -17,10 +17,7 @@
                 class="kl-select-dropdown"
             >
                 <ul>
-                    <slot name="selectDropDown"></slot>
-                    <li>123</li>
-                    <li>123</li>
-                    <li>123</li>
+                    <slot></slot>
                 </ul>
             </div>
         </transition>
@@ -30,11 +27,13 @@
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
 import { KlSystemPullDown } from '@kl-design/icons'
-import { computed, ref, watch } from 'vue'
+import { computed, provide, ref, watch } from 'vue'
 
 defineOptions({
     name: 'KlSelect'
 })
+
+const emit = defineEmits(['update:modelValue'])
 
 const props = defineProps({
     modelValue: {
@@ -54,9 +53,15 @@ const props = defineProps({
     disabled: {
         type: Boolean,
         default: false
-    },
-    optionList: Array
+    }
 })
+
+const handleModelValue = (val: any) => {
+    emit('update:modelValue', val)
+    selectOpen.value = false
+}
+
+provide('handleModelValue', handleModelValue)
 
 const selectOpen = ref(false)
 
@@ -96,6 +101,7 @@ const { n } = createNamespace('select')
     position: relative;
     font-size: 14px;
     display: inline-block;
+    cursor: pointer;
     .kl-select-button {
         background-color: #fff;
         background-image: none;
@@ -105,11 +111,14 @@ const { n } = createNamespace('select')
         padding: 0 16px;
         font-size: 14px;
         font-weight: 500;
-        line-height: 48px;
+        line-height: 40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        cursor: pointer;
+        &:hover {
+            outline: none;
+            border-color: #409eff;
+        }
     }
 
     .kl-select-button span {
@@ -141,12 +150,9 @@ const { n } = createNamespace('select')
 
     .kl-select-dropdown ul {
         overflow: hidden;
-        border-radius: 12px;
+        border-radius: 5px;
         border: #e6e8ec 2px solid;
         box-shadow: 0 4px 12px rgba(35, 38, 47, 0.1);
-        li {
-            padding: 0 16px;
-        }
     }
 
     .select-enter-from,
@@ -160,6 +166,16 @@ const { n } = createNamespace('select')
         transform-origin: top center;
         transition: opacity 0.4s cubic-bezier(0.5, 0, 0, 1.25),
             transform 0.2s cubic-bezier(0.5, 0, 0, 1.25);
+    }
+    // 是否禁用
+    &.is-disabled {
+        background-color: #e7effc;
+        border-color: #e7effc;
+        color: #c0c4cc;
+        cursor: not-allowed;
+        .kl-select-button {
+            pointer-events: none;
+        }
     }
 }
 </style>
