@@ -3,7 +3,10 @@
     <div class="kl-select" :class="{ 'is-disabled': disabled }">
         <div ref="select_button" class="kl-select-button" @click="selectOpen = !selectOpen">
             <!-- 选中内容 -->
-            <span>{{ placeholder }}</span>
+            <span v-if="value">{{ value }}</span>
+            <span class="placeholder" v-else
+                >{ placeholder ? placeholder : 'Please enter a keyword' }</span
+            >
             <div class="select-icon" :class="{ selectOpen: selectOpen }">
                 <KlSystemPullDown />
             </div>
@@ -55,13 +58,13 @@ const props = defineProps({
         default: false
     }
 })
+const value = ref('')
 
-const handleModelValue = (val: any) => {
+provide('handleModelValue', (val: any) => {
     emit('update:modelValue', val)
+    value.value = val
     selectOpen.value = false
-}
-
-provide('handleModelValue', handleModelValue)
+})
 
 const selectOpen = ref(false)
 
@@ -115,6 +118,9 @@ const { n } = createNamespace('select')
         display: flex;
         align-items: center;
         justify-content: space-between;
+        .placeholder {
+            color: #ccc;
+        }
         &:hover {
             outline: none;
             border-color: #409eff;

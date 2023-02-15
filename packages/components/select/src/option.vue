@@ -1,5 +1,5 @@
 <template>
-    <li class="kl-option" @click="onValue">
+    <li class="kl-option" @click="saveValue">
         <span v-if="!value && !label">
             <slot></slot>
         </span>
@@ -29,7 +29,7 @@ const props = defineProps({
 
 const handleValue = inject('handleModelValue') as Function
 
-const onValue = () => {
+const saveValue = () => {
     handleValue(props.value)
 }
 
