@@ -9,6 +9,7 @@ import Layout from './components/Layout.vue'
 import Icon from './components/Icon.vue'
 import Dialog from './components/dialog.vue'
 import Progress from './components/progress.vue'
+import Timeline from './components/Timeline.vue'
 </script>
 
 <template>
@@ -21,7 +22,8 @@ import Progress from './components/progress.vue'
     <Message></Message>
     <Form></Form>
     <Grid></Grid>
-    <Layout></Layout>
+    <!-- <Layout></Layout> -->
+    <Timeline></Timeline>
 </template>
 
 <style scoped lang="scss"></style>

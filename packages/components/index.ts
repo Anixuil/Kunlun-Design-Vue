@@ -13,8 +13,10 @@ export * from './select'
 
 export * from './col'
 export * from './row'
-
 export * from './layout'
+
 export * from './dialog'
 export * from './progress'
+
+export * from './timeline'
 export * from './upload'
