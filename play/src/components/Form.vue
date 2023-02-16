@@ -65,10 +65,10 @@
                 ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select v-model="form.selectData" placeholder="请选择">
-                    <kl-option value="胡桃" label="胡桃">1</kl-option>
-                    <kl-option value="夜兰" label="夜兰">1</kl-option>
-                    <kl-option value="七七" label="七七">1</kl-option>
+                <kl-select v-model="form.selectData">
+                    <kl-option value="胡桃">HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
                 </kl-select>
             </kl-form-item>
             <kl-form-item label="textarea">

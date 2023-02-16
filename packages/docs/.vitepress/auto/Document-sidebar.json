@@ -43,6 +43,10 @@
                 {
                     "text": "checkbox 多选框",
                     "link": "/form/checkbox"
+                },
+                {
+                    "text": "select 下拉选择框",
+                    "link": "/form/select"
                 }
             ]
         },
