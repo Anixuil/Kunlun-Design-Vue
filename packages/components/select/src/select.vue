@@ -1,14 +1,26 @@
 <template>
     <!-- 下拉框 -->
     <div class="kl-select" :class="{ 'is-disabled': disabled }">
-        <div ref="select_button" class="kl-select-button" @click="selectOpen = !selectOpen">
+        <div
+            ref="select_button"
+            class="kl-select-button"
+            :class="size"
+            @click="selectOpen = !selectOpen"
+        >
             <!-- 选中内容 -->
             <span v-if="label">{{ label }}</span>
             <span class="placeholder" v-else>{{
                 placeholder ? placeholder : 'Please enter a keyword'
             }}</span>
-            <div class="select-icon" :class="{ selectOpen: selectOpen }">
-                <KlSystemPullDown />
+            <div class="select-icon" :class="{ selectOpen: selectOpen && !clearable }">
+                <Component
+                    v-if="clearable"
+                    @mousemove="icon = 'KlOtherError'"
+                    @mouseleave="icon = 'KlSystemPullDown'"
+                    :is="icon"
+                    @click.stop="clearValue"
+                />
+                <KlSystemPullDown v-else />
             </div>
         </div>
         <!-- 下拉框 -->
@@ -31,6 +43,7 @@
 import { createNamespace } from '@kunlun-design/utils'
 import { KlSystemPullDown } from '@kl-design/icons'
 import { computed, provide, ref, watch } from 'vue'
+import './select.scss'
 
 defineOptions({
     name: 'KlSelect'
@@ -48,12 +61,15 @@ const props = defineProps({
         required: false,
         default: ''
     },
-    multiple: {
+    disabled: {
         type: Boolean,
-        required: false,
         default: false
     },
-    disabled: {
+    size: {
+        type: String,
+        default: 'default'
+    },
+    clearable: {
         type: Boolean,
         default: false
     }
@@ -61,15 +77,26 @@ const props = defineProps({
 
 const label = ref('')
 
+const icon = ref('KlSystemPullDown')
+
+const handleIcon = () => {}
+
 provide('handleModelValue', (val: any, lab: any) => {
     emit('update:modelValue', val)
     label.value = lab
     selectOpen.value = false
 })
 
+provide('size', props.size)
+
 const selectOpen = ref(false)
 
 const select_button = ref()
+
+const clearValue = () => {
+    emit('update:modelValue', null)
+    label.value = ''
+}
 
 watch(selectOpen, val => {
     if (val)
@@ -98,91 +125,3 @@ const calculateLocation = () => {
 
 const { n } = createNamespace('select')
 </script>
-
-<style scoped lang="scss">
-.kl-select {
-    width: 100%;
-    position: relative;
-    font-size: 14px;
-    display: inline-block;
-    cursor: pointer;
-    .kl-select-button {
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #dcdfe6;
-        border-radius: 4px;
-        height: 40px;
-        padding: 0 16px;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .placeholder {
-            color: #ccc;
-        }
-        &:hover {
-            outline: none;
-            border-color: #409eff;
-        }
-    }
-
-    .kl-select-button span {
-        font-weight: 500;
-        user-select: none;
-    }
-
-    // icon
-    .select-icon {
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        border: #e6e8ec 2px solid;
-        transition: all 0.2s;
-    }
-
-    .select-icon.selectOpen {
-        transform: rotate(180deg);
-    }
-
-    // 下拉框
-    .kl-select-dropdown {
-        position: fixed;
-        background-color: #fcfcfd;
-    }
-
-    .kl-select-dropdown ul {
-        overflow: hidden;
-        border-radius: 5px;
-        border: #e6e8ec 2px solid;
-        box-shadow: 0 4px 12px rgba(35, 38, 47, 0.1);
-    }
-
-    .select-enter-from,
-    .select-leave-to {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-
-    .select-enter-active,
-    .select-leave-active {
-        transform-origin: top center;
-        transition: opacity 0.4s cubic-bezier(0.5, 0, 0, 1.25),
-            transform 0.2s cubic-bezier(0.5, 0, 0, 1.25);
-    }
-    // 是否禁用
-    &.is-disabled {
-        background-color: #e7effc;
-        border-color: #e7effc;
-        color: #c0c4cc;
-        cursor: not-allowed;
-        .kl-select-button {
-            pointer-events: none;
-        }
-    }
-}
-</style>

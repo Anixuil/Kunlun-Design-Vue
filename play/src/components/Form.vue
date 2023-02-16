@@ -71,6 +71,20 @@
                     <kl-option value="七七">QiQi</kl-option>
                 </kl-select>
             </kl-form-item>
+            <kl-form-item label="select">
+                <kl-select v-model="form.selectData" size="large">
+                    <kl-option value="胡桃" disabled>HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
+                </kl-select>
+            </kl-form-item>
+            <kl-form-item label="select">
+                <kl-select v-model="form.selectData" size="small" clearable>
+                    <kl-option value="胡桃">HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
+                </kl-select>
+            </kl-form-item>
             <kl-form-item label="textarea">
                 <kl-input
                     placeholder="请输入文本"
