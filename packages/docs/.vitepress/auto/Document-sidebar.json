@@ -97,6 +97,18 @@
                 {
                     "text": "Input",
                     "link": "/form/input"
+                },
+                {
+                    "text": "Upload",
+                    "link": "/form/upload"
+                },
+                {
+                    "text": "Switch",
+                    "link": "/form/switch"
+                },
+                {
+                    "text": "checkbox",
+                    "link": "/form/checkbox"
                 }
             ]
         },
