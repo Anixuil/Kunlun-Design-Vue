@@ -1,6 +1,6 @@
 <template>
     <li class="kl-option" @click="saveValue">
-        <span v-if="!value && !label">
+        <span v-if="!label && slotDefault">
             <slot></slot>
         </span>
         <span v-else>{{ label ? label : value }}</span>
@@ -9,10 +9,12 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { inject } from 'vue'
+import { inject, useSlots } from 'vue'
 defineOptions({
     name: 'KlOption'
 })
+
+const slotDefault = !!useSlots().default
 
 const props = defineProps({
     value: {
@@ -29,8 +31,8 @@ const props = defineProps({
 
 const handleValue = inject('handleModelValue') as Function
 
-const saveValue = () => {
-    handleValue(props.value)
+const saveValue = (event: Event) => {
+    handleValue(props.value, event.target.innerText)
 }
 
 const { n } = createNamespace('option')

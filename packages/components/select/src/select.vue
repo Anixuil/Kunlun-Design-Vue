@@ -3,7 +3,7 @@
     <div class="kl-select" :class="{ 'is-disabled': disabled }">
         <div ref="select_button" class="kl-select-button" @click="selectOpen = !selectOpen">
             <!-- 选中内容 -->
-            <span v-if="value">{{ value }}</span>
+            <span v-if="label">{{ label }}</span>
             <span class="placeholder" v-else>{{
                 placeholder ? placeholder : 'Please enter a keyword'
             }}</span>
@@ -58,11 +58,12 @@ const props = defineProps({
         default: false
     }
 })
-const value = ref('')
 
-provide('handleModelValue', (val: any) => {
+const label = ref('')
+
+provide('handleModelValue', (val: any, lab: any) => {
     emit('update:modelValue', val)
-    value.value = val
+    label.value = lab
     selectOpen.value = false
 })
 
