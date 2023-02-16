@@ -53,7 +53,7 @@ const emit = defineEmits(['update:modelValue'])
 
 const props = defineProps({
     modelValue: {
-        type: String,
+        type: [String, Boolean, Number],
         default: ''
     },
     placeholder: {
@@ -78,8 +78,6 @@ const props = defineProps({
 const label = ref('')
 
 const icon = ref('KlSystemPullDown')
-
-const handleIcon = () => {}
 
 provide('handleModelValue', (val: any, lab: any) => {
     emit('update:modelValue', val)

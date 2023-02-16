@@ -18,7 +18,7 @@ const slotDefault = !!useSlots().default
 
 const props = defineProps({
     value: {
-        type: String
+        type: [String, Boolean, Number]
     },
     label: {
         type: String
