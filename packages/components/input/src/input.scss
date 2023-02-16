@@ -73,6 +73,9 @@
     }
     .kl-input_suffix {
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         right: 10px;
         height: 100%;
         top: 0;
@@ -80,8 +83,5 @@
         color: #c0c4cc;
         transition: all 0.3s;
         z-index: 999;
-        .on-input_icon {
-            margin-top: 50%;
-        }
     }
 }
