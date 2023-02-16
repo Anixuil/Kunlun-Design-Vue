@@ -4,9 +4,9 @@
         <div ref="select_button" class="kl-select-button" @click="selectOpen = !selectOpen">
             <!-- 选中内容 -->
             <span v-if="value">{{ value }}</span>
-            <span class="placeholder" v-else
-                >{ placeholder ? placeholder : 'Please enter a keyword' }</span
-            >
+            <span class="placeholder" v-else>{{
+                placeholder ? placeholder : 'Please enter a keyword'
+            }}</span>
             <div class="select-icon" :class="{ selectOpen: selectOpen }">
                 <KlSystemPullDown />
             </div>
