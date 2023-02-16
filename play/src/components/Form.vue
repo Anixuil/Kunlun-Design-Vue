@@ -25,6 +25,9 @@
             <kl-form-item label="switch-颜色设置">
                 <kl-switch v-model="form.isON" activeColor="red" inactiveColor="blue"></kl-switch>
             </kl-form-item>
+            <kl-form-item label="switch-value">
+                <kl-switch v-model="form.switch" activeValue="red" inactiveValue="blue"></kl-switch>
+            </kl-form-item>
             <kl-form-item label="switch-disabled">
                 <kl-switch v-model="form.isON" disabled></kl-switch>
             </kl-form-item>
@@ -62,10 +65,24 @@
                 ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select v-model="form.selectData" placeholder="请选择">
-                    <kl-option value="胡桃" label="胡桃">1</kl-option>
-                    <kl-option value="夜兰" label="夜兰">1</kl-option>
-                    <kl-option value="七七" label="七七">1</kl-option>
+                <kl-select v-model="form.selectData">
+                    <kl-option value="胡桃">HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
+                </kl-select>
+            </kl-form-item>
+            <kl-form-item label="select">
+                <kl-select v-model="form.selectData" size="large">
+                    <kl-option value="胡桃" disabled>HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
+                </kl-select>
+            </kl-form-item>
+            <kl-form-item label="select">
+                <kl-select v-model="form.selectData" size="small" clearable>
+                    <kl-option value="胡桃">HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
                 </kl-select>
             </kl-form-item>
             <kl-form-item label="textarea">
@@ -103,6 +120,7 @@ const form = reactive({
     password: '',
     isVIP: true,
     isON: true,
+    switch: 'red',
     selectData: '',
     text: ''
 })

@@ -41,8 +41,12 @@
                     "link": "/form/switch"
                 },
                 {
-                    "text": "checkbox 多选框",
+                    "text": "Checkbox 多选框",
                     "link": "/form/checkbox"
+                },
+                {
+                    "text": "Select 下拉选择框",
+                    "link": "/form/select"
                 }
             ]
         },
@@ -107,8 +111,12 @@
                     "link": "/form/switch"
                 },
                 {
-                    "text": "checkbox",
+                    "text": "Checkbox",
                     "link": "/form/checkbox"
+                },
+                {
+                    "text": "Select",
+                    "link": "/form/select"
                 }
             ]
         },
