@@ -3,7 +3,12 @@
     <div class="form">
         <kl-form :model="form" labelWidth="120px">
             <kl-form-item label="username">
-                <kl-input placeholder="请输入账号" v-model="form.name" :clearable="true"></kl-input>
+                <kl-input
+                    placeholder="请输入账号"
+                    v-model="form.name"
+                    @change="change"
+                    :clearable="true"
+                ></kl-input>
             </kl-form-item>
             <kl-form-item label="password">
                 <kl-input
@@ -153,6 +158,9 @@ const model = reactive({
     disables: '02'
 })
 
+const change = () => {
+    console.log('hello')
+}
 const onSubmit = () => {
     console.log(JSON.parse(JSON.stringify(form)))
 }
