@@ -85,6 +85,6 @@ switch/icon
 
 ### Event
 
-| Name    | Description                                                                | Callback parameters |
-|---------|----------------------------------------------------------------------------|---------------------|
-| change	 | Triggered only when the modelValue changes                                 | val                 |
+| Name   | Description                                | Callback parameters |
+| ------ | ------------------------------------------ | ------------------- |
+| change | Triggered only when the modelValue changes | val                 |
