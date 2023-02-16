@@ -40,7 +40,7 @@ Add the 'disabled' attribute to set the switch to the disabled state.
 switch/disabled
 :::
 
-##  Text description
+## Text description
 
 Text description
 
