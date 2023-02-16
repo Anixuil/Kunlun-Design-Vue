@@ -80,6 +80,8 @@
         color: #c0c4cc;
         transition: all 0.3s;
         z-index: 999;
-        vertical-align: middle;
+        .on-input_icon {
+            margin-top: 50%;
+        }
     }
 }
