@@ -49,7 +49,7 @@ defineOptions({
     name: 'KlSelect'
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change', 'clear'])
 
 const props = defineProps({
     modelValue: {
@@ -81,6 +81,7 @@ const icon = ref('KlSystemPullDown')
 
 provide('handleModelValue', (val: any, lab: any) => {
     emit('update:modelValue', val)
+    emit('change', val)
     label.value = lab
     selectOpen.value = false
 })
@@ -94,6 +95,7 @@ const select_button = ref()
 // 清空选项
 const clearValue = () => {
     emit('update:modelValue', null)
+    emit('clear')
     label.value = ''
 }
 

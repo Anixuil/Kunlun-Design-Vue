@@ -47,7 +47,7 @@ defineOptions({
     name: 'KlSwitch'
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 
 const props = defineProps({
     modelValue: {
@@ -129,10 +129,9 @@ const textStyle = computed(() => {
 
 const handleClick = () => {
     if (props.disabled) return
-    emit(
-        'update:modelValue',
-        props.modelValue === props.activeValue ? props.inactiveValue : props.activeValue
-    )
+    let val = props.modelValue === props.activeValue ? props.inactiveValue : props.activeValue
+    emit('update:modelValue', val)
+    emit('change', val)
 }
 
 const { n } = createNamespace('switch')
