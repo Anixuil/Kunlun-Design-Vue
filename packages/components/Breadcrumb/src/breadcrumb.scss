@@ -1,0 +1,39 @@
+@import '../../styles/common.scss';
+
+.kl-breadcrumb {
+    display: flex;
+    align-items: center;
+    padding: var(--kl-padding);
+    background-color: var(--kl-bg-color);
+    color: var(--kl-font-color);
+    width: 100%;
+    list-style: none;
+    box-sizing: border-box;
+
+    &-item {
+        a {
+            text-decoration: none;
+            color: #666;
+            transition: all 0.3s;
+
+            &:hover {
+                color: #27ba9b;
+            }
+
+
+        }
+
+        &:nth-last-child(1) {
+            .kl-breadcrumb-item-separator {
+                display: none;
+            }
+        }
+
+        span {
+            padding: 0px 2px;
+        }
+
+    }
+
+
+}
