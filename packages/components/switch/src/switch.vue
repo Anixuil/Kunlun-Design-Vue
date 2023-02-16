@@ -97,8 +97,9 @@ const props = defineProps({
 
 // 开关颜色
 const switchColor = computed(() => ({
-    backgroundColor: props.modelValue ? props.activeColor : props.inactiveColor,
-    borderColor: props.modelValue ? props.activeColor : props.inactiveColor
+    backgroundColor:
+        props.modelValue == props.activeValue ? props.activeColor : props.inactiveColor,
+    borderColor: props.modelValue == props.activeValue ? props.activeColor : props.inactiveColor
 }))
 
 onMounted(() => {
