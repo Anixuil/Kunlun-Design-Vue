@@ -48,6 +48,7 @@ switch/text
 :::
 
 ## 绑定数据类型
+
 使用`active-value`属性与`inactive-value`属性来设置开关的文字描述。
 
 :::demo
@@ -66,16 +67,16 @@ switch/icon
 
 ### 属性
 
-| 属性名             | 说明                               | 类型                         | 默认值    |
-|-----------------|----------------------------------|----------------------------|--------|
-| v-model         | 绑定值                              | boolean                    | —      |
-| disabled        | 是否禁用                             | boolean                    | fales  |
-| active-value	   | switch 状态为 on 时的值	               | boolean / string / number  | 	true  |
-| inactive-value	 | switch的状态为 off 时的值	              | boolean / string / number	 | 	false |
-| active-icon     | switch 状态为 on 时所显示图标，结合 Icon 使用  | string                     | —      |
-| inactive-icon   | switch 状态为 off 时所显示图标，结合 Icon 使用 | string                     | —      |
-| active-text     | switch 打开时的文字描述                  | string                     | —      |
-| inactive-text   | switch 关闭时的文字描述                  | string                     | —      |
-| active-color    | 当在 on 状态时的背景颜色                   | string                     | —      |
-| inactive-color  | off 状态时的背景颜色                     | string                     | —      |
-| name            | 等价于原生 input name 属性              | string                     | —      |
+| 属性名         | 说明                                           | 类型                      | 默认值 |
+| -------------- | ---------------------------------------------- | ------------------------- | ------ |
+| v-model        | 绑定值                                         | boolean                   | —      |
+| disabled       | 是否禁用                                       | boolean                   | fales  |
+| active-value   | switch 状态为 on 时的值                        | boolean / string / number | true   |
+| inactive-value | switch 的状态为 off 时的值                     | boolean / string / number | false  |
+| active-icon    | switch 状态为 on 时所显示图标，结合 Icon 使用  | string                    | —      |
+| inactive-icon  | switch 状态为 off 时所显示图标，结合 Icon 使用 | string                    | —      |
+| active-text    | switch 打开时的文字描述                        | string                    | —      |
+| inactive-text  | switch 关闭时的文字描述                        | string                    | —      |
+| active-color   | 当在 on 状态时的背景颜色                       | string                    | —      |
+| inactive-color | off 状态时的背景颜色                           | string                    | —      |
+| name           | 等价于原生 input name 属性                     | string                    | —      |

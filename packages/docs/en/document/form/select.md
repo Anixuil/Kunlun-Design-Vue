@@ -63,20 +63,20 @@ select/clearable
 
 ## API
 
-### Select属性
+### Select 属性
 
-| name         | Description                         | Type      | The default value is |
-|--------------|-------------------------------------|-----------|----------------------|
-| v-model      | binding value                       | boolean   | —                    |
-| disabled     | whether Select is disabled          | boolean   | fales                |
-| size	        | size of Input(large/default/small)	 | string	   | 	default             |
-| clearable    | 	whether select can be cleared      | 	boolean	 | 	false               |
-| placeholder	 | placeholder	                        | string	   | —                    |
+| name        | Description                        | Type    | The default value is |
+| ----------- | ---------------------------------- | ------- | -------------------- |
+| v-model     | binding value                      | boolean | —                    |
+| disabled    | whether Select is disabled         | boolean | fales                |
+| size        | size of Input(large/default/small) | string  | default              |
+| clearable   | whether select can be cleared      | boolean | false                |
+| placeholder | placeholder                        | string  | —                    |
 
-### Option属性
+### Option 属性
 
-| name      | Description                                | Type                                | The default value is |
-|-----------|--------------------------------------------|-------------------------------------|----------------------|
-| value	    | value of option	                           | string / number / boolean / object	 | —                    |
-| label	    | label of option, same as value if omitted	 | string/number                       | 	—                   |
-| disabled	 | whether option is disabled	                | boolean	                            | 	false               |
+| name     | Description                               | Type                               | The default value is |
+| -------- | ----------------------------------------- | ---------------------------------- | -------------------- |
+| value    | value of option                           | string / number / boolean / object | —                    |
+| label    | label of option, same as value if omitted | string/number                      | —                    |
+| disabled | whether option is disabled                | boolean                            | false                |

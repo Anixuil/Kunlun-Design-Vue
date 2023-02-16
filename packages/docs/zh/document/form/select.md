@@ -60,20 +60,20 @@ select/clearable
 
 ## API
 
-### Select属性
+### Select 属性
 
-| 属性名          | 说明                          | 类型        | 默认值      |
-|--------------|-----------------------------|-----------|----------|
-| v-model      | 绑定值                         | boolean   | —        |
-| disabled     | 是否禁用                        | boolean   | fales    |
-| size	        | 输入框尺寸(large/default/small)	 | string	   | 	default |
-| clearable    | 	是否可以清空选项                   | 	boolean	 | 	false   |
-| placeholder	 | 占位文字	                       | string	   | —        |
+| 属性名      | 说明                            | 类型    | 默认值  |
+| ----------- | ------------------------------- | ------- | ------- |
+| v-model     | 绑定值                          | boolean | —       |
+| disabled    | 是否禁用                        | boolean | fales   |
+| size        | 输入框尺寸(large/default/small) | string  | default |
+| clearable   | 是否可以清空选项                | boolean | false   |
+| placeholder | 占位文字                        | string  | —       |
 
-### Option属性
+### Option 属性
 
-| 属性名       | 说明                     | 类型                                  | 默认值    |
-|-----------|------------------------|-------------------------------------|--------|
-| value	    | 选项的值	                  | string / number / boolean / object	 | —      |
-| label	    | 选项的标签，若不设置则默认与value相同	 | string/number                       | 	—     |
-| disabled	 | 是否禁用该选项	               | boolean	                            | 	false |
+| 属性名   | 说明                                    | 类型                               | 默认值 |
+| -------- | --------------------------------------- | ---------------------------------- | ------ |
+| value    | 选项的值                                | string / number / boolean / object | —      |
+| label    | 选项的标签，若不设置则默认与 value 相同 | string/number                      | —      |
+| disabled | 是否禁用该选项                          | boolean                            | false  |
