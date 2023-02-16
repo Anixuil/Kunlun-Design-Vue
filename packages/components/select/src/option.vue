@@ -32,7 +32,7 @@ const props = defineProps({
 const handleValue = inject('handleModelValue') as Function
 
 const size = inject('size')
-const saveValue = (event: Event) => {
+const saveValue = (event: { target: { innerText: String } }) => {
     if (props.disabled) return
     handleValue(props.value, event.target.innerText)
 }
