@@ -77,3 +77,10 @@ select/clearable
 | value    | 选项的值                                | string / number / boolean / object | —      |
 | label    | 选项的标签，若不设置则默认与 value 相同 | string/number                      | —      |
 | disabled | 是否禁用该选项                          | boolean                            | false  |
+
+### Select 事件
+
+| 事件名     | 说明                          | 回调参数 |
+|---------|-----------------------------|------|
+| change	 | 仅当 modelValue 改变时触发         | val  |
+| clear	  | 在点击由 clearable 属性生成的清空按钮时触发 | —    |

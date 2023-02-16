@@ -80,3 +80,9 @@ switch/icon
 | active-color   | 当在 on 状态时的背景颜色                       | string                    | —      |
 | inactive-color | off 状态时的背景颜色                           | string                    | —      |
 | name           | 等价于原生 input name 属性                     | string                    | —      |
+
+### 事件
+
+| 事件名     | 说明                          | 回调参数 |
+|---------|-----------------------------|------|
+| change	 | 仅当 modelValue 改变时触发         | val  |

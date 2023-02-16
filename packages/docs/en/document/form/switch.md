@@ -82,3 +82,9 @@ switch/icon
 | active-color   | When in the on state, the background color             | string                    | —                    |
 | inactive-color | The background color of the off state is               | string                    | —                    |
 | name           | Equivalent to the native input name attribute          | string                    | —                    |
+
+### Event
+
+| Name    | Description                                                                | Callback parameters |
+|---------|----------------------------------------------------------------------------|---------------------|
+| change	 | Triggered only when the modelValue changes                                 | val                 |
