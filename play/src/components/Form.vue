@@ -1,7 +1,7 @@
 <template>
     <h1>Form</h1>
     <div class="form">
-        <kl-form :model="{}" labelWidth="120px">
+        <kl-form :model="form" labelWidth="120px">
             <kl-form-item label="username">
                 <kl-input placeholder="请输入账号" v-model="form.name" :clearable="true"></kl-input>
             </kl-form-item>
@@ -62,10 +62,10 @@
                 ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select v-model="form.selectData">
-                    <option value="胡桃" label="胡桃"></option>
-                    <option value="夜兰" label="夜兰"></option>
-                    <option value="七七" label="七七"></option>
+                <kl-select v-model="form.selectData" placeholder="请选择">
+                    <kl-option value="胡桃" label="胡桃">1</kl-option>
+                    <kl-option value="夜兰" label="夜兰">1</kl-option>
+                    <kl-option value="七七" label="七七">1</kl-option>
                 </kl-select>
             </kl-form-item>
             <kl-form-item label="textarea">
@@ -93,7 +93,8 @@ import {
     KlButton,
     KlCheckbox,
     KlSwitch,
-    KlSelect
+    KlSelect,
+    KlOption
 } from 'kunlun-design'
 import { reactive } from 'vue'
 
@@ -141,7 +142,7 @@ const onSubmit = () => {
 
 <style scoped lang="scss">
 .form {
-    width: 500px;
+    width: 600px;
     margin-left: 20px;
 }
 </style>
