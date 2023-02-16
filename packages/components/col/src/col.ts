@@ -1,14 +1,6 @@
 //存col的props
 import { ExtractPropTypes } from 'vue'
 
-export type ColSizeObject = {
-    span?: number
-    offset?: number
-    pull?: number
-    push?: number
-    order?: number
-}
-// export type ColSize = number | ColSizeObject
 export const colProps = {
     tag: {
         type: String,
