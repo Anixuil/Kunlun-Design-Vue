@@ -3,7 +3,13 @@
     <div class="form">
         <kl-form :model="form" labelWidth="120px">
             <kl-form-item label="username">
-                <kl-input placeholder="请输入账号" v-model="form.name" :clearable="true"></kl-input>
+                <kl-input
+                    placeholder="请输入账号"
+                    v-model="form.name"
+                    @change="change"
+                    :clearable="true"
+                    @clear="clear"
+                ></kl-input>
             </kl-form-item>
             <kl-form-item label="password">
                 <kl-input
@@ -23,7 +29,12 @@
                 <kl-switch v-model="form.isON" :title="form.isON"></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-颜色设置">
-                <kl-switch v-model="form.isON" activeColor="red" inactiveColor="blue"></kl-switch>
+                <kl-switch
+                    v-model="form.isON"
+                    @change="change"
+                    activeColor="red"
+                    inactiveColor="blue"
+                ></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-value">
                 <kl-switch v-model="form.switch" activeValue="red" inactiveValue="blue"></kl-switch>
@@ -65,7 +76,7 @@
                 ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select v-model="form.selectData">
+                <kl-select v-model="form.selectData" @change="change">
                     <kl-option value="胡桃">HuTao</kl-option>
                     <kl-option value="夜兰">YeLan</kl-option>
                     <kl-option value="七七">QiQi</kl-option>
@@ -92,6 +103,7 @@
                     :clearable="true"
                     type="textarea"
                     :rows="4"
+                    @change="change"
                 ></kl-input>
             </kl-form-item>
             <kl-form-item>
@@ -153,6 +165,13 @@ const model = reactive({
     disables: '02'
 })
 
+const change = (val: any) => {
+    console.log(val)
+}
+
+const clear = () => {
+    console.log('清除成功')
+}
 const onSubmit = () => {
     console.log(JSON.parse(JSON.stringify(form)))
 }
