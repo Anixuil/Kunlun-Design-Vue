@@ -25,6 +25,9 @@
             <kl-form-item label="switch-颜色设置">
                 <kl-switch v-model="form.isON" activeColor="red" inactiveColor="blue"></kl-switch>
             </kl-form-item>
+            <kl-form-item label="switch-value">
+                <kl-switch v-model="form.switch" activeValue="red" inactiveValue="blue"></kl-switch>
+            </kl-form-item>
             <kl-form-item label="switch-disabled">
                 <kl-switch v-model="form.isON" disabled></kl-switch>
             </kl-form-item>
@@ -103,6 +106,7 @@ const form = reactive({
     password: '',
     isVIP: true,
     isON: true,
+    switch: 'red',
     selectData: '',
     text: ''
 })

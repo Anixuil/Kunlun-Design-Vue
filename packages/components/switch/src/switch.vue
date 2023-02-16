@@ -1,5 +1,9 @@
 <template>
-    <div class="kl-switch" :class="{ 'is-checked': modelValue }" @click="handleClick">
+    <div
+        class="kl-switch"
+        :class="{ 'is-checked': modelValue === activeValue }"
+        @click="handleClick"
+    >
         <Component
             class="kl-switch-inactiveIcon"
             v-if="inactiveIcon"
@@ -36,7 +40,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import './switch.scss'
 
 defineOptions({
@@ -47,7 +51,14 @@ const emit = defineEmits(['update:modelValue'])
 
 const props = defineProps({
     modelValue: {
-        type: Boolean,
+        type: [Boolean, String, Number]
+    },
+    activeValue: {
+        type: [Boolean, String, Number],
+        default: true
+    },
+    inactiveValue: {
+        type: [Boolean, String, Number],
         default: false
     },
     activeColor: {
@@ -90,6 +101,10 @@ const switchColor = computed(() => ({
     borderColor: props.modelValue ? props.activeColor : props.inactiveColor
 }))
 
+onMounted(() => {
+    emit('update:modelValue', props.inactiveValue)
+})
+
 // 字体大小
 const textStyle = computed(() => {
     let size
@@ -113,7 +128,10 @@ const textStyle = computed(() => {
 
 const handleClick = () => {
     if (props.disabled) return
-    emit('update:modelValue', !props.modelValue)
+    emit(
+        'update:modelValue',
+        props.modelValue === props.activeValue ? props.inactiveValue : props.activeValue
+    )
 }
 
 const { n } = createNamespace('switch')
