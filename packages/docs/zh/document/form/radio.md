@@ -25,7 +25,7 @@ radio/basic
 你只需要为radio-group设置 `disabled` 属性就能控制所有option禁用状态。
 
 :::demo
-select/disabled
+radio/disabled
 :::
 
 ## 禁用选项
@@ -33,7 +33,7 @@ select/disabled
 为radio设置 `disabled` 属性就能禁用选项。
 
 :::demo
-select/disabled-option
+radio/disabled-option
 :::
 
 ## 带有边框
@@ -41,7 +41,7 @@ select/disabled-option
 设置 border 属性为 true 可以渲染为带有边框的单选框。
 
 :::demo
-select/border
+radio/border
 :::
 
 ## API
@@ -60,7 +60,7 @@ select/border
 | 属性名      | 说明         | 类型      | 默认值   |
 |----------|------------|---------|-------|
 | v-model  | 绑定值        | boolean | —     |
-| disabled | 是否禁用所有选项   | boolean | fales |
+| disabled | 是否禁用所有选项   | boolean | false |
 | border	  | 是否显示所有选项边框 | boolean | false |
 
 ### RadioGroup 事件

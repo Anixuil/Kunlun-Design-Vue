@@ -27,7 +27,7 @@ The 'disabled' property can be used to control the disabled state of the radio b
 You only need to set the 'disabled' attribute for radio-group to control all option disabled states.
 
 :::demo
-select/disabled
+radio/disabled
 :::
 
 ## Disable option
@@ -35,7 +35,7 @@ select/disabled
 Setting the 'disabled' attribute for radio disables the option.
 
 :::demo
-select/disabled-option
+radio/disabled-option
 :::
 
 ## With a border
@@ -43,7 +43,7 @@ select/disabled-option
 Set the border property to true to render as a radio box with a border.
 
 :::demo
-select/border
+radio/border
 :::
 
 ## API
@@ -62,7 +62,7 @@ select/border
 | Property name | Description                           | Type    | Default value |
 |---------------|---------------------------------------|---------|---------------|
 | v-model       | Binding value                         | boolean | —             |
-| disabled      | Whether to disable all options        | boolean | fales         |
+| disabled      | Whether to disable all options        | boolean | false         |
 | border	       | Whether to display all option borders | boolean | false         |
 
 ### RadioGroup event
