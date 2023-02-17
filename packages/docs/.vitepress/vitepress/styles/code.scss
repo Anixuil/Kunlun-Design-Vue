@@ -4,6 +4,7 @@
 @use './theme.scss';
 
 body {
+
     //滚动条整体样式
     &::-webkit-scrollbar {
         width: 10px;
@@ -51,11 +52,9 @@ span[class~='language-css']:before {
     --theme-color-dark: rgb(117, 205, 213);
     --theme-color: rgb(43, 142, 65);
     --linear-color: linear-gradient(to left, var(--theme-color-dark), var(--theme-color-light));
-    --linear-color-rev: linear-gradient(
-        to right,
-        var(--theme-color-dark),
-        var(--theme-color-light)
-    );
+    --linear-color-rev: linear-gradient(to right,
+            var(--theme-color-dark),
+            var(--theme-color-light));
     --vp-button-hover: var(--theme-color);
 
     /* demo公用样式 */
@@ -145,7 +144,7 @@ html.dark {
         }
     }
 
-    a > code {
+    a>code {
         color: var(--code-link-color);
     }
 
@@ -164,7 +163,7 @@ html.dark {
         overflow-x: auto;
     }
 
-    li > div[class*='language-'] {
+    li>div[class*='language-'] {
         border-radius: 6px 0 0 6px;
         margin: 1rem -1.5rem 1rem -1.25rem;
     }
@@ -175,7 +174,7 @@ html.dark {
             border-radius: 6px;
         }
 
-        li > div[class*='language-'] {
+        li>div[class*='language-'] {
             margin: 1rem 0 1rem 0;
             border-radius: 6px;
         }
@@ -228,7 +227,7 @@ html.dark {
         padding: 0;
     }
 
-    li + li {
+    li+li {
         margin-top: 0px;
     }
 
@@ -280,4 +279,8 @@ html.dark {
     100% {
         transform: translate(-42%, -42%);
     }
+}
+
+svg {
+    display: inline;
 }
