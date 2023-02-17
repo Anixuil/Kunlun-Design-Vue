@@ -79,6 +79,15 @@
                     "link": "/data-display/progress/progress"
                 }
             ]
+        },
+        "navigation": {
+            "text": "导航组件",
+            "children": [
+                {
+                    "text": "BreadCrumb 面包屑",
+                    "link": "/navigation/breadcrumb/breadcrumb"
+                }
+            ]
         }
     },
     "en": {
@@ -147,6 +156,15 @@
                 {
                     "text": "Progress",
                     "link": "/data-display/progress/progress"
+                }
+            ]
+        },
+        "navigation": {
+            "text": "Navigation component",
+            "children": [
+                {
+                    "text": "BreadCrumb ",
+                    "link": "/navigation/breadcrumb/breadcrumb"
                 }
             ]
         }

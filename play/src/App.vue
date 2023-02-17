@@ -10,9 +10,12 @@ import Icon from './components/Icon.vue'
 import Dialog from './components/dialog.vue'
 import Progress from './components/progress.vue'
 import Timeline from './components/Timeline.vue'
+import BreadCrumb from './components/BreadCrumb.vue'
 </script>
 
 <template>
+    <BreadCrumb></BreadCrumb>
+    <router-view></router-view>
     <Progress></Progress>
     <Dialog></Dialog>
     <Icon></Icon>
@@ -22,7 +25,7 @@ import Timeline from './components/Timeline.vue'
     <Message></Message>
     <Form></Form>
     <Grid></Grid>
-    <!-- <Layout></Layout> -->
+    <Layout></Layout>
     <Timeline></Timeline>
 </template>
 
