@@ -63,7 +63,7 @@ select/clearable
 
 ## API
 
-### Select 属性
+### Select Attribute
 
 | name        | Description                        | Type    | The default value is |
 | ----------- | ---------------------------------- | ------- | -------------------- |
@@ -73,7 +73,7 @@ select/clearable
 | clearable   | whether select can be cleared      | boolean | false                |
 | placeholder | placeholder                        | string  | —                    |
 
-### Option 属性
+### Option Attribute
 
 | name     | Description                               | Type                               | The default value is |
 | -------- | ----------------------------------------- | ---------------------------------- | -------------------- |
