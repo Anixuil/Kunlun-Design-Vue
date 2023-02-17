@@ -10,10 +10,10 @@ import { createNamespace } from '@kunlun-design/utils'
 import { BreadCrumbProps } from './breadcrumb'
 import { provide, ref } from 'vue'
 
-const props = defineProps(BreadCrumbProps);
+const props = defineProps(BreadCrumbProps)
 
 const separator = ref(props.separator)
-provide('separator', separator);
+provide('separator', separator)
 
 defineOptions({
     name: 'KlBreadCrumb'
@@ -22,6 +22,4 @@ defineOptions({
 const { n } = createNamespace('breadcrumb')
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

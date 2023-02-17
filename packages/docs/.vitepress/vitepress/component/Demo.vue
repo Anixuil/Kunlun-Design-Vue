@@ -46,8 +46,6 @@ const props = defineProps<{
     description?: string
 }>()
 
-const n = 'button/basic'
-
 const formatPathDemos = computed(() => {
     const demoObj = {}
 

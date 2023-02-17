@@ -16,20 +16,19 @@ import {
     KlCheckbox
 } from '@kunlun-design/components'
 
-export default
-    [KlButton,
-        KlList,
-        KlListItem,
-        KlListItemMeta,
-        KlDatePicker,
-        KlBreadCrumb,
-        KlBreadCrumbItem,
-        KlInput,
-        KlForm,
-        KlFormItem,
-        KlSwitch,
-        KlSelect,
-        KlOption,
-        KlCheckbox] as Plugin[]
-
-
+export default [
+    KlButton,
+    KlList,
+    KlListItem,
+    KlListItemMeta,
+    KlDatePicker,
+    KlBreadCrumb,
+    KlBreadCrumbItem,
+    KlInput,
+    KlForm,
+    KlFormItem,
+    KlSwitch,
+    KlSelect,
+    KlOption,
+    KlCheckbox
+] as Plugin[]

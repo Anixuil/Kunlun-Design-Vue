@@ -25,8 +25,8 @@ import BreadCrumb from './components/BreadCrumb.vue'
     <Message></Message>
     <Form></Form>
     <Grid></Grid>
-    <!-- <Layout></Layout> -->
-<Timeline></Timeline>
+    <Layout></Layout>
+    <Timeline></Timeline>
 </template>
 
 <style scoped lang="scss"></style>

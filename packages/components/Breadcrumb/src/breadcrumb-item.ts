@@ -1,5 +1,3 @@
-
-
 export const BreadCrumbItemProps = {
     to: {
         type: [String, Object]
@@ -8,6 +6,4 @@ export const BreadCrumbItemProps = {
         type: Boolean,
         default: false
     }
-
-
 }
