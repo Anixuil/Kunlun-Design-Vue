@@ -5,7 +5,7 @@
             ref="select_button"
             class="kl-select-button"
             :class="size"
-            @click="selectOpen = !selectOpen"
+            @click.stop="selectOpen = !selectOpen"
         >
             <!-- 选中内容 -->
             <span v-if="label">{{ label }}</span>
@@ -42,7 +42,7 @@
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
 import { KlSystemPullDown } from '@kl-design/icons'
-import { computed, provide, ref, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, provide, ref, watch } from 'vue'
 import './select.scss'
 
 defineOptions({
@@ -123,6 +123,27 @@ const calculateLocation = () => {
     dropdownPosition.value.x = select_button_dom.left
     dropdownPosition.value.y = select_button_dom.top + select_button_dom.height + 5
 }
+
+// 下拉框失焦时消失
+const showDrop = () => {
+    if (selectOpen.value) {
+        selectOpen.value = false
+    }
+}
+
+const handleScroll = () => {
+    calculateLocation()
+}
+
+onMounted(() => {
+    document.body.addEventListener('click', showDrop)
+    window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+    document.body.removeEventListener('click', showDrop)
+    window.removeEventListener('scroll', handleScroll)
+})
 
 const { n } = createNamespace('select')
 </script>

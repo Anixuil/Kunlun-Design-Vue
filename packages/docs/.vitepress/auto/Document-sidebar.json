@@ -25,6 +25,10 @@
             "text": "表单组件",
             "children": [
                 {
+                    "text": "Form 表单",
+                    "link": "/form/form"
+                },
+                {
                     "text": "DatePicker 日期选择框",
                     "link": "/form/datepicker"
                 },
