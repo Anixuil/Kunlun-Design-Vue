@@ -55,5 +55,18 @@ export const mdPlugin = (md: MarkdownIt) => {
                 return `</Demo>`
             }
         }
-    } as ContainerOpts)
+    } as ContainerOpts),
+        md.use(mdContainer, 'doc', {
+            validate: params => {
+                return params.trim() === 'doc'
+            },
+            render: (tokens, idx) => {
+                const pageName = tokens[idx].$page.key.replace(/\//g, '-')
+                if (tokens[idx].nesting === 1) {
+                    return `<${pageName}></${pageName}>`
+                } else {
+                    return `</${pageName}>`
+                }
+            }
+        } as ContainerOpts)
 }

@@ -2,6 +2,7 @@ export * from './message'
 export * from './button'
 
 export * from './list'
+export * from './Breadcrumb'
 
 export * from './form'
 export * from './input'

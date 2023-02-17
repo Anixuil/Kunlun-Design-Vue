@@ -50,7 +50,7 @@ const isChecked = computed({
     }
 })
 
-const { n } = createNamespace('form')
+const { n } = createNamespace('checkbox')
 </script>
 
 <style scoped lang="scss">
