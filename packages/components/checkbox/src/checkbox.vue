@@ -20,8 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { computed, onBeforeUnmount, onMounted } from 'vue'
 import { createNamespace } from '@kunlun-design/utils'
+import { emitter } from '../unit/mitt'
 
 defineOptions({
     name: 'KlCheckbox'
@@ -48,6 +49,16 @@ const isChecked = computed({
     set: val => {
         emit('update:modelValue', val)
     }
+})
+
+onMounted(() => {
+    emitter.on('hello', () => {
+        console.log('hello I am mitt')
+    })
+})
+
+onBeforeUnmount(() => {
+    emitter.off('hello')
 })
 
 const { n } = createNamespace('checkbox')
