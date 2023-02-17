@@ -1,5 +1,5 @@
 <template>
-    <kl-input v-model="password" type="password" placeholder="Please input password"> </kl-input>
+    <kl-input v-model="password" type="password" placeholder="Please input"> </kl-input>
     <kl-input v-model="password1" type="password" placeholder="Please input password" showPassword>
     </kl-input>
 </template>

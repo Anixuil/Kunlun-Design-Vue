@@ -6,7 +6,6 @@ export * from './Breadcrumb'
 
 export * from './form'
 export * from './input'
-export * from './form-item'
 export * from './checkbox'
 export * from './switch'
 

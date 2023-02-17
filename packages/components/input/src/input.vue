@@ -64,7 +64,7 @@ defineOptions({
     name: 'KlInput'
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change', 'clear'])
 
 const props = defineProps({
     placeholder: {
@@ -126,10 +126,12 @@ const showSuffix = computed(() => props.clearable || props.showPassword)
 const passwordVisible = ref(false)
 const handleInput = (e: { target: { value: any } }) => {
     emit('update:modelValue', e.target.value)
+    emit('change', e.target.value)
 }
 
 const clear = (e: { target: { value: any } }) => {
     emit('update:modelValue', '')
+    emit('clear')
 }
 
 const handlePassword = () => {

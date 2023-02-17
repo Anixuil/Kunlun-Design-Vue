@@ -6,7 +6,30 @@ import {
     KlListItemMeta,
     KlDatePicker,
     KlBreadCrumb,
-    KlBreadCrumbItem
+    KlBreadCrumbItem,
+    KlInput,
+    KlForm,
+    KlFormItem,
+    KlSwitch,
+    KlSelect,
+    KlOption,
+    KlCheckbox
 } from '@kunlun-design/components'
 
-export default [KlButton, KlList, KlListItem, KlListItemMeta, KlDatePicker, KlBreadCrumb, KlBreadCrumbItem] as Plugin[]
+export default
+    [KlButton,
+        KlList,
+        KlListItem,
+        KlListItemMeta,
+        KlDatePicker,
+        KlBreadCrumb,
+        KlBreadCrumbItem,
+        KlInput,
+        KlForm,
+        KlFormItem,
+        KlSwitch,
+        KlSelect,
+        KlOption,
+        KlCheckbox] as Plugin[]
+
+

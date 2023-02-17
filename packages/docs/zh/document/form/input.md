@@ -69,3 +69,10 @@ input/textarea
 | autofocus     | 原生属性，自动获取焦点                             | boolean                       | false   |
 | form          | 原生属性                                           | string                        | —       |
 | input-style   | input 元素或 textarea 元素的 style                 | string/object                 | {}      |
+
+### 事件
+
+| 事件名 | 说明                                        | 回调参数 |
+| ------ | ------------------------------------------- | -------- |
+| change | 仅当 modelValue 改变时触发                  | val      |
+| clear  | 在点击由 clearable 属性生成的清空按钮时触发 | —        |

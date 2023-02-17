@@ -35,8 +35,8 @@
         font-size: 14px;
     }
     .large {
-        height: 50px;
-        line-height: 50px;
+        height: 55px;
+        line-height: 55px;
         font-size: 16px;
     }
     .small {
@@ -64,13 +64,6 @@
             outline: none;
             border-color: #409eff;
         }
-        // 禁用样式
-        &.is-disabled {
-            background-color: #f5f7fa;
-            border-color: #e4e7ed;
-            color: #c0c4cc;
-            cursor: not-allowed;
-        }
     }
 }
 // 后面加suffix的意思是后面如果有后缀的话，触发该样式
@@ -83,16 +76,10 @@
         right: 10px;
         height: 100%;
         top: 0;
-        line-height: 40px;
         text-align: center;
         color: #c0c4cc;
         transition: all 0.3s;
-        z-index: 900;
-        i {
-            color: #c0c4cc;
-            font-size: 14px;
-            cursor: pointer;
-            transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
+        z-index: 999;
+        vertical-align: middle;
     }
 }
