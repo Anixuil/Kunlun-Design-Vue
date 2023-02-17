@@ -9,9 +9,11 @@ import Layout from './components/Layout.vue'
 import Icon from './components/Icon.vue'
 import Dialog from './components/dialog.vue'
 import Progress from './components/progress.vue'
+import Drawer from './components/Drawer.vue'
 </script>
 
 <template>
+    <Drawer></Drawer>
     <Progress></Progress>
     <Dialog></Dialog>
     <Icon></Icon>
