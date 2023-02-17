@@ -13,7 +13,8 @@ import {
     KlSwitch,
     KlSelect,
     KlOption,
-    KlCheckbox
+    KlCheckbox,
+    KlRadio
 } from '@kunlun-design/components'
 
 export default [
@@ -30,5 +31,6 @@ export default [
     KlSwitch,
     KlSelect,
     KlOption,
-    KlCheckbox
+    KlCheckbox,
+    KlRadio
 ] as Plugin[]
