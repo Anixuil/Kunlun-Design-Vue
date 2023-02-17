@@ -18,10 +18,6 @@ const props = defineProps({
     modelValue: {
         type: [String, Number, Boolean]
     },
-    label: {
-        type: String,
-        default: ''
-    },
     disabled: {
         type: Boolean,
         default: false

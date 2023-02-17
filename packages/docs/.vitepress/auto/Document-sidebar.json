@@ -49,6 +49,10 @@
                     "link": "/form/checkbox"
                 },
                 {
+                    "text": "Radio 单选框",
+                    "link": "/form/radio"
+                },
+                {
                     "text": "Select 下拉选择框",
                     "link": "/form/select"
                 }
@@ -126,6 +130,10 @@
                 {
                     "text": "Checkbox",
                     "link": "/form/checkbox"
+                },
+                {
+                    "text": "Radio",
+                    "link": "/form/radio"
                 },
                 {
                     "text": "Select",
