@@ -17,7 +17,7 @@ import { createNamespace } from '@kunlun-design/utils'
 import { BreadCrumbItemProps } from './breadcrumb-item'
 import { inject } from 'vue'
 
-// const props = defineProps(BreadCrumbItemProps)
+const props = defineProps(BreadCrumbItemProps)
 const separator = inject('separator')
 
 defineOptions({
