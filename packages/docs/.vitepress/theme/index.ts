@@ -13,12 +13,12 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            component: defineAsyncComponent(() => import('../../zh/index.md'))
+            component: () => import('../../zh/index.md')
         },
         {
-            path: '/list',
+            path: '/#',
             component: defineAsyncComponent(
-                () => import('../../zh/document/data-display/list/list.md')
+                () => import('../../zh/index.md')
             )
         }
     ]
