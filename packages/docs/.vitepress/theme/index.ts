@@ -8,7 +8,7 @@ import { registerIcons } from '@kunlun-design/utils'
 
 import { createRouter, createWebHistory } from 'vue-router'
 import { defineAsyncComponent } from 'vue'
-const router = createRouter({
+const Router = createRouter({
     history: createWebHistory(),
     routes: [
         {
@@ -17,9 +17,7 @@ const router = createRouter({
         },
         {
             path: '/#',
-            component: defineAsyncComponent(
-                () => import('../../zh/index.md')
-            )
+            component: defineAsyncComponent(() => import('../../zh/index.md'))
         }
     ]
 })
@@ -27,7 +25,6 @@ const router = createRouter({
 export default define<ThemeType>({
     ...Theme,
     enhanceApp: ({ app }) => {
-        app.use(router)
         Object.keys(KunlunDesign).forEach(key => {
             if (key.startsWith('Kl') && KunlunDesign[key].name) {
                 app.component(KunlunDesign[key].name, KunlunDesign[key])
@@ -36,5 +33,6 @@ export default define<ThemeType>({
         globals.forEach(([name, comp]) => app.component(name, comp))
         // 注册全部图标
         registerIcons(app)
+        app.use(Router)
     }
 })
