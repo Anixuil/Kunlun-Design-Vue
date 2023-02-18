@@ -19,12 +19,9 @@
             />
         </span>
         <span class="kl-radio_label">
-            <template v-if="label">{{ label }}</template>
-            <template v-else>
-                <slot></slot>
-            </template>
-            <!-- 如果没有label,也没有插槽，就把value作为文本显示 -->
-            <template v-if="!$slots.default && !label">{{ value }}</template>
+            <slot></slot>
+            <!-- 如果没有插槽，就把label或value作为文本显示 -->
+            <template v-if="!$slots.default">{{ label ? label : value }}</template>
         </span>
     </label>
 </template>
