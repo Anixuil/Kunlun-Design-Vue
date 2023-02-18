@@ -63,7 +63,7 @@ const props = defineProps({
 const attribute = computed(() => {
     return {
         disabled: props.disabled || (group ? group.disabled : null),
-        border: props.border || (group ? group.disabled : null)
+        border: props.border || (group ? group.border : null)
     }
 })
 
