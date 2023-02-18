@@ -28,6 +28,7 @@ const props = defineProps({
     }
 })
 
+// 数据注入
 provide('is-group', {
     getModelValue: () => props.modelValue,
     'update:modelValue': (val: any) => {

@@ -58,6 +58,7 @@ const props = defineProps({
     }
 })
 
+// 组件状态管理
 const attribute = computed(() => {
     return {
         disabled: props.disabled || (group ? group.disabled : null),
@@ -66,6 +67,7 @@ const attribute = computed(() => {
 })
 
 const emit = defineEmits(['update:modelValue'])
+
 const group = inject('is-group', null) as unknown as {
     getModelValue: Function
     'update:modelValue': Function
@@ -73,6 +75,7 @@ const group = inject('is-group', null) as unknown as {
     border: Boolean
 }
 
+// 数据绑定
 const model = computed({
     get: () => {
         return group ? group.getModelValue() : props.modelValue

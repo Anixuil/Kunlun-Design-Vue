@@ -60,6 +60,7 @@ const props = defineProps({
     }
 })
 
+// 组件状态
 const attribute = computed(() => {
     return {
         checked: isChecked(),
@@ -68,6 +69,7 @@ const attribute = computed(() => {
     }
 })
 
+// 是否选中
 const isChecked = () => {
     if (group) {
         return model.value.find((item: string | number | boolean) => props.value === item)
@@ -77,6 +79,8 @@ const isChecked = () => {
 }
 
 const emit = defineEmits(['update:modelValue'])
+
+// 注入数据
 const group = inject('is-group', null) as unknown as {
     getModelValue: Function
     'update:modelValue': Function
@@ -84,6 +88,7 @@ const group = inject('is-group', null) as unknown as {
     border: Boolean
 }
 
+// 绑定的数据
 const model = computed({
     get: () => {
         return group ? group.getModelValue() : props.modelValue

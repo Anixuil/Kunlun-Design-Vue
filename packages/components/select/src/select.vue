@@ -75,6 +75,7 @@ const props = defineProps({
     }
 })
 
+// select选框显示
 const label = ref('')
 
 const icon = ref('KlSystemPullDown')
@@ -99,6 +100,7 @@ const clearValue = () => {
     label.value = ''
 }
 
+// 下拉框是否打开
 watch(selectOpen, val => {
     if (val)
         // 计算位置
@@ -116,7 +118,7 @@ const dropdownStyle = computed(() => {
     }
 })
 
-// 计算位置
+// 计算下拉框位置
 const calculateLocation = () => {
     let select_button_dom = select_button.value.getBoundingClientRect()
     dropdownPosition.value.w = select_button_dom.width
@@ -131,6 +133,7 @@ const showDrop = () => {
     }
 }
 
+// 浏览器页面滚动时重新计算下拉框位置
 const handleScroll = () => {
     calculateLocation()
 }
