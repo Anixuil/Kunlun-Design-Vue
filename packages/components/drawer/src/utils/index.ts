@@ -1,10 +1,16 @@
+// 取消默认行为
+const preventDefault = (event: Event) => {
+    event.preventDefault()
+}
 // 禁止body滚动
 export const lockScroll = () => {
-    document.body.classList.add('lock-scroll')
+    document.body.style.overflow = 'hidden'
+    document.addEventListener('touchmove', preventDefault, false)
 }
 // 允许body滚动
 export const unlockScroll = () => {
-    document.body.classList.remove('lock-scroll')
+    document.body.style.overflow = ''
+    document.removeEventListener('touchmove', preventDefault, false)
 }
 // 监听esc
 export const listenEsc = (cb: () => void) => {

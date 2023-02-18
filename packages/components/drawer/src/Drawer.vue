@@ -19,7 +19,6 @@ export interface IPropsType {
     modelValue: boolean
     size?: string | number
     direction?: 'rtl' | 'ltr' | 'ttb' | 'btt'
-    model?: boolean
     lockScroll?: boolean
     modal?: boolean
     modalClass?: string
@@ -102,16 +101,13 @@ onMounted(() => {
 onBeforeUnmount(() => {
     if (props.closeEsc) unlistenEsc(onClose)
 })
+
+defineOptions({
+    name: 'KlDrawer'
+})
 </script>
 
-<style lang="scss" scoped>
-/* 禁止底层滚动 */
-:global(.lock-scroll) {
-    position: fixed;
-    top: 0;
-    height: 100%;
-    overflow: hidden;
-}
+<style lang="scss">
 .drawer-rtl {
     top: 0;
     right: 0;
@@ -145,8 +141,10 @@ onBeforeUnmount(() => {
 /* 遮罩 */
 .kl-overlay {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: v-bind(zIndex);
 }
@@ -154,7 +152,7 @@ onBeforeUnmount(() => {
 /* 水平方向 */
 .lr-enter-active,
 .lr-leave-active {
-    transition: width 0.4s ease, opacity 0.4s ease;
+    transition: width 0.4s ease, opacity 0.3s ease;
 }
 .lr-enter-from,
 .lr-leave-to {
@@ -164,7 +162,7 @@ onBeforeUnmount(() => {
 /* 垂直方向 */
 .tb-enter-active,
 .tb-leave-active {
-    transition: heigth 0.4s ease, opacity 0.4s ease;
+    transition: height 0.4s ease, opacity 0.3s ease;
 }
 .tb-enter-from,
 .tb-leave-to {

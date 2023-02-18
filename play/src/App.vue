@@ -14,7 +14,7 @@ import Drawer from './components/Drawer.vue'
 
 <template>
     <Drawer></Drawer>
-    <Progress></Progress>
+    <!-- <Progress></Progress>
     <Dialog></Dialog>
     <Icon></Icon>
     <List></List>
@@ -23,7 +23,7 @@ import Drawer from './components/Drawer.vue'
     <Message></Message>
     <Form></Form>
     <Grid></Grid>
-    <Layout></Layout>
+    <Layout></Layout> -->
 </template>
 
 <style scoped lang="scss"></style>
