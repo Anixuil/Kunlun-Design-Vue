@@ -3,15 +3,15 @@
         class="kl-radio"
         :class="{
             'is-checked': value === model,
-            'is-disabled': disabled || group.disabled,
-            'is-border': border || group.border
+            'is-disabled': attribute.disabled,
+            'is-border': attribute.border
         }"
     >
         <span class="kl-radio_input">
             <span class="kl-radio_inner"></span>
             <input
                 type="radio"
-                :disabled="disabled || group.disabled"
+                :disabled="attribute.disabled"
                 class="kl-radio_original"
                 :name="name"
                 :value="value"
@@ -38,6 +38,7 @@ defineOptions({
 })
 
 const props = defineProps({
+    modelValue: [String, Number, Boolean],
     label: {
         type: String,
         default: ''
@@ -59,6 +60,14 @@ const props = defineProps({
     }
 })
 
+const attribute = computed(() => {
+    return {
+        disabled: props.disabled || (group ? group.disabled : null),
+        border: props.border || (group ? group.disabled : null)
+    }
+})
+
+const emit = defineEmits(['update:modelValue'])
 const group = inject('is-group') as {
     getModelValue: Function
     'update:modelValue': Function
@@ -67,9 +76,15 @@ const group = inject('is-group') as {
 }
 
 const model = computed({
-    get: () => group.getModelValue(),
+    get: () => {
+        return group ? group.getModelValue() : props.modelValue
+    },
     set: val => {
-        group['update:modelValue'](val)
+        if (group) {
+            group['update:modelValue'](val)
+        } else {
+            emit('update:modelValue', val)
+        }
     }
 })
 
