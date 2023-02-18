@@ -68,7 +68,7 @@ const attribute = computed(() => {
 })
 
 const emit = defineEmits(['update:modelValue'])
-const group = inject('is-group') as {
+const group = inject('is-group', null) as unknown as {
     getModelValue: Function
     'update:modelValue': Function
     disabled: Boolean

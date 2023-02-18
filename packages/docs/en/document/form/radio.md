@@ -22,8 +22,7 @@ radio/basic
 
 ## Radio is used alone
 
-Radio can also be used alone, and the same data needs to be bound to all radios, but there will be some small warnings
-that do not affect the use
+Radio can also be used alone, and the same data needs to be bound to all radios.
 :::demo
 radio/alone
 :::

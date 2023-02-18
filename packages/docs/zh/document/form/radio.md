@@ -20,7 +20,7 @@ radio/basic
 
 ## Radio 单独使用
 
-Radio 也可以单独使用，需要为所有radio绑定同一个数据，不过会有一些小警告，不影响使用
+Radio 也可以单独使用，需要为所有radio绑定同一个数据。
 
 :::demo
 radio/alone
