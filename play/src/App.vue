@@ -9,12 +9,16 @@ import Layout from './components/Layout.vue'
 import Icon from './components/Icon.vue'
 import Dialog from './components/dialog.vue'
 import Progress from './components/progress.vue'
+import Timeline from './components/Timeline.vue'
+import BreadCrumb from './components/BreadCrumb.vue'
 import Drawer from './components/Drawer.vue'
 </script>
 
 <template>
     <Drawer></Drawer>
-    <!-- <Progress></Progress>
+    <BreadCrumb></BreadCrumb>
+    <router-view></router-view>
+    <Progress></Progress>
     <Dialog></Dialog>
     <Icon></Icon>
     <List></List>
@@ -23,7 +27,8 @@ import Drawer from './components/Drawer.vue'
     <Message></Message>
     <Form></Form>
     <Grid></Grid>
-    <Layout></Layout> -->
+    <Layout></Layout>
+    <Timeline></Timeline>
 </template>
 
 <style scoped lang="scss"></style>

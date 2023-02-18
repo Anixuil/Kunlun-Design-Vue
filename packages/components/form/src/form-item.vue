@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { inject, onMounted } from 'vue'
+import { inject } from 'vue'
 
 defineOptions({
     name: 'KlFormItem'
@@ -37,6 +37,7 @@ const { n } = createNamespace('form-item')
         float: left;
         font-size: 14px;
         color: #606266;
+        height: 40px;
         line-height: 40px;
         padding: 0 12px 0 0;
         box-sizing: border-box;

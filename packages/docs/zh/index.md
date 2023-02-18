@@ -18,8 +18,8 @@ hero:
 
 features:
     - icon: ⚡️
-      title: 这是一个练习项目
-      details: wawawa
+      title: 快速上手
+      details: 与已有组件库构造相同，更快上手
     - icon: 🖖
       title: 这是一个手掌图标
       details: good...

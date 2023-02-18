@@ -79,7 +79,7 @@
 import { KlButton } from 'kunlun-design'
 
 const link_button = [
-    { type: '', text: 'default' },
+    { type: 'default', text: 'default' },
     { type: 'primary', text: 'primary' },
     { type: 'success', text: 'success' },
     { type: 'danger', text: 'danger' },

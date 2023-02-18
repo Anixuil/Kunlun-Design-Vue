@@ -1,33 +1,85 @@
 <template>
-    <div class="kl-switch" :class="{ 'is-checked': modelValue }" @click="handleClick">
-        <span class="kl-switch_core" :class="{ 'is-disabled': disabled }" :style="switchColor">
+    <div
+        class="kl-switch"
+        :class="{ 'is-checked': modelValue === activeValue }"
+        @click="handleClick"
+    >
+        <Component
+            class="kl-switch-inactiveIcon"
+            v-if="inactiveIcon"
+            :size="textStyle.fontSize"
+            :is="inactiveIcon"
+        />
+        <span
+            class="kl-switch-inactive"
+            v-if="inactiveText"
+            :style="{ ...textStyle, color: !props.modelValue ? '#409eff' : '#000' }"
+            >{{ inactiveText }}</span
+        >
+        <span
+            class="kl-switch_core"
+            :class="[{ 'is-disabled': disabled }, size]"
+            :style="switchColor"
+        >
             <span class="kl-switch_button"></span>
         </span>
+        <Component
+            class="kl-switch-activeIcon"
+            v-if="activeIcon"
+            :size="textStyle.fontSize"
+            :is="activeIcon"
+        />
+        <span
+            class="kl-switch-active"
+            v-if="activeText"
+            :style="{ ...textStyle, color: !props.modelValue ? '#000' : '#409eff' }"
+            >{{ activeText }}</span
+        >
     </div>
 </template>
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
+import './switch.scss'
 
 defineOptions({
     name: 'KlSwitch'
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change'])
 
 const props = defineProps({
     modelValue: {
-        type: Boolean,
+        type: [Boolean, String, Number]
+    },
+    activeValue: {
+        type: [Boolean, String, Number],
+        default: true
+    },
+    inactiveValue: {
+        type: [Boolean, String, Number],
         default: false
     },
     activeColor: {
         type: String,
-        default: ''
+        default: '#409eff'
     },
     inactiveColor: {
         type: String,
         default: ''
+    },
+    activeText: {
+        type: String
+    },
+    inactiveText: {
+        type: String
+    },
+    activeIcon: {
+        type: String
+    },
+    inactiveIcon: {
+        type: String
     },
     name: {
         type: String,
@@ -36,72 +88,51 @@ const props = defineProps({
     disabled: {
         type: Boolean,
         default: false
+    },
+    size: {
+        type: String,
+        default: 'default'
     }
 })
 
 // 开关颜色
 const switchColor = computed(() => ({
-    backgroundColor: props.modelValue ? props.activeColor : props.inactiveColor,
-    borderColor: props.modelValue ? props.activeColor : props.inactiveColor
+    backgroundColor:
+        props.modelValue == props.activeValue ? props.activeColor : props.inactiveColor,
+    borderColor: props.modelValue == props.activeValue ? props.activeColor : props.inactiveColor
 }))
+
+onMounted(() => {
+    emit('update:modelValue', props.inactiveValue)
+})
+
+// 字体大小
+const textStyle = computed(() => {
+    let size
+    let lineHeight
+    switch (props.size) {
+        case 'small':
+            size = 14
+            lineHeight = '20px'
+            break
+        case 'large':
+            size = 18
+            lineHeight = '30px'
+            break
+        case 'default':
+            size = 16
+            lineHeight = '25px'
+            break
+    }
+    return { lineHeight, fontSize: `${size}px` }
+})
 
 const handleClick = () => {
     if (props.disabled) return
-    emit('update:modelValue', !props.modelValue)
+    let val = props.modelValue === props.activeValue ? props.inactiveValue : props.activeValue
+    emit('update:modelValue', val)
+    emit('change', val)
 }
 
 const { n } = createNamespace('switch')
 </script>
-
-<style scoped lang="scss">
-.kl-switch {
-    display: inline-block;
-    align-items: center;
-    position: relative;
-    font-size: 14px;
-    line-height: 20px;
-    vertical-align: middle;
-    .kl-switch_core {
-        margin: 0;
-        display: inline-block;
-        position: relative;
-        width: 40px;
-        height: 20px;
-        border: 1px solid #dcdfe6;
-        outline: none;
-        border-radius: 10px;
-        box-sizing: border-box;
-        background: #dcdfe6;
-        cursor: pointer;
-        transition: border-color 0.3s, background-color 0.3s;
-        vertical-align: middle;
-        .kl-switch_button {
-            position: absolute;
-            top: 1px;
-            left: 1px;
-            border-radius: 100%;
-            transition: all 0.3s;
-            width: 16px;
-            height: 16px;
-            background-color: #fff;
-        }
-        // 是否禁用
-        &.is-disabled {
-            background-color: #e7effc;
-            border-color: #e7effc;
-            color: #c0c4cc;
-            cursor: not-allowed;
-        }
-    }
-    // 选中样式
-    &.is-checked {
-        .kl-switch_core {
-            border-color: #409eff;
-            background-color: #409eff;
-            .kl-switch_button {
-                transform: translateX(20px);
-            }
-        }
-    }
-}
-</style>

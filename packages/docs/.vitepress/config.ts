@@ -4,7 +4,7 @@ import { sidebar } from './config/sidebar'
 
 export const config: UserConfig = {
     outDir: './dist',
-    title: 'Kunun Design',
+    title: 'KunLun Design',
     head: [['link', { rel: 'icon', href: '/images/logo.svg' }]],
     themeConfig: {
         nav: [
@@ -21,7 +21,7 @@ export const config: UserConfig = {
             {
                 text: '关于',
                 items: [
-                    { text: '开发团队', link: '/zh/' },
+                    { text: '开发团队', link: '/zh/team' },
                     { text: '联系我们', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }
                 ]
             }
@@ -29,7 +29,7 @@ export const config: UserConfig = {
         logo: '/images/logo-transprent.png',
         footer: {
             message: 'Released under the MIT License.',
-            copyright: `Copyright &copy; 2023-PRESENT Kunlun-Designer and Kunlun-Design contributors`
+            copyright: `Copyright &copy; 湘ICP备2022024189号-1 2023-PRESENT Kunlun-Designer and Kunlun-Design contributors`
         },
         algolia: {},
         socialLinks: [{ icon: 'github', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }]
@@ -76,7 +76,7 @@ function getEnglishThemeConfig() {
             {
                 text: 'About',
                 items: [
-                    { text: 'Dev Team', link: '/en' },
+                    { text: 'Dev Team', link: '/en/team' },
                     { text: 'Contact Us', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }
                 ]
             }
@@ -110,7 +110,7 @@ function getChineseThemeConfig() {
             {
                 text: '关于',
                 items: [
-                    { text: '开发团队', link: '/zh/' },
+                    { text: '开发团队', link: '/zh/team' },
                     { text: '联系我们', link: 'https://github.com/Anixuil/Kunlun-Design-Vue' }
                 ]
             }

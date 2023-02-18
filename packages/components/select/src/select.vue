@@ -1,29 +1,59 @@
 <template>
-    <div class="kl-select">
-        <select
-            class="kl-select_inner"
-            :disabled="disabled"
-            :placeholder="placeholder"
-            :multiple="multiple"
-            v-model="val"
+    <!-- 下拉框 -->
+    <div class="kl-select" :class="{ 'is-disabled': disabled }">
+        <div
+            ref="select_button"
+            class="kl-select-button"
+            :class="size"
+            @click.stop="selectOpen = !selectOpen"
         >
-            <slot></slot>
-        </select>
+            <!-- 选中内容 -->
+            <span v-if="label">{{ label }}</span>
+            <span class="placeholder" v-else>{{
+                placeholder ? placeholder : 'Please enter a keyword'
+            }}</span>
+            <div class="select-icon" :class="{ selectOpen: selectOpen && !clearable }">
+                <Component
+                    v-if="clearable"
+                    @mousemove="icon = 'KlOtherError'"
+                    @mouseleave="icon = 'KlSystemPullDown'"
+                    :is="icon"
+                    @click.stop="clearValue"
+                />
+                <KlSystemPullDown v-else />
+            </div>
+        </div>
+        <!-- 下拉框 -->
+        <transition name="select">
+            <div
+                ref="select_dropdown"
+                v-show="selectOpen"
+                :style="dropdownStyle"
+                class="kl-select-dropdown"
+            >
+                <ul>
+                    <slot></slot>
+                </ul>
+            </div>
+        </transition>
     </div>
 </template>
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { ref, watch } from 'vue'
+import { KlSystemPullDown } from '@kl-design/icons'
+import { computed, onBeforeUnmount, onMounted, provide, ref, watch } from 'vue'
+import './select.scss'
 
 defineOptions({
     name: 'KlSelect'
 })
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'change', 'clear'])
+
 const props = defineProps({
     modelValue: {
-        type: String,
+        type: [String, Boolean, Number],
         default: ''
     },
     placeholder: {
@@ -31,59 +61,89 @@ const props = defineProps({
         required: false,
         default: ''
     },
-    multiple: {
-        type: Boolean,
-        required: false,
-        default: false
-    },
     disabled: {
         type: Boolean,
         default: false
     },
-    optionList: Array
+    size: {
+        type: String,
+        default: 'default'
+    },
+    clearable: {
+        type: Boolean,
+        default: false
+    }
 })
 
-const val = ref('')
+const label = ref('')
 
-watch(val, value => {
-    emit('update:modelValue', value)
+const icon = ref('KlSystemPullDown')
+
+provide('handleModelValue', (val: any, lab: any) => {
+    emit('update:modelValue', val)
+    emit('change', val)
+    label.value = lab
+    selectOpen.value = false
+})
+
+provide('size', props.size)
+
+const selectOpen = ref(false)
+
+const select_button = ref()
+
+// 清空选项
+const clearValue = () => {
+    emit('update:modelValue', null)
+    emit('clear')
+    label.value = ''
+}
+
+watch(selectOpen, val => {
+    if (val)
+        // 计算位置
+        calculateLocation()
+})
+
+// 下拉框位置
+const dropdownPosition = ref({ x: 0, y: 0, w: 0 })
+const dropdownStyle = computed(() => {
+    return {
+        left: `${dropdownPosition.value.x}px`,
+        top: `${dropdownPosition.value.y}px`,
+        width: `${dropdownPosition.value.w}px`,
+        zIndex: 999
+    }
+})
+
+// 计算位置
+const calculateLocation = () => {
+    let select_button_dom = select_button.value.getBoundingClientRect()
+    dropdownPosition.value.w = select_button_dom.width
+    dropdownPosition.value.x = select_button_dom.left
+    dropdownPosition.value.y = select_button_dom.top + select_button_dom.height + 5
+}
+
+// 下拉框失焦时消失
+const showDrop = () => {
+    if (selectOpen.value) {
+        selectOpen.value = false
+    }
+}
+
+const handleScroll = () => {
+    calculateLocation()
+}
+
+onMounted(() => {
+    document.body.addEventListener('click', showDrop)
+    window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+    document.body.removeEventListener('click', showDrop)
+    window.removeEventListener('scroll', handleScroll)
 })
 
 const { n } = createNamespace('select')
 </script>
-
-<style scoped lang="scss">
-.kl-select {
-    width: 100%;
-    position: relative;
-    font-size: 14px;
-    display: inline-block;
-    .kl-select_inner {
-        background-color: #fff;
-        background-image: none;
-        border: 1px solid #dcdfe6;
-        border-radius: 4px;
-        box-sizing: border-box;
-        color: #606266;
-        display: inline-block;
-        font-size: inherit;
-        height: 40px;
-        line-height: 40px;
-        outline: none;
-        padding: 0 15px;
-        transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
-        width: 100%;
-        &:focus {
-            outline: none;
-            border-color: #409eff;
-        }
-        // input禁用样式
-        &.is-disabled {
-            background-color: #f5f7fa;
-            border-color: #e4e7ed;
-            color: #c0c4cc;
-            cursor: not-allowed;
-        }
-    }
-}
-</style>

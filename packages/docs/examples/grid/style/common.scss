@@ -1,30 +1,29 @@
-
 .main {
     margin: 20px;
-.kl-col{
-    color: aliceblue;
-    height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 14px;
+    .kl-col {
+        color: aliceblue;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 14px;
+    }
+    h4 {
+        margin: 20px 0;
+    }
+    .row {
+        margin: 20px 0;
+    }
 }
-h4{
-    margin: 20px 0;
-}
-.row{
-    margin:20px 0;
-}
- }
 
-.color1{
-    background-color: #1677ffbf;
+.color1 {
+    background-color: rgb(119, 198, 205);
 }
-.color2{
-    background-color: #1e80ff;
+.color2 {
+    background-color: rgb(116, 183, 190);
 }
-.color3{
-    background-color: #0f6be3;
+.color3 {
+    background-color: rgb(74, 164, 174);
 }
-.color4{
-    background-color: #065ccd;
+.color4 {
+    background-color: rgb(33, 179, 192);
 }

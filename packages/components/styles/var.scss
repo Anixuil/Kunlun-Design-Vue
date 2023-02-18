@@ -113,7 +113,77 @@ $--breakpoints: (
 /*layout 布局*/
 $--header-height: 60px;
 $--header-padding: 0 20px;
-
 $--footer-padding: 0 20px;
-
 $--main-padding: 0 20px;
+
+/*timeline 时间线*/
+
+//dotsize
+%--dot-normal-width {
+    width: 8px;
+    height: 8px;
+}
+%--dot-large-width {
+    width: 12px;
+    height: 12px;
+}
+%--dot-normal-border-width {
+    border-width: 2px;
+}
+%--dot-large-border-width {
+    border-width: 3px;
+}
+//type
+%--dot-blank-bgColor {
+    background-color: #fff;
+}
+%--dot-default-bgColor {
+    background-color: #67cdcc;
+}
+%--dot-primary-bgColor {
+    background-color: #3a7afe;
+}
+%--dot-warning-bgColor {
+    background-color: rgb(230, 162, 60);
+}
+%--dot-danger-bgColor {
+    background-color: rgb(245, 108, 108);
+}
+%--dot-info-bgColor {
+    background-color: #85878b;
+}
+%--dot-success-bgColor {
+    background-color: rgb(103, 194, 58);
+}
+%--dot-default-color {
+    color: #67cdcc;
+}
+%--dot-primary-color {
+    color: #3a7afe;
+}
+%--dot-warning-color {
+    color: rgb(230, 162, 60);
+}
+%--dot-danger-color {
+    color: rgb(245, 108, 108);
+}
+%--dot-info-color {
+    color: #85878b;
+}
+%--dot-success-color {
+    color: rgb(103, 194, 58);
+}
+
+%--dot-large-border-width {
+    border-width: 3px;
+}
+$--tail-color: #e4e7ed;
+$--tail-width: 2px;
+
+$--message-border-radius: 5px;
+$--message-bgColor: rgb(223, 223, 223);
+
+$--timestamp-color: #afb0b1;
+$--timestamp-fontSize: 13px;
+
+$--wrapper-margin: 45px;

@@ -25,6 +25,10 @@
             "text": "表单组件",
             "children": [
                 {
+                    "text": "Form 表单",
+                    "link": "/form/form"
+                },
+                {
                     "text": "DatePicker 日期选择框",
                     "link": "/form/datepicker"
                 },
@@ -35,6 +39,22 @@
                 {
                     "text": "Upload 上传",
                     "link": "/form/upload"
+                },
+                {
+                    "text": "Switch 开关",
+                    "link": "/form/switch"
+                },
+                {
+                    "text": "Checkbox 多选框",
+                    "link": "/form/checkbox"
+                },
+                {
+                    "text": "Radio 单选框",
+                    "link": "/form/radio"
+                },
+                {
+                    "text": "Select 下拉选择框",
+                    "link": "/form/select"
                 }
             ]
         },
@@ -67,6 +87,15 @@
                     "link": "/data-display/progress/progress"
                 }
             ]
+        },
+        "navigation": {
+            "text": "导航组件",
+            "children": [
+                {
+                    "text": "BreadCrumb 面包屑",
+                    "link": "/navigation/breadcrumb/breadcrumb"
+                }
+            ]
         }
     },
     "en": {
@@ -97,6 +126,22 @@
                 {
                     "text": "Upload",
                     "link": "/form/upload"
+                },
+                {
+                    "text": "Switch",
+                    "link": "/form/switch"
+                },
+                {
+                    "text": "Checkbox",
+                    "link": "/form/checkbox"
+                },
+                {
+                    "text": "Radio",
+                    "link": "/form/radio"
+                },
+                {
+                    "text": "Select",
+                    "link": "/form/select"
                 }
             ]
         },
@@ -127,6 +172,15 @@
                 {
                     "text": "Progress",
                     "link": "/data-display/progress/progress"
+                }
+            ]
+        },
+        "navigation": {
+            "text": "Navigation component",
+            "children": [
+                {
+                    "text": "BreadCrumb ",
+                    "link": "/navigation/breadcrumb/breadcrumb"
                 }
             ]
         }

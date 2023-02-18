@@ -1,7 +1,7 @@
 <template>
-    <h1>Form</h1>
+    <h1>Form {{ form.radio }}</h1>
     <div class="form">
-        <kl-form :model="{}" labelWidth="120px">
+        <kl-form :model="form" labelWidth="120px">
             <kl-form-item label="username">
                 <kl-input placeholder="请输入账号" v-model="form.name" :clearable="true"></kl-input>
             </kl-form-item>
@@ -23,21 +23,74 @@
                 <kl-switch v-model="form.isON" :title="form.isON"></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-颜色设置">
-                <kl-switch
-                    v-model="form.isON"
-                    activeColor="#000"
-                    inactiveColor="#79CDCD"
-                ></kl-switch>
+                <kl-switch v-model="form.isON" activeColor="red" inactiveColor="blue"></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="switch-value">
+                <kl-switch v-model="form.switch" activeValue="red" inactiveValue="blue"></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-disabled">
                 <kl-switch v-model="form.isON" disabled></kl-switch>
             </kl-form-item>
+            <kl-form-item label="switch-small">
+                <kl-switch
+                    v-model="form.isON"
+                    :title="form.isON"
+                    active-text="开"
+                    inactive-text="关"
+                    size="small"
+                ></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="switch-large">
+                <kl-switch
+                    v-model="form.isON"
+                    :title="form.isON"
+                    activeText="开"
+                    inactiveText="关"
+                    size="large"
+                ></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="switch-text">
+                <kl-switch
+                    v-model="form.isON"
+                    :title="form.isON"
+                    activeText="开"
+                    inactiveText="关"
+                ></kl-switch>
+            </kl-form-item>
+            <kl-form-item label="switch-icon">
+                <kl-switch
+                    v-model="form.isON"
+                    activeIcon="KlOtherCorrect"
+                    inactiveIcon="KlOtherError"
+                ></kl-switch>
+            </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.selectData">
-                    <option value="胡桃" label="胡桃"></option>
-                    <option value="夜兰" label="夜兰"></option>
-                    <option value="七七" label="七七"></option>
+                    <kl-option value="胡桃">HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
                 </kl-select>
+            </kl-form-item>
+            <kl-form-item label="select">
+                <kl-select v-model="form.selectData" size="large">
+                    <kl-option value="胡桃" disabled>HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
+                </kl-select>
+            </kl-form-item>
+            <kl-form-item label="select">
+                <kl-select v-model="form.selectData" size="small" clearable>
+                    <kl-option value="胡桃">HuTao</kl-option>
+                    <kl-option value="夜兰">YeLan</kl-option>
+                    <kl-option value="七七">QiQi</kl-option>
+                </kl-select>
+            </kl-form-item>
+            <kl-form-item label="radio">
+                <kl-radio-group v-model="form.radio">
+                    <kl-radio label="HuTao" value="胡桃"></kl-radio>
+                    <kl-radio label="YeLan" value="夜兰"></kl-radio>
+                    <kl-radio label="QiQi" value="七七"></kl-radio>
+                </kl-radio-group>
             </kl-form-item>
             <kl-form-item label="textarea">
                 <kl-input
@@ -46,6 +99,7 @@
                     :clearable="true"
                     type="textarea"
                     :rows="4"
+                    @change="change"
                 ></kl-input>
             </kl-form-item>
             <kl-form-item>
@@ -64,7 +118,10 @@ import {
     KlButton,
     KlCheckbox,
     KlSwitch,
-    KlSelect
+    KlSelect,
+    KlOption,
+    KlRadio,
+    KlRadioGroup
 } from 'kunlun-design'
 import { reactive } from 'vue'
 
@@ -73,7 +130,9 @@ const form = reactive({
     password: '',
     isVIP: true,
     isON: true,
+    switch: 'red',
     selectData: '',
+    radio: '',
     text: ''
 })
 
@@ -105,6 +164,13 @@ const model = reactive({
     disables: '02'
 })
 
+const change = (val: any) => {
+    console.log(val)
+}
+
+const clear = () => {
+    console.log('清除成功')
+}
 const onSubmit = () => {
     console.log(JSON.parse(JSON.stringify(form)))
 }
@@ -112,7 +178,7 @@ const onSubmit = () => {
 
 <style scoped lang="scss">
 .form {
-    width: 500px;
+    width: 600px;
     margin-left: 20px;
 }
 </style>
