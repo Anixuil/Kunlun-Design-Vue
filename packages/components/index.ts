@@ -22,3 +22,4 @@ export * from './progress'
 
 export * from './timeline'
 export * from './upload'
+export * from './drawer'

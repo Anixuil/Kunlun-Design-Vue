@@ -11,9 +11,11 @@ import Dialog from './components/dialog.vue'
 import Progress from './components/progress.vue'
 import Timeline from './components/Timeline.vue'
 import BreadCrumb from './components/BreadCrumb.vue'
+import Drawer from './components/Drawer.vue'
 </script>
 
 <template>
+    <Drawer></Drawer>
     <BreadCrumb></BreadCrumb>
     <router-view></router-view>
     <Progress></Progress>

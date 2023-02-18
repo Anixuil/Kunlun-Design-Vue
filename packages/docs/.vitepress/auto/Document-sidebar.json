@@ -68,6 +68,10 @@
                 {
                     "text": "Dialog 对话框",
                     "link": "/feedback/dialog"
+                },
+                {
+                    "text": "Drawer 抽屉",
+                    "link": "/feedback/drawer"
                 }
             ]
         },
@@ -151,6 +155,10 @@
                 {
                     "text": "Dialog",
                     "link": "/feedback/dialog"
+                },
+                {
+                    "text": "Drawer",
+                    "link": "/feedback/drawer"
                 }
             ]
         },
