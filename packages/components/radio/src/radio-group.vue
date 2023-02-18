@@ -28,7 +28,7 @@ const props = defineProps({
     }
 })
 
-provide('model', {
+provide('is-group', {
     getModelValue: () => props.modelValue,
     'update:modelValue': (val: any) => {
         emit('update:modelValue', val)
