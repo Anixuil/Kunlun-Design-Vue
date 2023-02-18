@@ -6,28 +6,9 @@ import { globals } from '../vitepress'
 import * as KunlunDesign from '@kunlun-design/components'
 import { registerIcons } from '@kunlun-design/utils'
 
-import { createRouter, createWebHistory } from 'vue-router'
-import { defineAsyncComponent } from 'vue'
-const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {
-            path: '/',
-            component: () => import('../../zh/index.md')
-        },
-        {
-            path: '/#',
-            component: defineAsyncComponent(
-                () => import('../../zh/index.md')
-            )
-        }
-    ]
-})
-
 export default define<ThemeType>({
     ...Theme,
     enhanceApp: ({ app }) => {
-        app.use(router)
         Object.keys(KunlunDesign).forEach(key => {
             if (key.startsWith('Kl') && KunlunDesign[key].name) {
                 app.component(KunlunDesign[key].name, KunlunDesign[key])

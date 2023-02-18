@@ -1,11 +1,10 @@
 <template>
     <span :class="[n()]">
-        <router-link v-if="to" :to="to" :replace="replace">
+        <span v-if="to" @click="onClick" class="kl-breadcrumb-item-link">
             <slot></slot>
-        </router-link>
+        </span>
         <span v-else>
             <slot></slot>
-            <slot name="overlay"></slot>
         </span>
         <span class="kl-breadcrumb-item-separator">{{ separator }}</span>
     </span>
@@ -15,8 +14,10 @@
 import './breadcrumb.scss'
 import { createNamespace } from '@kunlun-design/utils'
 import { BreadCrumbItemProps } from './breadcrumb-item'
-import { inject } from 'vue'
+import { getCurrentInstance, inject } from 'vue'
+import type { Router } from 'vue-router'
 
+const instance = getCurrentInstance()!
 const props = defineProps(BreadCrumbItemProps)
 const separator = inject('separator')
 
@@ -25,6 +26,14 @@ defineOptions({
 })
 
 const { n } = createNamespace('breadcrumb-item')
+
+const router = instance.appContext.config.globalProperties.$router as Router
+
+
+const onClick = () => {
+    if (!props.to || !router) return
+    props.replace ? router.replace(props.to) : router.push(props.to)
+}
 </script>
 
 <style scoped lang="scss"></style>
