@@ -52,6 +52,14 @@ radio/disabled-option
 radio/border
 :::
 
+## 图标
+
+可以在插槽内传入图标
+
+:::demo
+radio/icon
+:::
+
 ## API
 
 ### Radio 属性
@@ -63,6 +71,12 @@ radio/border
 | label    | 选项的标签，若不设置则默认与 value 相同 | string/number                      | —     |
 | disabled | 是否禁用该选项                 | boolean                            | false |
 | border	  | 是否显示边框                  | boolean                            | false |
+
+## Radio 插槽
+
+| 插槽名  | 说明   |
+| ------- |------|
+| default | 默认插槽 |
 
 ### RadioGroup 属性
 
@@ -77,3 +91,4 @@ radio/border
 | 事件名    | 说明                  | 回调参数 |
 |--------|---------------------|------|
 | change | 仅当 modelValue 改变时触发 | val  |
+

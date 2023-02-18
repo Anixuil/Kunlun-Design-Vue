@@ -53,6 +53,14 @@ Set the border property to true to render as a radio box with a border.
 radio/border
 :::
 
+## icon
+
+Icons can be passed in within a slot
+
+:::demo
+radio/icon
+:::
+
 ## API
 
 ### Radio attribute
@@ -65,6 +73,12 @@ radio/border
 | disabled      | Whether to disable the option                                      | boolean                            | false         |
 | border	       | Whether to display a border                                        | boolean                            | false         |
 
+## Radio slot
+
+| Slot name | Description |
+| ------- |------|
+| default | Default slot |
+
 ### RadioGroup attribute
 
 | Property name | Description                           | Type    | Default value |
@@ -73,8 +87,11 @@ radio/border
 | disabled      | Whether to disable all options        | boolean | false         |
 | border	       | Whether to display all option borders | boolean | false         |
 
+
 ### RadioGroup event
 
 | Event Name | Description | Callback parameters                       |
 |------------|-------------|-------------------------------------------|
-| change     |             | Triggers only when modelValue changes val |
+| change     |   Triggers only when modelValue changes          |  — |
+
+
