@@ -13,73 +13,17 @@
                     showPassword
                 ></kl-input>
             </kl-form-item>
-            <kl-form-item label="disabled">
-                <kl-input disabled placeholder="禁用输入框" />
-            </kl-form-item>
             <kl-form-item label="checkbox">
-                <kl-checkbox v-model="form.isVIP" label="VIP" />
+                <!--                <kl-checkbox-group v-model="form.isVIP">-->
+                <kl-checkbox label="VIP" v-model="form.checkbox" />
+                <kl-checkbox label="VIP1" v-model="form.checkbox" />
+                <!--                </kl-checkbox-group>-->
             </kl-form-item>
             <kl-form-item label="switch">
-                <kl-switch v-model="form.isON" :title="form.isON"></kl-switch>
-            </kl-form-item>
-            <kl-form-item label="switch-颜色设置">
-                <kl-switch v-model="form.isON" activeColor="red" inactiveColor="blue"></kl-switch>
-            </kl-form-item>
-            <kl-form-item label="switch-value">
-                <kl-switch v-model="form.switch" activeValue="red" inactiveValue="blue"></kl-switch>
-            </kl-form-item>
-            <kl-form-item label="switch-disabled">
-                <kl-switch v-model="form.isON" disabled></kl-switch>
-            </kl-form-item>
-            <kl-form-item label="switch-small">
-                <kl-switch
-                    v-model="form.isON"
-                    :title="form.isON"
-                    active-text="开"
-                    inactive-text="关"
-                    size="small"
-                ></kl-switch>
-            </kl-form-item>
-            <kl-form-item label="switch-large">
-                <kl-switch
-                    v-model="form.isON"
-                    :title="form.isON"
-                    activeText="开"
-                    inactiveText="关"
-                    size="large"
-                ></kl-switch>
-            </kl-form-item>
-            <kl-form-item label="switch-text">
-                <kl-switch
-                    v-model="form.isON"
-                    :title="form.isON"
-                    activeText="开"
-                    inactiveText="关"
-                ></kl-switch>
-            </kl-form-item>
-            <kl-form-item label="switch-icon">
-                <kl-switch
-                    v-model="form.isON"
-                    activeIcon="KlOtherCorrect"
-                    inactiveIcon="KlOtherError"
-                ></kl-switch>
+                <kl-switch v-model="form.switch" :title="form.switch"></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select v-model="form.selectData">
-                    <kl-option value="胡桃">HuTao</kl-option>
-                    <kl-option value="夜兰">YeLan</kl-option>
-                    <kl-option value="七七">QiQi</kl-option>
-                </kl-select>
-            </kl-form-item>
-            <kl-form-item label="select">
-                <kl-select v-model="form.selectData" size="large">
-                    <kl-option value="胡桃" disabled>HuTao</kl-option>
-                    <kl-option value="夜兰">YeLan</kl-option>
-                    <kl-option value="七七">QiQi</kl-option>
-                </kl-select>
-            </kl-form-item>
-            <kl-form-item label="select">
-                <kl-select v-model="form.selectData" size="small" clearable>
+                <kl-select v-model="form.select">
                     <kl-option value="胡桃">HuTao</kl-option>
                     <kl-option value="夜兰">YeLan</kl-option>
                     <kl-option value="七七">QiQi</kl-option>
@@ -92,11 +36,6 @@
                     <kl-radio label="QiQi" value="七七"></kl-radio>
                 </kl-radio-group>
             </kl-form-item>
-            <kl-form-item label="radio 单独使用">
-                <kl-radio label="HuTao" value="胡桃" v-model="form.radio1"></kl-radio>
-                <kl-radio label="YeLan" value="夜兰" v-model="form.radio1"></kl-radio>
-                <kl-radio label="QiQi" value="七七" v-model="form.radio1"></kl-radio>
-            </kl-form-item>
             <kl-form-item label="textarea">
                 <kl-input
                     placeholder="请输入文本"
@@ -104,7 +43,6 @@
                     :clearable="true"
                     type="textarea"
                     :rows="4"
-                    @change="change"
                 ></kl-input>
             </kl-form-item>
             <kl-form-item>
@@ -122,6 +60,7 @@ import {
     KlFormItem,
     KlButton,
     KlCheckbox,
+    KlCheckboxGroup,
     KlSwitch,
     KlSelect,
     KlOption,
@@ -133,41 +72,11 @@ import { reactive } from 'vue'
 const form = reactive({
     name: '',
     password: '',
-    isVIP: true,
-    isON: true,
-    switch: 'red',
-    selectData: '',
+    checkbox: true,
+    switch: true,
+    select: '',
     radio: '',
-    radio1: '',
     text: ''
-})
-
-const model = reactive({
-    model: '',
-    options: JSON.stringify([
-        {
-            valueKey: '01',
-            labelKey: '选项1',
-            dis: '说明1',
-            disA: '说明2'
-        },
-        {
-            valueKey: '02',
-            labelKey: '选项2',
-            dis: '说明3',
-            disA: '说明4'
-        }
-    ]),
-    urlParams: JSON.stringify({
-        key1: '01',
-        key2: 'Y'
-    }),
-    optionKeys: JSON.stringify({
-        value: 'valueKey',
-        label: 'labelKey'
-    }),
-    showLabels: 'labelKey,dis,disA',
-    disables: '02'
 })
 
 const change = (val: any) => {

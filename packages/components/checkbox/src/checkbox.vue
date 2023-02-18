@@ -1,64 +1,92 @@
 <template>
-    <label class="kl-checkbox" :class="{ ' is-checked': isChecked }">
+    <label
+        class="kl-checkbox"
+        :class="{
+            'is-checked': value === model,
+            'is-disabled': attribute.disabled,
+            'is-border': attribute.border
+        }"
+    >
         <span class="kl-checkbox_input">
             <span class="kl-checkbox_inner"></span>
             <input
                 type="checkbox"
+                :disabled="attribute.disabled"
                 class="kl-checkbox_original"
                 :name="name"
-                v-model="isChecked"
-                :value="label"
+                :value="value"
+                v-model="model"
             />
         </span>
         <span class="kl-checkbox_label">
-            <slot></slot>
-            <template v-if="!$slots.default">
-                {{ label }}
+            <template v-if="label">{{ label }}</template>
+            <template v-else>
+                <slot></slot>
             </template>
+            <!-- 如果没有label,也没有插槽，就把value作为文本显示 -->
+            <template v-if="!$slots.default && !label">{{ value }}</template>
         </span>
     </label>
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted } from 'vue'
 import { createNamespace } from '@kunlun-design/utils'
-import { emitter } from '../unit/mitt'
+import { computed, inject } from 'vue'
 
 defineOptions({
     name: 'KlCheckbox'
 })
 
-const emit = defineEmits(['update:modelValue'])
 const props = defineProps({
-    modelValue: {
-        type: Boolean,
-        default: false
-    },
+    modelValue: [String, Number, Boolean],
     label: {
         type: String,
         default: ''
     },
+    value: {
+        type: [String, Number, Boolean],
+        default: true
+    },
     name: {
         type: String,
         default: ''
+    },
+    disabled: {
+        type: Boolean,
+        default: false
+    },
+    border: {
+        type: Boolean,
+        default: false
     }
 })
 
-const isChecked = computed({
-    get: () => props.modelValue,
+const attribute = computed(() => {
+    return {
+        disabled: props.disabled || (group ? group.disabled : null),
+        border: props.border || (group ? group.disabled : null)
+    }
+})
+
+const emit = defineEmits(['update:modelValue'])
+const group = inject('is-group', null) as unknown as {
+    getModelValue: Function
+    'update:modelValue': Function
+    disabled: Boolean
+    border: Boolean
+}
+
+const model = computed({
+    get: () => {
+        return group ? group.getModelValue() : props.modelValue
+    },
     set: val => {
-        emit('update:modelValue', val)
+        if (group) {
+            group['update:modelValue'](val)
+        } else {
+            emit('update:modelValue', val)
+        }
     }
-})
-
-onMounted(() => {
-    emitter.on('hello', () => {
-        console.log('hello I am mitt')
-    })
-})
-
-onBeforeUnmount(() => {
-    emitter.off('hello')
 })
 
 const { n } = createNamespace('checkbox')
@@ -68,13 +96,17 @@ const { n } = createNamespace('checkbox')
 .kl-checkbox {
     color: #606266;
     font-weight: 500;
-    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
     position: relative;
     cursor: pointer;
     display: inline-block;
     white-space: nowrap;
-    user-select: none;
+    outline: none;
+    font-size: 14px;
     margin-right: 30px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
     .kl-checkbox_input {
         white-space: nowrap;
         cursor: pointer;
@@ -84,17 +116,16 @@ const { n } = createNamespace('checkbox')
         position: relative;
         vertical-align: middle;
         .kl-checkbox_inner {
-            display: inline-block;
-            position: relative;
             border: 1px solid #dcdfe6;
             border-radius: 2px;
             box-sizing: border-box;
             width: 14px;
             height: 14px;
             background-color: #fff;
-            z-index: 1;
-            transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
-                background-color 0.25s, cubic-bezier(0.71, -0.46, 0.29, 1.46);
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            box-sizing: border-box;
             &:after {
                 box-sizing: content-box;
                 content: '';
@@ -142,6 +173,22 @@ const { n } = createNamespace('checkbox')
     }
     .kl-checkbox_label {
         color: #409eff;
+    }
+}
+
+.is-border {
+    border: 1px solid #778899;
+    padding: 0 12px 0 10px;
+}
+// 禁用样式
+.is-disabled {
+    border-color: #e4e7ed;
+    color: #c0c4cc;
+    cursor: not-allowed;
+    .kl-checkbox_input {
+        .kl-checkbox_inner {
+            cursor: not-allowed;
+        }
     }
 }
 </style>
