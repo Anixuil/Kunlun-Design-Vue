@@ -92,6 +92,11 @@
                     <kl-radio label="QiQi" value="七七"></kl-radio>
                 </kl-radio-group>
             </kl-form-item>
+            <kl-form-item label="radio 单独使用">
+                <kl-radio label="HuTao" value="胡桃" v-model="form.radio1"></kl-radio>
+                <kl-radio label="YeLan" value="夜兰" v-model="form.radio1"></kl-radio>
+                <kl-radio label="QiQi" value="七七" v-model="form.radio1"></kl-radio>
+            </kl-form-item>
             <kl-form-item label="textarea">
                 <kl-input
                     placeholder="请输入文本"
@@ -133,6 +138,7 @@ const form = reactive({
     switch: 'red',
     selectData: '',
     radio: '',
+    radio1: '',
     text: ''
 })
 
