@@ -30,6 +30,7 @@
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
 import { computed, inject, onMounted } from 'vue'
+import './checkbox.scss'
 
 defineOptions({
     name: 'KlCheckbox'
@@ -98,105 +99,3 @@ const model = computed({
 
 const { n } = createNamespace('checkbox')
 </script>
-
-<style scoped lang="scss">
-.kl-checkbox {
-    color: #606266;
-    border: none;
-    font-weight: 500;
-    height: 30px;
-    line-height: 30px;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    white-space: nowrap;
-    outline: none;
-    font-size: 14px;
-    margin-right: 30px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    .kl-checkbox_input {
-        white-space: nowrap;
-        cursor: pointer;
-        outline: none;
-        display: inline-block;
-        line-height: 1;
-        position: relative;
-        vertical-align: middle;
-        .kl-checkbox_inner {
-            border: 1px solid #dcdfe6;
-            border-radius: 2px;
-            box-sizing: border-box;
-            width: 14px;
-            height: 14px;
-            background-color: #fff;
-            position: relative;
-            cursor: pointer;
-            display: inline-block;
-            box-sizing: border-box;
-            &:after {
-                box-sizing: content-box;
-                content: '';
-                border: 1px solid #ffffff;
-                border-left: 0;
-                border-top: 0;
-                height: 7px;
-                left: 4px;
-                position: absolute;
-                top: 1px;
-                transform: rotate(45deg) scaleY(0);
-                width: 3px;
-                transition: transform 0.15s ease-in 0.05s;
-                transform-origin: center;
-            }
-        }
-        .kl-checkbox_original {
-            opacity: 0;
-            outline: none;
-            position: absolute;
-            left: 10px;
-            margin: 0;
-            width: 0;
-            height: 0;
-            z-index: -1;
-        }
-    }
-    .kl-checkbox_label {
-        display: inline-block;
-        padding-left: 10px;
-        line-height: 19px;
-        font-size: 14px;
-    }
-}
-// 选中的样式
-.kl-checkbox.is-checked {
-    .kl-checkbox_input {
-        .kl-checkbox_inner {
-            background-color: #409eff;
-            border-color: #409eff;
-        }
-        &:after {
-            transform: rotate(45deg) scaleY(1);
-        }
-    }
-    .kl-checkbox_label {
-        color: #409eff;
-    }
-}
-
-.is-border {
-    border: 1px solid #9ea3a7;
-    padding: 0 12px 0 10px;
-}
-
-// 禁用样式
-.is-disabled {
-    color: #c0c4cc;
-    cursor: not-allowed;
-    .kl-checkbox_input {
-        .kl-checkbox_inner {
-            cursor: not-allowed;
-        }
-    }
-}
-</style>
