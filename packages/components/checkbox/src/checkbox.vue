@@ -2,7 +2,7 @@
     <label
         class="kl-checkbox"
         :class="{
-            'is-checked': value === model,
+            'is-checked': attribute.checked,
             'is-disabled': attribute.disabled,
             'is-border': attribute.border
         }"
@@ -13,25 +13,23 @@
                 type="checkbox"
                 :disabled="attribute.disabled"
                 class="kl-checkbox_original"
+                :id="value"
                 :name="name"
                 :value="value"
                 v-model="model"
             />
         </span>
         <span class="kl-checkbox_label">
-            <template v-if="label">{{ label }}</template>
-            <template v-else>
-                <slot></slot>
-            </template>
-            <!-- 如果没有label,也没有插槽，就把value作为文本显示 -->
-            <template v-if="!$slots.default && !label">{{ value }}</template>
+            <slot></slot>
+            <!-- 如果没有插槽，就把label或value作为文本显示 -->
+            <template v-if="!$slots.default">{{ label ? label : value }}</template>
         </span>
     </label>
 </template>
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { computed, inject } from 'vue'
+import { computed, inject, onMounted } from 'vue'
 
 defineOptions({
     name: 'KlCheckbox'
@@ -63,10 +61,19 @@ const props = defineProps({
 
 const attribute = computed(() => {
     return {
-        disabled: props.disabled || (group ? group.disabled : null),
-        border: props.border || (group ? group.disabled : null)
+        checked: isChecked(),
+        disabled: props.disabled || (group ? group.disabled : false),
+        border: props.border || (group ? group.border : false)
     }
 })
+
+const isChecked = () => {
+    if (group) {
+        return model.value.find((item: string | number | boolean) => props.value === item)
+    } else {
+        return props.value === model.value
+    }
+}
 
 const emit = defineEmits(['update:modelValue'])
 const group = inject('is-group', null) as unknown as {
@@ -95,6 +102,7 @@ const { n } = createNamespace('checkbox')
 <style scoped lang="scss">
 .kl-checkbox {
     color: #606266;
+    border: none;
     font-weight: 500;
     height: 30px;
     line-height: 30px;
@@ -177,12 +185,12 @@ const { n } = createNamespace('checkbox')
 }
 
 .is-border {
-    border: 1px solid #778899;
+    border: 1px solid #9ea3a7;
     padding: 0 12px 0 10px;
 }
+
 // 禁用样式
 .is-disabled {
-    border-color: #e4e7ed;
     color: #c0c4cc;
     cursor: not-allowed;
     .kl-checkbox_input {

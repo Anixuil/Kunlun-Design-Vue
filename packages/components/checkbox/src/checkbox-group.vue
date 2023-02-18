@@ -32,7 +32,7 @@ provide('is-group', {
     getModelValue: () => props.modelValue,
     'update:modelValue': (val: any) => {
         emit('update:modelValue', val)
-        emit('change', val)
+        emit('change')
     },
     disabled: props.disabled,
     border: props.border

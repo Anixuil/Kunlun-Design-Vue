@@ -14,17 +14,20 @@
                 ></kl-input>
             </kl-form-item>
             <kl-form-item label="checkbox">
-                <!--                <kl-checkbox-group v-model="form.isVIP">-->
-                <kl-checkbox label="VIP" v-model="form.checkbox" />
-                <kl-checkbox label="VIP1" v-model="form.checkbox" />
-                <!--                </kl-checkbox-group>-->
+                <kl-checkbox v-model="form.checkbox"><KlLogoQq /></kl-checkbox>
+            </kl-form-item>
+            <kl-form-item label="checkbox">
+                <kl-checkbox-group v-model="form.checkbox1">
+                    <kl-checkbox label="胡桃" value="胡桃" />
+                    <kl-checkbox label="夜兰" value="夜兰" />
+                </kl-checkbox-group>
             </kl-form-item>
             <kl-form-item label="switch">
                 <kl-switch v-model="form.switch" :title="form.switch"></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.select">
-                    <kl-option value="胡桃">HuTao</kl-option>
+                    <kl-option value="胡桃"><KlLogoQq /></kl-option>
                     <kl-option value="夜兰">YeLan</kl-option>
                     <kl-option value="七七">QiQi</kl-option>
                 </kl-select>
@@ -73,6 +76,7 @@ const form = reactive({
     name: '',
     password: '',
     checkbox: true,
+    checkbox1: [],
     switch: true,
     select: '',
     radio: '',
