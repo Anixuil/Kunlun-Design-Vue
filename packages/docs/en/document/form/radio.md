@@ -12,12 +12,20 @@ Single selection in a set of alternatives
 Radio boxes should not have too many options, and if you have a lot of options you should use select boxes instead of
 radio boxes.
 
-Radio must be used with RadioGroup, to use the Radio component, you only need to set the 'v-model' binding variable,
+to use the Radio component, you only need to set the 'v-model' binding variable,
 checked means that the value of the variable is the corresponding Radio
 The value of the value attribute, 'value' can be String, Number or Boolean.
 
 :::demo
 radio/basic
+:::
+
+## Radio is used alone
+
+Radio can also be used alone, and the same data needs to be bound to all radios, but there will be some small warnings
+that do not affect the use
+:::demo
+radio/alone
 :::
 
 ## Disabled state
@@ -52,6 +60,7 @@ radio/border
 
 | Property name | Description                                                        | Type                               | Default value |
 |---------------|--------------------------------------------------------------------|------------------------------------|---------------|
+| v-model       | Binding value                                                      | boolean                            | —             |
 | value         | The value of the option                                            | string / number / boolean / object | —             |
 | label         | The label of the option, if not set, defaults to the same as value | string/number                      | —             |
 | disabled      | Whether to disable the option                                      | boolean                            | false         |
