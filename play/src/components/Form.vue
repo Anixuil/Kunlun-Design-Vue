@@ -1,15 +1,9 @@
 <template>
-    <h1>Form</h1>
+    <h1>Form {{ form.radio }}</h1>
     <div class="form">
         <kl-form :model="form" labelWidth="120px">
             <kl-form-item label="username">
-                <kl-input
-                    placeholder="请输入账号"
-                    v-model="form.name"
-                    @change="change"
-                    :clearable="true"
-                    @clear="clear"
-                ></kl-input>
+                <kl-input placeholder="请输入账号" v-model="form.name" :clearable="true"></kl-input>
             </kl-form-item>
             <kl-form-item label="password">
                 <kl-input
@@ -29,12 +23,7 @@
                 <kl-switch v-model="form.isON" :title="form.isON"></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-颜色设置">
-                <kl-switch
-                    v-model="form.isON"
-                    @change="change"
-                    activeColor="red"
-                    inactiveColor="blue"
-                ></kl-switch>
+                <kl-switch v-model="form.isON" activeColor="red" inactiveColor="blue"></kl-switch>
             </kl-form-item>
             <kl-form-item label="switch-value">
                 <kl-switch v-model="form.switch" activeValue="red" inactiveValue="blue"></kl-switch>
@@ -76,7 +65,7 @@
                 ></kl-switch>
             </kl-form-item>
             <kl-form-item label="select">
-                <kl-select v-model="form.selectData" @change="change">
+                <kl-select v-model="form.selectData">
                     <kl-option value="胡桃">HuTao</kl-option>
                     <kl-option value="夜兰">YeLan</kl-option>
                     <kl-option value="七七">QiQi</kl-option>
@@ -95,6 +84,13 @@
                     <kl-option value="夜兰">YeLan</kl-option>
                     <kl-option value="七七">QiQi</kl-option>
                 </kl-select>
+            </kl-form-item>
+            <kl-form-item label="radio">
+                <kl-radio-group v-model="form.radio">
+                    <kl-radio label="HuTao" value="胡桃"></kl-radio>
+                    <kl-radio label="YeLan" value="夜兰"></kl-radio>
+                    <kl-radio label="QiQi" value="七七"></kl-radio>
+                </kl-radio-group>
             </kl-form-item>
             <kl-form-item label="textarea">
                 <kl-input
@@ -123,7 +119,9 @@ import {
     KlCheckbox,
     KlSwitch,
     KlSelect,
-    KlOption
+    KlOption,
+    KlRadio,
+    KlRadioGroup
 } from 'kunlun-design'
 import { reactive } from 'vue'
 
@@ -134,6 +132,7 @@ const form = reactive({
     isON: true,
     switch: 'red',
     selectData: '',
+    radio: '',
     text: ''
 })
 

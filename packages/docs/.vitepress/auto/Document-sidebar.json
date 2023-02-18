@@ -49,6 +49,10 @@
                     "link": "/form/checkbox"
                 },
                 {
+                    "text": "Radio 单选框",
+                    "link": "/form/radio"
+                },
+                {
                     "text": "Select 下拉选择框",
                     "link": "/form/select"
                 }
@@ -64,6 +68,10 @@
                 {
                     "text": "Dialog 对话框",
                     "link": "/feedback/dialog"
+                },
+                {
+                    "text": "Drawer 抽屉",
+                    "link": "/feedback/drawer"
                 }
             ]
         },
@@ -128,6 +136,10 @@
                     "link": "/form/checkbox"
                 },
                 {
+                    "text": "Radio",
+                    "link": "/form/radio"
+                },
+                {
                     "text": "Select",
                     "link": "/form/select"
                 }
@@ -143,6 +155,10 @@
                 {
                     "text": "Dialog",
                     "link": "/feedback/dialog"
+                },
+                {
+                    "text": "Drawer",
+                    "link": "/feedback/drawer"
                 }
             ]
         },
