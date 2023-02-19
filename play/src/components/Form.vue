@@ -27,7 +27,7 @@
             </kl-form-item>
             <kl-form-item label="select">
                 <kl-select v-model="form.select">
-                    <kl-option value="胡桃"><KlLogoQq /></kl-option>
+                    <kl-option value="胡桃" icon="KlLogoQq"></kl-option>
                     <kl-option value="夜兰">YeLan</kl-option>
                     <kl-option value="七七">QiQi</kl-option>
                 </kl-select>
@@ -80,7 +80,8 @@ const form = reactive({
     switch: true,
     select: '',
     radio: '',
-    text: ''
+    text: '',
+    region: ''
 })
 
 const change = (val: any) => {

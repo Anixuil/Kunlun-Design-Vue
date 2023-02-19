@@ -25,10 +25,6 @@
             "text": "表单组件",
             "children": [
                 {
-                    "text": "Form 表单",
-                    "link": "/form/form"
-                },
-                {
                     "text": "DatePicker 日期选择框",
                     "link": "/form/datepicker"
                 },
@@ -55,6 +51,10 @@
                 {
                     "text": "Select 下拉选择框",
                     "link": "/form/select"
+                },
+                {
+                    "text": "Form 表单",
+                    "link": "/form/form"
                 }
             ]
         },
@@ -146,6 +146,10 @@
                 {
                     "text": "Select",
                     "link": "/form/select"
+                },
+                {
+                    "text": "Form",
+                    "link": "/form/form"
                 }
             ]
         },
