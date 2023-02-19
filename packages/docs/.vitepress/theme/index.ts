@@ -6,22 +6,6 @@ import { globals } from '../vitepress'
 import * as KunlunDesign from '@kunlun-design/components'
 import { registerIcons } from '@kunlun-design/utils'
 
-import { createRouter, createWebHistory } from 'vue-router'
-import { defineAsyncComponent } from 'vue'
-const Router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {
-            path: '/',
-            component: () => import('../../zh/index.md')
-        },
-        {
-            path: '/#',
-            component: defineAsyncComponent(() => import('../../zh/index.md'))
-        }
-    ]
-})
-
 export default define<ThemeType>({
     ...Theme,
     enhanceApp: ({ app }) => {
@@ -33,6 +17,5 @@ export default define<ThemeType>({
         globals.forEach(([name, comp]) => app.component(name, comp))
         // 注册全部图标
         registerIcons(app)
-        app.use(Router)
     }
 })
