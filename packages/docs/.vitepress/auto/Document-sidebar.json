@@ -85,6 +85,10 @@
                 {
                     "text": "Progress 进度条",
                     "link": "/data-display/progress/progress"
+                },
+                {
+                    "text": "QRCode 二维码",
+                    "link": "/data-display/qrcode"
                 }
             ]
         },
@@ -172,6 +176,10 @@
                 {
                     "text": "Progress",
                     "link": "/data-display/progress/progress"
+                },
+                {
+                    "text": "QRCode",
+                    "link": "/data-display/qrcode"
                 }
             ]
         },
