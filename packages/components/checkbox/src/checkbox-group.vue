@@ -1,5 +1,5 @@
 <template>
-    <div class="one-radio-group">
+    <div class="one-checkbox-group">
         <slot></slot>
     </div>
 </template>
@@ -9,14 +9,14 @@ import { createNamespace } from '@kunlun-design/utils'
 import { provide } from 'vue'
 
 defineOptions({
-    name: 'KlRadioGroup'
+    name: 'KlCheckboxGroup'
 })
 
 const emit = defineEmits(['update:modelValue', 'change'])
 
 const props = defineProps({
     modelValue: {
-        type: [String, Number, Boolean]
+        type: Array
     },
     disabled: {
         type: Boolean,
@@ -28,15 +28,16 @@ const props = defineProps({
     }
 })
 
+// 数据注入
 provide('is-group', {
     getModelValue: () => props.modelValue,
     'update:modelValue': (val: any) => {
         emit('update:modelValue', val)
-        emit('change', val)
+        emit('change')
     },
     disabled: props.disabled,
     border: props.border
 })
 
-const { n } = createNamespace('radio-group')
+const { n } = createNamespace('checkbox-group')
 </script>

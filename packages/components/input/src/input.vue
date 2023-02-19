@@ -121,19 +121,24 @@ const props = defineProps({
 
 const input = ref(null)
 
+// icon后缀
 const showSuffix = computed(() => props.clearable || props.showPassword)
 
 const passwordVisible = ref(false)
+
+// 数据修改回调
 const handleInput = (e: { target: { value: any } }) => {
     emit('update:modelValue', e.target.value)
     emit('change', e.target.value)
 }
 
+// 清空input
 const clear = (e: { target: { value: any } }) => {
     emit('update:modelValue', '')
     emit('clear')
 }
 
+// 是否显示密码
 const handlePassword = () => {
     passwordVisible.value = !passwordVisible.value
 }

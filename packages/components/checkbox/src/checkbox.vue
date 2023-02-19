@@ -1,136 +1,106 @@
 <template>
-    <label class="kl-checkbox" :class="{ ' is-checked': isChecked }">
+    <label
+        class="kl-checkbox"
+        :class="{
+            'is-checked': attribute.checked,
+            'is-disabled': attribute.disabled,
+            'is-border': attribute.border
+        }"
+    >
         <span class="kl-checkbox_input">
             <span class="kl-checkbox_inner"></span>
             <input
                 type="checkbox"
+                :disabled="attribute.disabled"
                 class="kl-checkbox_original"
+                :id="value"
                 :name="name"
-                v-model="isChecked"
-                :value="label"
+                :value="value"
+                v-model="model"
             />
         </span>
         <span class="kl-checkbox_label">
             <slot></slot>
-            <template v-if="!$slots.default">
-                {{ label }}
-            </template>
+            <!-- 如果没有插槽，就把label或value作为文本显示 -->
+            <template v-if="!$slots.default">{{ label ? label : value }}</template>
         </span>
     </label>
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
 import { createNamespace } from '@kunlun-design/utils'
+import { computed, inject, onMounted } from 'vue'
+import './checkbox.scss'
 
 defineOptions({
     name: 'KlCheckbox'
 })
 
-const emit = defineEmits(['update:modelValue'])
 const props = defineProps({
-    modelValue: {
-        type: Boolean,
-        default: false
-    },
+    modelValue: [String, Number, Boolean],
     label: {
         type: String,
         default: ''
     },
+    value: {
+        type: [String, Number, Boolean],
+        default: true
+    },
     name: {
         type: String,
         default: ''
+    },
+    disabled: {
+        type: Boolean,
+        default: false
+    },
+    border: {
+        type: Boolean,
+        default: false
     }
 })
 
-const isChecked = computed({
-    get: () => props.modelValue,
+// 组件状态
+const attribute = computed(() => {
+    return {
+        checked: isChecked(),
+        disabled: props.disabled || (group ? group.disabled : false),
+        border: props.border || (group ? group.border : false)
+    }
+})
+
+// 是否选中
+const isChecked = () => {
+    if (group) {
+        return model.value.find((item: string | number | boolean) => props.value === item)
+    } else {
+        return props.value === model.value
+    }
+}
+
+const emit = defineEmits(['update:modelValue'])
+
+// 注入数据
+const group = inject('is-group', null) as unknown as {
+    getModelValue: Function
+    'update:modelValue': Function
+    disabled: Boolean
+    border: Boolean
+}
+
+// 绑定的数据
+const model = computed({
+    get: () => {
+        return group ? group.getModelValue() : props.modelValue
+    },
     set: val => {
-        emit('update:modelValue', val)
+        if (group) {
+            group['update:modelValue'](val)
+        } else {
+            emit('update:modelValue', val)
+        }
     }
 })
 
 const { n } = createNamespace('checkbox')
 </script>
-
-<style scoped lang="scss">
-.kl-checkbox {
-    color: #606266;
-    font-weight: 500;
-    font-size: 14px;
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    white-space: nowrap;
-    user-select: none;
-    margin-right: 30px;
-    .kl-checkbox_input {
-        white-space: nowrap;
-        cursor: pointer;
-        outline: none;
-        display: inline-block;
-        line-height: 1;
-        position: relative;
-        vertical-align: middle;
-        .kl-checkbox_inner {
-            display: inline-block;
-            position: relative;
-            border: 1px solid #dcdfe6;
-            border-radius: 2px;
-            box-sizing: border-box;
-            width: 14px;
-            height: 14px;
-            background-color: #fff;
-            z-index: 1;
-            transition: border-color 0.25s cubic-bezier(0.71, -0.46, 0.29, 1.46),
-                background-color 0.25s, cubic-bezier(0.71, -0.46, 0.29, 1.46);
-            &:after {
-                box-sizing: content-box;
-                content: '';
-                border: 1px solid #ffffff;
-                border-left: 0;
-                border-top: 0;
-                height: 7px;
-                left: 4px;
-                position: absolute;
-                top: 1px;
-                transform: rotate(45deg) scaleY(0);
-                width: 3px;
-                transition: transform 0.15s ease-in 0.05s;
-                transform-origin: center;
-            }
-        }
-        .kl-checkbox_original {
-            opacity: 0;
-            outline: none;
-            position: absolute;
-            left: 10px;
-            margin: 0;
-            width: 0;
-            height: 0;
-            z-index: -1;
-        }
-    }
-    .kl-checkbox_label {
-        display: inline-block;
-        padding-left: 10px;
-        line-height: 19px;
-        font-size: 14px;
-    }
-}
-// 选中的样式
-.kl-checkbox.is-checked {
-    .kl-checkbox_input {
-        .kl-checkbox_inner {
-            background-color: #409eff;
-            border-color: #409eff;
-        }
-        &:after {
-            transform: rotate(45deg) scaleY(1);
-        }
-    }
-    .kl-checkbox_label {
-        color: #409eff;
-    }
-}
-</style>

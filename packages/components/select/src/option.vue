@@ -32,6 +32,8 @@ const props = defineProps({
 const handleValue = inject('handleModelValue') as Function
 
 const size = inject('size')
+
+// 修改数据
 const saveValue = (event: { target: { innerText: String } }) => {
     if (props.disabled) return
     handleValue(props.value, event.target.innerText)
