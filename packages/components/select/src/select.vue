@@ -8,7 +8,12 @@
             @click.stop="selectOpen = !selectOpen"
         >
             <!-- 选中内容 -->
-            <span v-if="label">{{ label }}</span>
+            <template v-if="label">
+                <Component v-if="isIcon" :is="label" />
+                <template v-else>
+                    {{ label }}
+                </template>
+            </template>
             <span class="placeholder" v-else>{{
                 placeholder ? placeholder : 'Please enter a keyword'
             }}</span>
@@ -76,18 +81,22 @@ const props = defineProps({
 })
 
 // select选框显示
-const label = ref('')
+const label = ref<String>('')
+const isIcon = ref<Boolean>(false)
 
 const icon = ref('KlSystemPullDown')
 
-provide('handleModelValue', (val: any, lab: any) => {
+provide('handleModelValue', (val: any, lab: { isIcon: Boolean; label: String }) => {
     emit('update:modelValue', val)
     emit('change', val)
-    label.value = lab
+    label.value = lab.label
+    isIcon.value = lab.isIcon
     selectOpen.value = false
 })
 
 provide('size', props.size)
+
+provide('getValue', () => props.modelValue)
 
 const selectOpen = ref(false)
 
@@ -140,12 +149,12 @@ const handleScroll = () => {
 
 onMounted(() => {
     document.body.addEventListener('click', showDrop)
-    window.addEventListener('scroll', handleScroll)
+    document.addEventListener('scroll', handleScroll)
 })
 
 onBeforeUnmount(() => {
     document.body.removeEventListener('click', showDrop)
-    window.removeEventListener('scroll', handleScroll)
+    document.removeEventListener('scroll', handleScroll)
 })
 
 const { n } = createNamespace('select')
