@@ -14,7 +14,9 @@ import {
     KlSelect,
     KlOption,
     KlCheckbox,
-    KlRadio
+    KlCheckboxGroup,
+    KlRadio,
+    KlRadioGroup
 } from '@kunlun-design/components'
 
 export default [
@@ -32,5 +34,7 @@ export default [
     KlSelect,
     KlOption,
     KlCheckbox,
-    KlRadio
+    KlCheckboxGroup,
+    KlRadio,
+    KlRadioGroup
 ] as Plugin[]

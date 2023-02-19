@@ -20,7 +20,7 @@ checkbox/basic
 
 ## Checkbox is used alone
 
-Checkboxes can also be used separately, requiring the same data to be bound to all Checkboxes.
+Checkbox can also be used separately, the binding data is 'boolean', multiple checkboxes bound to the same value will not be mutually exclusive.
 
 :::demo
 checkbox/alone

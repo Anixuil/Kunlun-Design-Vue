@@ -20,7 +20,7 @@ checkbox/basic
 
 ## Checkbox 单独使用
 
-checkbox 也可以单独使用，需要为所有Checkbox绑定同一个数据。
+checkbox 也可以单独使用，绑定数据为`boolean`，多个checkbox绑定同一个value不会互斥。
 
 :::demo
 checkbox/alone
