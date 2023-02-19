@@ -45,7 +45,6 @@ importers:
       vite-plugin-dts: ^1.7.1
       vitest: ^0.28.3
       vue: ^3.2.45
-      vue-router: ^4.1.6
     dependencies:
       '@kl-design/icons': 1.0.12
       escape-html: registry.npmmirror.com/escape-html/1.0.3
@@ -89,7 +88,6 @@ importers:
       vite-plugin-dts: registry.npmmirror.com/vite-plugin-dts/1.7.1_vite@4.0.4
       vitest: registry.npmmirror.com/vitest/0.28.3_73aghwfynuahkc2kbwtd63iuoi
       vue: registry.npmmirror.com/vue/3.2.45
-      vue-router: registry.npmmirror.com/vue-router/4.1.6_vue@3.2.45
 
   packages/components:
     specifiers:
