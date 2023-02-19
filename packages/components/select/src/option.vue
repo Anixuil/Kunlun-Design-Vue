@@ -4,8 +4,11 @@
         @click="saveValue"
         :class="[{ 'is-disabled': disabled, 'is-checked': props.value === getValue() }, size]"
     >
-        <slot></slot>
-        <template v-if="!$slots.default">{{ label ? label : value }}</template>
+        <Component v-if="icon" :is="icon" />
+        <template v-else>
+            <slot></slot>
+            <template v-if="!$slots.default">{{ label ? label : value }}</template>
+        </template>
     </li>
 </template>
 
@@ -26,6 +29,10 @@ const props = defineProps({
     disabled: {
         type: Boolean,
         default: false
+    },
+    icon: {
+        type: String,
+        default: ''
     }
 })
 
@@ -38,10 +45,10 @@ const slot = useSlots()
 // 修改数据
 const saveValue = (event: { target: { innerText: String } }) => {
     if (props.disabled) return
-    let isIcon = slot.default()[0].type.name ? true : false
+    let isIcon = !!props.icon
     handleValue(props.value, {
         isIcon,
-        label: isIcon ? slot.default()[0].type.name : event.target.innerText
+        label: isIcon ? props.icon : event.target.innerText
     })
 }
 
