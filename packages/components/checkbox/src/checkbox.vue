@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { computed, inject, onMounted } from 'vue'
+import { computed, inject } from 'vue'
 import './checkbox.scss'
 
 defineOptions({
