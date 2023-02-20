@@ -3,7 +3,7 @@
         <div class="header">
             <span>{{ curTime }}</span>
         </div>
-        <div class="main">
+        <div class="panel-main">
             <div class="hour-list" ref="hourRef">
                 <div
                     :class="[
@@ -271,7 +271,7 @@ defineExpose({
         font-size: 18px;
     }
 
-    .main {
+    .panel-main {
         display: flex;
         height: 280px;
 

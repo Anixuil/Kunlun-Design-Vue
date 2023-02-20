@@ -2,7 +2,7 @@
     <label
         class="kl-radio"
         :class="{
-            'is-checked': value === model,
+            'is-checked': attribute.checked,
             'is-disabled': attribute.disabled,
             'is-border': attribute.border
         }"
@@ -61,6 +61,7 @@ const props = defineProps({
 // 组件状态管理
 const attribute = computed(() => {
     return {
+        checked: props.value === model.value,
         disabled: props.disabled || (group ? group.disabled : null),
         border: props.border || (group ? group.border : null)
     }

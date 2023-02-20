@@ -3,7 +3,8 @@ layout: doc
 lang: en-US
 ---
 
-# Timeline 
+# Timeline
+
 Visualize time-stream information.
 
 ## Basic usage
@@ -68,37 +69,34 @@ timeline/message
 
 ## Timeline Attribute
 
-| attribute | description                       | type                             | default value  |
-| ------ | -------------------------- | -------------------------------- | ------- |
-| mode   | Change the relative position of the timeline and content | `string`（left\|center\|right ） | left    |
-| type   | Change the style type of the content box       | `string`(message\|default)       | default |
-| reverse | Change the order of content | `boolean` | false |
-
-
+| attribute | description                                              | type                             | default value |
+| --------- | -------------------------------------------------------- | -------------------------------- | ------------- |
+| mode      | Change the relative position of the timeline and content | `string`（left\|center\|right ） | left          |
+| type      | Change the style type of the content box                 | `string`(message\|default)       | default       |
+| reverse   | Change the order of content                              | `boolean`                        | false         |
 
 ## Timeline Slots
 
-| slot name  | description       | Sublabels       |
-| ------- | ---------- | ------------ |
-| default | Customize content | TimelineItem |
+| slot name | description       | Sublabels    |
+| --------- | ----------------- | ------------ |
+| default   | Customize content | TimelineItem |
 
 # TimelineItem API
 
 ## TimelineItem Attribute
 
-| attribute    | description               | type                                          | default     |
-| --------- | ------------------ | --------------------------------------------- | ---------- |
-| dotcolor  | Node color           | `string`                                      | —          |
-| dotsolid  | Whether the node is solid       | `boolean`                                     | false      |
-| dotsize   | Node size           | `string`                                      | normal     |
-| dottype   | Node type           | `primary/success/warning/danger/info/default` | default    |
-| timestamp | timestamp             | `string`                                      | 0000/00/00 |
+| attribute | description                                    | type                                          | default    |
+| --------- | ---------------------------------------------- | --------------------------------------------- | ---------- |
+| dotcolor  | Node color                                     | `string`                                      | —          |
+| dotsolid  | Whether the node is solid                      | `boolean`                                     | false      |
+| dotsize   | Node size                                      | `string`                                      | normal     |
+| dottype   | Node type                                      | `primary/success/warning/danger/info/default` | default    |
+| timestamp | timestamp                                      | `string`                                      | 0000/00/00 |
 | timeplace | The timestamp relative to the content location | `string`                                      | bottom     |
 
 ## TimelineItem Slots
 
-| slot name  | description       |
-| ------- | ---------- |
-| default | Customize content |
-| dot     | Customize node |
-
+| slot name | description       |
+| --------- | ----------------- |
+| default   | Customize content |
+| dot       | Customize node    |

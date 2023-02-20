@@ -9,7 +9,7 @@
             @error="handleError"
         >
             <template #trigger>
-                <kl-button type="primary">Click to upload</kl-button>
+                <kl-button>Click to upload</kl-button>
             </template>
             <template #tip>
                 <div class="upload-tip">prompt message.</div>

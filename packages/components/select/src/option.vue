@@ -1,20 +1,23 @@
 <template>
-    <li class="kl-option" @click="saveValue" :class="[{ 'is-disabled': disabled }, size]">
-        <span v-if="!label && slotDefault">
+    <li
+        class="kl-option"
+        @click="saveValue"
+        :class="[{ 'is-disabled': disabled, 'is-checked': props.value === getValue() }, size]"
+    >
+        <Component v-if="icon" :is="icon" />
+        <template v-else>
             <slot></slot>
-        </span>
-        <span v-else>{{ label ? label : value }}</span>
+            <template v-if="!$slots.default">{{ label ? label : value }}</template>
+        </template>
     </li>
 </template>
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { inject, useSlots } from 'vue'
+import { inject, ref, useSlots } from 'vue'
 defineOptions({
     name: 'KlOption'
 })
-
-const slotDefault = !!useSlots().default
 
 const props = defineProps({
     value: {
@@ -26,17 +29,27 @@ const props = defineProps({
     disabled: {
         type: Boolean,
         default: false
+    },
+    icon: {
+        type: String,
+        default: ''
     }
 })
 
 const handleValue = inject('handleModelValue') as Function
 
 const size = inject('size')
+const getValue = inject('getValue')
 
+const slot = useSlots()
 // 修改数据
 const saveValue = (event: { target: { innerText: String } }) => {
     if (props.disabled) return
-    handleValue(props.value, event.target.innerText)
+    let isIcon = !!props.icon
+    handleValue(props.value, {
+        isIcon,
+        label: isIcon ? props.icon : event.target.innerText
+    })
 }
 
 const { n } = createNamespace('option')
@@ -56,6 +69,9 @@ li {
         color: #c0c4cc;
         cursor: not-allowed;
     }
+}
+.is-checked {
+    color: #409eff;
 }
 .default {
     height: 40px;

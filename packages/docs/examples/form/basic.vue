@@ -27,6 +27,6 @@ const form = reactive({
 })
 
 const login = () => {
-    console.log(JSON.parse(JSON.stringify(form)))
+    console.log(form)
 }
 </script>

@@ -77,6 +77,7 @@ select/clearable
 | value    | 选项的值                                | string / number / boolean / object | —      |
 | label    | 选项的标签，若不设置则默认与 value 相同 | string/number                      | —      |
 | disabled | 是否禁用该选项                          | boolean                            | false  |
+| icon     | 把 icon 图标作为 label，不可与文字共用  | String                             | —      |
 
 ### Select 事件
 

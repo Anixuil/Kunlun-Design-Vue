@@ -8,7 +8,8 @@ lang: zh-CN
 可视化地呈现时间流信息。
 
 ## 基础用法
-可通过给`timeline`组件设置`reverse`属性值来改变内容的排布顺序，true为倒序，false为正序，默认false。
+
+可通过给`timeline`组件设置`reverse`属性值来改变内容的排布顺序，true 为倒序，false 为正序，默认 false。
 
 <style lang="scss"> @use '../../../../examples/timeline/styles/common.scss'; </style>
 
@@ -46,7 +47,7 @@ timeline/time
 
 实现时间轴在右边内容在左边以及时间轴在中间，内容交替展现。
 
-在`timeline`组件上使用`mode`属性,值为right即时间轴在右边，center即时间轴在中间，默认为left。
+在`timeline`组件上使用`mode`属性,值为 right 即时间轴在右边，center 即时间轴在中间，默认为 left。
 
 :::demo
 timeline/mode
@@ -56,7 +57,7 @@ timeline/mode
 
 实现以对话框的形式展示内容，更加美观。
 
-在`timeline`组件上使用`type`属性,值设置为message即可实现对话框展示，默认值为default。
+在`timeline`组件上使用`type`属性,值设置为 message 即可实现对话框展示，默认值为 default。
 
 :::demo
 timeline/message
@@ -73,8 +74,6 @@ timeline/message
 | mode    | 改变时间轴和内容的相对位置 | `string`（left\|center\|right ） | left    |
 | type    | 改变内容框的样式类型       | `string`(message\|default)       | default |
 | reverse | 改变内容的顺序             | `boolean`                        | false   |
-
-
 
 ## Timeline 插槽
 
@@ -101,4 +100,3 @@ timeline/message
 | ------- | ---------- |
 | default | 自定义内容 |
 | dot     | 自定义节点 |
-
