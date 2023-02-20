@@ -80,6 +80,7 @@ select/clearable
 | value    | value of option                           | string / number / boolean / object | —                    |
 | label    | label of option, same as value if omitted | string/number                      | —                    |
 | disabled | whether option is disabled                | boolean                            | false                |
+|icon| Use the icon icon as a label, not with text| String                             |—|
 
 ### Select Event
 
