@@ -1,6 +1,13 @@
 import type { Plugin } from 'vue'
 import {
     KlButton,
+    KlCol,
+    KlRow,
+    KlLayout,
+    KlHeader,
+    KlMain,
+    KlFooter,
+    KlAside,
     KlList,
     KlListItem,
     KlListItemMeta,
@@ -14,11 +21,20 @@ import {
     KlSelect,
     KlOption,
     KlCheckbox,
-    KlRadio
+    KlRadio,
+    KlTimeline,
+    KlTimelineItem
 } from '@kunlun-design/components'
 
 export default [
     KlButton,
+    KlCol,
+    KlRow,
+    KlLayout,
+    KlHeader,
+    KlMain,
+    KlFooter,
+    KlAside,
     KlList,
     KlListItem,
     KlListItemMeta,
@@ -32,5 +48,7 @@ export default [
     KlSelect,
     KlOption,
     KlCheckbox,
-    KlRadio
+    KlRadio,
+    KlTimeline,
+    KlTimelineItem
 ] as Plugin[]

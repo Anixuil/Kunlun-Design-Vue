@@ -5,7 +5,7 @@ const definePropType = <T>(val: any): PropType<T> => val
 export const BreadCrumbItemProps = {
     to: {
         type: definePropType<RouteLocationRaw>([String, Object]),
-        default: '',
+        default: ''
     },
     replace: {
         type: Boolean,
