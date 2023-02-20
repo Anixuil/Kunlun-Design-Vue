@@ -71,6 +71,10 @@ const nextPage = () => {
 const setPageIndex = (index: number) => {
     pageIndex.value = index
 }
+
+defineOptions({
+    name: 'KlCarousel'
+})
 </script>
 
 <style lang="scss" scoped>

@@ -17,7 +17,7 @@ import Carousel from './components/Carousel.vue'
 
 <template>
     <Carousel></Carousel>
-    <!-- <Drawer></Drawer>
+    <Drawer></Drawer>
     <BreadCrumb></BreadCrumb>
     <router-view></router-view>
     <Progress></Progress>
@@ -30,7 +30,7 @@ import Carousel from './components/Carousel.vue'
     <Form></Form>
     <Grid></Grid>
     <Layout></Layout>
-    <Timeline></Timeline> -->
+    <Timeline></Timeline>
 </template>
 
 <style scoped lang="scss"></style>

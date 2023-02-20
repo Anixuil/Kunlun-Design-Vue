@@ -1,10 +1,10 @@
 <template>
     <div class="carousel">
         <KlCarousel>
-            <div class="carousel-item">page 1</div>
-            <div class="carousel-item">page 2</div>
-            <div class="carousel-item">page 3</div>
-            <div class="carousel-item">page 3</div>
+            <div class="carousel-item">1</div>
+            <div class="carousel-item">2</div>
+            <div class="carousel-item">3</div>
+            <div class="carousel-item">4</div>
         </KlCarousel>
     </div>
 </template>

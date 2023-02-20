@@ -37,12 +37,12 @@ const emit = defineEmits<IEmitType>()
         height: 6px;
         border-radius: 3px;
         margin-right: 8px;
-        background: #d3d5d9;
+        background: rgba(30, 45, 60, 0.2);
 
         &.active {
-            width: 24px;
+            width: 12px;
             background: #5e7ce0;
-            transition: all 0.3s ease; // 切换内容时指示器小圆点上的动效
+            transition: all 0.3s ease;
         }
     }
 }
