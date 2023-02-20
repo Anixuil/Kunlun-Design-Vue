@@ -175,6 +175,7 @@ defineExpose({
     align-items: center;
     width: 312px;
     height: 32px;
+    line-height: 22px;
     padding: 4px 11px;
     border: 1px solid #d9d9d9;
     border-radius: 6px;
