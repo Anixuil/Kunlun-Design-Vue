@@ -12,10 +12,12 @@ import Progress from './components/progress.vue'
 import Timeline from './components/Timeline.vue'
 import BreadCrumb from './components/BreadCrumb.vue'
 import Drawer from './components/Drawer.vue'
+import Carousel from './components/Carousel.vue'
 </script>
 
 <template>
-    <Drawer></Drawer>
+    <Carousel></Carousel>
+    <!-- <Drawer></Drawer>
     <BreadCrumb></BreadCrumb>
     <router-view></router-view>
     <Progress></Progress>
@@ -28,7 +30,7 @@ import Drawer from './components/Drawer.vue'
     <Form></Form>
     <Grid></Grid>
     <Layout></Layout>
-    <Timeline></Timeline>
+    <Timeline></Timeline> -->
 </template>
 
 <style scoped lang="scss"></style>
