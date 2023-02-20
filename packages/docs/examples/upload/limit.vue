@@ -11,7 +11,7 @@
             @exceed="handleExceed"
         >
             <template #trigger>
-                <kl-button type="primary">Click to upload</kl-button>
+                <kl-button>Click to upload</kl-button>
             </template>
         </kl-upload>
     </div>
