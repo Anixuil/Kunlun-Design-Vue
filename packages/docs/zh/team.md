@@ -30,10 +30,4 @@ features:
       title: RobertZhang-cloud
       details: 项目成员
       link: https://github.com/RobertZhang-cloud
-    - icon: 🛠️
-      title: 这是一个修理图标
-      details: cocococo
-    - icon: 🛠️
-      title: 这是一个修理图标
-      details: cocococo
 ---
