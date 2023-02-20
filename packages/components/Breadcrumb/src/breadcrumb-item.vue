@@ -29,7 +29,6 @@ const { n } = createNamespace('breadcrumb-item')
 
 const router = instance.appContext.config.globalProperties.$router as Router
 
-
 const onClick = () => {
     if (!props.to || !router) return
     props.replace ? router.replace(props.to) : router.push(props.to)

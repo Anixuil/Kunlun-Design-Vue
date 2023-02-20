@@ -29,13 +29,13 @@ form/classic
 
 ### Form property
 
-| Property name | Description | Type | Default value |
-| ----------- | -------- | ------- | ------ |
-| v-model     | Binding value | boolean | —      |
-| label-width | label wide | String  | 80px   |
+| Property name | Description   | Type    | Default value |
+| ------------- | ------------- | ------- | ------------- |
+| v-model       | Binding value | boolean | —             |
+| label-width   | label wide    | String  | 80px          |
 
 ### FormItem property
 
-| Property name | Description | Type | Default value |
-| ------ | --------------------------------------- | ------------- | ------ |
-| label  | The label of the option, if not set, defaults to the same as value | string/number | —      |
+| Property name | Description                                                        | Type          | Default value |
+| ------------- | ------------------------------------------------------------------ | ------------- | ------------- |
+| label         | The label of the option, if not set, defaults to the same as value | string/number | —             |

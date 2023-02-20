@@ -65,32 +65,29 @@ checkbox/icon
 ### Checkbox attribute
 
 | Property name | Description                                                        | Type                               | Default value |
-|---------------|--------------------------------------------------------------------|------------------------------------|---------------|
+| ------------- | ------------------------------------------------------------------ | ---------------------------------- | ------------- |
 | v-model       | Binding value                                                      | boolean                            | —             |
 | value         | The value of the option                                            | string / number / boolean / object | —             |
 | label         | The label of the option, if not set, defaults to the same as value | string/number                      | —             |
 | disabled      | Whether to disable the option                                      | boolean                            | false         |
-| border	       | Whether to display a border                                        | boolean                            | false         |
+| border        | Whether to display a border                                        | boolean                            | false         |
 
 ## Checkbox slot
 
-| Slot name | Description |
-| ------- |------|
-| default | Default slot |
+| Slot name | Description  |
+| --------- | ------------ |
+| default   | Default slot |
 
 ### CheckboxGroup attribute
 
 | Property name | Description                           | Type    | Default value |
-|---------------|---------------------------------------|---------|---------------|
+| ------------- | ------------------------------------- | ------- | ------------- |
 | v-model       | Binding value                         | boolean | —             |
 | disabled      | Whether to disable all options        | boolean | false         |
-| border	       | Whether to display all option borders | boolean | false         |
-
+| border        | Whether to display all option borders | boolean | false         |
 
 ### CheckboxGroup event
 
-| Event Name | Description | Callback parameters |
-|------------|-------------|---------------------|
-| change     |    Triggers only when modelValue changes         | —                   |
-
-
+| Event Name | Description                           | Callback parameters |
+| ---------- | ------------------------------------- | ------------------- |
+| change     | Triggers only when modelValue changes | —                   |
