@@ -4,7 +4,7 @@ layout: home
 hero:
     name: Kunlun Design
     text: 基于 vue 3 的组件库
-    tagline: 会当临绝顶，一览众山小
+    tagline:
     image:
         src: /images/logo-transprent.png
         alt: Kunlun Design Logo

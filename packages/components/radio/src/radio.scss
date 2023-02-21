@@ -1,3 +1,5 @@
+@import '../../styles/common.scss';
+
 .kl-radio {
     color: #606266;
     font-weight: 500;
@@ -63,18 +65,18 @@
 
 // 选中的样式
 .kl-radio.is-checked {
-    border-color: rgb(103, 194, 58);
+    border-color: var(--theme-color-light);
     .kl-radio_input {
         .kl-radio_inner {
-            border-color: rgb(103, 194, 58);
-            background-color: rgb(103, 194, 58);
+            border-color: var(--theme-color-light);
+            background-color: var(--theme-color-light);
             &:after {
                 transform: translate(-50%, -50%) scale(1);
             }
         }
     }
     .kl-radio_label {
-        color: rgb(103, 194, 58);
+        color: var(--theme-color-light);
     }
 }
 

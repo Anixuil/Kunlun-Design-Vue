@@ -14,7 +14,9 @@
 
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
-import { inject, ref, useSlots } from 'vue'
+import { inject, useSlots } from 'vue'
+import '../../styles/common.scss'
+
 defineOptions({
     name: 'KlOption'
 })
@@ -61,7 +63,7 @@ li {
     border-radius: 3px;
     cursor: pointer;
     &:hover {
-        border: 1px solid rgb(103, 194, 58);
+        border: 1px solid var(--theme-color-light);
     }
     &.is-disabled {
         background-color: #e7effc;
@@ -71,7 +73,7 @@ li {
     }
 }
 .is-checked {
-    color: rgb(103, 194, 58);
+    color: var(--theme-color-light);
 }
 .default {
     height: 40px;
