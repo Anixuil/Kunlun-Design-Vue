@@ -87,3 +87,9 @@ datepicker/lang
 | disabledTime     | Set an optional time                                                      | Array<number[]> |               | no       |
 | showHolidays     | Lunar calendar, holidays show                                             | boolean         | false         | no       |
 | lang             | Language setting                                                          | zh / en         | zh            | no       |
+
+### Event
+
+| name   | description                                                                      | callback parameter         |
+| ------ | -------------------------------------------------------------------------------- | -------------------------- |
+| change | Triggered when the input box value changes. It is used to obtain the input value | (value: string / string[]) |
