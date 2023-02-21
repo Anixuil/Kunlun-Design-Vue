@@ -1,3 +1,5 @@
+@import '../../styles/common.scss';
+
 .kl-input {
     width: 100%;
     position: relative;
@@ -18,7 +20,7 @@
         width: 100%;
         &:focus {
             outline: none;
-            border-color: rgb(103, 194, 58);
+            border-color: var(--theme-color-light);
         }
         // 禁用样式
         &.is-disabled {
@@ -27,9 +29,9 @@
             color: #c0c4cc;
             cursor: not-allowed;
         }
+        height: 40px;
     }
     .default {
-        height: 40px;
         line-height: 40px;
         font-size: 14px;
     }
@@ -60,7 +62,7 @@
         width: 100%;
         &:focus {
             outline: none;
-            border-color: rgb(103, 194, 58);
+            border-color: var(--theme-color-light);
         }
     }
 }

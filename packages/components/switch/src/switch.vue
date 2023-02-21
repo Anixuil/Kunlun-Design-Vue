@@ -13,7 +13,10 @@
         <span
             class="kl-switch-inactive"
             v-if="inactiveText"
-            :style="{ ...textStyle, color: !props.modelValue ? 'rgb(103, 194, 58)' : '#000' }"
+            :style="{
+                ...textStyle,
+                color: !props.modelValue ? 'var(--theme-color-light)' : '#000'
+            }"
             >{{ inactiveText }}</span
         >
         <span
@@ -32,7 +35,10 @@
         <span
             class="kl-switch-active"
             v-if="activeText"
-            :style="{ ...textStyle, color: !props.modelValue ? '#000' : 'rgb(103, 194, 58)' }"
+            :style="{
+                ...textStyle,
+                color: !props.modelValue ? '#000' : 'var(--theme-color-light)'
+            }"
             >{{ activeText }}</span
         >
     </div>
@@ -42,6 +48,7 @@
 import { createNamespace } from '@kunlun-design/utils'
 import { computed, onMounted } from 'vue'
 import './switch.scss'
+import '../../styles/common.scss'
 
 defineOptions({
     name: 'KlSwitch'
@@ -63,7 +70,7 @@ const props = defineProps({
     },
     activeColor: {
         type: String,
-        default: 'rgb(103, 194, 58)'
+        default: 'var(--theme-color-light)'
     },
     inactiveColor: {
         type: String,
