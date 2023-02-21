@@ -27,5 +27,3 @@ provide('labelWidth', props.labelWidth)
 
 const { n } = createNamespace('form')
 </script>
-
-<style scoped lang="scss"></style>
