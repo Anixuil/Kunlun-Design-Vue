@@ -3,7 +3,7 @@ import { ExtractPropTypes } from 'vue'
 export const timelineItemProps = {
     timestamp: {
         string: String,
-        default: '0000/00/00'
+        default: ''
     },
     timeplace: {
         type: String,
