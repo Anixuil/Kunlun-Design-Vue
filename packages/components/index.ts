@@ -25,3 +25,6 @@ export * from './upload'
 export * from './drawer'
 export * from './qrcode'
 export * from './carousel'
+
+export * from './message'
+export * from './dialog'

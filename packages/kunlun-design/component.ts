@@ -25,7 +25,9 @@ import {
     KlTimeline,
     KlTimelineItem,
     KlCheckboxGroup,
-    KlRadioGroup
+    KlRadioGroup,
+    KlProgress,
+    KlDialog
 } from '@kunlun-design/components'
 
 export default [
@@ -54,5 +56,7 @@ export default [
     KlTimeline,
     KlTimelineItem,
     KlCheckboxGroup,
-    KlRadioGroup
+    KlRadioGroup,
+    KlProgress,
+    KlDialog
 ] as Plugin[]
