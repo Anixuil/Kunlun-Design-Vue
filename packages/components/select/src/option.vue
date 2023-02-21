@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
 import { inject, useSlots } from 'vue'
-import '../../styles/common.scss'
+import './option.scss'
 
 defineOptions({
     name: 'KlOption'
@@ -56,38 +56,3 @@ const saveValue = (event: { target: { innerText: String } }) => {
 
 const { n } = createNamespace('option')
 </script>
-
-<style lang="scss" scoped>
-li {
-    padding: 0 16px;
-    border-radius: 3px;
-    cursor: pointer;
-    &:hover {
-        border: 1px solid var(--theme-color-light);
-    }
-    &.is-disabled {
-        background-color: #e7effc;
-        border-color: #e7effc;
-        color: #c0c4cc;
-        cursor: not-allowed;
-    }
-}
-.is-checked {
-    color: var(--theme-color-light);
-}
-.default {
-    height: 40px;
-    line-height: 40px;
-    font-size: 14px;
-}
-.large {
-    height: 55px;
-    line-height: 55px;
-    font-size: 16px;
-}
-.small {
-    height: 33px;
-    line-height: 33px;
-    font-size: 12px;
-}
-</style>

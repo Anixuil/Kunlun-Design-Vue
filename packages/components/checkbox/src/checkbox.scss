@@ -72,15 +72,15 @@
 .kl-checkbox.is-checked {
     .kl-checkbox_input {
         .kl-checkbox_inner {
-            background-color: var(--theme-color-light);
-            border-color: var(--theme-color-light);
+            background-color: $theme-color-light;
+            border-color: $theme-color-light;
         }
         &:after {
             transform: rotate(45deg) scaleY(1);
         }
     }
     .kl-checkbox_label {
-        color: var(--theme-color-light);
+        color: $theme-color-light;
     }
 }
 

@@ -20,7 +20,7 @@
         width: 100%;
         &:focus {
             outline: none;
-            border-color: var(--theme-color-light);
+            border-color: $theme-color-light;
         }
         // 禁用样式
         &.is-disabled {
@@ -62,7 +62,7 @@
         width: 100%;
         &:focus {
             outline: none;
-            border-color: var(--theme-color-light);
+            border-color: $theme-color-light;
         }
     }
 }
