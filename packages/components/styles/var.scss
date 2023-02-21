@@ -120,12 +120,12 @@ $--main-padding: 0 20px;
 
 //dotsize
 %--dot-normal-width {
-    width: 8px;
-    height: 8px;
-}
-%--dot-large-width {
     width: 12px;
     height: 12px;
+}
+%--dot-large-width {
+    width: 14px;
+    height: 14px;
 }
 %--dot-normal-border-width {
     border-width: 2px;
@@ -181,9 +181,8 @@ $--tail-color: #e4e7ed;
 $--tail-width: 2px;
 
 $--message-border-radius: 5px;
-$--message-bgColor: rgb(223, 223, 223);
-
-$--timestamp-color: #afb0b1;
+$--message-bgColor: #b0e4e4;
+$--timestamp-color: #686868;
 $--timestamp-fontSize: 13px;
 
-$--wrapper-margin: 45px;
+$--wrapper-margin: 35px;

@@ -1,29 +1,35 @@
-<template>
-    <ul :class="[n()]">
-        <slot />
-    </ul>
-</template>
 <script lang="ts">
-export default {
-    name: 'kl-timeline'
-}
-</script>
-<script setup lang="ts">
 import { createNamespace } from '@kunlun-design/utils'
 import { timelineProps } from './type/timeline'
-import { provide, defineProps, useSlots } from 'vue'
+import { provide, h, watchEffect } from 'vue'
 import './style/timeline.scss'
-const { n } = createNamespace('timeline')
-const props = defineProps(timelineProps)
-const slots = useSlots()
-if (props.reverse) {
-    if (slots && slots.default) {
-        slots.default().reverse()
+export default {
+    name: 'kl-timeline',
+    props: timelineProps,
+    setup(props, { slots }) {
+        provide('mode', props.mode)
+        provide('type', props.type)
+        const { n } = createNamespace('timeline')
+        // const props = defineProps(timelineProps)
+        let slot = (slots as any).default()
+        watchEffect(() => {
+            if (props.reverse) {
+                slot = (slots as any).default().reverse()
+            } else {
+                slot = (slots as any).default()
+            }
+        })
+
+        return () => [
+            h(
+                'ul',
+                {
+                    class: [n()]
+                },
+                slot
+            )
+        ]
     }
 }
-provide('mode', props.mode)
-provide('type', props.type)
-//mode时间轴位置
-//节点倒序
 </script>
 <style></style>
