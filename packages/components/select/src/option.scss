@@ -1,33 +1,33 @@
 @import '../../styles/common.scss';
 li {
-  padding: 0 16px;
-  border-radius: 3px;
-  cursor: pointer;
-  &:hover {
-    border: 1px solid $theme-color-light;
-  }
-  &.is-disabled {
-    background-color: #e7effc;
-    border-color: #e7effc;
-    color: #c0c4cc;
-    cursor: not-allowed;
-  }
+    padding: 0 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    &:hover {
+        border: 1px solid $theme-color-light;
+    }
+    &.is-disabled {
+        background-color: #e7effc;
+        border-color: #e7effc;
+        color: #c0c4cc;
+        cursor: not-allowed;
+    }
 }
 .is-checked {
-  color: $theme-color-light;
+    color: $theme-color-light;
 }
 .default {
-  height: 40px;
-  line-height: 40px;
-  font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
 }
 .large {
-  height: 55px;
-  line-height: 55px;
-  font-size: 16px;
+    height: 55px;
+    line-height: 55px;
+    font-size: 16px;
 }
 .small {
-  height: 33px;
-  line-height: 33px;
-  font-size: 12px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 12px;
 }
