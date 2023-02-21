@@ -63,18 +63,18 @@
 
 // 选中的样式
 .kl-radio.is-checked {
-    border-color: #409eff;
+    border-color: rgb(103, 194, 58);
     .kl-radio_input {
         .kl-radio_inner {
-            border-color: #409eff;
-            background-color: #409eff;
+            border-color: rgb(103, 194, 58);
+            background-color: rgb(103, 194, 58);
             &:after {
                 transform: translate(-50%, -50%) scale(1);
             }
         }
     }
     .kl-radio_label {
-        color: #409eff;
+        color: rgb(103, 194, 58);
     }
 }
 

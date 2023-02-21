@@ -15,11 +15,10 @@
         font-size: inherit;
         outline: none;
         padding: 0 15px;
-        transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
         width: 100%;
         &:focus {
             outline: none;
-            border-color: #409eff;
+            border-color: rgb(103, 194, 58);
         }
         // 禁用样式
         &.is-disabled {
@@ -58,11 +57,10 @@
         line-height: 40px;
         outline: none;
         padding: 0 15px;
-        transition: border-color 0.2s cubic-bezier(0.645, 045, 0.355, 1);
         width: 100%;
         &:focus {
             outline: none;
-            border-color: #409eff;
+            border-color: rgb(103, 194, 58);
         }
     }
 }
