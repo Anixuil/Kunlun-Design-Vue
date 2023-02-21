@@ -5,6 +5,20 @@
 // 原生的css变量命名 --变量名:变量值 var(--变量名)进行使用
 :root {
     //基本变量
+    //主体色
+    --theme-color-light: $theme-color-light;
+    --theme-color-dark: $theme-color-dark;
+    --theme-color: $theme-color;
+    --linear-color: linear-gradient(
+        to left,
+        var(var(--theme-color-dark), var(--theme-color-light))
+    );
+    --linear-color-rev: linear-gradient(
+        to right,
+        var(--theme-color-dark),
+        var(--theme-color-light)
+    );
+    --button-hover: var(--theme-color);
     //背景
     --kl-bg-color: white;
     //字体
