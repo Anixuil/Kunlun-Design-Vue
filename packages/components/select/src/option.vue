@@ -61,7 +61,7 @@ li {
     border-radius: 3px;
     cursor: pointer;
     &:hover {
-        border: 1px solid #409eff;
+        border: 1px solid rgb(103, 194, 58);
     }
     &.is-disabled {
         background-color: #e7effc;
@@ -71,7 +71,7 @@ li {
     }
 }
 .is-checked {
-    color: #409eff;
+    color: rgb(103, 194, 58);
 }
 .default {
     height: 40px;

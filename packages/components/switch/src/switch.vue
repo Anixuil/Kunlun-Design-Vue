@@ -13,7 +13,7 @@
         <span
             class="kl-switch-inactive"
             v-if="inactiveText"
-            :style="{ ...textStyle, color: !props.modelValue ? '#409eff' : '#000' }"
+            :style="{ ...textStyle, color: !props.modelValue ? 'rgb(103, 194, 58)' : '#000' }"
             >{{ inactiveText }}</span
         >
         <span
@@ -32,7 +32,7 @@
         <span
             class="kl-switch-active"
             v-if="activeText"
-            :style="{ ...textStyle, color: !props.modelValue ? '#000' : '#409eff' }"
+            :style="{ ...textStyle, color: !props.modelValue ? '#000' : 'rgb(103, 194, 58)' }"
             >{{ activeText }}</span
         >
     </div>
@@ -63,7 +63,7 @@ const props = defineProps({
     },
     activeColor: {
         type: String,
-        default: '#409eff'
+        default: 'rgb(103, 194, 58)'
     },
     inactiveColor: {
         type: String,

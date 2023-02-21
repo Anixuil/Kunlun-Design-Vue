@@ -70,15 +70,15 @@
 .kl-checkbox.is-checked {
     .kl-checkbox_input {
         .kl-checkbox_inner {
-            background-color: #409eff;
-            border-color: #409eff;
+            background-color: rgb(103, 194, 58);
+            border-color: rgb(103, 194, 58);
         }
         &:after {
             transform: rotate(45deg) scaleY(1);
         }
     }
     .kl-checkbox_label {
-        color: #409eff;
+        color: rgb(103, 194, 58);
     }
 }
 
