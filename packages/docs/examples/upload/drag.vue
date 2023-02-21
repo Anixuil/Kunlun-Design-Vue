@@ -47,8 +47,8 @@ const handleError = () => {
 
 <style lang="scss" scoped>
 .dragging {
-    border-color: #3a7afe !important;
-    background-color: #ebf1ff;
+    border-color: #2b8e41 !important;
+    background-color: #f0f9eb;
 }
 
 .drag-area {
@@ -75,7 +75,7 @@ const handleError = () => {
     }
 
     &:hover {
-        border-color: #3a7afe;
+        border-color: #2b8e41;
     }
 }
 </style>

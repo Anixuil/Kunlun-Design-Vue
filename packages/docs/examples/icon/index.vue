@@ -57,8 +57,8 @@ const handleCopy = (cpn: string) => {
         transition: background-color 0.5s, color 0.2s;
 
         &:hover {
-            background-color: #f3f6ff;
-            color: #3a7afe;
+            background-color: #f0f9eb;
+            color: rgb(58, 186, 85);
         }
 
         span {

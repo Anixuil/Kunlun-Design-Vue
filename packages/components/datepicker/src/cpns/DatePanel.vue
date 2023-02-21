@@ -675,6 +675,8 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/common.scss';
+
 /* 时间选择器样式 */
 .show-date-time {
     display: flex;
@@ -727,7 +729,7 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
             cursor: pointer;
             transition: 0.2s;
             &:hover {
-                color: #4096ff;
+                color: $theme-color;
             }
         }
         .year {
@@ -740,7 +742,7 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
         span {
             cursor: pointer;
             &:hover {
-                color: #4096ff;
+                color: $theme-color;
             }
         }
         .prev {
@@ -797,7 +799,7 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
 
                 &:hover {
                     background-color: #eee;
-                    color: #4096ff;
+                    color: $theme-color;
                 }
             }
         }
@@ -810,12 +812,12 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
 
     /* 默认今天的日期样式 */
     .day-default {
-        border: 1px solid #4096ff;
+        border: 1px solid $theme-color;
     }
 
     /* 选中日期样式 */
     .day-selected {
-        background-color: #4096ff !important;
+        background-color: $theme-color !important;
         color: #fff !important;
     }
 
@@ -849,7 +851,7 @@ const goToday = (hour: number, minute: number, second: number, onlyTime: boolean
         cursor: pointer;
 
         &:hover {
-            color: #4096ff;
+            color: $theme-color;
         }
     }
 }

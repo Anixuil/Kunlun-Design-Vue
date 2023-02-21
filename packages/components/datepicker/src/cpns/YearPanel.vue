@@ -285,6 +285,7 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/common.scss';
 .year-panel {
     width: 320px;
     /* font-family: '楷体'; */
@@ -329,7 +330,7 @@ defineExpose({
         span {
             cursor: pointer;
             &:hover {
-                color: #4096ff;
+                color: $theme-color;
             }
         }
         .prev {
@@ -367,19 +368,19 @@ defineExpose({
 
         &:hover span {
             background-color: #eee;
-            color: #4096ff;
+            color: $theme-color;
         }
     }
 
     /* 选中年的样式 */
     .year-selected {
-        background-color: #4096ff !important;
+        background-color: $theme-color !important;
         color: #fff !important;
     }
 
     /* 今年默认的样式 */
     .year-default {
-        border: 1px solid #4096ff;
+        border: 1px solid $theme-color;
     }
 
     /* 选中年份范围中的样式 */

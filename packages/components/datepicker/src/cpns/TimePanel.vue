@@ -243,9 +243,10 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/common.scss';
 /* 选中的时间的样式 */
 .time-selected {
-    background-color: #4096ff !important;
+    background-color: $theme-color !important;
     color: #fff !important;
 }
 
@@ -307,7 +308,7 @@ defineExpose({
 
                 &:hover {
                     background-color: #eee;
-                    color: #4096ff;
+                    color: $theme-color;
                 }
             }
         }
@@ -323,7 +324,7 @@ defineExpose({
         cursor: pointer;
 
         &:hover {
-            color: #4096ff;
+            color: $theme-color;
         }
     }
 }

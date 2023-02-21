@@ -98,6 +98,7 @@ const handleIconClick = (e: Event) => {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/common.scss';
 .picker-input {
     box-sizing: border-box;
     display: flex;
@@ -112,7 +113,8 @@ const handleIconClick = (e: Event) => {
     transition: 0.2s;
 
     &:hover {
-        border-color: #4096ff;
+        /* border-color: #4096ff; */
+        border-color: $theme-color;
     }
 
     & > input {
@@ -153,7 +155,8 @@ const handleIconClick = (e: Event) => {
 
 /* input框选中样式 */
 .picker-input-selected {
-    border-color: #4096ff;
+    /* border-color: #4096ff; */
+    border-color: $theme-color;
     box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
     outline: 0;
 }
