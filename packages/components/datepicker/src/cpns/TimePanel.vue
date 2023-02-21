@@ -289,6 +289,12 @@ defineExpose({
                 background-color: #eee;
             }
 
+            &::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background: #ccc;
+                box-shadow: none;
+            }
+
             & > div {
                 height: 30px;
                 line-height: 30px;
