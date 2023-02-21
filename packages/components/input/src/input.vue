@@ -22,17 +22,17 @@
             <KlOtherError
                 class="on-input_icon kl-icon-cancel"
                 color="#000"
-                :size="16"
+                :size="suffixIconSize - 8"
                 v-if="clearable && modelValue"
                 @click="clear"
             />
             <Component
                 class="on-input_icon kl-icon-visible"
                 color="#000"
-                :size="18"
+                :size="suffixIconSize"
                 v-if="showPassword && type === 'password'"
                 @click="handlePassword"
-                :is="passwordVisible ? 'KlSystemEyeClose' : 'KlSystemEyeOpen'"
+                :is="passwordVisible ? 'KlSystemEyeClose' : 'KlOtherEyeOpenFill'"
             />
         </span>
     </div>
@@ -123,6 +123,16 @@ const input = ref(null)
 
 // icon后缀
 const showSuffix = computed(() => props.clearable || props.showPassword)
+const suffixIconSize = computed(() => {
+    switch (props.size) {
+        case 'default':
+            return 24
+        case 'small':
+            return 20
+        default:
+            return 28
+    }
+})
 
 const passwordVisible = ref(false)
 

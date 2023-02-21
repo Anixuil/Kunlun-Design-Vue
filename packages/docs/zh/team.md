@@ -11,6 +11,7 @@ features:
           src: https://avatars.githubusercontent.com/u/85006433?v=4
       title: liliang12138
       details: 项目成员
+      link: https://github.com/liliangCS
     - icon:
           src: https://avatars.githubusercontent.com/u/94451633?v=4
       title: jiale233
@@ -20,6 +21,7 @@ features:
           src: https://avatars.githubusercontent.com/u/101889521?v=4
       title: zea
       details: 项目成员
+      link: https://github.com/zeahao
     - icon:
           src: https://avatars.githubusercontent.com/u/95285572?v=4
       title: woshixiaocheng

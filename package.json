@@ -77,7 +77,7 @@
         ]
     },
     "dependencies": {
-        "@kl-design/icons": "1.0.12",
+        "@kl-design/icons": "1.0.13",
         "escape-html": "^1.0.3"
     }
 }
