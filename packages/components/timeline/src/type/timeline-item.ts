@@ -10,10 +10,6 @@ export const timelineItemProps = {
         value: ['top', 'bottom'],
         default: 'bottom'
     },
-    center: {
-        type: Boolean,
-        default: false
-    },
     dottype: {
         type: String,
         value: ['primary', 'success', 'warning', 'danger', 'info', 'default']

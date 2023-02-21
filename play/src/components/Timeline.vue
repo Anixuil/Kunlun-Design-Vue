@@ -1,6 +1,10 @@
 <template>
     <div class="main">
-        <KlTimeline mode="center" :reverse="true">
+        <KlTimeline>
+            <KlTimelineItem>11</KlTimelineItem>
+            <KlTimelineItem>11</KlTimelineItem>
+        </KlTimeline>
+        <!-- <KlTimeline mode="center" :reverse="true">
             <KlTimelineItem timestamp="2002/11/01" dotcolor="pink">
                 <template #default>111</template>
                 <template #dot>
@@ -15,7 +19,7 @@
                 >22</KlTimelineItem
             >
             <KlTimelineItem>33</KlTimelineItem>
-        </KlTimeline>
+        </KlTimeline> -->
     </div>
 </template>
 <script setup lang="ts">

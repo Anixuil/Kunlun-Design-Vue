@@ -7,6 +7,7 @@ $item: 'kl-timeline-item';
         display: flex;
         height: inherit;
         position: relative;
+        color: #303133;
         //tail
         .#{$item}--tail {
             position: absolute;
@@ -34,7 +35,7 @@ $item: 'kl-timeline-item';
 
         //large尺寸
         @include dotSize(large) {
-            left: -2.5px;
+            left: -2px;
         }
 
         //dottype空心版
@@ -61,10 +62,10 @@ $item: 'kl-timeline-item';
         .#{$item}--wrapper,
         .#{$item}--message {
             margin-bottom: 25px;
-            min-width: 100px;
         }
         .#{$item}--message {
             position: relative;
+            top: -10px;
             padding: 10px 20px;
             border-radius: $--message-border-radius;
             background-color: $--message-bgColor;
@@ -109,6 +110,7 @@ $item: 'kl-timeline-item';
             //type对话框形式
             .#{$item}--message {
                 margin: 0;
+                margin-left: $--wrapper-margin;
                 & ::after {
                     right: 100%;
                     border: 10px solid transparent;
@@ -145,6 +147,7 @@ $item: 'kl-timeline-item';
             //type对话框形式
             .#{$item}--message {
                 margin: 0;
+                margin-right: $--wrapper-margin;
                 & ::after {
                     left: 100%;
                     border: 10px solid transparent;
@@ -172,19 +175,25 @@ $item: 'kl-timeline-item';
                 transform: translate(-50%, 0);
             }
             &:nth-child(odd) .#{$item}--wrapper {
+                width: 50%;
                 margin: 0;
-                margin-left: 10%;
+                margin-left: 55%;
                 text-align: left;
             }
 
             &:nth-child(even) .#{$item}--wrapper {
+                width: 50%;
+
                 margin: 0;
-                margin-right: 10%;
+                margin-right: 55%;
                 text-align: right;
             }
             &:nth-child(odd) .#{$item}--message {
+                width: 50%;
+                max-width: 200px;
+                min-width: 100px;
                 margin: 0;
-                margin-left: 15%;
+                margin-left: 45%;
                 text-align: left;
 
                 //画对话框箭头
@@ -196,8 +205,11 @@ $item: 'kl-timeline-item';
             }
 
             &:nth-child(even) .#{$item}--message {
+                width: 50%;
+                max-width: 200px;
+                min-width: 100px;
                 margin: 0;
-                margin-right: 15%;
+                margin-right: 45%;
                 text-align: right;
 
                 //画对话框箭头
