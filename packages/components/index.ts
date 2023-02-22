@@ -26,3 +26,5 @@ export * from './upload'
 export * from './drawer'
 export * from './qrcode'
 export * from './carousel'
+
+export * from './infinite-scroll'

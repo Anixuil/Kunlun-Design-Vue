@@ -17,7 +17,7 @@ input/basic
 
 ## 密码框
 
-通过设置`type`属性为`password`，可设置为密码框，添加`showPassword`属性可以控制密码是否可查看(`showPassword`属性依赖于icon，使用之前请先导入icon图标库，详细请看[icon](https://anixuil.github.io/zh/document/basic/icon.html))。
+通过设置`type`属性为`password`，可设置为密码框，添加`showPassword`属性可以控制密码是否可查看(`showPassword`属性依赖于 icon，使用之前请先导入 icon 图标库，详细请看[icon](https://anixuil.github.io/zh/document/basic/icon.html))。
 
 :::demo
 input/password

@@ -4,7 +4,7 @@ import { timelineProps } from './type/timeline'
 import { provide, h, watchEffect } from 'vue'
 import './style/timeline.scss'
 export default {
-    name: 'kl-timeline',
+    name: 'KlTimeline',
     props: timelineProps,
     setup(props, { slots }) {
         provide('mode', props.mode)

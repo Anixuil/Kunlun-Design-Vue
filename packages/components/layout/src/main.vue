@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-main'
+    name: 'KlMain'
 }
 </script>
 <script setup lang="ts">

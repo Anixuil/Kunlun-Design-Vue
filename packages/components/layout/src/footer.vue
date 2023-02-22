@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-footer'
+    name: 'KlFooter'
 }
 </script>
 <script setup lang="ts">

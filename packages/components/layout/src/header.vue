@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-header'
+    name: 'KlHeader'
 }
 </script>
 <script setup lang="ts">
