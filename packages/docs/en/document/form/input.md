@@ -18,7 +18,7 @@ input/basic
 ## Password
 
 By setting the 'type' property to 'password', you can set it as a password box, and add the 'showPassword' property to
-control whether the password can be viewed.
+control whether the password can be viewed(The 'showPassword' attribute depends on icon, please import the icon library before using it, see [icon](https://anixuil.github.io/zh/document/basic/icon.html)) for details).
 
 :::demo
 input/password
