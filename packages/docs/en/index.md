@@ -19,12 +19,12 @@ hero:
 
 features:
     - icon: ⚡️
-      title: 这是一个练习项目
-      details: wawawa
+      title: Quick installation
+      details: The component library is small
     - icon: 🖖
-      title: 这是一个手掌图标
-      details: good...
+      title: Just have your hands
+      details: Simple to understand, easy to learn to use
     - icon: 🛠️
-      title: 这是一个修理图标
-      details: cocococo
+      title: Custom configuration
+      details: Basically can meet your personalized needs
 ---

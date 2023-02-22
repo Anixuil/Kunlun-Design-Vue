@@ -84,8 +84,8 @@ const handleBeforeUpload = (uploadFile: FileItem) => {
     }
 
     &:hover {
-        border-color: #3a7afe;
-        color: #3a7afe;
+        border-color: #2b8e41;
+        color: #2b8e41;
     }
 }
 </style>

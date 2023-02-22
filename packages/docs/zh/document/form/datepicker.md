@@ -87,3 +87,33 @@ datepicker/lang
 | disabledTime     | 设置不可选时间                                        | Array<number[]> |            | 否   |
 | showHolidays     | 农历，节假日显示                                      | boolean         | false      | 否   |
 | lang             | 语言设置                                              | zh / en         | zh         | 否   |
+
+### 事件
+
+| 事件名 | 说明                                 | 回调参数                   |
+| ------ | ------------------------------------ | -------------------------- |
+| change | input 框值改变时触发，用于获取输入值 | (value: string / string[]) |
+
+## FAQ
+
+### 关于日期选择框组件数据获取
+
+`日期选择框组件`是一个非受控组件，即其状态由组件内部维护，可以通过`ref`获取组件的模板引用，通过`.value`获取组件日期数据。例：
+
+```vue
+<template>
+    <div>
+        <kl-date-picker ref="datePickerRef"></kl-date-picker>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { KlDatePicker } from 'kunlun-design'
+const datePickerRef = ref<InstanceType<typeof KlDatePicker> | null>(null)
+// 打印日期数据
+console.log(datePickerRef.value?.value)
+</script>
+```
+
+在后续，我们会根据用户体验来评判这种设计是否合理。对于不合理的设计，我们将会在后续版本迭代中进行相应的重构。

@@ -31,9 +31,9 @@ infinitescroll/disabled
 
 ## InfiniteScroll Attribute
 
-| Attribute Name                   | Description                                 | type      | Default Value |
-| ------------------------- | ------------------------------------ | --------- | ------ |
-| infinite-scroll-disabled  | Disable scrolling bottoming                     | `boolean` | false  |
-| infinite-scroll-immediate | The load method executes as soon as the content does not fill the container | `boolean` | true   |
-| infinite-scroll-delay     | Throttling delay in ms                    | `number`  | 200    |
-| infinite-scroll-distance  | The distance threshold at which the load is triggered, in px        | number    | 0      |
+| Attribute Name            | Description                                                                 | type      | Default Value |
+| ------------------------- | --------------------------------------------------------------------------- | --------- | ------------- |
+| infinite-scroll-disabled  | Disable scrolling bottoming                                                 | `boolean` | false         |
+| infinite-scroll-immediate | The load method executes as soon as the content does not fill the container | `boolean` | true          |
+| infinite-scroll-delay     | Throttling delay in ms                                                      | `number`  | 200           |
+| infinite-scroll-distance  | The distance threshold at which the load is triggered, in px                | number    | 0             |

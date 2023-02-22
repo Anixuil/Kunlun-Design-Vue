@@ -1,3 +1,5 @@
+@import '../../styles/common.scss';
+
 .kl-select {
     width: 100%;
     position: relative;
@@ -22,7 +24,7 @@
         }
         &:hover {
             outline: none;
-            border-color: #409eff;
+            border-color: $theme-color-light;
         }
         // icon
         .select-icon {

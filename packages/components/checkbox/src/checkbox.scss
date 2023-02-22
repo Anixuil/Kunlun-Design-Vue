@@ -1,3 +1,5 @@
+@import '../../styles/common.scss';
+
 .kl-checkbox {
     color: #606266;
     border: none;
@@ -70,15 +72,15 @@
 .kl-checkbox.is-checked {
     .kl-checkbox_input {
         .kl-checkbox_inner {
-            background-color: #409eff;
-            border-color: #409eff;
+            background-color: $theme-color-light;
+            border-color: $theme-color-light;
         }
         &:after {
             transform: rotate(45deg) scaleY(1);
         }
     }
     .kl-checkbox_label {
-        color: #409eff;
+        color: $theme-color-light;
     }
 }
 

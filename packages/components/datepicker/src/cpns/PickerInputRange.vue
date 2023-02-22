@@ -162,6 +162,8 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/common.scss';
+
 /* 时间选择器样式 */
 .show-date-time {
     width: 420px !important;
@@ -183,7 +185,8 @@ defineExpose({
     transition: 0.2s;
 
     &:hover {
-        border-color: #4096ff;
+        /* border-color: #4096ff; */
+        border-color: $theme-color;
     }
 
     & > input {
@@ -233,7 +236,8 @@ defineExpose({
 
 /* 选中样式 */
 .picker-input-range-selected {
-    border-color: #4096ff;
+    /* border-color: #4096ff; */
+    border-color: $theme-color;
     box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
     outline: 0;
 }

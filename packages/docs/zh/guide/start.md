@@ -27,6 +27,24 @@ app.mount('#app')
 
 ## 按需导入
 
+```ts
+//main.ts
+import 'kunlun-design/lib/style.css'
+```
+
+```vue
+//component.vue
+<template>
+    <kl-button @click="handleClick">default</kl-button>
+</template>
+<script lang="ts" setup>
+import { KlButton, KlMessage } from 'kunlun-design'
+const handleClick = () => {
+    KlMessage.success('test success')
+}
+</script>
+```
+
 ## 开始使用
 
 您可以从现在起启动您的项目。对于每个组件的用法，请参考单个组件对应的文档。

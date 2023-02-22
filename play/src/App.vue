@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Avatar from './components/Avatar.vue'
 import DatePicker from './components/DatePicker.vue'
 import List from './components/List.vue'
 import Message from './components/Message.vue'
@@ -33,6 +34,7 @@ import InfiniteScroll from './components/Infinitescroll.vue'
     <Grid></Grid>
     <Layout></Layout>
     <Timeline></Timeline>
+    <Avatar></Avatar>
 </template>
 
 <style scoped lang="scss"></style>
