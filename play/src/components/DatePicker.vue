@@ -1,11 +1,13 @@
 <template>
     <div class="app" :style="{ margin: '16px' }">
+        <button @click="handleClick">获取值</button>
         <h1>placeholder属性</h1>
         <KlDatePicker placeholder="花无凋零之时" @change="getValue"></KlDatePicker>
         <br />
         <br />
         <h1>placeholderRange属性</h1>
         <KlDatePicker
+            ref="testRef"
             :isRangePicker="true"
             :placeholderRange="['花无凋零之时', '爱无传达之日']"
             @change="getValue"
@@ -120,7 +122,9 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { KlDatePicker } from '@kunlun-design/components'
+import DatePicker from '@kunlun-design/components/datepicker/src/DatePicker.vue'
 // import Test from "./components/others/Test.vue"
 const disabledDate = [
     [2023, 1, 28],
@@ -139,6 +143,11 @@ const disabledTime = [
 
 const getValue = (value: string | string[]) => {
     console.log(value)
+}
+const testRef = ref<InstanceType<typeof DatePicker> | null>(null)
+
+const handleClick = () => {
+    console.log(testRef.value?.value)
 }
 </script>
 

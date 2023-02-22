@@ -79,6 +79,10 @@
             "text": "数据展示组件",
             "children": [
                 {
+                    "text": "Avatar 头像",
+                    "link": "/data-display/avatar/avatar"
+                },
+                {
                     "text": "List 列表",
                     "link": "/data-display/list/list"
                 },
@@ -185,6 +189,10 @@
         "data-display": {
             "text": "Data-display Components",
             "children": [
+                {
+                    "text": "Avatar",
+                    "link": "/data-display/avatar/avatar"
+                },
                 {
                     "text": "List",
                     "link": "/data-display/list/list"

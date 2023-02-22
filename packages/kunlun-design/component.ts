@@ -1,6 +1,8 @@
 import type { Plugin } from 'vue'
 import {
     KlButton,
+    KlProgress,
+    KlDialog,
     KlCol,
     KlRow,
     KlLayout,
@@ -25,11 +27,14 @@ import {
     KlTimeline,
     KlTimelineItem,
     KlCheckboxGroup,
-    KlRadioGroup
+    KlRadioGroup,
+    KlAvatar
 } from '@kunlun-design/components'
 
 export default [
     KlButton,
+    KlProgress,
+    KlDialog,
     KlCol,
     KlRow,
     KlLayout,
@@ -54,5 +59,6 @@ export default [
     KlTimeline,
     KlTimelineItem,
     KlCheckboxGroup,
-    KlRadioGroup
+    KlRadioGroup,
+    KlAvatar
 ] as Plugin[]

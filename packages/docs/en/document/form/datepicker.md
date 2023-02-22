@@ -93,3 +93,27 @@ datepicker/lang
 | name   | description                                                                      | callback parameter         |
 | ------ | -------------------------------------------------------------------------------- | -------------------------- |
 | change | Triggered when the input box value changes. It is used to obtain the input value | (value: string / string[]) |
+
+## FAQ
+
+### About the date selection box component data acquisition
+
+The `date selector box component` is an uncontrolled component, that is, its state is maintained internally by the component. The template reference of the component can be obtained by `ref` and the date data of the component can be obtained by `.value `. For example:
+
+```vue
+<template>
+    <div>
+        <kl-date-picker ref="datePickerRef"></kl-date-picker>
+    </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { KlDatePicker } from 'kunlun-design'
+const datePickerRef = ref<InstanceType<typeof KlDatePicker> | null>(null)
+// Print date data
+console.log(datePickerRef.value?.value)
+</script>
+```
+
+In the future, we will judge the design based on the user experience. For designs that don't make sense, we will refactor them in subsequent iterations.

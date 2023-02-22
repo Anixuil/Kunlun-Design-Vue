@@ -6,9 +6,10 @@
 $buttonType: (
     'primary': (
         kl-bg: $primary-bgColor,
+        // kl-bg: $theme-color-light,
         kl-fontColor: $primary-fontColor,
         kl-border: $primary-border,
-        kl-bg-active: $primary-bgColor-active
+        kl-bg-active: $primary-bgColor-active // kl-bg-active: $theme-color-dark
     ),
     'success': (
         kl-bg: $success-bgColor,

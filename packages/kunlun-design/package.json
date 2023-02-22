@@ -1,7 +1,7 @@
 {
     "name": "kunlun-design",
     "private": false,
-    "version": "0.0.23-alpha.01",
+    "version": "0.1.2-alpha.1",
     "author": "anixuil",
     "description": "Kunlun Design - A Vue.js 3 UI library",
     "keywords": [
@@ -21,12 +21,12 @@
         "packages/*",
         "package.json"
     ],
-    "main": "./lib/kunlun-design-vue.umd.js",
+    "main": "./lib/kunlun-design-vue.mjs",
     "module": "./lib/kunlun-design-vue.mjs",
     "exports": {
         ".": {
-            "import": "./lib/kunlun-design.mjs",
-            "require": "./lib/kunlun-design.umd.js"
+            "import": "./lib/kunlun-design-vue.mjs",
+            "require": "./lib/kunlun-design-vue.umd.js"
         },
         "./lib/style.css": "./lib/style.css"
     },

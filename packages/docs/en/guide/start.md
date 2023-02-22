@@ -27,6 +27,24 @@ app.mount('#app')
 
 ## Import on demand
 
+```ts
+//main.ts
+import 'kunlun-design/lib/style.css'
+```
+
+```vue
+//component.vue
+<template>
+    <kl-button @click="handleClick">default</kl-button>
+</template>
+<script lang="ts" setup>
+import { KlButton, KlMessage } from 'kunlun-design'
+const handleClick = () => {
+    KlMessage.success('test success')
+}
+</script>
+```
+
 ## Come into use
 
 You can start your project now. For usage of each component, refer to the documentation for the individual component.
