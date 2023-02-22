@@ -48,7 +48,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, provide, computed } from 'vue'
+import { ref, provide, computed, watch } from 'vue'
 import type { Ref } from 'vue'
 import PickerInput from './cpns/PickerInput.vue'
 import PickerPanel from './cpns/PickerPanel.vue'
@@ -136,6 +136,10 @@ const props = withDefaults(defineProps<IPropsType>(), {
     showHolidays: false,
     lang: 'ch'
 })
+
+const emit = defineEmits<{
+    (e: 'change', value: string | string[]): void
+}>()
 // 全局数据提供
 // 日期选择器/日期时间选择器
 provide<boolean>('isDateTime', props.isDateTime)
@@ -188,7 +192,6 @@ const closePanel = (event: MouseEvent) => {
     if (pickerPanelRef.value?.isClickBlank(event)) {
         closeAction()
     }
-    // }
 }
 // 改变日期
 const changeDate = (y: number, m: number, d: number, formatStr: string) => {
@@ -323,6 +326,20 @@ const changeYearRange = (yr: number[], formatStr: string) => {
     yearRange.value[1] = formatTime('y', { year: ey }, formatStr)
     closeAction()
 }
+
+/**
+ * --------------------生命周期--------------------
+ */
+watch(timeValue, value => {
+    emit('change', value)
+})
+watch(
+    rangeTimeValue,
+    value => {
+        emit('change', JSON.parse(JSON.stringify(value)))
+    },
+    { deep: true }
+)
 
 defineOptions({
     name: 'KlDatePicker'

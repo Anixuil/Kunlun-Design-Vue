@@ -309,6 +309,8 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
+@import '../../../styles/common.scss';
+
 .month-panel {
     width: 320px;
     /* font-family: '楷体'; */
@@ -348,7 +350,7 @@ defineExpose({
             cursor: pointer;
             transition: 0.2s;
             &:hover {
-                color: #4096ff;
+                color: $theme-color;
             }
         }
     }
@@ -358,7 +360,7 @@ defineExpose({
         span {
             cursor: pointer;
             &:hover {
-                color: #4096ff;
+                color: $theme-color;
             }
         }
         .prev {
@@ -390,19 +392,19 @@ defineExpose({
 
         &:hover span {
             background-color: #eee;
-            color: #4096ff;
+            color: $theme-color;
         }
     }
 
     /* 选中月的样式 */
     .month-selected {
-        background-color: #4096ff !important;
+        background-color: $theme-color !important;
         color: #fff !important;
     }
 
     /* 默认当前月的样式 */
     .month-default {
-        border: 1px solid #4096ff;
+        border: 1px solid $theme-color;
     }
 
     /* 选中月份范围中的样式 */

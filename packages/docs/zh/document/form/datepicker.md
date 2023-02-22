@@ -87,3 +87,9 @@ datepicker/lang
 | disabledTime     | 设置不可选时间                                        | Array<number[]> |            | 否   |
 | showHolidays     | 农历，节假日显示                                      | boolean         | false      | 否   |
 | lang             | 语言设置                                              | zh / en         | zh         | 否   |
+
+### 事件
+
+| 事件名 | 说明                                 | 回调参数                   |
+| ------ | ------------------------------------ | -------------------------- |
+| change | input 框值改变时触发，用于获取输入值 | (value: string / string[]) |
