@@ -20,7 +20,7 @@ checkbox/basic
 
 ## Checkbox is used alone
 
-Checkbox can also be used separately, the binding data type is 'boolean'。
+Checkbox can also be used separately, the binding data type is 'boolean'.
 
 :::demo
 checkbox/alone
