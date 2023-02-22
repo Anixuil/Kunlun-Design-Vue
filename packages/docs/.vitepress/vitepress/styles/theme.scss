@@ -18,6 +18,8 @@
     --vp-home-hero-name-background: var(--linear-color);
     --vp-home-hero-name-color: transparent;
     --vp-button-brand-bg: var(--vp-c-brand-light);
+    // --vp-c-bg-alt:rgba(117, 205, 213,.1)
+    --theme-bg-op: rgb(117, 205, 213, 0.1);
 }
 
 //首页按钮样式
@@ -28,6 +30,26 @@
     background: var(--vp-button-hover) !important;
     border-color: var(--vp-button-hover) !important;
 }
+
+.link-text {
+    padding-left: 15px;
+}
+.VPLink.link.link:not(.VPNavBarMenuLink) {
+    box-sizing: border-box;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    &:hover {
+        color: var(--theme-color-light);
+    }
+}
+.VPLink.link.link.active:not(.VPNavBarMenuLink) {
+    // color: white;
+    color: var(--theme-color-light);
+    background-color: rgb(219, 243, 206);
+    // background-color: var(--theme-color-light);
+}
+
 .dark .VPButton.brand:hover {
     background: var(--vp-button-hover) !important;
     border-color: var(--vp-button-hover);
