@@ -85,7 +85,8 @@ const InfiniteScroll: Directive = {
     },
     unmounted(el: any, binding: DirectiveBinding) {
         const instance = binding.instance
-        el.removeEvnetListener('scroll', (instance as any).handleScroll)
+        const handleScroll = (instance as any).handleScroll
+        el.removeEventListener('scroll', handleScroll)
     }
 }
 
