@@ -125,6 +125,13 @@ const rangeTimeValue = computed(() => {
 
 // 获取PickerInputRange组件dom元素
 const pickerInputRangeRef = ref<InstanceType<typeof PickerInputRange> | null>(null)
+// 需要向外暴露的日期
+const value = computed(() =>
+    props.isRangePicker ? JSON.parse(JSON.stringify(rangeTimeValue.value)) : timeValue.value
+)
+defineExpose({
+    value
+})
 
 /**
  * --------------------组件通信--------------------
