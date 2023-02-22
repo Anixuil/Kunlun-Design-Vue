@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-aside'
+    name: 'KlAside'
 }
 </script>
 <script setup lang="ts">

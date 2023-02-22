@@ -93,6 +93,10 @@
                 {
                     "text": "Timeline 时间轴",
                     "link": "/data-display/timeline/timeline"
+                },
+                {
+                    "text": "Infinite Scroll 无限滚动",
+                    "link": "/data-display/infinitescroll/infinitescroll"
                 }
             ]
         },
@@ -200,6 +204,10 @@
                 {
                     "text": "Timeline",
                     "link": "/data-display/timeline/timeline"
+                },
+                {
+                    "text": "Infinite Scroll",
+                    "link": "/data-display/infinitescroll/infinitescroll"
                 }
             ]
         },

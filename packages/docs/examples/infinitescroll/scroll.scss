@@ -1,0 +1,34 @@
+.kl-infinite-scroll {
+    width: 500px;
+    height: 300px;
+    margin: 20px auto;
+    overflow-y: scroll; //y轴方向有滚动条
+    .kl-infinite-scroll--item {
+        //每一项的显示样式，这些都要搬到文档中的
+        height: 60px;
+        line-height: 60px;
+        margin: 5px 0;
+        background-color: var(--theme-color-dark);
+        color: white;
+        font-size: 16px;
+        text-align: center;
+    }
+    &::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
+        height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        background: var(--linear-color);
+    }
+    &::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0;
+        background: white;
+    }
+}

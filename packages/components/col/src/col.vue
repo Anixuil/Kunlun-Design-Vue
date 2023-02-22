@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-col'
+    name: 'KlCol'
 }
 </script>
 <script setup lang="ts">

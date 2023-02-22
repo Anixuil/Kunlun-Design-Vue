@@ -5,7 +5,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-layout'
+    name: 'KlLayout'
 }
 </script>
 <script setup lang="ts">

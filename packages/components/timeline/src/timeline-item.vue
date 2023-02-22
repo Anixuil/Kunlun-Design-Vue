@@ -23,7 +23,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-timeline-item'
+    name: 'KlTimelineItem'
 }
 </script>
 <script setup lang="ts">

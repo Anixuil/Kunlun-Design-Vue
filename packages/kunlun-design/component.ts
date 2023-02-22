@@ -25,7 +25,8 @@ import {
     KlTimeline,
     KlTimelineItem,
     KlCheckboxGroup,
-    KlRadioGroup
+    KlRadioGroup,
+    KlInfiniteScroll
 } from '@kunlun-design/components'
 
 export default [
@@ -54,5 +55,6 @@ export default [
     KlTimeline,
     KlTimelineItem,
     KlCheckboxGroup,
-    KlRadioGroup
+    KlRadioGroup,
+    KlInfiniteScroll
 ] as Plugin[]

@@ -21,7 +21,7 @@
 </template>
 <script lang="ts">
 export default {
-    name: 'kl-row'
+    name: 'KlRow'
 }
 </script>
 <script setup lang="ts">

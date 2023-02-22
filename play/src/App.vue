@@ -13,9 +13,11 @@ import Timeline from './components/Timeline.vue'
 import BreadCrumb from './components/BreadCrumb.vue'
 import Drawer from './components/Drawer.vue'
 import Carousel from './components/Carousel.vue'
+import InfiniteScroll from './components/Infinitescroll.vue'
 </script>
 
 <template>
+    <InfiniteScroll></InfiniteScroll>
     <Carousel></Carousel>
     <Drawer></Drawer>
     <BreadCrumb></BreadCrumb>
