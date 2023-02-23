@@ -3,7 +3,7 @@ layout: doc
 lang: en-US
 ---
 
-# Carousel 
+# Carousel
 
 In a limited space, play the same type of pictures, text, etc. in a loop.
 
@@ -43,12 +43,12 @@ carousel/arrow
 
 ## Carousel Attribute
 
-| The property name             | Desprition                           | Type                             | Default Value |
-| ------------------ | ------------------------------ | -------------------------------- | ------ |
-| height             | Marquee height, in px             | `number`                         | 300    |
-| width              | Marquee width, in px              | `number`                         | 600    |
-| trigger            | How the indicator is triggered               | `string`(click\|hover)           | click  |
-| autoplay           | Whether to switch automatically                   | `boolean`                        | true   |
-| interval           | The interval for automatic switching, in milliseconds | `number`                         | 3000   |
-| indicator-position | The position of the indicator                   | `string`(outside\|none)          | —      |
-| arrow              | Toggles when the arrows are displayed             | `string`（always\|hover\|never） | hover  |
+| The property name  | Desprition                                            | Type                             | Default Value |
+| ------------------ | ----------------------------------------------------- | -------------------------------- | ------------- |
+| height             | Marquee height, in px                                 | `number`                         | 300           |
+| width              | Marquee width, in px                                  | `number`                         | 600           |
+| trigger            | How the indicator is triggered                        | `string`(click\|hover)           | click         |
+| autoplay           | Whether to switch automatically                       | `boolean`                        | true          |
+| interval           | The interval for automatic switching, in milliseconds | `number`                         | 3000          |
+| indicator-position | The position of the indicator                         | `string`(outside\|none)          | —             |
+| arrow              | Toggles when the arrows are displayed                 | `string`（always\|hover\|never） | hover         |
