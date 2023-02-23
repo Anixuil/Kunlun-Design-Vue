@@ -4,30 +4,49 @@
             :class="['kl-carousel-indicator-item', { active: modelValue === item }]"
             v-for="item in count"
             :key="item"
+            @click="trigger === 'click' ? setPageIndex(item) : ''"
+            @mouseenter="trigger === 'hover' ? setPageIndex(item) : ''"
         ></div>
     </div>
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue'
+
 /**
  * --------------------组件通信--------------------
  */
 export interface IPropsType {
     modelValue: number
     count: number
+    trigger: string
+    indicatorPosition: string
 }
 export interface IEmitType {
     (e: 'update:modelValue', value: number): void
+    (e: 'on-setPageIndex', value: number): void
 }
 const props = defineProps<IPropsType>()
 const emit = defineEmits<IEmitType>()
+//点击跳转到对应页面
+const setPageIndex = (index: number) => {
+    emit('on-setPageIndex', index)
+}
+//处理指示器的位置
+let cBottom = computed(() => {
+    return props.indicatorPosition === 'outside' ? 0 + 'px' : 32 + 'px'
+})
+//处理指示器的隐藏
+let cDisplay = computed(() => {
+    return props.indicatorPosition === 'none' ? 'none' : 'flex'
+})
 </script>
 
 <style lang="scss" scoped>
 .kl-carousel-indicator {
-    display: flex;
+    display: v-bind(cDisplay);
     position: absolute;
-    bottom: 12px;
+    bottom: v-bind(cBottom);
     justify-content: center;
     width: 100%;
 

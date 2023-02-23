@@ -101,6 +101,10 @@
                 {
                     "text": "Infinite Scroll 无限滚动",
                     "link": "/data-display/infinitescroll/infinitescroll"
+                },
+                {
+                    "text": "Carousel 走马灯",
+                    "link": "/data-display/carousel/carousel"
                 }
             ]
         },
@@ -216,6 +220,10 @@
                 {
                     "text": "Infinite Scroll",
                     "link": "/data-display/infinitescroll/infinitescroll"
+                },
+                {
+                    "text": "Carousel ",
+                    "link": "/data-display/carousel/carousel"
                 }
             ]
         },
