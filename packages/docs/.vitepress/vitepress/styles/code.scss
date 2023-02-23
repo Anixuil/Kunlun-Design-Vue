@@ -6,7 +6,7 @@
 * {
     //滚动条整体样式
     &::-webkit-scrollbar {
-        width: 10px;
+        width: 5px;
         // background-color: rgba(0, 154, 0, 0.074);
         background-color: transparent;
     }
@@ -22,8 +22,11 @@
     //滑块
     &::-webkit-scrollbar-thumb {
         border-radius: 10px;
-        background: var(--theme-color-light);
-        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        background: rgb(187, 244, 157);
+        // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        &:hover {
+            background: var(--theme-color-light);
+        }
     }
 }
 

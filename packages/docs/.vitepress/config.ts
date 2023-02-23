@@ -16,7 +16,7 @@ export const config: UserConfig = {
             {
                 text: '文档',
                 link: '/zh/document/basic/button',
-                activeMatch: 'document/basic/button'
+                activeMatch: '/zh/document/*'
             },
             {
                 text: '关于',
@@ -66,12 +66,12 @@ function getEnglishThemeConfig() {
             {
                 text: 'Guide',
                 link: '/en/guide/intro',
-                activeMatch: '/en/guide/intro'
+                activeMatch: 'guide'
             },
             {
                 text: 'Document',
                 link: '/en/document/basic/button',
-                activeMatch: 'document/basic/button'
+                activeMatch: 'document'
             },
             {
                 text: 'About',
@@ -100,12 +100,12 @@ function getChineseThemeConfig() {
             {
                 text: '指南',
                 link: '/zh/guide/intro',
-                activeMatch: '/guide/intro'
+                activeMatch: 'guide'
             },
             {
                 text: '文档',
                 link: '/zh/document/basic/button',
-                activeMatch: 'document/basic/button'
+                activeMatch: 'document'
             },
             {
                 text: '关于',

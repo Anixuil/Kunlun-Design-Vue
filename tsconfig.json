@@ -10,6 +10,9 @@
         "types": ["unplugin-vue-define-options/macros-global", "vitest/globals"],
         "rootDir": ".",
         "moduleResolution": "node",
-        "declaration": true
+        "declaration": true,
+        "paths": {
+            "@kunlun-design/*": ["packages/*"]
+        }
     }
 }
