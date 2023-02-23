@@ -11,10 +11,18 @@
             <slot></slot>
             <!-- 上一页、下一页按钮 -->
         </div>
-        <button class="kl-carousel-arrow kl-carousel-arrow-left" @click="prevPage">
+        <button
+            class="kl-carousel-arrow kl-carousel-arrow-left"
+            @click="prevPage"
+            v-show="arrow === 'always' || arrow === 'hover'"
+        >
             <KlArrowLineLeft />
         </button>
-        <button class="kl-carousel-arrow kl-carousel-arrow-right" @click="nextPage">
+        <button
+            class="kl-carousel-arrow kl-carousel-arrow-right"
+            @click="nextPage"
+            v-show="arrow === 'always' || arrow === 'hover'"
+        >
             <KlArrowLineRight />
         </button>
 
@@ -35,7 +43,6 @@ import { carouselProps } from './type'
 import { KlArrowLineLeft, KlArrowLineRight } from '@kl-design/icons'
 import '@kl-design/icons/style.css'
 import CarouselIndicator from './cpns/CarouselIndicator.vue'
-import { time } from 'console'
 defineOptions({
     name: 'KlCarousel'
 })
@@ -51,15 +58,19 @@ const cheight = computed(() => props.height + 20 + 'px')
 /**
  * --------------------功能函数--------------------
  */
-// 初始化复制第一张放最后，最后一张放第一张前
-const dom = document.querySelector('.kl-carousel-container')
-console.log(dom)
-const init = () => {}
+// //loop循环播放
+// // 初始化复制第一张放最后，最后一张放第一张前
+// onMounted(() => {
+//     let doms = document.querySelector('.kl-carousel-container')
+//     //复制
+//     let firstItem = doms?.firstElementChild?.cloneNode(true)
+//     let lastItem = doms?.lastElementChild?.cloneNode(true)
+//     doms?.appendChild(firstItem as Node) //在最后加第一张
+//     doms?.insertBefore(lastItem as Node, doms.firstElementChild) //在第一张前面加最后一张
+//     console.log(doms?.children)
+// })
 // 上一页
 const prevPage = () => {
-    if (pageIndex.value === 1) {
-        // dom[].style.transition = 'none'
-    }
     pageIndex.value === 1 ? (pageIndex.value = count) : (pageIndex.value -= 1)
 }
 // 下一页
@@ -70,6 +81,7 @@ const nextPage = () => {
 const setPageIndex = (index: number) => {
     pageIndex.value = index
 }
+
 //自动播放
 let timer: any
 
