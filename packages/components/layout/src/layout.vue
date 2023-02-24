@@ -15,6 +15,12 @@ import { createNamespace } from '@kunlun-design/utils'
 const props = defineProps<{
     direction?: string
 }>()
+// type Props={
+//     direction?: string
+// }
+// withDefaults(defineProps<Props>(), {
+//     height: '60px'
+// })
 const { n } = createNamespace('layout') //命名
 const slots: any = useSlots()
 
@@ -29,7 +35,7 @@ const isVertical = computed(() => {
         const vNodes: VNode[] = slots.default()
         return vNodes.some(vNode => {
             const tagName = (vNode.type as any).name
-            return tagName === 'kl-header' || tagName === 'kl-footer'
+            return tagName === 'KlHeader' || tagName === 'KlFooter'
         })
     } else {
         return false
