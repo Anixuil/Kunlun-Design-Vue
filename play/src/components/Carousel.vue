@@ -1,6 +1,6 @@
 <template>
     <div class="carousel">
-        <KlCarousel>
+        <KlCarousel trigger="hover" :autoplay="true" :initial-index="3">
             <div class="carousel-item">1</div>
             <div class="carousel-item">2</div>
             <div class="carousel-item">3</div>
