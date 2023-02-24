@@ -189,7 +189,7 @@ onMounted(() => {
     let lastItem = containerRef.value?.lastElementChild?.cloneNode(true)
     containerRef.value?.appendChild(firstItem as Node) //在最后加第一张
     containerRef.value?.insertBefore(lastItem as Node, containerRef.value.firstElementChild) //在第一张前面加最后一张
-    console.log(containerRef.value?.children)
+    // console.log(containerRef.value?.children)
 })
 </script>
 
