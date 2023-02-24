@@ -101,8 +101,8 @@ const move = (direction: 'left' | 'right', step = 1) => {
 const prevPage = async () => {
     if (isActive) return
     if (pageIndex.value === 1) {
-        await move('left')
         pageIndex.value = count
+        await move('left')
         initIndex()
         return
     }
@@ -113,8 +113,8 @@ const prevPage = async () => {
 const nextPage = async () => {
     if (isActive) return
     if (pageIndex.value === count) {
-        await move('right')
         pageIndex.value = 1
+        await move('right')
         initIndex()
         return
     }
@@ -127,8 +127,8 @@ const setPageIndex = (index: number) => {
     // 记录跳转之前的页码
     const step = index - pageIndex.value
     const direction = step > 0 ? 'right' : 'left'
-    move(direction, Math.abs(step))
     pageIndex.value = index
+    move(direction, Math.abs(step))
 }
 
 // 初始化continer位置
