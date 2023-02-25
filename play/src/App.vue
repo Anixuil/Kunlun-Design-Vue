@@ -15,10 +15,12 @@ import BreadCrumb from './components/BreadCrumb.vue'
 import Drawer from './components/Drawer.vue'
 import Carousel from './components/Carousel.vue'
 import InfiniteScroll from './components/Infinitescroll.vue'
+import Camera from './components/Camera.vue'
 </script>
 
 <template>
-    <InfiniteScroll></InfiniteScroll>
+    <Camera></Camera>
+    <!-- <InfiniteScroll></InfiniteScroll>
     <Carousel></Carousel>
     <Drawer></Drawer>
     <BreadCrumb></BreadCrumb>
@@ -34,7 +36,7 @@ import InfiniteScroll from './components/Infinitescroll.vue'
     <Grid></Grid>
     <Layout></Layout>
     <Timeline></Timeline>
-    <Avatar></Avatar>
+    <Avatar></Avatar> -->
 </template>
 
 <style scoped lang="scss"></style>

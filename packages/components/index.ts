@@ -28,3 +28,4 @@ export * from './qrcode'
 export * from './carousel'
 
 export * from './infinite-scroll'
+export * from './camera'
