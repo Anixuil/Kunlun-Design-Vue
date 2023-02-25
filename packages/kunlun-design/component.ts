@@ -29,7 +29,13 @@ import {
     KlCheckboxGroup,
     KlRadioGroup,
     KlInfiniteScroll,
-    KlAvatar
+    KlAvatar,
+    KlCamera,
+    KlCarousel,
+    KlDrawer,
+    KlMessage,
+    KlQrcode,
+    KlUpload
 } from '@kunlun-design/components'
 
 export default [
@@ -62,5 +68,11 @@ export default [
     KlCheckboxGroup,
     KlRadioGroup,
     KlInfiniteScroll,
-    KlAvatar
+    KlAvatar,
+    KlCamera,
+    KlCarousel,
+    KlDrawer,
+    KlMessage,
+    KlQrcode,
+    KlUpload
 ] as Plugin[]
