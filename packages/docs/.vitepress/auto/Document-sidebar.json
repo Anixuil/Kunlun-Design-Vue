@@ -116,6 +116,15 @@
                     "link": "/navigation/breadcrumb/breadcrumb"
                 }
             ]
+        },
+        "others": {
+            "text": "其他组件",
+            "children": [
+                {
+                    "text": "Camera 摄像头",
+                    "link": "/others/camera"
+                }
+            ]
         }
     },
     "en": {
@@ -233,6 +242,15 @@
                 {
                     "text": "BreadCrumb ",
                     "link": "/navigation/breadcrumb/breadcrumb"
+                }
+            ]
+        },
+        "others": {
+            "text": "Others Component",
+            "children": [
+                {
+                    "text": "Camera",
+                    "link": "/others/camera"
                 }
             ]
         }

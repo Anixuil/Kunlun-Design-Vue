@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "docs": "link:",
+        "kunlun-design": "workspace:0.1.4-alpha.1",
         "markdown-it": "^13.0.1",
         "markdown-it-container": "^3.0.0",
         "prism-theme-vars": "^0.2.4",
